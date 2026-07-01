@@ -419,13 +419,18 @@ Add your answer here...
 
 Add your answer here...
 
+* From sat-Mon
+* Immediately after the Sat 8hrs class, sleep for like 2hrs then begin the Assignment, Try everything possible to finish up on monday
+
 #### How Many Sessions Per Week?
 
 Add your answer here...
 
-Sat: After the 8hours session, 2 hours of sleep and 5 hours on the Assignment
-Sun: Full day working on the Assignment like 15 hours with little break in-between 
-Mon: 3-4hours early morning reading and watching DMI youtube videos
+* Sat: After the 8hours session, 2 hours of sleep and 5 hours on the Assignment.
+
+* Sun: Full day working on the Assignment like 15 hours with little break in-between.
+
+* Mon: 3-4hours early morning reading and watching DMI youtube videos.
 
 
 ### Distraction Rules
