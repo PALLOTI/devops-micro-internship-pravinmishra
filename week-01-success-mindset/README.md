@@ -186,7 +186,7 @@ If Yes:
 Add your answer here...
 No
 
-Being innocent is not what I am try to portray here
+Been innocent is not what I am try to portray here.
 But I have not been in a situation, where cutting corners would be necessary , so I never did
 
 # Assignment 5. What are 10 non-fiction books you plan to read in the next 1 year?
@@ -211,16 +211,123 @@ Choose books that improve:
 
 ## Book List
 
-1. Add your answer here...
-2. Add your answer here...
-3. Add your answer here...
-4. Add your answer here...
-5. Add your answer here...
-6. Add your answer here...
-7. Add your answer here...
-8. Add your answer here...
-9. Add your answer here...
-10. Add your answer here...
+1. Mindset by Carol S. Dweck
+
+
+![Assignment 1 screenshot](screenshots/Mindset.png)
+
+
+
+
+
+
+
+
+2. Atomic habits by James Clear
+
+
+![Assignment 1 screenshot](screenshots/Atomic%20habits.png)
+
+
+
+
+
+3. Crucial conversation by Joseph Greeny, Kerry Patterson, et al.
+
+
+![Assignment  screenshot](screenshots/Crucial%20conversation.png)
+
+
+
+
+
+
+
+4. Deep work by Cal Newporl
+
+
+![Assignment screenshot](screenshots/Deep%20work.png)
+
+
+
+
+
+
+
+
+5. Outlive by Peter Attia
+
+
+![Assignment screenshot](screenshots/Outlive.png)
+
+
+
+
+
+6. The psychology of Money by Morgan Housel
+
+
+![Assignment screenshot](screenshots/Psychology%20of%20money.png)
+
+
+
+
+
+
+
+
+7. Rich Dad Poor Dad by Robert T. Kiyosaki
+
+![Assignment screenshot](screenshots/Rich%20dad.png)
+
+
+
+
+
+
+
+
+
+
+8. What got you here won't get you there by Marshall Goldsmith
+
+
+![Assignment screenshot](screenshots/What%20got%20you%20here.png)
+
+
+
+
+
+
+
+
+
+9. 5Am Club by Robin Sharma
+
+
+![Assignment screenshot](screenshots/The%205am%20club.png)
+
+
+
+
+
+
+
+
+
+10. Design your life by Bill Burnett and Dave Evans
+
+
+![Assignment screenshot](screenshots/Design%20your%20life.png)
+
+
+
+
+
+
+
+
+
 
 ---
 
@@ -249,16 +356,13 @@ List topics only. No need to share numbers.
 
 ## My Metrics
 
-* Add your answer here...
-* Add your answer here...
-* Add your answer here...
-* Add your answer here...
-* Add your answer here...
-* Add your answer here...
-* Add your answer here...
-* Add your answer here...
-* Add your answer here...
-* Add your answer here...
+* Two hours early workout before breakfast
+* Taking more of fruits and less junks
+* Three pages a day from one of the aforementioned books
+* Earlier dinner, night sleep by 8pm
+* To wake up by 3am for morning 2hours studing my cloud and Devops materials before earlier morning workout
+* On weekends after saturday 8hours class , full focus on my Assignments and rewatching the youtube videos
+
 
 ---
 
@@ -282,10 +386,12 @@ Examples:
 
 **Yes / No**
 
-Answer:
+Answer: Yes
 
 Add your answer here...
+Sometimes, it is not easy to stay locked into learning a new skill when your family depends on you for so many things. My goal in this cohort is to gain clarity and confidence by building a strong foundation in cloud-native technologies.
 
+It is important for me to understand my current learning baseline, especially during those moments when confusion and anxiety creep in. Through this program, I aim to secure a clear learning roadmap and significantly increase my technical understanding of DevOps.
 ---
 
 ## Step 2: Your 5-Month Routine + Focus Blocks
@@ -303,9 +409,9 @@ Example:
 #### My Weekly Routine
 
 Add your answer here...
-
----
-
+* Mon-Fri: I work from 9am-5pm ,3hours study everyday before from 4am-7am
+* Sat: DMI 8 hours session. After the sesssion, full focus on my Assignments 
+* Sun: Weekly reflection and review . Also Asssignment completion
 ### Focus Blocks
 
 #### When Will You Do DMI Work? (Days + Time)
@@ -315,7 +421,9 @@ Add your answer here...
 #### How Many Sessions Per Week?
 
 Add your answer here...
-
+Sat: After the 8hours session, 2 hours of sleep and 5 hours on the Assignment
+Sun: Full day working on the Assignment like 15 hours with little break in-between 
+Mon: 3-4hours early morning reading and watching DMI youtube videos
 ---
 
 ### Distraction Rules
@@ -330,34 +438,42 @@ Examples:
 
 Add your answer here...
 
----
+* My phone and social media pose no distration to me, because thats where most my business runs
+* My room and state Libary conducive for learning
 
 # Reflection – Week 1
 
 ### Biggest insight I got about myself this week
 
 Add your answer here...
+Understanding the effect of compounding, consistent little disciple leads to greatness
+Prioritizing my health and mental state
 
 ### My biggest weakness/loop I noticed
 
 Add your answer here...
+Mastering consistency is the ultimate challenge for me right now. However, I am confident that in the near future, I will achieve it.
 
 ### One system I will implement from this week (exact habit + time)
 
 Add your answer here...
+Wake up early by 3am
+3hrs early morning reading 
+2hrs early morning workout
 
 ### LinkedIn Post
 
 Paste your LinkedIn post link here:
 
-`__________________________`
+`https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-cloudcomputing-softwareengineering-share-7477398559223431168-46gd/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE__________________________`
 
 ---
 
 ## 10. Proof of Work
 
-- LinkedIn Post URL: **ADD LINK HERE**  
-- Blog / Medium : **ADD LINK HERE**  
+- LinkedIn Post URL: **https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-cloudcomputing-softwareengineering-share-7477398559223431168-46gd/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE**  
+
+- Blog / Medium : **https://medium.com/@palloti10x/mental-dependencies-before-server-dependencies-why-your-mindset-is-your-true-foundation-in-devops-d0b8e665ce2c**  
 
 ---
 
