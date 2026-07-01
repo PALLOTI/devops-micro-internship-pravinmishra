@@ -135,7 +135,7 @@ Example:
 
 ```bash
 
-cd "E:\DMI"
+cd "D:\DMI"
 
 ```
 
