@@ -98,11 +98,11 @@ Use commas instead of dots:
 Every LinkedIn post MUST end with this:
 
 > **P.S. This post is a part of DevOps Micro Internship with Agentic AI Cohort-3 by [Pravin Mishra](https://www.linkedin.com/in/pravin-mishra-aws-trainer/). You can start your DevOps journey by joining this Discord community: [https://discord.pravinmishra.com/](https://discord.pravinmishra.com/)**
+>
+>#DMIByPravinMishra #DevOps #AgenticAI
 
-#DMIByPravinMishra #DevOps #AgenticAI
 
-
-Example post P.S & tagging:
+## **Example post P.S & tagging:**
 
 ![tagging & PS](./images/ss162.png)
 
