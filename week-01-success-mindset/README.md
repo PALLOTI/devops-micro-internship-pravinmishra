@@ -438,7 +438,7 @@ Examples:
 
 Add your answer here...
 
-* My phone and social media pose no distration to me, because thats where most my business runs
+* My phone always on airplane mode during my reading hours
 * My room and state Libary conducive for learning
 
 # Reflection – Week 1
