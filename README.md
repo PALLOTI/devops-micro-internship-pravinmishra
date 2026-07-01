@@ -9,7 +9,7 @@
 
 ---
 
- About Me
+## About Me
 
 | | |
 |---|---|
@@ -21,7 +21,7 @@
 
 ---
 
- About the Program
+## About the Program
 
 **DevOps Micro Internship with Agentic AI** is a 15-week mentor-led cohort program by [Pravin Mishra](https://www.linkedin.com/in/pravin-mishra-aws-trainer/) — Cloud, DevOps & AI consultant with 15+ years of experience, 5,000+ learners trained, and 20K+ LinkedIn followers.
 
@@ -60,7 +60,7 @@ This is not a course. It is an internship-style program — real deployments, re
 
 **Preview — what your full stack looks like:**
 
-[![Week 00](./badges/week-00.svg)](./week-00-internet-and-networking/)[![Week 01](./badges/week-01.svg)](./week-01-success-mindset/)[![Week 02](./badges/week-02.svg)](./week-02-agentic-ai/)[![Week 03](./badges/week-03.svg)](./week-03-linux-for-devops/)[![Week 04](./badges/week-04.svg)](./week-04-bash-scripting/)[![Week 05](./badges/week-05.svg)](./week-05-github/)[![Week 06](./badges/week-06.svg)](./week-06-devops-lifecycle/)[![Week 07](./badges/week-07.svg)](./week-07-aws-cloud/)[![Week 08](./badges/week-08.svg)](./week-08-azure-cloud/)[![Week 09](./badges/week-09.svg)](./week-09-terraform/)[![Week 10](./badges/week-10.svg)](./week-10-ansible/)[![Week 11](./badges/week-11.svg)](./week-11-azure-devops/)[![Week 12](./badges/week-12.svg)](./week-12-docker/)[![Week 13](./badges/week-13.svg)](./week-13-kubernetes/)[![Week 14](./badges/week-14.svg)](./week-14-final-project/)
+# [![Week 00](./badges/week-00.svg)](./week-00-internet-and-networking/)[![Week 01](./badges/week-01.svg)](./week-01-success-mindset/)[![Week 02](./badges/week-02.svg)](./week-02-agentic-ai/)[![Week 03](./badges/week-03.svg)](./week-03-linux-for-devops/)[![Week 04](./badges/week-04.svg)](./week-04-bash-scripting/)[![Week 05](./badges/week-05.svg)](./week-05-github/)[![Week 06](./badges/week-06.svg)](./week-06-devops-lifecycle/)[![Week 07](./badges/week-07.svg)](./week-07-aws-cloud/)[![Week 08](./badges/week-08.svg)](./week-08-azure-cloud/)[![Week 09](./badges/week-09.svg)](./week-09-terraform/)[![Week 10](./badges/week-10.svg)](./week-10-ansible/)[![Week 11](./badges/week-11.svg)](./week-11-azure-devops/)[![Week 12](./badges/week-12.svg)](./week-12-docker/)[![Week 13](./badges/week-13.svg)](./week-13-kubernetes/)[![Week 14](./badges/week-14.svg)](./week-14-final-project/)
 
 ---
 
