@@ -384,7 +384,7 @@ Examples:
 
 ### Did You Do It?
 
-**Yes / No**
+# **Yes / No**
 
 Answer: Yes
 
