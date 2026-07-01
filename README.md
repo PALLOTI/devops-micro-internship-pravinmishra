@@ -14,7 +14,7 @@
 | | |
 |---|---|
 | **Name** | EZEOBI CHINECHEREM JUDE |
-| **LinkedIn** | [Ezeobi Palloti](www.linkedin.com/in/ezeobi-palloti-5b231a1b9) |
+| **LinkedIn** | (www.linkedin.com/in/ezeobi-palloti-5b231a1b9) |
 | **Location** | Lagos, Nigeria |
 | **Background** | Cloud Security, DevOps Engineer|
 | **Goal** | Gaining clarity about Ai driven Cloud security and Devops Engineering operations |
