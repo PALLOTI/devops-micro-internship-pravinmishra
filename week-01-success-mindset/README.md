@@ -389,9 +389,9 @@ Examples:
 Answer: Yes
 
 Add your answer here...
-Sometimes, it is not easy to stay locked into learning a new skill when your family depends on you for so many things. My goal in this cohort is to gain clarity and confidence by building a strong foundation in cloud-native technologies.
 
-It is important for me to understand my current learning baseline, especially during those moments when confusion and anxiety creep in. Through this program, I aim to secure a clear learning roadmap and significantly increase my technical understanding of DevOps.
+
+Sometimes, it is not easy to stay locked into learning a new skill when your family depends on you for so many things. My goal in this cohort is to gain clarity and confidence by building a strong foundation in cloud-native technologies. It is important for me to understand my current learning baseline, especially during those moments when confusion and anxiety creep in. Through this program, I aim to secure a clear learning roadmap and significantly increase my technical understanding of DevOps.
 ---
 
 ## Step 2: Your 5-Month Routine + Focus Blocks
@@ -409,6 +409,7 @@ Example:
 #### My Weekly Routine
 
 Add your answer here...
+
 * Mon-Fri: I work from 9am-5pm ,3hours study everyday before from 4am-7am
 * Sat: DMI 8 hours session. After the sesssion, full focus on my Assignments 
 * Sun: Weekly reflection and review . Also Asssignment completion
@@ -421,6 +422,7 @@ Add your answer here...
 #### How Many Sessions Per Week?
 
 Add your answer here...
+
 Sat: After the 8hours session, 2 hours of sleep and 5 hours on the Assignment
 Sun: Full day working on the Assignment like 15 hours with little break in-between 
 Mon: 3-4hours early morning reading and watching DMI youtube videos
