@@ -57,7 +57,7 @@ Write each truth in this format:
 
 The power of living in the presence
 
- Evidence from my life
+ *Evidence from my life*
 
 Life is'nt about perfection, life is an adventure, the little moments of life holds weight eg. attending ur kids graudation ,spending time with the kids at the park etc, life is about living in the presence stop believing that you'll be enjoy life more tomorrow or when you clock 60 .
 
@@ -69,7 +69,7 @@ Life is'nt about perfection, life is an adventure, the little moments of life ho
 
 Taking zero risk costs more
 
- Evidence from my life
+ *Evidence from my life*
 
 The future belongs to those taking a calculated risk. The truth is that some years from now you'll become someone . The big question is "who" ?
 
@@ -83,7 +83,7 @@ Hope I'm not sounding like a motivational speaker
 
 Clarity meets you half way in the grind 
 
- Evidence from my life
+ *Evidence from my life*
 
 A year ago, I made the mistake of delaying my DevOps journey, waiting for the 'perfect time' and hoping to find absolute clarity before taking action. That year taught me a valuable lesson about inertia. Today, three months into the deep grind, I am finally gaining that clarity—one technical milestone at a time. It made me realize a fundamental truth about career growth: Clarity doesn't precede action. It meets you halfway through the execution, never before you begin.
 
