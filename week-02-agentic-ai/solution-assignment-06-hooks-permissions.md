@@ -22,6 +22,7 @@ Create the `.claude` directory structure required for team-level Claude Code con
 
 Add your screenshot here.
 
+![hooks](./screenshots/6claudefolder.png)
 ---
 
 # Task 2 — Create the UserPromptSubmit Hook Script
@@ -35,7 +36,7 @@ Create a hook that checks user prompts before Claude processes them and blocks r
 #### Screenshot 2 — `user-prompt-guard.sh` open in VS Code showing the hook script
 
 Add your screenshot here.
-
+![hooks](./screenshots/6userpro.png)
 ---
 
 # Task 3 — Create the PreToolUse Hook Script
@@ -49,7 +50,7 @@ Create a hook that runs before Claude executes Bash commands and blocks dangerou
 #### Screenshot 3 — `pre-tool-guard.sh` open in VS Code showing the hook script
 
 Add your screenshot here.
-
+![hooks](./screenshots/6pretool.png)
 ---
 
 # Task 4 — Create the PostToolUse Hook Script
@@ -63,7 +64,7 @@ Create a hook that runs after Claude executes a Bash command and logs selected T
 #### Screenshot 4 — `post-tool-logger.sh` open in VS Code showing the hook script
 
 Add your screenshot here.
-
+![hooks](./screenshots/6posttool.png)
 ---
 
 # Task 5 — Configure settings.json to Connect Hook Scripts
@@ -77,7 +78,7 @@ Configure Claude Code permissions and connect the hook scripts created in the pr
 #### Screenshot 5 — `settings.json` open in VS Code showing permissions and hooks configuration
 
 Add your screenshot here.
-
+![hooks](./screenshots/6permission.png)
 ---
 
 # Task 6 — Test the UserPromptSubmit Hook
@@ -89,7 +90,7 @@ Prove the prompt-level hook works by typing a destructive prompt and verifying i
 ### Evidence
 
 #### Screenshot 6 — UserPromptSubmit hook blocking the destructive prompt
-
+![hooks](./screenshots/6userhookblock.png)
 ---
 
 # Task 7 — Test the PreToolUse Hook

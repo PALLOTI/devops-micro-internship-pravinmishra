@@ -22,6 +22,7 @@ Capture Claude’s response before `CLAUDE.md` exists in the project to establis
 
 Add your screenshot here.
 
+![claude version](./screenshots/Generic%20answer.png)
 ---
 
 # Task 2 — Generate the First Draft with /init
@@ -35,7 +36,7 @@ Generate an initial `CLAUDE.md` file using the `/init` command and review the au
 #### Screenshot 2 — The auto-generated CLAUDE.md open in VS Code showing its content
 
 Add your screenshot here.
-
+![claude version](./screenshots/Auto-generated%20claude.md.png)
 ---
 
 # Task 3 — Customize the CLAUDE.md
@@ -49,7 +50,7 @@ Update the generated `CLAUDE.md` file by adding project-specific instructions ac
 #### Screenshot 3 — Your customized CLAUDE.md in VS Code showing all 5 sections (scroll to show the full file)
 
 Add your screenshot here.
-
+![claude version](./screenshots/customised%20claude.md.png)
 ---
 
 # Task 4 — Test the After State
@@ -63,13 +64,13 @@ Verify that Claude’s behavior changes after adding `CLAUDE.md` by running a ne
 #### Screenshot 4 — Claude's specific, detailed answer after reading CLAUDE.md (Claude mentioning S3, CloudFront and Terraform)
 
 Add your screenshot here.
-
+![claude version](./screenshots/claude%20specific.png)
 ---
 
 #### Screenshot 5 — Claude refusing or warning against adding React because of the "No JavaScript" convention defined in CLAUDE.md
 
 Add your screenshot here.
-
+![claude version](./screenshots/claude%20refusing.png)
 ---
 
 # Task 5 — Commit and push your changes to your fork in GitHub
@@ -83,7 +84,7 @@ Commit the `CLAUDE.md` file and push it to your GitHub fork so the project instr
 #### Screenshot 6 — `CLAUDE.md` visible in your GitHub repository after pushing the commit
 
 Add your screenshot here.
-
+![claude version](./screenshots/Github.png)
 ---
 
 # Submission Instructions
