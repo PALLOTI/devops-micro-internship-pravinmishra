@@ -56,8 +56,6 @@ Go through the [Onboarding](./onboarding) folder for complete assignment guideli
 
 * **Deadline - Friday, 3rd of July 11:59 PM (your local time)** 
 
-* **Assignment submission form:** [Assignment Submission Form](https://forms.gle/mTKDwJNU5vyNLbAFA) <br>
-
 Week-1 contains 7 assignments
 
 | S. No. | Assignment | Correct task execution | Post on LinkedIn with PS | Marks |
