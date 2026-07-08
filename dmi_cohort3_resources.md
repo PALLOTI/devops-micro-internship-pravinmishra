@@ -90,7 +90,7 @@ Week-1 contains 7 assignments
 
 ### Week 2: Assignments Submission Guidelines – DevOps Micro Internship (DMI) Cohort-3
 
-* **Deadline - Friday, 3rd of July 11:59 PM (your local time)** 
+* **Deadline - Friday, 10th of July 11:59 PM (your local time)** 
 
 Week-2 contains 8 assignments
 
