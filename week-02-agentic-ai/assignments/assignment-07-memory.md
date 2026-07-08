@@ -4,10 +4,17 @@
 
 ## 1. Assignment Overview
 
+<<<<<<< HEAD
 **Assignment:** Memory               
 **Estimated Time:** 45 minutes          
 **Difficulty:** Intermediate                
 **Category:** Agentic AI, Memory               
+=======
+**Assignment:** Memory
+**Estimated Time:** 45 minutes
+**Difficulty:** Intermediate
+**Category:** Agentic AI, Memory
+>>>>>>> 3f86e28 (adding agentic ai assignment)
 
 ---
 
@@ -35,6 +42,11 @@ Every time you open a new Claude Code session, Claude starts completely fresh �
 
 ## 5. Important Instructions (Global Rules)
 
+<<<<<<< HEAD
+=======
+Follow the Assignment Submission Guidelines — Click here
+
+>>>>>>> 3f86e28 (adding agentic ai assignment)
 **Key Rules:**
 - Full name must be visible in required screenshots
 - Do not expose sensitive information (keys, passwords, account IDs)
@@ -167,6 +179,12 @@ Your submission must include:
 - All 6 required screenshots
 - Your GitHub repo URL
 
+<<<<<<< HEAD
+=======
+Submit only a Google Doc link.
+Follow the Assignment Submission Guidelines — (LINK)
+
+>>>>>>> 3f86e28 (adding agentic ai assignment)
 ---
 
 ## 10. Solution Walkthrough
@@ -197,4 +215,14 @@ Before submission, verify:
 - [ ] Session fully closed and fresh session opened (Screenshot 4)
 - [ ] Claude recalled hero colors in new session without prompting (Screenshot 5)
 - [ ] Claude refused JavaScript — memory rule enforced (Screenshot 6)
+<<<<<<< HEAD
 - [ ] All 6 screenshots captured and updated in GitHub folder
+=======
+- [ ] All 6 screenshots captured and in Google Doc
+
+---
+
+## 13. Final Submission
+
+Submit only your Google Doc link.
+>>>>>>> 3f86e28 (adding agentic ai assignment)

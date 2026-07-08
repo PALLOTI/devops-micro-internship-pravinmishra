@@ -4,10 +4,17 @@
 
 ## 1. Assignment Overview
 
+<<<<<<< HEAD
 **Assignment:** MCP Servers          
 **Estimated Time:** 60 minutes            
 **Difficulty:** Intermediate             
 **Category:** Agentic AI, MCP              
+=======
+**Assignment:** MCP Servers
+**Estimated Time:** 60 minutes
+**Difficulty:** Intermediate
+**Category:** Agentic AI, MCP
+>>>>>>> 3f86e28 (adding agentic ai assignment)
 
 ---
 
@@ -35,6 +42,11 @@ Without MCP, Claude works from training data — which can be months old and kno
 
 ## 5. Important Instructions (Global Rules)
 
+<<<<<<< HEAD
+=======
+Follow the Assignment Submission Guidelines — Click here
+
+>>>>>>> 3f86e28 (adding agentic ai assignment)
 **Key Rules:**
 - Full name must be visible in required screenshots
 - Do **not** expose your GitHub token in any screenshot — blur or hide the token value
@@ -194,6 +206,12 @@ Your submission must include:
 - A note confirming `settings.local.json` is in your `.gitignore`
 - Your GitHub repo URL (`.mcp.json` committed and visible, `settings.local.json` NOT committed)
 
+<<<<<<< HEAD
+=======
+Submit only a Google Doc link.
+Follow the Assignment Submission Guidelines — (LINK)
+
+>>>>>>> 3f86e28 (adding agentic ai assignment)
 ---
 
 ## 10. Solution Walkthrough
@@ -221,3 +239,10 @@ Before submission, verify:
 - [ ] `.mcp.json` committed and visible in GitHub repo
 
 ---
+<<<<<<< HEAD
+=======
+
+## 13. Final Submission
+
+Submit only your Google Doc link.
+>>>>>>> 3f86e28 (adding agentic ai assignment)

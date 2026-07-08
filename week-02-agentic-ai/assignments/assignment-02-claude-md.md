@@ -4,10 +4,17 @@
 
 ## 1. Assignment Overview
 
+<<<<<<< HEAD
 **Assignment:** CLAUDE.md              
 **Estimated Time:** 60 minutes                
 **Difficulty:** Beginner                  
 **Category:** Agentic AI, Project Context                    
+=======
+**Assignment:** CLAUDE.md
+**Estimated Time:** 60 minutes
+**Difficulty:** Beginner
+**Category:** Agentic AI, Project Context
+>>>>>>> 3f86e28 (adding agentic ai assignment)
 
 ---
 
@@ -34,6 +41,11 @@ On real engineering teams, every new team member reads the onboarding doc before
 
 ## 5. Important Instructions (Global Rules)
 
+<<<<<<< HEAD
+=======
+Follow the Assignment Submission Guidelines — Click here
+
+>>>>>>> 3f86e28 (adding agentic ai assignment)
 **Key Rules:**
 - Full name must be visible in required screenshots
 - Do not expose sensitive information (keys, passwords, account IDs)
@@ -166,6 +178,12 @@ Your submission must include:
 - All 5 required screenshots
 - Your GitHub repo URL (CLAUDE.md should be committed)
 
+<<<<<<< HEAD
+=======
+Submit only a Google Doc link.
+Follow the Assignment Submission Guidelines — (LINK)
+
+>>>>>>> 3f86e28 (adding agentic ai assignment)
 ---
 
 ## 10. Solution Walkthrough
@@ -193,4 +211,10 @@ Before submission, verify:
 
 ---
 
+<<<<<<< HEAD
 
+=======
+## 13. Final Submission
+
+Submit only your Google Doc link.
+>>>>>>> 3f86e28 (adding agentic ai assignment)

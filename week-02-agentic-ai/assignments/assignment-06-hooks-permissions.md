@@ -4,10 +4,17 @@
 
 ## 1. Assignment Overview
 
+<<<<<<< HEAD
 **Assignment:** Hooks & Permissions             
 **Estimated Time:** 60 minutes             
 **Difficulty:** Intermediate                 
 **Category:** Agentic AI, Safety              
+=======
+**Assignment:** Hooks & Permissions
+**Estimated Time:** 60 minutes
+**Difficulty:** Intermediate
+**Category:** Agentic AI, Safety
+>>>>>>> 3f86e28 (adding agentic ai assignment)
 
 ---
 
@@ -35,6 +42,11 @@ On real infrastructure teams, no engineer gives AI unrestricted access to produc
 
 ## 5. Important Instructions (Global Rules)
 
+<<<<<<< HEAD
+=======
+Follow the Assignment Submission Guidelines — Click here
+
+>>>>>>> 3f86e28 (adding agentic ai assignment)
 **Key Rules:**
 - Full name must be visible in required screenshots
 - Do not expose sensitive information (keys, passwords, account IDs)
@@ -215,6 +227,12 @@ Your submission must include:
 - All 5 required screenshots
 - Your GitHub repo URL (`settings.json` committed and visible)
 
+<<<<<<< HEAD
+=======
+Submit only a Google Doc link.
+Follow the Assignment Submission Guidelines — (LINK)
+
+>>>>>>> 3f86e28 (adding agentic ai assignment)
 ---
 
 ## 10. Solution Walkthrough
@@ -238,4 +256,14 @@ Before submission, verify:
 - [ ] PreToolUse hook added and visible in screenshot
 - [ ] Destructive prompt test shows Claude was blocked (Screenshot 4)
 - [ ] Terraform destroy command test shows it was intercepted (Screenshot 5)
+<<<<<<< HEAD
 - [ ] `settings.json` committed and visible in GitHub repo
+=======
+- [ ] `settings.json` committed and visible in GitHub repo
+
+---
+
+## 13. Final Submission
+
+Submit only your Google Doc link.
+>>>>>>> 3f86e28 (adding agentic ai assignment)

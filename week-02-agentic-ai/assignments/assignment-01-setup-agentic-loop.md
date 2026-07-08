@@ -4,16 +4,27 @@
 
 ## 1. Assignment Overview
 
+<<<<<<< HEAD
 **Assignment:** Setup & Agentic Loop     
 **Estimated Time:** 60 minutes     
 **Difficulty:** Beginner      
 **Category:** Agentic AI, Claude Code Setup     
+=======
+**Assignment:** Setup & Agentic Loop
+**Estimated Time:** 60 minutes
+**Difficulty:** Beginner
+**Category:** Agentic AI, Claude Code Setup
+>>>>>>> 3f86e28 (adding agentic ai assignment)
 
 ---
 
 ## 2. Objective
 
+<<<<<<< HEAD
 Install and authenticate Claude Code CLI and VS Code extension, fork and clone the course starter [repository](https://github.com/pravinmishraaws/Ultimate-Agentic-DevOps-with-Claude-Code), and observe how the Agentic Loop works before any configuration is in place.
+=======
+Install and authenticate Claude Code CLI and VS Code extension, fork and clone the course starter repository, and observe how the Agentic Loop works before any configuration is in place.
+>>>>>>> 3f86e28 (adding agentic ai assignment)
 
 ---
 
@@ -35,6 +46,11 @@ Every DevOps engineer working with agentic AI starts the same way — setting up
 
 ## 5. Important Instructions (Global Rules)
 
+<<<<<<< HEAD
+=======
+Follow the Assignment Submission Guidelines — Click here
+
+>>>>>>> 3f86e28 (adding agentic ai assignment)
 **Key Rules:**
 - Full name must be visible in required screenshots
 - Do not expose sensitive information (keys, passwords, account IDs)
@@ -90,7 +106,11 @@ claude
 **Goal:** Get your own copy of the course project onto your machine.
 
 **Steps:**
+<<<<<<< HEAD
 1. Go to the course [repository link](https://github.com/pravinmishraaws/Ultimate-Agentic-DevOps-with-Claude-Code) in the Resources section of [Fork the reposiroty](https://www.udemy.com/course/ultimate-agentic-ai-devops-with-claude-code/learn/lecture/54808941#overview). 
+=======
+1. Go to the course repository link in the Resources section of Lecture 1.5
+>>>>>>> 3f86e28 (adding agentic ai assignment)
 2. Click **Fork → Create Fork**
 3. Clone your fork to your local machine
 4. Open the project in VS Code
@@ -150,19 +170,39 @@ Your submission must include:
 - All 5 required screenshots
 - Your GitHub forked repository URL
 
+<<<<<<< HEAD
+=======
+Submit only a Google Doc link.
+Follow the Assignment Submission Guidelines — (LINK)
+
+>>>>>>> 3f86e28 (adding agentic ai assignment)
 ---
 
 ## 10. Solution Walkthrough
 
 A step-by-step solution and troubleshooting guide is available for reference:
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3f86e28 (adding agentic ai assignment)
 Full solution walkthrough → (LINK)
 
 ---
 
 ## 11. LinkedIn Requirement
 
+<<<<<<< HEAD
 Not required for this assignment.
+=======
+Create a LinkedIn post including:
+- A screenshot of Claude Code running in your project
+- One sentence describing what the Agentic Loop means to you in your own words
+- Tag: #DMIProgram #AgenticAI #ClaudeCode
+
+**Submit:**
+- LinkedIn post URL
+- Screenshot of the post
+>>>>>>> 3f86e28 (adding agentic ai assignment)
 
 ---
 
@@ -173,7 +213,18 @@ Before submission, verify:
 - [ ] Claude Code authenticated — opens without asking for login again
 - [ ] VS Code extension installed and Claude Code panel visible
 - [ ] Starter repo forked and cloned
+<<<<<<< HEAD
 - [ ] All 5 screenshots captured and added to your GitHub Repository file
 - [ ] GitHub repo URL included
 
 ---
+=======
+- [ ] All 5 screenshots captured and added to your Google Doc
+- [ ] GitHub repo URL included
+
+---
+
+## 13. Final Submission
+
+Submit only your Google Doc link.
+>>>>>>> 3f86e28 (adding agentic ai assignment)
