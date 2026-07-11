@@ -35,19 +35,19 @@ Analyze the configuration differences between the three agents and demonstrate u
 #### 1. Why does the cost optimizer use Haiku instead of Sonnet?
 
 Add your answer here...
-
+Haiku is designed as a lightweight model, it's significantly cheaper per token than sonnet
 ---
 
 #### 2. Why does the security auditor NOT have Write in its tools list?
 
 Add your answer here...
-
+This the principle of least privilege in security design, the write permission could compromise the integrity of the audit trial
 ---
 
 #### 3. Why does the tf-writer use `inherit` instead of a specific model?
 
 Add your answer here...
-
+tf-writer uses inherit model because the subagent adopts the same model as the parent agent.
 ---
 
 ### Evidence
@@ -55,13 +55,13 @@ Add your answer here...
 #### Screenshot 2 — `security-auditor.md` frontmatter showing model and tools configuration
 
 Add your screenshot here.
-
+![claude version](./screenshots/4securityfr.png)
 ---
 
 #### Screenshot 3 — `cost-optimizer.md` frontmatter showing the model and tools configuration
 
 Add your screenshot here.
-
+![claude version](./screenshots/4costfr.png)
 ---
 
 # Task 3 — Run the Security Auditor
@@ -75,13 +75,14 @@ Trigger the security auditor agent and analyze the generated security report for
 #### Screenshot 4 — The delegation message showing Claude launched the security-auditor
 
 Add your screenshot here.
-
+![claude version](./screenshots/4DI.png)
+![claude version](./screenshots/4D2.png)
 ---
 
 #### Screenshot 5 — Security audit report output
 
 Add your screenshot here.
-
+![claude version](./screenshots/4sar.png)
 ---
 
 # Task 4 — Run the Cost Optimizer
@@ -95,7 +96,7 @@ Trigger the cost optimizer agent and review the generated cost optimization repo
 #### Screenshot 6 — The full cost optimization report
 
 Add your screenshot here.
-
+![claude version](./screenshots/4costopt.png)
 ---
 
 # Submission Instructions
@@ -110,7 +111,7 @@ Add your screenshot here.
 
 Paste your forked repository URL here:
 
-`__________________________`
+`https://github.com/PALLOTI/Ultimate-Agentic-DevOps-with-Claude-Code.git__________________________`
 
 ---
 
