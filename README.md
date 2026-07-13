@@ -68,8 +68,14 @@ Your stack earned via participation
 
  [![Week 01 – Mindset](./badges/week-01.svg)](./week-01-success-mindset/) 
 
-<!-- Week 02 → Agentic AI with Claude Code -->
-<!-- [![Week 02 – Agentic AI](./badges/week-02.svg)](./week-02-agentic-ai/) -->
+
+
+ Week 02 → Agentic AI with Claude Code 
+
+
+ [![Week 02 – Agentic AI](./badges/week-02.svg)](./week-02-agentic-ai/) 
+
+
 
 <!-- Week 03 → Linux for DevOps -->
 <!-- [![Week 03 – Linux](./badges/week-03.svg)](./week-03-linux-for-devops/) -->
@@ -128,9 +134,9 @@ Your stack earned via participation
 
 | Week | Topic | Status | Assignment | LinkedIn Post | Blog Post |
 |------|-------|--------|------------|---------------|-----------|
-| 00 | Internet & Networking Basics | ✅ Complete | ✅ Complete |https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_startuplife-networking-techforfounders-share-7473842580309520385-Ts5c/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE| — |
-| 01 | Success Mindset | ✅ Completed | ✅ Completed|https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-cloudengineering-continuouslearning-activity-7476649737945874432-CErC?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE |https://medium.com/@palloti10x/mental-dependencies-before-server-dependencies-why-your-mindset-is-your-true-foundation-in-devops-d0b8e665ce2c|
-| 02 | Agentic AI with Claude Code | ⬜ Not Started | ⏳ Pending | — | — |
+| 00 | Internet & Networking Basics | ✅ Complete | ✅ Solved |https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_startuplife-networking-techforfounders-share-7473842580309520385-Ts5c/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE| — |
+| 01 | Success Mindset | ✅ Completed | ✅ Solved|https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-cloudengineering-continuouslearning-activity-7476649737945874432-CErC?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE |https://medium.com/@palloti10x/mental-dependencies-before-server-dependencies-why-your-mindset-is-your-true-foundation-in-devops-d0b8e665ce2c|
+| 02 | Agentic AI with Claude Code |✅ Complete  | ✅ Solved |https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-agenticai-cloudengineering-ugcPost-7482423989043249152-HAcf/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE|https://medium.com/@palloti10x/the-rise-of-agentic-devops-990ff2cc9551?source=user_profile_page---------0-------------e994ee2a86f5----------------------|
 | 03 | Linux for DevOps | ⬜ Not Started | ⏳ Pending | — | — |
 | 04 | Bash Scripting | ⬜ Not Started | ⏳ Pending | — | — |
 | 05 | Git & GitHub | ⬜ Not Started | ⏳ Pending | — | — |

@@ -4,10 +4,17 @@
 
 ## 1. Assignment Overview
 
+<<<<<<< HEAD
 **Assignment:** Setup & Agentic Loop     
 **Estimated Time:** 60 minutes     
 **Difficulty:** Beginner      
 **Category:** Agentic AI, Claude Code Setup     
+=======
+**Assignment:** Setup & Agentic Loop  
+**Estimated Time:** 60 minutes  
+**Difficulty:** Beginner   
+**Category:** Agentic AI, Claude Code Setup  
+>>>>>>> 48c1f5c (Fix formatting of assignment overview section)
 
 ---
 
