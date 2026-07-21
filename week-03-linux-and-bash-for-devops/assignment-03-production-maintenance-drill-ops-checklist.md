@@ -400,7 +400,7 @@ The consequence of leaving unnecessary cloud resources running is a ballooning b
 
 Paste your LinkedIn post URL here:
 
-`__________________________`
+`Add your URL here`
 
 ---
 

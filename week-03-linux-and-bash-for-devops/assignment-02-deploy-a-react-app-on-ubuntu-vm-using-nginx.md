@@ -142,7 +142,11 @@ Add your screenshot here.
 
 Paste your LinkedIn post URL here:
 
+<<<<<<< HEAD
 `https://lnkd.in/p/ecgqYuPD__________________________`
+=======
+`Add your URL here`
+>>>>>>> upstream
 
 ---
 

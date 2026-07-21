@@ -82,7 +82,11 @@ Add your screenshot here.
 
 Paste your forked repository URL here:
 
+<<<<<<< HEAD
 `https://github.com/PALLOTI/devops-micro-internship-pravinmishra.git__________________________`
+=======
+`Add your URL here`
+>>>>>>> upstream
 
 ---
 
