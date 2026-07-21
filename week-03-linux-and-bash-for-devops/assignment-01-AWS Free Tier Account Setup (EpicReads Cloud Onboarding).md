@@ -22,34 +22,39 @@ Demonstrate understanding of AWS basics and Free Tier usage by answering the fol
 
 Write your answer here.
 
-An AWS Account is essentially your secure container for accessing Amazon Web Services. It gives you an isolated environment where you can launch virtual servers, set up databases, store files, and configure cloud networks. It comes with root administrative access and acts as both your security boundary and billing account.
+--- An AWS account represents a formal business relationship between you and AWS, serving as the central hub where you provision, manage, and pay for your cloud resources.
 
-At this stage in your DevOps journey—especially coming off hands-on projects like deploying applications on EC2 instances and configuring web servers like Nginx—an AWS Account is essential for a few major reasons:
----
+IMPORTANCE OF AWS ACCOUNT
+
+1 Access to Cloud Infrastructure: Creating an account is the mandatory first step to accessing AWS's massive ecosystem of over 200 services.
+
+2 For easy procurement of Virtual servers e.g EC2 , S3
+
+3 For Safety of our provisioned infrastructure through the use of Security groups
 
 #### Question 2 — What is AWS Free Tier, and how long does it last?
 
 Write your answer here.
 
-The AWS Free Tier is Amazon’s onboarding program that lets developers, students, and businesses experiment with real cloud services for free up to specific limits.
+The AWS Free Tier allows developers, students, and businesses to explore and test AWS some services at no cost (once the services are within the free credit).
 
-HOW LONG IT LAST
-The Credit-Based Free Plan
- (Default for New Accounts)What you get: AWS gives you $100 in initial credits upon account creation, plus the ability to earn up to $100 more in additional credits by completing basic console setup tasks (like setting up budget alerts or enabling MFA).  Safety Net: This plan prevents surprise credit card charges. Once your credits run out or the trial period ends, AWS simply pauses/closes the account rather than billing your card.  Duration: Lasts up to 6 months (or until your credits hit $0, whichever comes first). 
+
+Always Free                     Indefinitely (as long as your account is active)
+
+12 Months Free                  12 months starting from your initial sign-up date
+
+Short-Term Trials               Typically 30 to 90 days starting when you activate the specific service
 ---
 
 #### Question 3 — Name three AWS Free Tier services and their free usage limits.
 
 Write your answer here.
-1. Amazon EC2 (Elastic Compute Cloud) — Virtual ServersCategory:
- 12-Month Free Offer  Free Limit: 750 hours per month of Linux, RHEL, SLES, or Windows compute time running on t2.micro or t3.micro instances.  What that means: 750 hours is enough to run one single instance continuously for an entire 31-day month (or multiple instances running for fewer combined hours).
 
-2. Amazon S3 (Simple Storage Service) — Cloud Object StorageCategory: 
-  12-Month Free Offer  Free Limit:5 GB of S3 Standard Storage  20,000 GET Requests  2,000 PUT, POST, or LIST Requests  What that means: Great for hosting static web assets, application backups, or log files without incurring storage fees.
-
-3. AWS Lambda — Serverless ComputeCategory:
- Always Free (never expires, even after 12 months)  Free Limit:1 million free requests per month  400,000 GB-seconds of compute time per month  What that means: You can execute event-driven code or microservices automatically without paying for idle server time.
 ---
+EC2            750 hours per month of t2.micro or t3.micro instances (depending on your AWS Region).
+S3             5 GB of Standard Storage.20,000 HTTP GET requests (retrieving data).2,000 HTTP PUT, COPY, POST, or LIST 
+                requests (uploading/managing data).
+AWS Lambda     1 million free requests per month and 400,000 GB-seconds of compute time per month.
 
 # Task 2 — Create AWS Free Tier Account
 
@@ -72,7 +77,7 @@ Confirm that your AWS account setup is complete by navigating to the Account sec
 #### Screenshot 1 — AWS Account page showing account name (email may be blurred)
 
 Add your screenshot here.
-![week 03](./screenshots/1AWSpage.png)
+![AWS](./screenshots/1AWSpage.png)
 ---
 
 # Submission Instructions

@@ -91,7 +91,7 @@ Add your screenshot here.
 
 Paste your Linkedin post link here:
 
-`Add your URL here`
+`https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-agenticai-cloudengineering-activity-7482424102184579073-1pPB?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE`
 
 ---
 
@@ -99,7 +99,7 @@ Paste your Linkedin post link here:
 
 Paste your forked repository URL here:
 
-`Add your URL here`
+`https://github.com/PALLOTI/Ultimate-Agentic-DevOps-with-Claude-Code.git`
 
 ---
 

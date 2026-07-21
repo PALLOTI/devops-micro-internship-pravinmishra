@@ -21,7 +21,7 @@ Create the `.claude/agents/` directory and add all required agent files.
 #### Screenshot 1 — VS Code sidebar showing `.claude/agents/` with all 3 files
 
 Add your screenshot here.
-
+![week 02](./screenshots/3vscode%20sidecar.png)
 ---
 
 # Task 2 — Compare the Agent Configurations
@@ -111,11 +111,9 @@ Add your screenshot here.
 
 Paste your forked repository URL here:
 
-<<<<<<< HEAD
 `https://github.com/PALLOTI/Ultimate-Agentic-DevOps-with-Claude-Code.git__________________________`
 =======
 `Add your URL here`
->>>>>>> upstream
 
 ---
 

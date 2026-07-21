@@ -142,11 +142,8 @@ Add your screenshot here.
 
 Paste your LinkedIn post URL here:
 
-<<<<<<< HEAD
-`https://lnkd.in/p/ecgqYuPD__________________________`
-=======
-`Add your URL here`
->>>>>>> upstream
+`https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-cloudcomputing-aws-activity-7483441643359023104-nEkE?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE`
+
 
 ---
 

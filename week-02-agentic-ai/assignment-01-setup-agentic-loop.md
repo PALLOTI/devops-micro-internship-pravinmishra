@@ -81,12 +81,9 @@ Add your screenshot here.
 ## GitHub Repository URL
 
 Paste your forked repository URL here:
-
-<<<<<<< HEAD
-`https://github.com/PALLOTI/devops-micro-internship-pravinmishra.git__________________________`
+`https://github.com/PALLOTI/Ultimate-Agentic-DevOps-with-Claude-Code.git`
 =======
-`Add your URL here`
->>>>>>> upstream
+
 
 ---
 
