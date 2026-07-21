@@ -90,12 +90,16 @@ EpicReads bookstore has two application versions:
 ### Two-Tier Application
 
  Frontend
+
+
  Database
 
 ### Three-Tier Application
 
  Frontend
+
  Backend
+
  Database
 
 ## Your Task
@@ -121,16 +125,22 @@ Replace `task-3-diagram.png` with your actual diagram file name.
 ### Frontend
 
  React
+
+
  Angular
 
 ### Backend
 
  Node.JS
+
+
  Express.JS
 
 ### Database
 
  Mysql
+
+
  Redis
 
 ---
@@ -255,7 +265,7 @@ Paste the full text of your LinkedIn post here:
 
 Add your post content here...
 
-y friend is building a global startup—an online multilingual bookstore called EpicReads.com.
+My friend is building a global startup—an online multilingual bookstore called EpicReads.com.
 As a non-technical founder, he recently hit me with a massive question:
 "How does my website actually deliver books to someone on the other side of the world in milliseconds?"
 Breaking down networking concepts for a founder is always a fun challenge. You have to move past the jargon and focus on the trade-offs that impact the business.
