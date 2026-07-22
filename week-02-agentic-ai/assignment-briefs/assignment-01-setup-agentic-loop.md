@@ -4,23 +4,16 @@
 
 ## 1. Assignment Overview
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 328ea5c (Refactor assignment details formatting)
+
 **Assignment:** Setup & Agentic Loop     
 **Estimated Time:** 60 minutes     
 **Difficulty:** Beginner      
 **Category:** Agentic AI, Claude Code Setup     
-<<<<<<< HEAD
-=======
+
 **Assignment:** Setup & Agentic Loop  
 **Estimated Time:** 60 minutes  
 **Difficulty:** Beginner   
 **Category:** Agentic AI, Claude Code Setup  
->>>>>>> 48c1f5c (Fix formatting of assignment overview section)
-=======
->>>>>>> 328ea5c (Refactor assignment details formatting)
 
 ---
 
