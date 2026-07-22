@@ -17,22 +17,20 @@ In this assignment, you will set up your local development environment for Agent
 Install the Claude Code CLI globally and authenticate it using your Anthropic account.
 
 ### Evidence
-![claude version](./screenshots/claude%20code%20authentication.png)
+![claude version](./screenshots/Claude%20code%20authentication.png)
 
 
 #### Screenshot 1 — Terminal showing `claude --version` with the version number visible
 
-Add your screenshot here.
 
-![claude version](./screenshots/claude%20version.png)
+![claude version](./screenshots/Claude%20version.png)
 
 ---
 
 #### Screenshot 2 — Claude Code authenticated and showing the terminal prompt (your name visible)
 
-Add your screenshot here.
 
-![claude version](./screenshots/claude%20interaction.png)
+![claude version](./screenshots/Claude%20interaction.png)
 
 # Task 2 — Fork and Clone the Starter Repository
 
@@ -44,7 +42,6 @@ Fork the provided GitHub repository, clone it to your local machine, and open it
 
 #### Screenshot 3 — VS Code with the project open, file tree visible showing `index.html`, `style.css`, `images/`
 
-Add your screenshot here.
 
 ![claude version](./screenshots/vscode.png)
 
@@ -58,15 +55,13 @@ Interact with Claude Code and observe how it performs the Agentic Loop (Gather �
 
 #### Screenshot 4 — Claude's response to the first question, showing it read the files (tool calls visible)
 
-Add your screenshot here.
-![claude version](./screenshots/claude%20feedback.png)
+![claude version](./screenshots/Claude%20feedback.png)
 ---
 
 #### Screenshot 5 — Claude's response to the second question, showing it ran a command and reported the line count
 
-Add your screenshot here.
 
-![claude version](./screenshots/claude%20Answer.png)
+![claude version](./screenshots/Claude%20Answer.png)
 ---
 
 # Submission Instructions
