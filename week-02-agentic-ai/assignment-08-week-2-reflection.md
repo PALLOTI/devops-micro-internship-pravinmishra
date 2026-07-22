@@ -55,11 +55,7 @@ Add your screenshot here.
 
 Blog Link:
 
-<<<<<<< HEAD
-`__https://medium.com/@palloti10x/the-rise-of-agentic-devops-990ff2cc9551________________________________________`
-=======
-`Add your URL here`
->>>>>>> upstream
+https://medium.com/@palloti10x/the-rise-of-agentic-devops-990ff2cc9551
 
 ---
 
@@ -113,11 +109,7 @@ https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-agenticai-clouden
 
 ### LinkedIn Post Link:
 
-<<<<<<< HEAD
-`https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-agenticai-cloudengineering-ugcPost-7482423989043249152-HAcf/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE__________________________________________`
-=======
-`Add your URL here`
->>>>>>> upstream
+https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-agenticai-cloudengineering-ugcPost-7482423989043249152-HAcf/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE
 
 ---
 
