@@ -21,7 +21,7 @@ Verify the Ubuntu VM and Nginx are ready for deployment.
 #### Screenshot 0 — Output of `sudo systemctl status nginx --no-pager` showing Active (running)
 
 Add your screenshot here.
-
+![week 03](./screenshots/3w%204--.png)
 ---
 
 # Task 1 — Get the Website Source Code
@@ -35,7 +35,7 @@ Download and extract the portfolio website template.
 #### Screenshot 1 — Output of `ls -la` showing the extracted project folder
 
 Add your screenshot here.
-
+![week 03](./screenshots/3w%204-1.png)
 ---
 
 # Task 2 — Add Ownership Proof (Anti-Copy Change)
@@ -49,7 +49,7 @@ Update the website footer with your deployment details.
 #### Screenshot 2 — Nano editor open with the updated footer showing your Full Name, Group, Week, and Date
 
 Add your screenshot here.
-
+![week 03](./screenshots/3w%204-2.png)
 ---
 
 # Task 3 — Deploy Website via Nginx
@@ -63,13 +63,13 @@ Deploy the portfolio website to the Nginx web root.
 #### Screenshot 3 — Output of `sudo nginx -t` showing configuration test successful
 
 Add your screenshot here.
-
+![week 03](./screenshots/3w%204-30.png)
 ---
 
 #### Screenshot 4 — Output of `ls /var/www/html` showing deployed website files
 
 Add your screenshot here.
-
+![week 03](./screenshots/3w%204-4.png)
 ---
 
 # Task 4 — Verify Website is Live
@@ -83,13 +83,13 @@ Verify the deployed website is publicly accessible and the footer contains your 
 #### Screenshot 5 — Output of `curl ifconfig.me` showing the server's public IP address
 
 Add your screenshot here.
-
+![week 03](./screenshots/3w%204-5.png)
 ---
 
 #### Screenshot 6 — Browser showing the live website with your Full Name and deployment details in the footer
 
 Add your screenshot here.
-
+![week 03](./screenshots/lindin%20post.png)
 ---
 
 # Task 5 — Mini Real DevOps Operational Check
@@ -103,13 +103,13 @@ Verify the deployed website and Nginx service are healthy.
 #### Screenshot 7 — Output of `systemctl is-enabled nginx`
 
 Add your screenshot here.
-
+![week 03](./screenshots/4w%204-7.png)
 ---
 
 #### Screenshot 8 — Output of `curl -I http://localhost` showing 200 OK
 
 Add your screenshot here.
-
+![week 03](./screenshots/3w%204-8.png)
 ---
 
 # LinkedIn Post (Mandatory)
@@ -120,7 +120,7 @@ Add your screenshot here.
 
 Paste your LinkedIn post URL here:
 
-`Add your URL here`
+https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-cloudcomputing-aws-share-7483772158134005761-vR6x/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE
 
 ---
 
@@ -129,7 +129,7 @@ Paste your LinkedIn post URL here:
 Add your screenshot here.
 
 ---
-
+![week 03](./screenshots/linkedin.png)
 # Submission Instructions
 
 - Add all required screenshots in your submission
