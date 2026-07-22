@@ -91,17 +91,15 @@ Add your screenshot here.
 
 Paste your forked repository URL here:
 
-`https://github.com/PALLOTI/Ultimate-Agentic-DevOps-with-Claude-Code.git________________________`
-=======
-`Add your URL here`
+https://github.com/PALLOTI/Ultimate-Agentic-DevOps-with-Claude-Code.git
+
 
 
 ## LinkedIn post URL
 
 Paste your forked repository URL here:
+https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-agenticai-cloudengineering-share-7480623637004427264-RW9T/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE
 
-`___https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-agenticai-cloudengineering-share-7480623637004427264-RW9T/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE_______________________`
-`Add your URL here`
 ---
 
 # Completion Checklist
