@@ -111,9 +111,9 @@ Add your screenshot here.
 
 Paste your forked repository URL here:
 
-`https://github.com/PALLOTI/Ultimate-Agentic-DevOps-with-Claude-Code.git__________________________`
-=======
-`Add your URL here`
+https://github.com/PALLOTI/Ultimate-Agentic-DevOps-with-Claude-Code.git
+
+
 
 ---
 
