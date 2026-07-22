@@ -257,6 +257,19 @@ Answer the following in your own words:
 
 Write your answer here.
 
+1) Checking the Application Version Endpoint (For Backend/APIs)
+2) Server-Side Artifact Inspection (Direct Server Check)
+3) The Build Metadata File
+   Verification: You curl the endpoint or open it in a browser:
+    Bash
+    curl https://yourdomain.com/version.json
+
+    output
+    {
+  "version": "1.4.2",
+  "commit": "8f3b2a1",
+  "built_at": "2026-07-19T15:00:00Z"
+}
 ---
 
 # Task 6 — Nginx Configuration Failure Simulation
@@ -270,7 +283,7 @@ Simulate a real-world Nginx misconfiguration and recover the service safely.
 #### Screenshot 1 — Output of `sudo nginx -t` showing the syntax error (broken config)
 
 Add your screenshot here.
-
+There was no system break or failure
 ---
 
 #### Screenshot 2 — Output of `sudo nginx -t` showing syntax ok (fixed config)
@@ -292,7 +305,7 @@ Answer the following in your own words:
 **1. What caused the configuration failure?**
 
 Write your answer here.
-
+There was no system break or failure
 ---
 
 **2. How did you fix the issue?**
@@ -306,6 +319,11 @@ There wasn't actually an active Nginx configuration failure, my web server is ru
 
 Write your answer here.
 
+Validate Syntax Before Reloading (nginx -t)
+
+If it passes: You will see syntax is ok and test is successful. You can then safely run sudo systemctl reload nginx.
+
+If it fails: Nginx will pinpoint the exact file and line number causing the issue (e.g., a missing semicolon or an invalid directive), allowing you to fix it before applying it to production.
 ---
 
 # Task 7 — Web Application Failure Simulation
@@ -400,16 +418,14 @@ The consequence of leaving unnecessary cloud resources running is a ballooning b
 
 Paste your LinkedIn post URL here:
 
-`Add your URL here`
+https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-cloudcomputing-aws-activity-7483441643359023104-nEkE?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE
 
 ---
 
 #### Screenshot — Published LinkedIn post
 
-Add your screenshot here.
-
 ---
-
+![week 03](./screenshots/link.png)
 # Submission Instructions
 
 - Add all required screenshots in your submission
