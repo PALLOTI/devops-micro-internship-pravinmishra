@@ -144,7 +144,7 @@ Your stack earned via participation
 
 | 00 | Internet & Networking Basics | ✅ Complete | ✅ Solved | https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_startuplife-networking-techforfounders-share-7473842580309520385-Ts5c/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE | https://substack.com/profile/487332231-ezeobi-chinecherem-jude/note/c-298647371?r=8257yf&utm_source=notes-share-action&utm_medium=web |
 
-| 01 | Success Mindset | ✅ Completed | ✅ Solved| https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-cloudengineering-continuouslearning-activity-7476649737945874432-CErC?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE | https://medium.com/@palloti10x/mental-dependencies-before-server-dependencies-why-your-mindset-is-your-true-foundation-in-devops-d0b8e665ce2c|
+| 01 | Success Mindset | ✅ Completed | ✅ Solved | https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-cloudengineering-continuouslearning-activity-7476649737945874432-CErC?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE | https://medium.com/@palloti10x/mental-dependencies-before-server-dependencies-why-your-mindset-is-your-true-foundation-in-devops-d0b8e665ce2c|
 
 | 02 | Agentic AI with Claude Code |✅ Complete  | ✅ Solved | https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-agenticai-cloudengineering-ugcPost-7482423989043249152-HAcf/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE | https://medium.com/@palloti10x/the-rise-of-agentic-devops-990ff2cc9551?source=user_profile_page---------0-------------e994ee2a86f5---------------------- |
 
