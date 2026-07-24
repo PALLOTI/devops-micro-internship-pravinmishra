@@ -689,7 +689,7 @@ The incident followed the structured agentic loop phases as follows:
 
 Paste your LinkedIn post URL here:
 
-`https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-linux-cloudsecurity-ugcPost-7485168451012087808-cgMx/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE`
+https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-linux-cloudsecurity-ugcPost-7485168451012087808-cgMx/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE
 
 ---
 
@@ -703,7 +703,7 @@ Add your screenshot here.
 
 Paste the URL of your GitHub folder or repository containing the assignment files here:
 
-`https://github.com/PALLOTI/devops-micro-internship-pravinmishra.git`
+https://github.com/PALLOTI/devops-micro-internship-pravinmishra.git
 
 ---
 
