@@ -133,7 +133,7 @@ Write as if a journalist is writing about you **3 to 7 years from now** (not 20 
 
 Include this line:
 
-> **P.S. This post is part of the DevOps Micro Internship (DMI) with Agentic AI — Cohort 3 — by [Pravin Mishra](https://www.linkedin.com/in/pravin-mishra-aws-trainer/). My graded progress is public: https://dmi.pravinmishra.com/s/YOUR-GITHUB-USERNAME.html · Start your DevOps journey: https://dmi.pravinmishra.com/?utm_source=student&utm_medium=ps-blog&utm_campaign=cohort3**
+> **P.S. This post is a part of DevOps Micro Internship with Agentic AI Cohort-3 by [Pravin Mishra](https://www.linkedin.com/in/pravin-mishra-aws-trainer/). You can start your DevOps journey by joining this [Discord community](https://discord.pravinmishra.com/) ( https://discord.pravinmishra.com/ ).**
 
 ## Your Article
 
@@ -149,10 +149,9 @@ Throughout my career, I have built and optimized cloud infrastructure tailored f
 
 ### Public Link
 
-Paste your link here:
-https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-cloudcomputing-softwareengineering-share-7477398559223431168-46gd/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE
 
----
+
+https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-cloudcomputing-softwareengineering-share-7477398559223431168-46gd/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE
 
 # Assignment 4. Have you ever cut corners (unethical / dishonest / shortcut behavior — not necessarily illegal)? If yes, how did it make you feel?
 
@@ -182,7 +181,7 @@ If Yes:
 
 ## Answer
 
-Add your answer here...
+
 No
 
 Been innocent is not what I am try to portray here.
@@ -387,7 +386,7 @@ Examples:
 
 Answer: Yes
 
-Add your answer here...
+
 
 
 Sometimes, it is not easy to stay locked into learning a new skill when your family depends on you for so many things. My goal in this cohort is to gain clarity and confidence by building a strong foundation in cloud-native technologies. It is important for me to understand my current learning baseline, especially during those moments when confusion and anxiety creep in. Through this program, I aim to secure a clear learning roadmap and significantly increase my technical understanding of DevOps.
@@ -407,7 +406,7 @@ Example:
 
 #### My Weekly Routine
 
-Add your answer here...
+
 
 * Mon-Fri: I work from 9am-5pm ,3hours study everyday before from 4am-7am
 * Sat: DMI 8 hours session. After the sesssion, full focus on my Assignments 
@@ -416,14 +415,14 @@ Add your answer here...
 
 #### When Will You Do DMI Work? (Days + Time)
 
-Add your answer here...
+
 
 * From sat-Mon
 * Immediately after the Sat 8hrs class, sleep for like 2hrs then begin the Assignment, Try everything possible to finish up on monday
 
 #### How Many Sessions Per Week?
 
-Add your answer here...
+
 
 * Sat: After the 8hours session, 2 hours of sleep and 5 hours on the Assignment.
 
@@ -442,7 +441,7 @@ Examples:
 
 #### My Distraction Rules
 
-Add your answer here...
+
 
 * My phone always on airplane mode during my reading hours
 * My room and state Libary conducive for learning
@@ -457,31 +456,30 @@ Prioritizing my health and mental state
 
 ### My biggest weakness/loop I noticed
 
-Add your answer here...
+
 Mastering consistency is the ultimate challenge for me right now. However, I am confident that in the near future, I will achieve it.
 
 ### One system I will implement from this week (exact habit + time)
 
-Add your answer here...
+
 Wake up early by 3am
 3hrs early morning reading 
 2hrs early morning workout
 
 ### LinkedIn Post
 
-Paste your LinkedIn post link here:
 
-https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-cloudcomputing-softwareengineering-share-7477398559223431168-46gd/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE
 
----
+https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-cloudcomputing-softwareengineering-share-7477398559223431168-46gd/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE_
+
 
 ## 10. Proof of Work
 
-- LinkedIn Post URL: **https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-cloudcomputing-softwareengineering-share-7477398559223431168-46gd/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE**  
+- LinkedIn Post URL:
+ https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-cloudcomputing-softwareengineering-share-7477398559223431168-46gd/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE 
 
-- Blog / Medium : **https://medium.com/@palloti10x/mental-dependencies-before-server-dependencies-why-your-mindset-is-your-true-foundation-in-devops-d0b8e665ce2c**  
-
----
+ Blog / Medium : 
+ https://medium.com/@palloti10x/mental-dependencies-before-server-dependencies-why-your-mindset-is-your-true-foundation-in-devops-d0b8e665ce2c
 
 ## 📌 About DMI & CloudAdvisory
 
@@ -503,3 +501,4 @@ It helps learners build strong DevOps foundations with hands-on experience.
 ---
 
 *This submission is part of DevOps Micro Internship (DMI) Cohort 3 — Agentic AI Track*
+

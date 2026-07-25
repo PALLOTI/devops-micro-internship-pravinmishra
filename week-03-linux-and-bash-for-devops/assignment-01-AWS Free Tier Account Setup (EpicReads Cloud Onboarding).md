@@ -20,7 +20,7 @@ Demonstrate understanding of AWS basics and Free Tier usage by answering the fol
 
 #### Question 1 — What is an AWS account, and why do you need it at this stage?
 
-Write your answer here.
+
 
 --- An AWS account represents a formal business relationship between you and AWS, serving as the central hub where you provision, manage, and pay for your cloud resources.
 
@@ -34,7 +34,7 @@ IMPORTANCE OF AWS ACCOUNT
 
 #### Question 2 — What is AWS Free Tier, and how long does it last?
 
-Write your answer here.
+
 
 The AWS Free Tier allows developers, students, and businesses to explore and test AWS some services at no cost (once the services are within the free credit).
 
@@ -48,12 +48,12 @@ Short-Term Trials               Typically 30 to 90 days starting when you activa
 
 #### Question 3 — Name three AWS Free Tier services and their free usage limits.
 
-Write your answer here.
+
 
 ---
 EC2            750 hours per month of t2.micro or t3.micro instances (depending on your AWS Region).
 S3             5 GB of Standard Storage.20,000 HTTP GET requests (retrieving data).2,000 HTTP PUT, COPY, POST, or LIST 
-                requests (uploading/managing data).
+               requests (uploading/managing data).
 AWS Lambda     1 million free requests per month and 400,000 GB-seconds of compute time per month.
 
 # Task 2 — Create AWS Free Tier Account
@@ -76,7 +76,7 @@ Confirm that your AWS account setup is complete by navigating to the Account sec
 
 #### Screenshot 1 — AWS Account page showing account name (email may be blurred)
 
-Add your screenshot here.
+
 ![AWS](./screenshots/1AWSpage.png)
 ---
 

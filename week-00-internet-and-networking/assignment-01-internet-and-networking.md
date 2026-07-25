@@ -25,7 +25,7 @@ Take a screenshot of your interaction showing:
 
 Save your screenshot in the `screenshots` folder and update the file name below.
 
-![Week 00](screenshots/w1-1.png)
+![Week 00](./screenshots/w1-1.png)
 
 
 Replace `task-1-chatgpt.png` with your actual screenshot file name.
@@ -34,7 +34,7 @@ Replace `task-1-chatgpt.png` with your actual screenshot file name.
 
 ## What I Learned (2–3 lines)
 
-Add your answer here...
+
 
 In networking, a protocol is simply a formal set of rules that determines how data is transmitted between different devices over a network. Networking is the bedrock of internet communication and transimission of informations.
 ---
@@ -60,7 +60,6 @@ Write a short explanation (**100–150 words**) that includes:
 
 ## Answer
 
-Add your answer here...
 
 PACKET SWITCHING
 This is the communication technique in data is split into smaller units called 'PACKETS' and sent across a network independently. 
@@ -91,7 +90,6 @@ EpicReads bookstore has two application versions:
 
  Frontend
 
-
  Database
 
 ### Three-Tier Application
@@ -113,7 +111,7 @@ EpicReads bookstore has two application versions:
 
 Save your diagram image in the `screenshots` folder and update the file name below.
 
-![Application Architecture Diagram](screenshots/Application%20diagrams.png)
+![Application Architecture Diagram](./screenshots/Application%20diagrams.png)
 
 
 Replace `task-3-diagram.png` with your actual diagram file name.
@@ -126,20 +124,17 @@ Replace `task-3-diagram.png` with your actual diagram file name.
 
  React
 
-
  Angular
 
 ### Backend
 
  Node.JS
 
-
  Express.JS
 
 ### Database
 
  Mysql
-
 
  Redis
 
@@ -170,7 +165,7 @@ In **50–100 words**, explain in your own words:
 
 ## Answer
 
-Add your answer here...
+
 DNS [Domain Name Service]
  This resolves a name to an IP address. It's often called the 'phonebook' of the internet because it translates human friendly domain name (like google.com) into machine readable IP address (Like 142.250.80.46) that the computer use to identify each other on the network. Without DNS you do have to memorize strings of numbers to visit everywebsite.
 
@@ -216,7 +211,7 @@ ls
 
 Save your screenshot in the `screenshots` folder and update the file name below.
 
-![VS Code Setup Screenshot](screenshots/w1%203.png)
+![VS Code Setup Screenshot](./screenshots/w1%203.png)
 
 
 Replace `task-5-vscode.png` with your actual screenshot file name.
@@ -253,7 +248,7 @@ Add the following credit note at the end of your post:
 
 ## LinkedIn Post URL
 
-Paste your LinkedIn post URL here:
+
 
 
 https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_startuplife-networking-techforfounders-activity-7473842583388119041-ihPm?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE
@@ -263,7 +258,7 @@ https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_startuplife-networking-t
 
 Paste the full text of your LinkedIn post here:
 
-Add your post content here...
+
 
 My friend is building a global startup—an online multilingual bookstore called EpicReads.com.
 As a non-technical founder, he recently hit me with a massive question:
@@ -305,21 +300,17 @@ P.S. This post is part of the DevOps Micro Internship with Agentic AI Cohort run
 
 ### What did you find easy?
 
-Add your answer here...
+
 Navigating through the questions and getting precised responses with my AI assistant
 
 ---
 
 ### What was difficult?
 
-Add your answer here...
-
 Reading to construct a reasonable answer from my Ai assistance
 ---
 
 ### What will you improve next week?
-
-Add your answer here...
 
 Fast reading and reasoning 
 ---

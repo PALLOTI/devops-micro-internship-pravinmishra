@@ -21,6 +21,7 @@ Capture Claude’s response before `CLAUDE.md` exists in the project to establis
 #### Screenshot 1 — Claude’s generic response before CLAUDE.md exists (project contains only `index.html`, `style.css`, `images/`, `README.MD`, `privacy.html`, `terms.html`)
 
 
+
 ![claude version](./screenshots/Generic%20answer.png)
 ---
 
@@ -33,6 +34,7 @@ Generate an initial `CLAUDE.md` file using the `/init` command and review the au
 ### Evidence
 
 #### Screenshot 2 — The auto-generated CLAUDE.md open in VS Code showing its content
+
 
 ![claude version](./screenshots/Auto-generated%20claude.md.png)
 ---
@@ -47,7 +49,8 @@ Update the generated `CLAUDE.md` file by adding project-specific instructions ac
 
 #### Screenshot 3 — Your customized CLAUDE.md in VS Code showing all 5 sections (scroll to show the full file)
 
-![claude version](./screenshots/Customised%20claude.md.png)
+
+![claude version](./screenshots/customised%20claude.md.png)
 ---
 
 # Task 4 — Test the After State
@@ -60,12 +63,14 @@ Verify that Claude’s behavior changes after adding `CLAUDE.md` by running a ne
 
 #### Screenshot 4 — Claude's specific, detailed answer after reading CLAUDE.md (Claude mentioning S3, CloudFront and Terraform)
 
-![claude version](./screenshots/Claude%20specific.png)
+
+![claude version](./screenshots/claude%20specific.png)
 ---
 
 #### Screenshot 5 — Claude refusing or warning against adding React because of the "No JavaScript" convention defined in CLAUDE.md
 
-![claude version](./screenshots/Claude%20refusing.png)
+
+![claude version](./screenshots/claude%20refusing.png)
 ---
 
 # Task 5 — Commit and push your changes to your fork in GitHub
@@ -77,6 +82,7 @@ Commit the `CLAUDE.md` file and push it to your GitHub fork so the project instr
 ### Evidence
 
 #### Screenshot 6 — `CLAUDE.md` visible in your GitHub repository after pushing the commit
+
 
 ![claude version](./screenshots/Github.png)
 ---
@@ -91,11 +97,11 @@ Commit the `CLAUDE.md` file and push it to your GitHub fork so the project instr
 
 ## GitHub Repository URL
 
-Paste your forked repository URL here:
 
-`https://github.com/PALLOTI/Ultimate-Agentic-DevOps-with-Claude-Code.git`
 
----
+https://github.com/PALLOTI/Ultimate-Agentic-DevOps-with-Claude-Code.git
+
+
 
 # Completion Checklist
 

@@ -33,19 +33,18 @@ Analyze the configuration differences between the three agents and demonstrate u
 
 #### 1. Why does the cost optimizer use Haiku instead of Sonnet?
 
-Add your answer here...
+
 Haiku is designed as a lightweight model, it's significantly cheaper per token than sonnet
 ---
 
 #### 2. Why does the security auditor NOT have Write in its tools list?
 
-Add your answer here...
+
 This the principle of least privilege in security design, the write permission could compromise the integrity of the audit trial
 ---
 
 #### 3. Why does the tf-writer use `inherit` instead of a specific model?
 
-Add your answer here...
 tf-writer uses inherit model because the subagent adopts the same model as the parent agent.
 ---
 
@@ -53,10 +52,12 @@ tf-writer uses inherit model because the subagent adopts the same model as the p
 
 #### Screenshot 2 — `security-auditor.md` frontmatter showing model and tools configuration
 
+
 ![claude version](./screenshots/4Securityfr.png)
 ---
 
 #### Screenshot 3 — `cost-optimizer.md` frontmatter showing the model and tools configuration
+
 
 ![claude version](./screenshots/4costfr.png)
 ---
@@ -71,11 +72,15 @@ Trigger the security auditor agent and analyze the generated security report for
 
 #### Screenshot 4 — The delegation message showing Claude launched the security-auditor
 
+
 ![claude version](./screenshots/4D1.png)
+
+
 ![claude version](./screenshots/4D2.png)
 ---
 
 #### Screenshot 5 — Security audit report output
+
 
 ![claude version](./screenshots/4sar.png)
 ---
@@ -90,6 +95,7 @@ Trigger the cost optimizer agent and review the generated cost optimization repo
 
 #### Screenshot 6 — The full cost optimization report
 
+
 ![claude version](./screenshots/4Costopt.png)
 ---
 
@@ -103,7 +109,7 @@ Trigger the cost optimizer agent and review the generated cost optimization repo
 
 ## GitHub Repository URL
 
-Paste your forked repository URL here:
+
 
 https://github.com/PALLOTI/Ultimate-Agentic-DevOps-with-Claude-Code.git
 

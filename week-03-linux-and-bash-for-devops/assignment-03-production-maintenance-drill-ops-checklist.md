@@ -20,25 +20,25 @@ Verify that the deployed React application is reachable from the browser and con
 
 #### Screenshot 1 — Browser showing the React app with your Full Name visible on the UI
 
-Add your screenshot here.
+
 ![week 03](./screenshots/3w%202deployed.png)
 ---
 
 #### Screenshot 2 — Output of `ip a`
 
-Add your screenshot here.
+
 ![week 03](./screenshots/3w%202ip-a.png)
 ---
 
 #### Screenshot 3 — Output of `sudo ss -tulpen`
 
-Add your screenshot here.
+
 ![week 03](./screenshots/3w%203sstlup.png)
 ---
 
 #### Screenshot 4 — Output of `sudo ufw status`
 
-Add your screenshot here.
+
 ![week 03](./screenshots/3w%202ufw.png)
 ---
 
@@ -51,18 +51,19 @@ Answer the following in your own words:
 Write your answer here.
 sudo ss -tlnp | grep :80
 which has the below screenshot
+
 ![week 03](./screenshots/3w%203sstlup.png)
 ---
 
 **2. What proves SSH is active on port 22?**
 
-Write your answer here.
+
 sudo ss -tlnp | grep :22
 ---
 
 **3. Did you find any unexpected open ports? Explain briefly.**
 
-Write your answer here.
+
 
 YES
 ---
@@ -80,19 +81,18 @@ Verify that Nginx is properly installed, running, enabled at boot, and safely co
 
 #### Screenshot 1 — Output of `systemctl status nginx --no-pager`
 
-Add your screenshot here.
 ![week 03](./screenshots/3w%203systemctl.png)
 ---
 
 #### Screenshot 2 — Output of `sudo nginx -t`
 
-Add your screenshot here.
+
 ![week 03](./screenshots/3w%203nginx-t.png)
 ---
 
 #### Screenshot 3 — Output of `sudo ss -lptn '( sport = :80 )'`
 
-Add your screenshot here.
+
 ![week 03](./screenshots/3w%203sstlup.png)
 ---
 
@@ -102,13 +102,13 @@ Answer the following in your own words:
 
 **1. What happens if Nginx fails to restart in production?**
 
-Write your answer here.
+
 The immediate consequence is usually a complete service outage for your users. Because Nginx typically sits at the very front of your infrastructure, any failure there breaks the entry point to your entire application.
 ---
 
 **2. What's your basic rollback plan?**
 
-Write your answer here.
+
 The mechanism of your rollback depends entirely on how your application is deployed.
 
 Nginx Reload: Run sudo nginx -t && sudo systemctl reload nginx to apply changes instantly.
@@ -126,19 +126,19 @@ Verify real traffic flow and analyze logs to understand system behavior and erro
 
 #### Screenshot 1 — Output of `sudo tail -n 30 /var/log/nginx/access.log`
 
-Add your screenshot here.
+
 ![week 3](./screenshots/3w%203sudotail.png)
 ---
 
 #### Screenshot 2 — Output of `sudo tail -n 30 /var/log/nginx/error.log`
 
-Add your screenshot here.
+
 ![week 3](./screenshots/3w%203error.png)
 ---
 
 #### Screenshot 3 — Output of `sudo journalctl -u nginx --no-pager -n 50`
 
-Add your screenshot here.
+
 ![week 3](./screenshots/3w%203journal.png)
 ---
 
@@ -160,14 +160,14 @@ NO
 
 **2. If there were no errors, what does that indicate about the system?**
 
-Write your answer here.
+
 Inherited sockets from '5;6 which simply means nginx just performed a zero-downtime reload or binary upgrade.
 
 ---
 
 **3. Based on the access logs, were your curl requests visible in the log entries? What does that prove about traffic flow?**
 
-Write your answer here.
+
 The curl request was not visible in the log entries
 
 If a curl request successfully reached your Nginx server, it would generate a log line in /var/log/nginx/access.log containing:
@@ -183,25 +183,25 @@ Assess server capacity and detect potential performance or failure risks.
 
 #### Screenshot 1 — Output of `uptime`
 
-Add your screenshot here.
+
 ![week 3](./screenshots/3w%203uptime.png)
 ---
 
 #### Screenshot 2 — Output of `free -h`
 
-Add your screenshot here.
+
 ![week 3](./screenshots/3w%203free.png)
 ---
 
 #### Screenshot 3 — Output of `df -h`
 
-Add your screenshot here.
+
 ![week 3](./screenshots/3w%203df-h.png)
 ---
 
 #### Screenshot 4 — Output of `sudo du -sh /var/* | sort -h`
 
-Add your screenshot here.
+
 ![week 3](./screenshots/3w%203du-sh.png)
 ---
 
@@ -211,14 +211,14 @@ Answer the following in your own words:
 
 **1. Which resource looks most critical right now? (CPU/load, memory, or disk) Explain why.**
 
-Write your answer here.
+
 Memory looks most critical with
 ---
 Available Memory: Only 554mb is truly available.
 
 **2. What happens if disk becomes 100% full in a production server?**
 
-Write your answer here.
+
 
 it triggers a dangerous chain reaction, because operating systems, databases, and web applications constantly write temporary data, session files, and logs to the disk, a complete lack of storage space causes services to fail instantly.
 ---
@@ -233,19 +233,19 @@ Ensure the correct React build is deployed and Nginx is serving it properly.
 
 #### Screenshot 1 — Output of `ls -lah /var/www/html | head -n 20`
 
-Add your screenshot here.
+
 ![week 03](./screenshots/3w%203head-n.png)
 ---
 
 #### Screenshot 2 — Output of `grep -R "Deployed by" -n /var/www/html 2>/dev/null | head`
 
-Add your screenshot here.
+
 ![week 03](./screenshots/3w%203zz.png)
 ---
 
 #### Screenshot 3 — Output of `grep -n "try_files" /etc/nginx/sites-available/default`
 
-Add your screenshot here.
+
 ![week 03](./screenshots/3w%203tryfiles.png)
 ---
 
@@ -255,7 +255,7 @@ Answer the following in your own words:
 
 **1. How do you confirm that the correct version of the application is deployed?**
 
-Write your answer here.
+
 
 1) Checking the Application Version Endpoint (For Backend/APIs)
 2) Server-Side Artifact Inspection (Direct Server Check)
@@ -282,19 +282,19 @@ Simulate a real-world Nginx misconfiguration and recover the service safely.
 
 #### Screenshot 1 — Output of `sudo nginx -t` showing the syntax error (broken config)
 
-Add your screenshot here.
+
 There was no system break or failure
 ---
 
 #### Screenshot 2 — Output of `sudo nginx -t` showing syntax ok (fixed config)
 
-Add your screenshot here.
+
 ![week 03](./screenshots/3w%203nginx-t.png)
 ---
 
 #### Screenshot 3 — Output of `curl -I http://<public-ip>` confirming recovery (200 OK)
 
-Add your screenshot here.
+
 ![week 03](./screenshots/3w%20200k.png)
 ---
 
@@ -304,20 +304,19 @@ Answer the following in your own words:
 
 **1. What caused the configuration failure?**
 
-Write your answer here.
 There was no system break or failure
 ---
 
 **2. How did you fix the issue?**
 
-Write your answer here.
+
 
 There wasn't actually an active Nginx configuration failure, my web server is running and successfully serving my React app's HTML and JavaScript files (proven by the 200 OK responses in your access logs).
 ---
 
 **3. How can you avoid this kind of issue in real production systems?**
 
-Write your answer here.
+
 
 Validate Syntax Before Reloading (nginx -t)
 
@@ -336,13 +335,12 @@ Simulate missing deployment content and recover the application safely.
 
 #### Screenshot 1 — Output of `curl -I http://<public-ip>` showing failure (non-200 response)
 
-Add your screenshot here.
 I didn't experience any failure
 ---
 
 #### Screenshot 2 — Output of `curl -I http://<public-ip>` confirming recovery (200 OK)
 
-Add your screenshot here.
+
 ![week 03](./screenshots/3w%20200k.png)
 ---
 
@@ -352,19 +350,19 @@ Answer the following in your own words:
 
 **1. What caused the application to break in this scenario?**
 
-Write your answer here
+
 The only issue I faced was my web page not been served the browser
 ---
 
 **2. How did you fix the issue and restore the application?**
 
-Write your answer here.
+
 Choosing the right security group inbound rules
 ---
 
 **3. What steps would you take to prevent this kind of issue in real production systems?**
 
-Write your answer here.
+
 Choosing the right security group inbound rules
 ---
 
@@ -380,7 +378,7 @@ Answer the following in your own words:
 
 **1. Why is SSH key-based authentication more secure than sharing passwords?**
 
-Write your answer here.
+
 When you log into a remote server (like your AWS EC2 instance) using a private key file (.pem or .pub), you aren't just using a "stronger password" you are using an entirely different, mathematically secure authentication model.
 
 With SSH key your private key never leaves your machine during the cryptographic handshake, the fake server cannot steal it. The login attempt will simply fail, and your credentials remain safe.
@@ -388,7 +386,7 @@ With SSH key your private key never leaves your machine during the cryptographic
 
 **2. Why should only required ports be open on a production server?**
 
-Write your answer here.
+
 
 ---
 
@@ -416,7 +414,7 @@ The consequence of leaving unnecessary cloud resources running is a ballooning b
 
 #### LinkedIn Post URL
 
-Paste your LinkedIn post URL here:
+
 
 https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-cloudcomputing-aws-activity-7483441643359023104-nEkE?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE
 
@@ -424,8 +422,9 @@ https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-cloudcomputing-aw
 
 #### Screenshot — Published LinkedIn post
 
----
+
 ![week 03](./screenshots/link.png)
+
 # Submission Instructions
 
 - Add all required screenshots in your submission

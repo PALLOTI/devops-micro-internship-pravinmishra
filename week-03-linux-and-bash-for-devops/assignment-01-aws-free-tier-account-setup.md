@@ -20,7 +20,7 @@ Demonstrate understanding of AWS basics and Free Tier usage by answering the fol
 
 #### Question 1 — What is an AWS account, and why do you need it at this stage?
 
-Write your answer here.
+
 
 An AWS Account is essentially your secure container for accessing Amazon Web Services. It gives you an isolated environment where you can launch virtual servers, set up databases, store files, and configure cloud networks. It comes with root administrative access and acts as both your security boundary and billing account.
 
@@ -29,7 +29,7 @@ At this stage in your DevOps journey—especially coming off hands-on projects l
 
 #### Question 2 — What is AWS Free Tier, and how long does it last?
 
-Write your answer here.
+
 
 The AWS Free Tier is Amazon’s onboarding program that lets developers, students, and businesses experiment with real cloud services for free up to specific limits.
 
@@ -40,7 +40,7 @@ The Credit-Based Free Plan
 
 #### Question 3 — Name three AWS Free Tier services and their free usage limits.
 
-Write your answer here.
+
 1. Amazon EC2 (Elastic Compute Cloud) — Virtual ServersCategory:
  12-Month Free Offer  Free Limit: 750 hours per month of Linux, RHEL, SLES, or Windows compute time running on t2.micro or t3.micro instances.  What that means: 750 hours is enough to run one single instance continuously for an entire 31-day month (or multiple instances running for fewer combined hours).
 
@@ -71,7 +71,7 @@ Confirm that your AWS account setup is complete by navigating to the Account sec
 
 #### Screenshot 1 — AWS Account page showing account name (email may be blurred)
 
-Add your screenshot here.
+
 ![week 03](./screenshots/1AWSpage.png)
 ---
 

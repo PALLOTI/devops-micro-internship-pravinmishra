@@ -20,7 +20,7 @@ Confirm that Nginx and the React application are healthy before building the aut
 
 #### Screenshot 1 — Output of `systemctl is-active nginx`, `ss -ltn | grep ':80'`, and `curl -I http://localhost`
 
-Add your screenshot here.
+
 ![week 03](./screenshots/w3%2061.png)
 ---
 
@@ -28,7 +28,7 @@ Add your screenshot here.
 
 #### Screenshot 2 — Output of `pwd` and `find . -maxdepth 4 -type d | sort` showing the workspace folder structure
 
-Add your screenshot here.
+
 
 ![week 03](./screenshots/w3%20621.png)
 ---
@@ -39,7 +39,7 @@ Answer the following in your own words:
 
 **1. What proves that Nginx is running?**
 
-Add your answer here.
+
 
 Once you are logged into the server via SSH, check the system systemd manager.
 sudo systemctl status nginx
@@ -47,7 +47,7 @@ sudo systemctl status nginx
 
 **2. What proves that the server is listening for HTTP traffic?**
 
-Add your answer here.
+
 
 To prove that a server is actively listening for HTTP traffic, you need to verify that a web server process is bound to the standard HTTP port (Port 80) or HTTPS port (Port 443) and is accepting incoming connections.
 
@@ -56,7 +56,7 @@ sudo ss -tulpn | grep -E ':80|:443'
 
 **3. Why must you capture a healthy baseline before simulating an incident?**
 
-Add your answer here.
+
 
 To differentiating Incident Symptoms from Existing Noise
 
@@ -75,7 +75,7 @@ Tell Claude exactly what this project does and what it is not allowed to do.
 
 #### Screenshot 3 — CLAUDE.md open in VS Code showing all four sections (Project Overview, Incident Workflow, Safety Rules, Output Rules)
 
-Add your screenshot here.
+
 ![weeek 03](./screenshots/w3%2063.png)
 ---
 
@@ -85,20 +85,20 @@ Answer the following in your own words:
 
 **1. Why should Claude receive project-specific operational rules?**
 
-Add your answer here.
+
 
 Giving Claude project-specific operational rules transforms it from a generic AI assistant into a specialized context-aware teammate. Without these specific constraints, an LLM relies on broad, default patterns that won't align with your project's distinct workflow, architecture, or safety requirements.
 ---
 
 **2. Why is the human required to execute the recovery command?**
 
-Add your answer here.
+
 Keeping a human in the loop to execute the final recovery command is a deliberate engineering safeguard against automated cascading failures. While automation excels at detection, data gathering, and routine scaling, the actual decision to bring a system back online during an incident carries risks that software cannot fully evaluate.
 ---
 
 **3. Which rule prevents Claude from making an unsupported diagnosis?**
 
-Add your answer here.
+
 Within Claude's system architecture and operational guardrails, the specific protocol that prevents it from making unsupported diagnoses is the Sensitive Data Restriction policy—specifically Rule 2 (Never infer sensitive data unless explicitly requested) and Rule 3 (Never infer sensitive data based on search or activity history).
 
 When applied to technical troubleshooting or health states, this is reinforced by the core Content Quality principle of Specifics Over Generalities and the mandate for Technical Accuracy.
@@ -114,7 +114,7 @@ Use Claude Code to inspect the environment and produce a read-only plan before c
 
 #### Screenshot 4 — Claude Code showing the five-check plan and read-only inspection results
 
-Add your screenshot here.
+
 ![week 03](./screenshots/w3%2064.png)
 ---
 
@@ -124,7 +124,7 @@ Answer the following in your own words:
 
 **1. Which part of this task represents the Gather phase?**
 
-Add your answer here.
+
 The Command Execution: The step where the agent "Ran 5 shell commands" to inspect the Ubuntu server using read-only commands.
 
 The Resulting Data: The "Current snapshot (read-only, no changes made)" table
@@ -132,7 +132,7 @@ The Resulting Data: The "Current snapshot (read-only, no changes made)" table
 
 **2. Did Claude follow the instruction not to create files? How did you verify this?**
 
-Add your answer here.
+
 Yes, Claude followed the instruction not to create files.
 
 This can be verified directly from the provided image:
@@ -144,8 +144,6 @@ The "Observed result" metrics: The table shows the live system metrics gathered 
 
 **3. Why is planning before coding useful in DevOps automation?**
 
-
-Add your answer here.
 
 Planning before coding is a critical standard practice in DevOps automation for several key engineering reasons:
 
@@ -176,27 +174,27 @@ Create one Bash script that gathers consistent Linux and Nginx health evidence.
 
 #### Screenshot 5 — Top section of `linux-triage.sh` showing variables, thresholds, and the checks array
 
-Add your screenshot here.
+
 ![week 03](./screenshots/w3%2065.png)
 ---
 
 #### Screenshot 6 — Middle section showing check functions and conditionals
 
-Add your screenshot here.
+
 
 ![week 03](./screenshots/w3%2066.png)
 ---
 
 #### Screenshot 7 — Bottom section showing the loop, summary function, and exit behavior
 
-Add your screenshot here.
+
 
 ![week 03](./screenshots/w3%2067.png)
 ---
 
 #### Screenshot 8 — Output of `bash -n scripts/linux-triage.sh` (no syntax errors) and `ls -l scripts/linux-triage.sh` showing executable permission
 
-Add your screenshot here.
+
 ![week 03](./screenshots/w3%2068.png)
 ---
 
@@ -218,7 +216,7 @@ Based on the workflow demonstrated in the screen snapshot, the `checks` array st
 
 **2. How does the `for` loop use that array?**
 
-Add your answer here.
+
 
 In a Bash automation triage script structured like this, the `for` loop iterates through the items defined in the array to execute each diagnostic command sequentially.
 
@@ -239,13 +237,24 @@ By looping through the array, the script avoids repetitive code blocks (copy-pas
 
 **3. Why are the health checks separated into functions?**
 
-Add your answer here.
+Separating health checks into individual, modular functions is a fundamental best practice in shell scripting and software design. Rather than writing one long, monolithic script that executes sequentially from top to bottom, breaking checks into dedicated functions provides clear architectural advantages:
+
+1. Modularity and Reusability (DRY Principle)
+By isolating a check—such as inspecting disk space, checking an Nginx service status, or testing port connectivity—into its own function, you can invoke that check multiple times across different servers or configurations without duplicating code.
+
+2. Granular Error Isolation & Specific Exit Codes
+When health checks live inside distinct functions, each function can evaluate its own status and return a specific exit status (0 for success, 1 for warning, 2 for failure) independently.
+
+If the entire script were a single block of code, a failure in step 2 might crash the script or obscure whether step 3 would have passed. Functions allow you to isolate the execution context of each check.
+
+3. Parallel Execution and Performance
+Sequential health checks can be slow, especially when network timeouts or heavy I/O operations are involved. When health checks are wrapped in standalone functions, a main controller script can execute them in parallel using background jobs or subshells:
 
 ---
 
 **4. What is the purpose of `$(...)` in this script?**
 
-Add your answer here.
+
 
 Separating the health checks into individual functions provides distinct engineering advantages for automation scripts:
 
@@ -260,7 +269,20 @@ Separating the health checks into individual functions provides distinct enginee
 
 **5. Why does the script use different exit codes for HEALTHY, WARN, and FAIL?**
 
-Add your answer here.
+1. The Unix Standard: Exit Status ($?)
+By convention across Unix-like systems:
+0 strictly means Success / Healthy (no errors).
+Any non-zero value (1–255) indicates an Error or Non-Standard State.
+When a script finishes running, it returns its final exit code to the calling environment via the special variable $process_exit_code or $?.
+
+2. Why Text Parsing ("Grep") Fails at Scale
+If a script only returns 0 (success) or 1 (failure), an orchestrator trying to detect a Warning state would have to read and parse the text output (e.g., grep "WARNING").
+Text parsing is notoriously fragile:
+A developer changes "WARNING" to "WARN" in a log message, breaking the parser.
+Localization or formatting changes break automation downstream.
+Text processing adds CPU overhead when checking thousands of nodes continuously.
+Exit codes make state binary and programmatic: a machine only needs to evaluate an integer comparison.
+
 
 ---
 
@@ -274,13 +296,13 @@ Run the Bash script against the healthy server and verify that it creates a repo
 
 #### Screenshot 9 — Output of `./scripts/linux-triage.sh` showing your Full Name and all five check results
 
-Add your screenshot here.
+
 ![week03](./screenshots/w3%2069.png)
 ---
 
 #### Screenshot 10 — Output showing the captured exit code and final summary
 
-Add your screenshot here.
+
 
 ![week03](./screenshots/w3%20670.png)
 ---
@@ -291,7 +313,7 @@ Answer the following in your own words:
 
 **1. What is the overall status of your healthy baseline?**
 
-Add your answer here.
+
 The overall status of the healthy baseline is **completely successful**.
 
 The terminal output shows `Captured Exit Code: 0`, which in Linux and system automation signifies a successful execution with zero errors. This proves that all individual system probes in your triage checklist executed as expected and confirmed the environment is in a healthy, steady state.
@@ -299,7 +321,7 @@ The terminal output shows `Captured Exit Code: 0`, which in Linux and system aut
 
 **2. Which exact Linux evidence proves the application is serving traffic?**
 
-Add your answer here.
+
 
 To prove the application is actively serving traffic, the exact Linux evidence required is a combination of two things shown in the initial triage phase:
 
@@ -310,7 +332,7 @@ To prove the application is actively serving traffic, the exact Linux evidence r
 
 **3. Did your script return exit code 0 or 1? Explain why.**
 
-Add your answer here.
+
 
 The script returned exit code 0.
 
@@ -319,7 +341,7 @@ In Linux and Bash automation, an exit code of `0` indicates that a program execu
 
 **4. What is the difference between a warning and a failure in this script?**
 
-Add your answer here.
+
 
 Based on the structure of this triage script and the captured metrics, the difference comes down to whether the issue breaks core application delivery or merely highlights a suboptimal system state:
 
@@ -338,13 +360,13 @@ Turn the Bash script into a reusable, manually invoked Agentic AI workflow.
 
 #### Screenshot 11 — `SKILL.md` showing the frontmatter, allowed tool restrictions, and safety rules
 
-Add your screenshot here.
+
 ![week 03](./screenshots/w3%20671x.png)
 ---
 
 #### Screenshot 12 — `/linux-triage` output for the healthy server
 
-Add your screenshot here.
+
 
 ![week 03](./screenshots/w3%20672x.png)
 ---
@@ -355,7 +377,7 @@ Answer the following in your own words:
 
 **1. Why does this skill have Bash, Read, and Grep, but not Write?**
 
-Add your answer here.
+
 
 This specific skill focuses entirely on the **Gather and Triage** phase of incident response, which requires absolute isolation to prevent altering the system under investigation.
 
@@ -370,7 +392,7 @@ Here is why it uses `Bash`, `Read`, and `Grep`, but excludes `Write`:
 
 **2. Why is `disable-model-invocation: true` useful for this skill?**
 
-Add your answer here.
+
 
 Setting `disable-model-invocation: true` is useful because it locks the AI into a strict, programmatic execution mode. During the Gather and Triage phase of DevOps automation, you need deterministic, predictable behavior rather than creative variations or independent reasoning.
 
@@ -385,7 +407,7 @@ Here is exactly why this setting is valuable:
 
 **3. What part is performed by Bash, and what part is performed by Claude?**
 
-Add your answer here.
+
 
 In this DevOps automation workflow, the responsibilities are cleanly divided between the execution engine (Bash) and the cognitive coordinator (Claude):
 
@@ -408,7 +430,7 @@ In this DevOps automation workflow, the responsibilities are cleanly divided bet
 
 **4. Why is this better than asking Claude "Is my server healthy?" without giving it evidence?**
 
-Add your answer here.
+
 
 Providing a structured, code-driven baseline is significantly better than asking a vague question because an AI cannot guess the internal state of a server without data.
 
@@ -437,7 +459,7 @@ Create a controlled service failure, gather evidence through Bash, and let Claud
 
 #### Screenshot 13 — Output showing Nginx is inactive and the HTTP request fails
 
-Add your screenshot here.
+
 
 System Analysis
 Exit Code Alteration: The script now terminates with an Exit Code: 1, explicitly signaling an infrastructure failure.
@@ -447,14 +469,14 @@ Root Cause Identification: The application layer has failed. Because the Nginx s
 
 #### Screenshot 14 — `/linux-triage` output showing failed evidence, most likely cause, and a suggested recovery command
 
-Add your screenshot here.
+
 
 ![week 03](./screenshots/w3%20674x.png)
 ---
 
 #### Screenshot 15 — `incident-failure-report.txt` showing the failed checks and your Full Name
 
-Add your screenshot here.
+
 
 ![week 03](./screenshots/w3%20675x.png)
 ---
@@ -465,7 +487,7 @@ Answer the following in your own words:
 
 **1. Which three checks failed?**
 
-Add your answer here.
+
 Based on the incident triage report in the image, the three checks that failed are:
 
 * Nginx service is not active
@@ -475,7 +497,7 @@ Based on the incident triage report in the image, the three checks that failed a
 
 **2. What evidence supports the conclusion that Nginx is unavailable?**
 
-Add your answer here.
+
 
 Based on the triage report output, the specific evidence proving Nginx is unavailable includes:
 
@@ -488,7 +510,7 @@ Based on the triage report output, the specific evidence proving Nginx is unavai
 
 **3. Did Claude execute the recovery command? Why is that important?**
 
-Add your answer here.
+
 
 No, Claude did not execute the recovery command.
 
@@ -497,7 +519,7 @@ This is important because this specific skill is built exclusively for the **Gat
 
 **4. Which phase of the Agentic Loop is represented by the Bash report?**
 
-Add your answer here.
+
 
 The Bash report represents the Observe (or Reflection) phase of the Agentic Loop.
 
@@ -506,7 +528,7 @@ During this phase, the agent collects raw system evidence and logs the environme
 
 **5. Which phase is represented by Claude's explanation?**
 
-Add your answer here.
+
 
 Claude's explanation represents the Orient (or Analyze/Evaluate) phase of the loop.
 
@@ -523,28 +545,29 @@ Recover the service as the human operator and prove that the system is healthy a
 
 #### Screenshot 16 — Output showing Nginx is active and `curl -I http://localhost` returns 200 OK
 
-Add your screenshot here.
+
 
 ![week 03](./screenshots/w3%20676x.png)
 ---
 
 #### Screenshot 17 — Second `/linux-triage` output showing successful recovery with no FAIL results
 
-Add your screenshot here.
+
 
 ![week 03](./screenshots/w3%20677x.png)
 ---
 
 #### Screenshot 18 — Output of `ls -lah reports` showing both `incident-failure-report.txt` and `recovery-report.txt`
 
-Add your screenshot here.
+
+
 
 ![week 03](./screenshots/w3%20678x.png)
 ---
 
 #### Screenshot 19 — `incident-summary.md` showing all required sections and your Full Name
 
-Add your screenshot here.
+
 
 ![week 03](./screenshots/wq%20679x.png)
 ---
@@ -555,21 +578,20 @@ Answer the following in your own words:
 
 **1. What action did you execute manually?**
 
-Add your answer here.
 I started Nginx manaully
 sudo systemctl start nginx
 ---
 
 **2. What evidence proves that the service recovered?**
 
-Add your answer here.
+
 I ran this below command on the terminal and it returned ACTIVE
 systemctl is-active nginx
 ---
 
 **3. Why is the second triage run necessary?**
 
-Add your answer here.
+
 
 The second triage run is necessary to verify the recovery and ensure the system has successfully returned to a healthy state.
 
@@ -584,7 +606,7 @@ Running this second check closes the loop, proving mathematically that your manu
 
 **4. What could go wrong if an AI agent automatically restarted every failed service?**
 
-Add your answer here.
+
 If an AI agent automatically restarted every failed service without human intervention, it could trigger several severe operational risks:
 
 * Masking Deep Root Causes: A service might be crashing repeatedly due to a corrupted database, bad application code, or a hardware defect. If the AI continuously restarts it, the server might appear briefly "online" while masking a severe underlying structural issue that needs an engineer's attention.
@@ -598,7 +620,7 @@ If an AI agent automatically restarted every failed service without human interv
 
 **5. In one sentence, explain the difference between using AI as a chatbot and using AI in this agentic workflow.**
 
-Add your answer here.
+
 
 While a standard chatbot simply generates a text response based on user input, this agentic workflow uses an automated AI loop to coordinate structured, deterministic Bash commands that directly observe and analyze a real system's state.
 ---
@@ -615,7 +637,7 @@ Fill in all seven sections below in your own words.
 
 **1. Reported Symptom**
 
-Add your answer here.
+
 Based on the triage report screenshot, the specific reported symptoms are:
 
 * Inactivity of the Web Server: The Nginx service is not active.
@@ -625,7 +647,7 @@ Based on the triage report screenshot, the specific reported symptoms are:
 
 **2. Evidence Collected**
 
-Add your answer here.
+
 The below is the screenshot of Nginx not been active after been shotdown
 
 ![week 03](./screenshots/w3%20673x.png)
@@ -633,13 +655,12 @@ The below is the screenshot of Nginx not been active after been shotdown
 
 **3. Most Likely Cause**
 
-Add your answer here.
 Based on the collected evidence, the most likely cause is that the Nginx service has stopped running or crashed. Because the Nginx application process is inactive, it is no longer binding to Port 80 to listen for incoming connections, which subsequently causes all local loopback HTTP requests to fail with a network connection refusal (status code 000).
 ---
 
 **4. Human-Approved Recovery Action**
 
-Add your answer here.
+
 
 The human-approved recovery action was to manually execute the command to restart the web server:
 
@@ -648,7 +669,7 @@ The human-approved recovery action was to manually execute the command to restar
 
 **5. Verification**
 
-Add your answer here.
+
 
 Based on the second triage run, the following outputs prove that Nginx and the application successfully recovered:
 
@@ -661,14 +682,14 @@ Based on the second triage run, the following outputs prove that Nginx and the a
 
 **6. Safety Decision**
 
-Add your answer here.
+
 
 The AI skill was permitted to gather and analyze evidence because reading system metrics, parsing service states, and checking port availability are non-intrusive, read-only operations that carry no risk of altering the system state. Conversely, it was not allowed to restart the service to maintain a strict security boundary, preventing automated, unreviewed changes that could inadvertently trigger destructive crash loops, overwrite valuable forensic logs, or worsen an active incident.
 ---
 
 **7. Agentic Loop Mapping**
 
-Add your answer here.
+
 
 The incident followed the structured agentic loop phases as follows:
 
@@ -687,7 +708,7 @@ The incident followed the structured agentic loop phases as follows:
 
 #### LinkedIn Post URL
 
-Paste your LinkedIn post URL here:
+
 
 https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-linux-cloudsecurity-ugcPost-7485168451012087808-cgMx/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE
 
@@ -695,13 +716,13 @@ https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-linux-cloudsecuri
 
 #### Screenshot — Published LinkedIn post
 
-Add your screenshot here.
+
 ![week 03](./screenshots/linkedin10.png)
 ---
 
 # GitHub Repository URL
 
-Paste the URL of your GitHub folder or repository containing the assignment files here:
+
 
 https://github.com/PALLOTI/devops-micro-internship-pravinmishra.git
 
