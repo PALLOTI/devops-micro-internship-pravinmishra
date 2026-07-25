@@ -397,14 +397,14 @@ Create a final Bash script using functions to organize reusable code.
 
 
 
-![week 03](./screenshots/3w%205-20.png)
+![week 03](./screenshots/3W%205-20.png)
 ---
 
 #### Screenshot 2 — Output of `./final-automation.sh`
 
 
 
-![week 03](./screenshots/3w%205-20.png)
+![week 03](./screenshots/3W%205-20.png)
 ---
 
 #### Screenshot 3 — Output of `ls -lah` showing all created scripts
