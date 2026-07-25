@@ -23,6 +23,7 @@ Create a `CodeTrack` project folder and initialize it as a Git repository.
 
 
 ![week 04](./screenshots/wk4%2011.png)
+
 ---
 
 #### Screenshot 2 — Output of `ls -a` showing the `.git` folder
@@ -30,6 +31,7 @@ Create a `CodeTrack` project folder and initialize it as a Git repository.
 
 
 ![week 04](./screenshots/wk4%2012.png)
+
 ---
 
 ### Notes
@@ -41,6 +43,7 @@ Add your answer here.
 This folder is literally the entire Git repository. Everything outside of it is just your normal "working directory"—the raw, editable files you see in your code editor. The .git folder is where Git keeps all the magic, history, and metadata that make version control work.
 
 If you delete the .git folder, your project files won't disappear, but your entire commit history, all branches, stashes, and remote connections will vanish instantly.
+
 ---
 
 # Task 2 — Configure Git Identity Locally (Repository-Only)
@@ -57,6 +60,7 @@ Set your Git username and email for the `CodeTrack` repository only, using `git 
 
 
 ![week 04](./screenshots/wk4%2013.png)
+
 ---
 
 # Task 3 — Configure Git Identity Globally
@@ -73,6 +77,7 @@ Set a global Git username and email for this machine using `git config --global`
 
 
 ![week 04](./screenshots/wk4%2014.png)
+
 ---
 
 # Submission Instructions

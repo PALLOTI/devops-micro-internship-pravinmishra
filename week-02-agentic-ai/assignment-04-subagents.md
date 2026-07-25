@@ -21,6 +21,7 @@ Create the `.claude/agents/` directory and add all required agent files.
 #### Screenshot 1 — VS Code sidebar showing `.claude/agents/` with all 3 files
 
 ![week 02](./screenshots/3vscode%20sidecar.png)
+
 ---
 
 # Task 2 — Compare the Agent Configurations
@@ -41,6 +42,7 @@ Haiku is designed as a lightweight model, it's significantly cheaper per token t
 
 
 This the principle of least privilege in security design, the write permission could compromise the integrity of the audit trial
+
 ---
 
 #### 3. Why does the tf-writer use `inherit` instead of a specific model?
@@ -54,12 +56,14 @@ tf-writer uses inherit model because the subagent adopts the same model as the p
 
 
 ![claude version](./screenshots/4Securityfr.png)
+
 ---
 
 #### Screenshot 3 — `cost-optimizer.md` frontmatter showing the model and tools configuration
 
 
 ![claude version](./screenshots/4costfr.png)
+
 ---
 
 # Task 3 — Run the Security Auditor
@@ -77,12 +81,14 @@ Trigger the security auditor agent and analyze the generated security report for
 
 
 ![claude version](./screenshots/4D2.png)
+
 ---
 
 #### Screenshot 5 — Security audit report output
 
 
 ![claude version](./screenshots/4sar.png)
+
 ---
 
 # Task 4 — Run the Cost Optimizer
@@ -97,6 +103,7 @@ Trigger the cost optimizer agent and review the generated cost optimization repo
 
 
 ![claude version](./screenshots/4Costopt.png)
+
 ---
 
 # Submission Instructions

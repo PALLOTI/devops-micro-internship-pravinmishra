@@ -30,12 +30,12 @@ At this stage in your DevOps journey—especially coming off hands-on projects l
 #### Question 2 — What is AWS Free Tier, and how long does it last?
 
 
-
 The AWS Free Tier is Amazon’s onboarding program that lets developers, students, and businesses experiment with real cloud services for free up to specific limits.
 
 HOW LONG IT LAST
 The Credit-Based Free Plan
  (Default for New Accounts)What you get: AWS gives you $100 in initial credits upon account creation, plus the ability to earn up to $100 more in additional credits by completing basic console setup tasks (like setting up budget alerts or enabling MFA).  Safety Net: This plan prevents surprise credit card charges. Once your credits run out or the trial period ends, AWS simply pauses/closes the account rather than billing your card.  Duration: Lasts up to 6 months (or until your credits hit $0, whichever comes first). 
+
 ---
 
 #### Question 3 — Name three AWS Free Tier services and their free usage limits.
@@ -49,6 +49,7 @@ The Credit-Based Free Plan
 
 3. AWS Lambda — Serverless ComputeCategory:
  Always Free (never expires, even after 12 months)  Free Limit:1 million free requests per month  400,000 GB-seconds of compute time per month  What that means: You can execute event-driven code or microservices automatically without paying for idle server time.
+
 ---
 
 # Task 2 — Create AWS Free Tier Account
@@ -73,6 +74,7 @@ Confirm that your AWS account setup is complete by navigating to the Account sec
 
 
 ![week 03](./screenshots/1AWSpage.png)
+
 ---
 
 # Submission Instructions

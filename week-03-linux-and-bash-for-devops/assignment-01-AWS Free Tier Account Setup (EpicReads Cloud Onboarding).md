@@ -22,7 +22,7 @@ Demonstrate understanding of AWS basics and Free Tier usage by answering the fol
 
 
 
---- An AWS account represents a formal business relationship between you and AWS, serving as the central hub where you provision, manage, and pay for your cloud resources.
+ An AWS account represents a formal business relationship between you and AWS, serving as the central hub where you provision, manage, and pay for your cloud resources.
 
 IMPORTANCE OF AWS ACCOUNT
 
@@ -48,9 +48,8 @@ Short-Term Trials               Typically 30 to 90 days starting when you activa
 
 #### Question 3 — Name three AWS Free Tier services and their free usage limits.
 
-
-
 ---
+
 EC2            750 hours per month of t2.micro or t3.micro instances (depending on your AWS Region).
 S3             5 GB of Standard Storage.20,000 HTTP GET requests (retrieving data).2,000 HTTP PUT, COPY, POST, or LIST 
                requests (uploading/managing data).
@@ -78,6 +77,7 @@ Confirm that your AWS account setup is complete by navigating to the Account sec
 
 
 ![AWS](./screenshots/1AWSpage.png)
+
 ---
 
 # Submission Instructions

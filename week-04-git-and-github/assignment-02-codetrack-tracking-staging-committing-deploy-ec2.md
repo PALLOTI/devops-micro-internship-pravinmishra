@@ -24,6 +24,7 @@ Confirm that Git works and that you are inside the correct `CodeTrack` repositor
 
 
 ![week 04](./screenshots/wk4%2021.png)
+
 ---
 
 #### Screenshot 2 — Output of `git status` showing no "not a git repository" error
@@ -32,6 +33,7 @@ Confirm that Git works and that you are inside the correct `CodeTrack` repositor
 
 
 ![week 04](./screenshots/wk4%2022.png)
+
 ---
 
 # Task 2 — Create index.html and style.css
@@ -48,6 +50,7 @@ Create the two starter UI files inside `CodeTrack`.
 
 
 ![week 04](./screenshots/wk4%2023.png)
+
 ---
 
 # Task 3 — Add Starter Content
@@ -67,6 +70,7 @@ Copy the provided starter HTML and CSS content into your local `index.html` and 
 
 
 ![week 04](./screenshots/wk4%2024x.png)
+
 ---
 
 # Task 4 — Track and Stage Files Correctly
@@ -83,6 +87,7 @@ Confirm both files show as untracked, then stage them individually with `git add
 
 
 ![week 04](./screenshots/wk4%2025.png)
+
 ---
 
 #### Screenshot 6 — Output of `git status` showing both files staged under "Changes to be committed"
@@ -91,6 +96,7 @@ Confirm both files show as untracked, then stage them individually with `git add
 
 
 ![week 04](./screenshots/wk4%2026.png)
+
 ---
 
 # Task 5 — Create the First Commit (Clean Initial Commit)
@@ -107,6 +113,7 @@ Commit the staged starter files using the message `Initial UI scaffold: add inde
 
 
 ![week 04](./screenshots/wk4%2027.png)
+
 ---
 
 #### Screenshot 8 — Output of `git log --oneline` showing the first commit
@@ -115,6 +122,7 @@ Commit the staged starter files using the message `Initial UI scaffold: add inde
 
 
 ![week 04](./screenshots/wk4%2028.png)
+
 ---
 
 # Task 6 — Modify index.html and Create a Second Commit
@@ -131,6 +139,7 @@ Follow the instruction comment inside `index.html` to update the Student Name an
 
 
 ![week 04](./screenshots/wk4%2029.png)
+
 ---
 
 #### Screenshot 10 — Output of `git status` showing `index.html` as modified
@@ -139,6 +148,7 @@ Follow the instruction comment inside `index.html` to update the Student Name an
 
 
 ![week 04](./screenshots/wk4%20210.png)
+
 ---
 
 #### Screenshot 11 — Output of `git commit`
@@ -147,6 +157,7 @@ Follow the instruction comment inside `index.html` to update the Student Name an
 
 
 ![week 04](./screenshots/wk4%20211.png)
+
 ---
 
 #### Screenshot 12 — Output of `git log --oneline` showing two commits
@@ -155,6 +166,7 @@ Follow the instruction comment inside `index.html` to update the Student Name an
 
 
 ![week 04](./screenshots/wk4%20212.png)
+
 ---
 
 # Task 7 — Deploy to EC2 with Nginx (Static Website)
@@ -171,6 +183,7 @@ Install and start Nginx on your EC2 instance, then copy `index.html` and `style.
 
 
 ![week 04](./screenshots/wk4%20213.png)
+
 ---
 
 #### Screenshot 14 — Output of `curl -I http://localhost` showing `HTTP/1.1 200 OK`
@@ -179,6 +192,7 @@ Install and start Nginx on your EC2 instance, then copy `index.html` and `style.
 
 
 ![week 04](./screenshots/wk4%2021.png)
+
 ---
 
 #### Screenshot 15 — Browser showing the CodeTrack site loaded at `http://<EC2_PUBLIC_IP>`, with your Full Name and Group Name visible
@@ -187,6 +201,7 @@ Install and start Nginx on your EC2 instance, then copy `index.html` and `style.
 
 
 ![week 04](./screenshots/wk%20215.png)
+
 ---
 
 # LinkedIn Post (Required)

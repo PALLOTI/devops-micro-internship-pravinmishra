@@ -252,6 +252,7 @@ Add the following credit note at the end of your post:
 
 
 https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_startuplife-networking-techforfounders-activity-7473842583388119041-ihPm?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE
+
 ---
 
 ## LinkedIn Post Backup Copy
@@ -308,11 +309,13 @@ Navigating through the questions and getting precised responses with my AI assis
 ### What was difficult?
 
 Reading to construct a reasonable answer from my Ai assistance
+
 ---
 
 ### What will you improve next week?
 
 Fast reading and reasoning 
+
 ---
 
 ## 📌 About DMI & CloudAdvisory

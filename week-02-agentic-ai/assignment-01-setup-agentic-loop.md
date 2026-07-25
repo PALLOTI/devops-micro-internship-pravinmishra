@@ -56,12 +56,14 @@ Interact with Claude Code and observe how it performs the Agentic Loop (Gather �
 #### Screenshot 4 — Claude's response to the first question, showing it read the files (tool calls visible)
 
 ![claude version](./screenshots/Claude%20feedback.png)
+
 ---
 
 #### Screenshot 5 — Claude's response to the second question, showing it ran a command and reported the line count
 
 
 ![claude version](./screenshots/Claude%20Answer.png)
+
 ---
 
 # Submission Instructions

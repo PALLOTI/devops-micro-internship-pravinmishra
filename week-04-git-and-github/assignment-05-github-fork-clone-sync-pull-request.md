@@ -152,9 +152,7 @@ https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-agenticai-git-sha
 
 ## Fork URL
 
-Paste your fork URL here:
-
-`Add your URL here`
+https://github.com/PALLOTI/devops-micro-internship-interviews
 
 ---
 

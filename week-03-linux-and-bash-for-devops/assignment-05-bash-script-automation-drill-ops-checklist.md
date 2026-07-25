@@ -65,6 +65,7 @@ Create your first Bash script, make it executable, and run it from the terminal.
 
 
 ![week 03](./screenshots/3w%205-3.png)
+
 ---
 
 #### Screenshot 2 — Output of `./first-script.sh`
@@ -72,12 +73,14 @@ Create your first Bash script, make it executable, and run it from the terminal.
 
 
 ![week 03](./screenshots/3w%205-4.png)
+
 ---
 
 #### Screenshot 3 — Output of `ls -l first-script.sh` showing executable permission
 
 
 ![week 03](./screenshots/3w%205-5.png)
+
 ---
 
 ### Notes
@@ -108,6 +111,7 @@ When you type this, you are manually starting a fresh instance of the Bash progr
 
 ./script.sh
 When you type this, you are telling the operating system's kernel to run the file directly as an independent program (the ./ just points to the current folder).
+
 ---
 
 # Task 3 — Variables: User Information Script
@@ -123,6 +127,7 @@ Use variables to store and display user-related information.
 
 
 ![week 03](./screenshots/3w%205-6.png)
+
 ---
 
 #### Screenshot 2 — Output of `./user-info.sh`
@@ -130,6 +135,7 @@ Use variables to store and display user-related information.
 
 
 ![week 03](./screenshots/3w%205-7.png)
+
 ---
 
 ### Notes
@@ -169,6 +175,7 @@ Use arrays and loops to print a checklist of tools used in Bash scripting.
 
 
 ![week 03](./screenshots/3w%205-8.png)
+
 ---
 
 #### Screenshot 2 — Output of `./tools-checklist.sh`
@@ -176,6 +183,7 @@ Use arrays and loops to print a checklist of tools used in Bash scripting.
 
 
 ![week 03](./screenshots/3w%205-9.png)
+
 ---
 
 ### Notes
@@ -221,6 +229,7 @@ Use loops to repeat a task multiple times.
 
 
 ![week 03](./screenshots/3w%205-10.png)
+
 ---
 
 #### Screenshot 2 — Output of `./counter.sh`
@@ -228,6 +237,7 @@ Use loops to repeat a task multiple times.
 
 
 ![week 03](./screenshots/3w%205-11.png)
+
 ---
 
 ### Notes
@@ -258,6 +268,7 @@ Five times
 
 Add your answer here.
 Change the for number block from 5 digits to 10 digits
+
 ---
 
 # Task 6 — Files & Conditionals: File Validation Script
@@ -273,6 +284,7 @@ Use file checks and conditionals to verify whether files and directories exist.
 
 
 ![week 03](./screenshots/3w%205-12.png)
+
 ---
 
 #### Screenshot 2 — Content of `file-check.sh`
@@ -280,6 +292,7 @@ Use file checks and conditionals to verify whether files and directories exist.
 
 
 ![week 03](./screenshots/3w%205-13.png)
+
 ---
 
 #### Screenshot 3 — Output of `./file-check.sh`
@@ -287,6 +300,7 @@ Use file checks and conditionals to verify whether files and directories exist.
 
 
 ![week 03](./screenshots/3w%205-14.png)
+
 ---
 
 ### Notes
@@ -303,6 +317,7 @@ Answer the following in your own words:
 
 
 In Bash, the -f flag is a conditional test used to check if a specific file exists and is a regular file.
+
 ---
 
 **3. Why should file and directory paths be stored in variables?**
@@ -310,12 +325,14 @@ In Bash, the -f flag is a conditional test used to check if a specific file exis
 
 
 Storing file and directory paths in variables is an absolute best practice in scripting. It saves time, prevents catastrophic mistakes, and makes your code much cleaner.
+
 ---
 
 **4. What happens if the file does not exist?**
 
 
 It creates the file, if it doesn't exist
+
 ---
 
 # Task 7 — Conditionals: Pass or Retry Script
@@ -331,12 +348,14 @@ Use if-else conditionals to make decisions based on a variable value.
 
 
 ![week 03](./screenshots/3w%205-15.png)
+
 ---
 
 #### Screenshot 2 — Output showing `Result: Pass`
 
 
 ![week 03](./screenshots/3w%205-16.png)
+
 ---
 
 #### Screenshot 3 — Content of `score-check.sh` with `score=55`
@@ -344,6 +363,7 @@ Use if-else conditionals to make decisions based on a variable value.
 
 
 ![week 03](./screenshots/3w%205-16.png)
+
 ---
 
 #### Screenshot 4 — Output showing `Result: Retry`
@@ -351,6 +371,7 @@ Use if-else conditionals to make decisions based on a variable value.
 
 
 ![week 03](./screenshots/3w%205-17.png)
+
 ---
 
 ### Notes
@@ -362,6 +383,7 @@ Answer the following in your own words:
 
 
 The purpose of an if-else statement is to give your script decision-making power.
+
 ---
 
 **2. What does `-ge` mean?**
@@ -369,6 +391,7 @@ The purpose of an if-else statement is to give your script decision-making power
 
 
 In Bash, -ge stands for "greater than or equal to".
+
 ---
 
 **3. Why should conditions be tested with different values?**
@@ -376,6 +399,7 @@ In Bash, -ge stands for "greater than or equal to".
 
 
 This often called boundary and equivalence testing : This is the only way to prove a program actually works the way you expect. If you only test a single "happy path" value, you leave the door open for hidden bugs, crashes, and security holes.
+
 ---
 
 **4. How can conditionals help in automation scripts?**
@@ -398,6 +422,7 @@ Create a final Bash script using functions to organize reusable code.
 
 
 ![week 03](./screenshots/3W%205-20.png)
+
 ---
 
 #### Screenshot 2 — Output of `./final-automation.sh`
@@ -405,6 +430,7 @@ Create a final Bash script using functions to organize reusable code.
 
 
 ![week 03](./screenshots/3W%205-20.png)
+
 ---
 
 #### Screenshot 3 — Output of `ls -lah` showing all created scripts
@@ -412,6 +438,7 @@ Create a final Bash script using functions to organize reusable code.
 
 
 ![week 03](./screenshots/3w%205-21.png)
+
 ---
 
 ### Notes
@@ -473,6 +500,7 @@ https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_while-reading-engineerin
 
 
 ![week 03](./screenshots/linkedin5.png)
+
 ---
 
 # Submission Instructions

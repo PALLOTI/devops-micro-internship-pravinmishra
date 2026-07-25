@@ -22,24 +22,28 @@ Verify that the deployed React application is reachable from the browser and con
 
 
 ![week 03](./screenshots/3w%202deployed.png)
+
 ---
 
 #### Screenshot 2 — Output of `ip a`
 
 
 ![week 03](./screenshots/3w%202ip-a.png)
+
 ---
 
 #### Screenshot 3 — Output of `sudo ss -tulpen`
 
 
 ![week 03](./screenshots/3w%203sstlup.png)
+
 ---
 
 #### Screenshot 4 — Output of `sudo ufw status`
 
 
 ![week 03](./screenshots/3w%202ufw.png)
+
 ---
 
 ### Notes
@@ -53,6 +57,7 @@ sudo ss -tlnp | grep :80
 which has the below screenshot
 
 ![week 03](./screenshots/3w%203sstlup.png)
+
 ---
 
 **2. What proves SSH is active on port 22?**
@@ -82,18 +87,21 @@ Verify that Nginx is properly installed, running, enabled at boot, and safely co
 #### Screenshot 1 — Output of `systemctl status nginx --no-pager`
 
 ![week 03](./screenshots/3w%203systemctl.png)
+
 ---
 
 #### Screenshot 2 — Output of `sudo nginx -t`
 
 
 ![week 03](./screenshots/3w%203nginx-t.png)
+
 ---
 
 #### Screenshot 3 — Output of `sudo ss -lptn '( sport = :80 )'`
 
 
 ![week 03](./screenshots/3w%203sstlup.png)
+
 ---
 
 ### Notes
@@ -128,18 +136,21 @@ Verify real traffic flow and analyze logs to understand system behavior and erro
 
 
 ![week 3](./screenshots/3w%203sudotail.png)
+
 ---
 
 #### Screenshot 2 — Output of `sudo tail -n 30 /var/log/nginx/error.log`
 
 
 ![week 3](./screenshots/3w%203error.png)
+
 ---
 
 #### Screenshot 3 — Output of `sudo journalctl -u nginx --no-pager -n 50`
 
 
 ![week 3](./screenshots/3w%203journal.png)
+
 ---
 
 ### Notes
@@ -185,24 +196,28 @@ Assess server capacity and detect potential performance or failure risks.
 
 
 ![week 3](./screenshots/3w%203uptime.png)
+
 ---
 
 #### Screenshot 2 — Output of `free -h`
 
 
 ![week 3](./screenshots/3w%203free.png)
+
 ---
 
 #### Screenshot 3 — Output of `df -h`
 
 
 ![week 3](./screenshots/3w%203df-h.png)
+
 ---
 
 #### Screenshot 4 — Output of `sudo du -sh /var/* | sort -h`
 
 
 ![week 3](./screenshots/3w%203du-sh.png)
+
 ---
 
 ### Notes
@@ -235,18 +250,21 @@ Ensure the correct React build is deployed and Nginx is serving it properly.
 
 
 ![week 03](./screenshots/3w%203head-n.png)
+
 ---
 
 #### Screenshot 2 — Output of `grep -R "Deployed by" -n /var/www/html 2>/dev/null | head`
 
 
 ![week 03](./screenshots/3w%203zz.png)
+
 ---
 
 #### Screenshot 3 — Output of `grep -n "try_files" /etc/nginx/sites-available/default`
 
 
 ![week 03](./screenshots/3w%203tryfiles.png)
+
 ---
 
 ### Notes
@@ -290,12 +308,14 @@ There was no system break or failure
 
 
 ![week 03](./screenshots/3w%203nginx-t.png)
+
 ---
 
 #### Screenshot 3 — Output of `curl -I http://<public-ip>` confirming recovery (200 OK)
 
 
 ![week 03](./screenshots/3w%20200k.png)
+
 ---
 
 ### Notes
@@ -336,12 +356,14 @@ Simulate missing deployment content and recover the application safely.
 #### Screenshot 1 — Output of `curl -I http://<public-ip>` showing failure (non-200 response)
 
 I didn't experience any failure
+
 ---
 
 #### Screenshot 2 — Output of `curl -I http://<public-ip>` confirming recovery (200 OK)
 
 
 ![week 03](./screenshots/3w%20200k.png)
+
 ---
 
 ### Notes

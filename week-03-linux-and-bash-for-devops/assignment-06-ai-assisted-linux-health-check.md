@@ -22,6 +22,7 @@ Confirm that Nginx and the React application are healthy before building the aut
 
 
 ![week 03](./screenshots/w3%2061.png)
+
 ---
 
 ![week 03](./screenshots/w3%20611.png)
@@ -31,6 +32,7 @@ Confirm that Nginx and the React application are healthy before building the aut
 
 
 ![week 03](./screenshots/w3%20621.png)
+
 ---
 
 ### Notes
@@ -77,6 +79,7 @@ Tell Claude exactly what this project does and what it is not allowed to do.
 
 
 ![weeek 03](./screenshots/w3%2063.png)
+
 ---
 
 ### Notes
@@ -116,6 +119,7 @@ Use Claude Code to inspect the environment and produce a read-only plan before c
 
 
 ![week 03](./screenshots/w3%2064.png)
+
 ---
 
 ### Notes
@@ -176,6 +180,7 @@ Create one Bash script that gathers consistent Linux and Nginx health evidence.
 
 
 ![week 03](./screenshots/w3%2065.png)
+
 ---
 
 #### Screenshot 6 — Middle section showing check functions and conditionals
@@ -183,6 +188,7 @@ Create one Bash script that gathers consistent Linux and Nginx health evidence.
 
 
 ![week 03](./screenshots/w3%2066.png)
+
 ---
 
 #### Screenshot 7 — Bottom section showing the loop, summary function, and exit behavior
@@ -190,12 +196,14 @@ Create one Bash script that gathers consistent Linux and Nginx health evidence.
 
 
 ![week 03](./screenshots/w3%2067.png)
+
 ---
 
 #### Screenshot 8 — Output of `bash -n scripts/linux-triage.sh` (no syntax errors) and `ls -l scripts/linux-triage.sh` showing executable permission
 
 
 ![week 03](./screenshots/w3%2068.png)
+
 ---
 
 ### Notes
@@ -212,6 +220,7 @@ Based on the workflow demonstrated in the screen snapshot, the `checks` array st
 * Localhost HTTP** response code
 * Root disk /** utilization
 * Memory** availability status
+
 ---
 
 **2. How does the `for` loop use that array?**
@@ -265,6 +274,7 @@ Separating the health checks into individual functions provides distinct enginee
 * Easier Maintenance and Testing:** If the command to check memory availability changes, you only need to update the logic inside the dedicated memory function. This localized update minimizes the risk of accidentally breaking the Nginx or disk space logic elsewhere in the script.
 
 * Cleaner Integration with the Array Loop:** Wrapping the logic in functions allows you to load the function names directly into a `checks` array. The `for` loop can then dynamically execute each function by name, resulting in highly readable, maintainable, and scannable code.
+
 ---
 
 **5. Why does the script use different exit codes for HEALTHY, WARN, and FAIL?**
@@ -298,6 +308,7 @@ Run the Bash script against the healthy server and verify that it creates a repo
 
 
 ![week03](./screenshots/w3%2069.png)
+
 ---
 
 #### Screenshot 10 — Output showing the captured exit code and final summary
@@ -305,6 +316,7 @@ Run the Bash script against the healthy server and verify that it creates a repo
 
 
 ![week03](./screenshots/w3%20670.png)
+
 ---
 
 ### Notes
@@ -328,6 +340,7 @@ To prove the application is actively serving traffic, the exact Linux evidence r
 1. The Network Socket State (`LISTEN`):** The network validation tool returned `LISTEN 0.0.0.0:80`. This proves the operating system kernel is actively binding port 80 to all available network interfaces and accepting incoming TCP connections.
 
 2. The Local Transaction Response (`http_code=200`):** The local loopback web request returned an explicit `http_code=200`. This proves that the Nginx application layer isn't just listening blindly; it is actively processing HTTP requests and successfully returning a healthy standard response code.
+
 ---
 
 **3. Did your script return exit code 0 or 1? Explain why.**
@@ -337,6 +350,7 @@ To prove the application is actively serving traffic, the exact Linux evidence r
 The script returned exit code 0.
 
 In Linux and Bash automation, an exit code of `0` indicates that a program executed successfully without encountering any errors or failures. Because the initial read-only triage checks verified that all five system areas—the Nginx service, Port 80 binding, Localhost HTTP response, root disk space, and memory availability—were completely healthy, the script ran its validation logic flawlessly from start to finish and completed with a clean success status.
+
 ---
 
 **4. What is the difference between a warning and a failure in this script?**
@@ -348,6 +362,7 @@ Based on the structure of this triage script and the captured metrics, the diffe
 * Failure (Critical Outage): A failure occurs when a core check completely breaks, meaning the server can no longer process or serve HTTP traffic (e.g., the Nginx service is dead, Port 80 stops listening, or local HTTP requests return an error/refusal). A failure halts the success chain and causes the script to return a non-zero exit code (like `1`).
 
 * Warning / Note (Non-Fatal Condition): A warning occurs when the application is still successfully serving traffic, but a resource metric or configuration is suboptimal. For example, in the baseline snapshot, the script flags a warning/note regarding memory (**`note: no swap configured`**) and captures a high disk usage of **64%**. Because these conditions do not cause an active service outage, the checks still pass and the script successfully returns an exit code of `0`.
+
 ---
 
 # Task 6 — Create and Run the /linux-triage Skill
@@ -362,6 +377,7 @@ Turn the Bash script into a reusable, manually invoked Agentic AI workflow.
 
 
 ![week 03](./screenshots/w3%20671x.png)
+
 ---
 
 #### Screenshot 12 — `/linux-triage` output for the healthy server
@@ -369,6 +385,7 @@ Turn the Bash script into a reusable, manually invoked Agentic AI workflow.
 
 
 ![week 03](./screenshots/w3%20672x.png)
+
 ---
 
 ### Notes
@@ -388,6 +405,7 @@ Here is why it uses `Bash`, `Read`, and `Grep`, but excludes `Write`:
 * Preventing Heuristic Tampering:** If a script writes files, generates temporary logs on a nearly full disk, or alters application configurations during a live incident, it can accidentally destroy valuable forensic data, trigger false monitoring alarms, or worsen the outage.
 
 * Decoupling Diagnosis from Recovery:** Keeping the script strictly read-only maintains a safe separation of duties. The automation is built solely to gather a healthy baseline and diagnose issues, leaving the execution of any destructive or corrective actions (which require a "Write" capability) to the human operator.
+
 ---
 
 **2. Why is `disable-model-invocation: true` useful for this skill?**
@@ -403,6 +421,7 @@ Here is exactly why this setting is valuable:
 * Guarantees Strict Determinism: It forces the automation to run exactly the pre-planned Bash functions and array checks configured in the script, ensuring the baseline data is collected identically every single time.
 
 * Prevents Unsupported Diagnostics: By stopping the model from inferring or guessing system health statuses, it ensures that the final triage output is built purely on raw system metrics (like `Exit Code: 0` or socket states) rather than AI-generated assumptions.
+
 ---
 
 **3. What part is performed by Bash, and what part is performed by Claude?**
@@ -426,6 +445,7 @@ In this DevOps automation workflow, the responsibilities are cleanly divided bet
 * Parsing and Structuring Data: Claude reads the raw console output returned by the Bash commands and organizes it into a clear, scannable format, such as the markdown snapshot table.
 
 * Evaluating the Baseline: Claude interprets the results against the guardrails—confirming that the system is fully healthy while highlighting low-risk anomalies, such as noting that no swap space is configured.
+
 ---
 
 **4. Why is this better than asking Claude "Is my server healthy?" without giving it evidence?**
@@ -447,6 +467,7 @@ A simple "yes" or "no" does not help you during a live incident. By running stru
  3. Provides Context-Aware Engineering Value
 
 Your server might be running at 64% disk utilization normally. If Claude knows this is your baseline standard, it won't trigger a false alarm. Without this evidence, an AI might look at a 64% disk space metric during an incident and incorrectly flag it as the root cause of the outage. Explicit evidence ensures the analysis is tailored to your specific project environment.
+
 ---
 
 # Task 7 — Simulate an Nginx Incident and Let the Skill Diagnose It
@@ -459,12 +480,13 @@ Create a controlled service failure, gather evidence through Bash, and let Claud
 
 #### Screenshot 13 — Output showing Nginx is inactive and the HTTP request fails
 
-
+![week 03](./screenshots/w3%20681.png)
 
 System Analysis
 Exit Code Alteration: The script now terminates with an Exit Code: 1, explicitly signaling an infrastructure failure.
 
 Root Cause Identification: The application layer has failed. Because the Nginx service is stopped, the operating system kernel closes the socket on Port 80, causing subsequent local curl loopback validation requests to fail with a connection refusal.
+
 ---
 
 #### Screenshot 14 — `/linux-triage` output showing failed evidence, most likely cause, and a suggested recovery command
@@ -472,6 +494,7 @@ Root Cause Identification: The application layer has failed. Because the Nginx s
 
 
 ![week 03](./screenshots/w3%20674x.png)
+
 ---
 
 #### Screenshot 15 — `incident-failure-report.txt` showing the failed checks and your Full Name
@@ -479,6 +502,7 @@ Root Cause Identification: The application layer has failed. Because the Nginx s
 
 
 ![week 03](./screenshots/w3%20675x.png)
+
 ---
 
 ### Notes
@@ -493,6 +517,7 @@ Based on the incident triage report in the image, the three checks that failed a
 * Nginx service is not active
 * Port 80 is not listening
 * Local HTTP check returned status 000
+
 ---
 
 **2. What evidence supports the conclusion that Nginx is unavailable?**
@@ -506,6 +531,7 @@ Based on the triage report output, the specific evidence proving Nginx is unavai
 * Port Binding Failure: The network layer validation confirms `[FAIL] Port 80 is not listening`, meaning the web server is not binding to the expected network socket to accept incoming traffic.
 
 * Transaction Failure: The local loopback request returns `[FAIL] Local HTTP check returned status 000`, proving that HTTP requests are failing to connect completely rather than returning a valid web response.
+
 ---
 
 **3. Did Claude execute the recovery command? Why is that important?**
@@ -515,6 +541,7 @@ Based on the triage report output, the specific evidence proving Nginx is unavai
 No, Claude did not execute the recovery command.
 
 This is important because this specific skill is built exclusively for the **Gather and Triage** phase of incident response, which requires a strictly read-only approach. By ensuring the automation cannot execute corrective or destructive actions, you prevent it from accidentally modifying the system state, wiping out valuable forensic data, or worsening an active server outage.
+
 ---
 
 **4. Which phase of the Agentic Loop is represented by the Bash report?**
@@ -524,6 +551,7 @@ This is important because this specific skill is built exclusively for the **Gat
 The Bash report represents the Observe (or Reflection) phase of the Agentic Loop.
 
 During this phase, the agent collects raw system evidence and logs the environment's current state to verify whether its execution resulted in a success or a failure.
+
 ---
 
 **5. Which phase is represented by Claude's explanation?**
@@ -533,6 +561,7 @@ During this phase, the agent collects raw system evidence and logs the environme
 Claude's explanation represents the Orient (or Analyze/Evaluate) phase of the loop.
 
 While the Bash report handles the raw Observation by gathering the system data, Claude interprets, structures, and assesses that data against the operational rules to determine what the health status actually means for the infrastructure.
+
 ---
 
 # Task 8 — Recover Manually, Verify Again, and Write the Incident Summary
@@ -548,6 +577,7 @@ Recover the service as the human operator and prove that the system is healthy a
 
 
 ![week 03](./screenshots/w3%20676x.png)
+
 ---
 
 #### Screenshot 17 — Second `/linux-triage` output showing successful recovery with no FAIL results
@@ -555,6 +585,7 @@ Recover the service as the human operator and prove that the system is healthy a
 
 
 ![week 03](./screenshots/w3%20677x.png)
+
 ---
 
 #### Screenshot 18 — Output of `ls -lah reports` showing both `incident-failure-report.txt` and `recovery-report.txt`
@@ -563,6 +594,7 @@ Recover the service as the human operator and prove that the system is healthy a
 
 
 ![week 03](./screenshots/w3%20678x.png)
+
 ---
 
 #### Screenshot 19 — `incident-summary.md` showing all required sections and your Full Name
@@ -570,6 +602,7 @@ Recover the service as the human operator and prove that the system is healthy a
 
 
 ![week 03](./screenshots/wq%20679x.png)
+
 ---
 
 ### Notes
@@ -580,6 +613,7 @@ Answer the following in your own words:
 
 I started Nginx manaully
 sudo systemctl start nginx
+
 ---
 
 **2. What evidence proves that the service recovered?**
@@ -587,6 +621,7 @@ sudo systemctl start nginx
 
 I ran this below command on the terminal and it returned ACTIVE
 systemctl is-active nginx
+
 ---
 
 **3. Why is the second triage run necessary?**
@@ -602,6 +637,7 @@ In the agentic incident response loop (Gather $\rightarrow$ Analyze $\rightarrow
 3. Local HTTP transactions now return a successful `http_code=200` instead of a connection refusal (`status 000`).
 
 Running this second check closes the loop, proving mathematically that your manual intervention resolved the outage without creating new resource anomalies.
+
 ---
 
 **4. What could go wrong if an AI agent automatically restarted every failed service?**
@@ -616,6 +652,7 @@ If an AI agent automatically restarted every failed service without human interv
 * Data Corruption and Log Flooding: Forcing automated restarts on stateful services (like databases or message queues) while they are in an unstable state can interrupt incomplete data writes, leading to corrupted tables or broken file systems. Additionally, it floods system logs with startup/shutdown noise, making manual forensics incredibly difficult.
 
 * Cascading Network Failures: If a primary backend service fails and an AI agent restarts it simultaneously with hundreds of other dependent microservices, the sudden thundering herd of connection requests can overwhelm network switches and database connection pools, turning a minor outage into a massive cascading system failure.
+
 ---
 
 **5. In one sentence, explain the difference between using AI as a chatbot and using AI in this agentic workflow.**
@@ -623,6 +660,7 @@ If an AI agent automatically restarted every failed service without human interv
 
 
 While a standard chatbot simply generates a text response based on user input, this agentic workflow uses an automated AI loop to coordinate structured, deterministic Bash commands that directly observe and analyze a real system's state.
+
 ---
 
 # Incident Summary
@@ -643,6 +681,7 @@ Based on the triage report screenshot, the specific reported symptoms are:
 * Inactivity of the Web Server: The Nginx service is not active.
 * Closed Network Socket: Port 80 is not listening to accept incoming traffic.
 * Failed Local Web Requests: The local HTTP check is failing completely, returning a status code of 000.
+
 ---
 
 **2. Evidence Collected**
@@ -651,6 +690,7 @@ Based on the triage report screenshot, the specific reported symptoms are:
 The below is the screenshot of Nginx not been active after been shotdown
 
 ![week 03](./screenshots/w3%20673x.png)
+
 ---
 
 **3. Most Likely Cause**
@@ -665,6 +705,7 @@ Based on the collected evidence, the most likely cause is that the Nginx service
 The human-approved recovery action was to manually execute the command to restart the web server:
 
 `sudo systemctl restart nginx`
+
 ---
 
 **5. Verification**
@@ -678,6 +719,7 @@ Based on the second triage run, the following outputs prove that Nginx and the a
 * Port Binding: The network validation returns a `[PASS]` state, proving that the operating system kernel is actively listening for incoming TCP traffic on Port 80.
 
 * HTTP Transaction: The local loopback request returns a `[PASS]` state with a successful HTTP status code of `200` instead of `000`, confirming the web server is successfully responding to network requests.
+
 ---
 
 **6. Safety Decision**
@@ -685,6 +727,7 @@ Based on the second triage run, the following outputs prove that Nginx and the a
 
 
 The AI skill was permitted to gather and analyze evidence because reading system metrics, parsing service states, and checking port availability are non-intrusive, read-only operations that carry no risk of altering the system state. Conversely, it was not allowed to restart the service to maintain a strict security boundary, preventing automated, unreviewed changes that could inadvertently trigger destructive crash loops, overwrite valuable forensic logs, or worsen an active incident.
+
 ---
 
 **7. Agentic Loop Mapping**
@@ -700,6 +743,7 @@ The incident followed the structured agentic loop phases as follows:
 * **Human Act:** You reviewed the diagnostic output and manually executed the recovery command (`sudo systemctl restart nginx`) to securely restore the web server process.
 
 * **Verify:** A final automated triage run executed the same suite of Bash probes to confirm that the service returned to an active state, Port 80 opened, and local HTTP requests successfully received a status 200 code.
+
 ---
 
 # LinkedIn Post (Required)
@@ -718,6 +762,7 @@ https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-linux-cloudsecuri
 
 
 ![week 03](./screenshots/linkedin10.png)
+
 ---
 
 # GitHub Repository URL

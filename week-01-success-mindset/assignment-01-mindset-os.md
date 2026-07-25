@@ -75,6 +75,7 @@ The future belongs to those taking a calculated risk. The truth is that some yea
 
 Lol
 Hope I'm not sounding like a motivational speaker
+
 ---
 
  Truth #3
@@ -476,9 +477,11 @@ https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-cloudcomputing-so
 ## 10. Proof of Work
 
 - LinkedIn Post URL:
+
  https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-cloudcomputing-softwareengineering-share-7477398559223431168-46gd/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE 
 
  Blog / Medium : 
+ 
  https://medium.com/@palloti10x/mental-dependencies-before-server-dependencies-why-your-mindset-is-your-true-foundation-in-devops-d0b8e665ce2c
 
 ## 📌 About DMI & CloudAdvisory

@@ -167,6 +167,7 @@ AKIA: Matches the exact four-letter string "AKIA". AWS uses this specific prefix
 {16}: This is a quantifier. It dictates that the previous character class ([0-9A-Z]) must appear exactly 16 times in a row.
 
 Because an AWS Access Key ID is exactly 20 characters long (the 4-character AKIA prefix + 16 alphanumeric characters), any fake key designed to look like a valid AWS key will be caught perfectly by this logic. The script doesn't know the key is fake; it just knows the string perfectly matches the structural blueprint of an AWS secret.
+
 ---
 
 **2. Could this hook have caught a poorly-named variable that stores a secret without the `AKIA` prefix? What does that tell you about the limits of a fixed rule like this?**
@@ -335,7 +336,8 @@ https://github.com/PALLOTI/devops-micro-internship-interviews/pulls
 **1. What, if anything, did you edit in the AI's drafted PR description before using it? Why?**
 
 Here's the PR 
-<PALLOTI>/devops-micro-internship-pravinmishra
+
+PALLOTI/devops-micro-internship-pravinmishra
 
 I edit the yourusername inputing myGithhub username PALLOTI
 Your forked repository

@@ -149,6 +149,7 @@ Display the repository history as a graph and locate both feature commits.
 #### Screenshot 14 — Full output of `git log --oneline --graph --decorate --all`
 
 ![week 03](./screenshots/wk4%20314.png)
+
 ---
 
 # Task 8 — Optional Cleanup (Delete the Feature Branch)
