@@ -36,6 +36,7 @@ Analyze the configuration differences between the three agents and demonstrate u
 
 
 Haiku is designed as a lightweight model, it's significantly cheaper per token than sonnet
+
 ---
 
 #### 2. Why does the security auditor NOT have Write in its tools list?
@@ -48,6 +49,7 @@ This the principle of least privilege in security design, the write permission c
 #### 3. Why does the tf-writer use `inherit` instead of a specific model?
 
 tf-writer uses inherit model because the subagent adopts the same model as the parent agent.
+
 ---
 
 ### Evidence

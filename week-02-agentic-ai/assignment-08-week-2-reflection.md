@@ -49,6 +49,7 @@ You can publish your blog on:
 
 
 ![.blog](./screenshots/blog.png)
+
 ---
 
 ### Submission Field
@@ -93,18 +94,20 @@ Your post must include:
 
 #### Screenshot 2 — LinkedIn post published
 
-Add your screenshot here.
+
 ![linkedin](./screenshots/linkedin.png)
+
 ---
 
 ### Submission Field
 
 LinkedIn Post Content (copy-paste here):
 
-```
-Paste your LinkedIn post content here
-```
+
+
+
 https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-agenticai-cloudengineering-ugcPost-7482423989043249152-HAcf/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE
+
 ---
 
 ### LinkedIn Post Link:

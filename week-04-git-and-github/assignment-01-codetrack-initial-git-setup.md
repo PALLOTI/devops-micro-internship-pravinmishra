@@ -38,7 +38,7 @@ Create a `CodeTrack` project folder and initialize it as a Git repository.
 
 **1. What is the `.git` folder, and why does it matter?**
 
-Add your answer here.
+
 
 This folder is literally the entire Git repository. Everything outside of it is just your normal "working directory"—the raw, editable files you see in your code editor. The .git folder is where Git keeps all the magic, history, and metadata that make version control work.
 

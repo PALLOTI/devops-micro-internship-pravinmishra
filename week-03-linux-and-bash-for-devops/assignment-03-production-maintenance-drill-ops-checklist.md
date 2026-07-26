@@ -52,7 +52,7 @@ Answer the following in your own words:
 
 **1. What proves Nginx is listening on 0.0.0.0:80?**
 
-Write your answer here.
+
 sudo ss -tlnp | grep :80
 which has the below screenshot
 
@@ -64,6 +64,7 @@ which has the below screenshot
 
 
 sudo ss -tlnp | grep :22
+
 ---
 
 **3. Did you find any unexpected open ports? Explain briefly.**
@@ -71,7 +72,9 @@ sudo ss -tlnp | grep :22
 
 
 YES
+
 ---
+
 All ports are specific system services because static web app (Nginx on port 80/http) is running perfectly alongside the essential background system services that Ubuntu requires to stay updated, keep time, resolve domains, and let you log in via SSH.
 1> Systemd-Network (DHCP Client) >> This is your server's DHCP client. It listens on the internal AWS network interface
 2> Systemd-Resolved (DNS Resolver) >> This is Ubuntu's internal DNS manager. Whenever your server needs to look up a domain name . etc
@@ -112,6 +115,7 @@ Answer the following in your own words:
 
 
 The immediate consequence is usually a complete service outage for your users. Because Nginx typically sits at the very front of your infrastructure, any failure there breaks the entry point to your entire application.
+
 ---
 
 **2. What's your basic rollback plan?**
@@ -122,6 +126,7 @@ The mechanism of your rollback depends entirely on how your application is deplo
 Nginx Reload: Run sudo nginx -t && sudo systemctl reload nginx to apply changes instantly.
 
 Backup Revert: Pull the previous release artifact from your build registry (S3, GitHub Releases, etc.), overwrite the directory, and restart your app services.
+
 ---
 
 # Task 3 — Logs & Request Trace
@@ -162,7 +167,7 @@ Answer the following in your own words:
 - If yes, mention 1–2 example error lines from the logs and explain what each one means in simple terms.
 - If no, explain what it means if the error log is empty or shows no recent errors during your check.
 
-Write your answer here.
+
 NO
 
 
@@ -182,6 +187,7 @@ Inherited sockets from '5;6 which simply means nginx just performed a zero-downt
 The curl request was not visible in the log entries
 
 If a curl request successfully reached your Nginx server, it would generate a log line in /var/log/nginx/access.log containing:
+
 ---
 
 # Task 4 — System Resource Health Check (Capacity Red Flags)
@@ -228,7 +234,9 @@ Answer the following in your own words:
 
 
 Memory looks most critical with
+
 ---
+
 Available Memory: Only 554mb is truly available.
 
 **2. What happens if disk becomes 100% full in a production server?**
@@ -236,6 +244,7 @@ Available Memory: Only 554mb is truly available.
 
 
 it triggers a dangerous chain reaction, because operating systems, databases, and web applications constantly write temporary data, session files, and logs to the disk, a complete lack of storage space causes services to fail instantly.
+
 ---
 
 # Task 5 — Configuration & Deployment Verification
@@ -302,6 +311,7 @@ Simulate a real-world Nginx misconfiguration and recover the service safely.
 
 
 There was no system break or failure
+
 ---
 
 #### Screenshot 2 — Output of `sudo nginx -t` showing syntax ok (fixed config)
@@ -325,6 +335,7 @@ Answer the following in your own words:
 **1. What caused the configuration failure?**
 
 There was no system break or failure
+
 ---
 
 **2. How did you fix the issue?**
@@ -332,6 +343,7 @@ There was no system break or failure
 
 
 There wasn't actually an active Nginx configuration failure, my web server is running and successfully serving my React app's HTML and JavaScript files (proven by the 200 OK responses in your access logs).
+
 ---
 
 **3. How can you avoid this kind of issue in real production systems?**
@@ -343,6 +355,7 @@ Validate Syntax Before Reloading (nginx -t)
 If it passes: You will see syntax is ok and test is successful. You can then safely run sudo systemctl reload nginx.
 
 If it fails: Nginx will pinpoint the exact file and line number causing the issue (e.g., a missing semicolon or an invalid directive), allowing you to fix it before applying it to production.
+
 ---
 
 # Task 7 — Web Application Failure Simulation
@@ -374,18 +387,21 @@ Answer the following in your own words:
 
 
 The only issue I faced was my web page not been served the browser
+
 ---
 
 **2. How did you fix the issue and restore the application?**
 
 
 Choosing the right security group inbound rules
+
 ---
 
 **3. What steps would you take to prevent this kind of issue in real production systems?**
 
 
 Choosing the right security group inbound rules
+
 ---
 
 # Task 8 — Security & Reliability Review
@@ -404,9 +420,18 @@ Answer the following in your own words:
 When you log into a remote server (like your AWS EC2 instance) using a private key file (.pem or .pub), you aren't just using a "stronger password" you are using an entirely different, mathematically secure authentication model.
 
 With SSH key your private key never leaves your machine during the cryptographic handshake, the fake server cannot steal it. The login attempt will simply fail, and your credentials remain safe.
+
 ---
 
 **2. Why should only required ports be open on a production server?**
+
+An open port isn't dangerous by itself—it's just an endpoint waiting to accept network traffic. However, a port is always bound to a service or application running behind it. The fundamental reasons to close unnecessary ports include: 
+
+1. Eliminating Entry Points for ExploitsEvery open port runs a background service (e.g., MySQL on port 3306, SSH on port 22, Redis on port 6379). If that service has an unpatched software vulnerability, zero-day bug, or weak configuration, an attacker can exploit it to gain remote code execution, steal data, or crash the server. If the port is blocked by a firewall, the attacker cannot reach the service to exploit it—even if the software itself is vulnerable.
+
+2. Blocking Automated Scanners and BotnetsThe public internet is constantly probed by automated botnets and malicious scanners (like Shodan or Nmap scripts). These bots continuously scan every IP address across thousands of ports looking for easy targets—such as exposed database ports or remote desktop (RDP) management ports with default passwords. Closing unused ports makes your server effectively invisible to low-hanging-fruit automated scans.
+
+3. Preventing Unintended Data ExposureInternal infrastructure services—like databases (PostgreSQL, MongoDB), caching layers (Redis, Memcached), or search engines (Elasticsearch)—are designed to talk to your web application locally, not to the open internet. Leaving their ports open to the public web often leads to massive data leaks caused by missing or misconfigured authentication.  
 
 
 
@@ -414,20 +439,22 @@ With SSH key your private key never leaves your machine during the cryptographic
 
 **3. Why is it important for Nginx to be enabled on boot?**
 
-Write your answer here.
+
 Restricting your server's access to only the absolute minimum required ports (a practice known as the Principle of Least Privilege) is a fundamental security requirement.
 ---
 
 **4. What are the risks of sharing secrets, keys, or credentials publicly?**
 
-Write your answer here.
+
 The Attack: Bots immediately use the leaked credentials to provision high-compute resources (such as massive GPU instances) to mine cryptocurrency or launch distributed denial-of-service (DDoS) attacks.
+
 ---
 
 **5. Why should cloud resources be stopped or terminated when they are no longer needed?**
 
-Write your answer here.
+
 The consequence of leaving unnecessary cloud resources running is a ballooning bill. A common misconception is that you only pay for what you "use." In reality, you pay for what you provision.
+
 ---
 
 # LinkedIn Post (Required)

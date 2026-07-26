@@ -126,7 +126,30 @@ Updates automatically propagate to the whole team when they pull main.
 
 **2. Compare this to `PreToolUse` from Week 2 Assignment 6. What does each one intercept, and what do they have in common?**
 
-Add your answer here.
+
+Git pre-commit Hook
+Intercepts: The local Git commit action triggered by a developer running git commit.
+
+When it runs: After changes have been staged (git add), but before Git creates the new commit object in the repository.
+
+Scope of inspection: Inspects staged files (git diff --cached) for policy violations—in your provided script, it checks for hardcoded secret keys (AWS, SSH keys) and files exceeding the 1MB size limit.
+
+Action taken: Exits with status code 1 to abort the commit process if a violation is detected.
+
+Claude Code PreToolUse HookIntercepts: 
+An AI agent's tool execution attempt (specifically the Bash tool in this example).  When it runs: After the AI model decides to execute a system/terminal command, but before that command is actually executed in the shell.  
+Scope of inspection: Inspects JSON delivered via standard input (stdin) to analyze the command intended by the AI model (.tool_input.command).  Action taken: Emits a JSON payload back (e.g., {"decision": "block", "reason": "..."}) or exits with a non-zero exit status to prevent the AI agent from executing destructive commands.  
+
+2. What They Have in Common
+Despite operating in completely different contexts (version control vs. AI agent execution), both scripts share fundamental architectural patterns:
+
+Gatekeeper / Interceptor Pattern: Both sit directly between a user (or agent) intent and actual system execution. They act as automated guardrails.
+
+Fail-Closed Gate Logic: Both evaluate inputs against a blacklist (secrets/file size vs. dangerous CLI commands). If a rule is matched, they halt execution immediately before damage occurs.
+
+Non-Zero Exit / Rejection Output: Both block execution by signaling an explicit failure and returning an informative error message so the user or agent knows why the action was rejected.
+
+Stateless Scripting: Both run as ephemeral Bash scripts receiving system state (either reading from stdin or querying git CLI) and outputting stdout/stderr messages.
 
 ---
 

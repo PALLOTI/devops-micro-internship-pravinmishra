@@ -41,30 +41,27 @@ Answer the following in your own words:
 
 **1. What proves that Nginx is running?**
 
-
-
 Once you are logged into the server via SSH, check the system systemd manager.
 sudo systemctl status nginx
+
 ---
 
 **2. What proves that the server is listening for HTTP traffic?**
 
-
-
 To prove that a server is actively listening for HTTP traffic, you need to verify that a web server process is bound to the standard HTTP port (Port 80) or HTTPS port (Port 443) and is accepting incoming connections.
 
 sudo ss -tulpn | grep -E ':80|:443'
+
 ---
 
 **3. Why must you capture a healthy baseline before simulating an incident?**
-
-
 
 To differentiating Incident Symptoms from Existing Noise
 
 To validating Alerting Thresholds and Telemetry Accuracy
 
 To measuring the True Impact (Blast Radius)
+
 ---
 
 # Task 2 — Create Project Context and Safety Rules in CLAUDE.md
@@ -88,15 +85,14 @@ Answer the following in your own words:
 
 **1. Why should Claude receive project-specific operational rules?**
 
-
-
 Giving Claude project-specific operational rules transforms it from a generic AI assistant into a specialized context-aware teammate. Without these specific constraints, an LLM relies on broad, default patterns that won't align with your project's distinct workflow, architecture, or safety requirements.
+
 ---
 
 **2. Why is the human required to execute the recovery command?**
 
-
 Keeping a human in the loop to execute the final recovery command is a deliberate engineering safeguard against automated cascading failures. While automation excels at detection, data gathering, and routine scaling, the actual decision to bring a system back online during an incident carries risks that software cannot fully evaluate.
+
 ---
 
 **3. Which rule prevents Claude from making an unsupported diagnosis?**
@@ -105,6 +101,7 @@ Keeping a human in the loop to execute the final recovery command is a deliberat
 Within Claude's system architecture and operational guardrails, the specific protocol that prevents it from making unsupported diagnoses is the Sensitive Data Restriction policy—specifically Rule 2 (Never infer sensitive data unless explicitly requested) and Rule 3 (Never infer sensitive data based on search or activity history).
 
 When applied to technical troubleshooting or health states, this is reinforced by the core Content Quality principle of Specifics Over Generalities and the mandate for Technical Accuracy.
+
 ---
 
 # Task 3 — Use Agentic AI to Plan Before Writing the Script
@@ -132,6 +129,7 @@ Answer the following in your own words:
 The Command Execution: The step where the agent "Ran 5 shell commands" to inspect the Ubuntu server using read-only commands.
 
 The Resulting Data: The "Current snapshot (read-only, no changes made)" table
+
 ---
 
 **2. Did Claude follow the instruction not to create files? How did you verify this?**
@@ -144,6 +142,7 @@ This can be verified directly from the provided image:
 The "Current snapshot" header: The text explicitly states "Current snapshot (read-only, no changes made)", confirming that the environment was only inspected and not modified.
 
 The "Observed result" metrics: The table shows the live system metrics gathered directly from running active checks (such as checking http_code=200, port LISTEN states, and disk space usage) rather than reading from a newly generated log file.
+
 ---
 
 **3. Why is planning before coding useful in DevOps automation?**
@@ -166,6 +165,7 @@ Before automating an infrastructure change or creating a self-healing pipeline, 
  4. Smooth Integration with the Existing CI/CD Pipeline
 
 DevOps automation rarely exists in isolation; it must integrate cleanly into larger workflows involving version control, environment variable management, and secrets storage. Planning out the data inputs, required API permissions, and environmental dependencies beforehand prevents pipeline breakages and reduces the need for repetitive debugging cycles during deployment.
+
 ---
 
 # Task 4 — Build the Linux Triage Bash Script
@@ -225,8 +225,6 @@ Based on the workflow demonstrated in the screen snapshot, the `checks` array st
 
 **2. How does the `for` loop use that array?**
 
-
-
 In a Bash automation triage script structured like this, the `for` loop iterates through the items defined in the array to execute each diagnostic command sequentially.
 
 The loop uses the array in the following way:
@@ -262,8 +260,6 @@ Sequential health checks can be slow, especially when network timeouts or heavy 
 ---
 
 **4. What is the purpose of `$(...)` in this script?**
-
-
 
 Separating the health checks into individual functions provides distinct engineering advantages for automation scripts:
 
@@ -329,11 +325,10 @@ Answer the following in your own words:
 The overall status of the healthy baseline is **completely successful**.
 
 The terminal output shows `Captured Exit Code: 0`, which in Linux and system automation signifies a successful execution with zero errors. This proves that all individual system probes in your triage checklist executed as expected and confirmed the environment is in a healthy, steady state.
+
 ---
 
 **2. Which exact Linux evidence proves the application is serving traffic?**
-
-
 
 To prove the application is actively serving traffic, the exact Linux evidence required is a combination of two things shown in the initial triage phase:
 
@@ -354,8 +349,6 @@ In Linux and Bash automation, an exit code of `0` indicates that a program execu
 ---
 
 **4. What is the difference between a warning and a failure in this script?**
-
-
 
 Based on the structure of this triage script and the captured metrics, the difference comes down to whether the issue breaks core application delivery or merely highlights a suboptimal system state:
 
@@ -394,8 +387,6 @@ Answer the following in your own words:
 
 **1. Why does this skill have Bash, Read, and Grep, but not Write?**
 
-
-
 This specific skill focuses entirely on the **Gather and Triage** phase of incident response, which requires absolute isolation to prevent altering the system under investigation.
 
 Here is why it uses `Bash`, `Read`, and `Grep`, but excludes `Write`:
@@ -410,8 +401,6 @@ Here is why it uses `Bash`, `Read`, and `Grep`, but excludes `Write`:
 
 **2. Why is `disable-model-invocation: true` useful for this skill?**
 
-
-
 Setting `disable-model-invocation: true` is useful because it locks the AI into a strict, programmatic execution mode. During the Gather and Triage phase of DevOps automation, you need deterministic, predictable behavior rather than creative variations or independent reasoning.
 
 Here is exactly why this setting is valuable:
@@ -425,8 +414,6 @@ Here is exactly why this setting is valuable:
 ---
 
 **3. What part is performed by Bash, and what part is performed by Claude?**
-
-
 
 In this DevOps automation workflow, the responsibilities are cleanly divided between the execution engine (Bash) and the cognitive coordinator (Claude):
 
@@ -449,8 +436,6 @@ In this DevOps automation workflow, the responsibilities are cleanly divided bet
 ---
 
 **4. Why is this better than asking Claude "Is my server healthy?" without giving it evidence?**
-
-
 
 Providing a structured, code-driven baseline is significantly better than asking a vague question because an AI cannot guess the internal state of a server without data.
 
@@ -521,8 +506,6 @@ Based on the incident triage report in the image, the three checks that failed a
 ---
 
 **2. What evidence supports the conclusion that Nginx is unavailable?**
-
-
 
 Based on the triage report output, the specific evidence proving Nginx is unavailable includes:
 
@@ -626,8 +609,6 @@ systemctl is-active nginx
 
 **3. Why is the second triage run necessary?**
 
-
-
 The second triage run is necessary to verify the recovery and ensure the system has successfully returned to a healthy state.
 
 In the agentic incident response loop (Gather $\rightarrow$ Analyze $\rightarrow$ Human Act $\rightarrow$ Verify), you cannot simply assume that running a manual recovery command fixed the underlying issue. The second run applies the exact same automated, objective Bash probes to the active environment to confirm that:
@@ -696,11 +677,10 @@ The below is the screenshot of Nginx not been active after been shotdown
 **3. Most Likely Cause**
 
 Based on the collected evidence, the most likely cause is that the Nginx service has stopped running or crashed. Because the Nginx application process is inactive, it is no longer binding to Port 80 to listen for incoming connections, which subsequently causes all local loopback HTTP requests to fail with a network connection refusal (status code 000).
+
 ---
 
 **4. Human-Approved Recovery Action**
-
-
 
 The human-approved recovery action was to manually execute the command to restart the web server:
 
@@ -709,7 +689,6 @@ The human-approved recovery action was to manually execute the command to restar
 ---
 
 **5. Verification**
-
 
 
 Based on the second triage run, the following outputs prove that Nginx and the application successfully recovered:
@@ -723,7 +702,6 @@ Based on the second triage run, the following outputs prove that Nginx and the a
 ---
 
 **6. Safety Decision**
-
 
 
 The AI skill was permitted to gather and analyze evidence because reading system metrics, parsing service states, and checking port availability are non-intrusive, read-only operations that carry no risk of altering the system state. Conversely, it was not allowed to restart the service to maintain a strict security boundary, preventing automated, unreviewed changes that could inadvertently trigger destructive crash loops, overwrite valuable forensic logs, or worsen an active incident.
@@ -752,8 +730,6 @@ The incident followed the structured agentic loop phases as follows:
 
 #### LinkedIn Post URL
 
-
-
 https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-linux-cloudsecurity-ugcPost-7485168451012087808-cgMx/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE
 
 ---
@@ -766,8 +742,6 @@ https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-linux-cloudsecuri
 ---
 
 # GitHub Repository URL
-
-
 
 https://github.com/PALLOTI/devops-micro-internship-pravinmishra.git
 

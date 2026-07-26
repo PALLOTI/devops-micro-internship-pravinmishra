@@ -141,19 +141,12 @@ Your stack earned via participation
 
 | Week | Topic | Status | Assignment | LinkedIn Post | Blog Post |
 |------|-------|--------|------------|---------------|-----------|
-
-| 00 | Internet & Networking Basics | ✅ Complete | ✅ Solved | https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_startuplife-networking-techforfounders-share-7473842580309520385-Ts5c/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE | https://substack.com/profile/487332231-ezeobi-chinecherem-jude/note/c-298647371?r=8257yf&utm_source=notes-share-action&utm_medium=web |
-
-| 01 | Success Mindset | ✅ Completed | ✅ Solved | https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-cloudengineering-continuouslearning-activity-7476649737945874432-CErC?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE | https://medium.com/@palloti10x/mental-dependencies-before-server-dependencies-why-your-mindset-is-your-true-foundation-in-devops-d0b8e665ce2c|
-
-| 02 | Agentic AI with Claude Code | ✅ Complete | ✅ Solved | https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-agenticai-cloudengineering-ugcPost-7482423989043249152-HAcf/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE | https://medium.com/@palloti10x/the-rise-of-agentic-devops-990ff2cc9551?source=user_profile_page---------0-------------e994ee2a86f5---------------------- |
-
-| 03 | Linux for DevOps | ✅ Completed | ✅ Solved
- | https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-linux-cloudsecurity-ugcPost-7485168451012087808-cgMx/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE | https://substack.com/profile/487332231-ezeobi-chinecherem-jude/note/c-298642766?utm_source=substack&utm_content=first-note-modal |
- 
-| 04 | Bash Scripting | ✅ Completed | ✅ Solved | https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_while-reading-engineering-newsletters-tuning-ugcPost-7484574314764107776-PWfQ/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE  | https://substack.com/profile/487332231-ezeobi-chinecherem-jude/note/c-298642766?utm_source=substack&utm_content=first-note-modal |
-
-| 05 | Git & GitHub | ✅ Completed | ✅ Solved | https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-agenticai-git-share-7486473114105753601-OrvQ/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE | https://medium.com/@palloti10x/augmenting-git-workflows-with-agentic-ai-from-pre-commit-hooks-to-ai-pr-reviews-c7180bae93dc |
+| 00 | Internet & Networking Basics | ✅ Complete | ✅ Solved | [View Post](https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_startuplife-networking-techforfounders-share-7473842580309520385-Ts5c/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE) | [Read Blog](https://substack.com/profile/487332231-ezeobi-chinecherem-jude/note/c-298647371?r=8257yf&utm_source=notes-share-action&utm_medium=web) |
+| 01 | Success Mindset | ✅ Completed | ✅ Solved | [View Post](https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-cloudengineering-continuouslearning-activity-7476649737945874432-CErC?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE) | [Read Blog](https://medium.com/@palloti10x/mental-dependencies-before-server-dependencies-why-your-mindset-is-your-true-foundation-in-devops-d0b8e665ce2c) |
+| 02 | Agentic AI with Claude Code | ✅ Complete | ✅ Solved | [View Post](https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-agenticai-cloudengineering-ugcPost-7482423989043249152-HAcf/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE) | [Read Blog](https://medium.com/@palloti10x/the-rise-of-agentic-devops-990ff2cc9551?source=user_profile_page---------0-------------e994ee2a86f5----------------------) |
+| 03 | Linux for DevOps | ✅ Completed | ✅ Solved | [View Post](https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-linux-cloudsecurity-ugcPost-7485168451012087808-cgMx/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE) | [Read Blog](https://substack.com/profile/487332231-ezeobi-chinecherem-jude/note/c-298642766?utm_source=substack&utm_content=first-note-modal) |
+| 04 | Bash Scripting | ✅ Completed | ✅ Solved | [View Post](https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_while-reading-engineering-newsletters-tuning-ugcPost-7484574314764107776-PWfQ/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE) | [Read Blog](https://substack.com/profile/487332231-ezeobi-chinecherem-jude/note/c-298642766?utm_source=substack&utm_content=first-note-modal) |
+| 05 | Git & GitHub | ✅ Completed | ✅ Solved | [View Post](https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-agenticai-git-share-7486473114105753601-OrvQ/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE) | [Read Blog](https://medium.com/@palloti10x/augmenting-git-workflows-with-agentic-ai-from-pre-commit-hooks-to-ai-pr-reviews-c7180bae93dc) |
 | 06 | DevOps Lifecycle & Agile | ⬜ Not Started | ⏳ Pending | — | — |
 | 07 | AWS Cloud | ⬜ Not Started | ⏳ Pending | — | — |
 | 08 | Azure Cloud | ⬜ Not Started | ⏳ Pending | — | — |
@@ -163,7 +156,6 @@ Your stack earned via participation
 | 12 | Docker | ⬜ Not Started | ⏳ Pending | — | — |
 | 13 | Kubernetes | ⬜ Not Started | ⏳ Pending | — | — |
 | 14 | Final Project | ⬜ Not Started | ⏳ Pending | — | — |
-
 
 
 **Status:** ⬜ Not Started &nbsp;|&nbsp; 🔄 In Progress &nbsp;|&nbsp; ✅ Completed<br>

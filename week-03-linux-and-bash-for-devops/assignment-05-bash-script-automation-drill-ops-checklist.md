@@ -39,17 +39,20 @@ Answer the following in your own words:
 **1. What is Bash?**
 
 Bash (short for Bourne Again SHell) is a command-line interpreter and scripting language used primarily on Unix-like operating systems, such as Linux and macOS.
+
 ---
 
 **2. What is the difference between shell and Bash?**
 
 The difference is simple: Shell is the broad category, while Bash is a specific software program inside that category.
+
 ---
 
 **3. Why is it important to confirm the Bash version before writing scripts?**
 
 
 Confirming your Bash version is important because features and syntax change over time. A script that runs perfectly on a modern machine might completely crash or behave unpredictably on an older server
+
 ---
 
 # Task 2 — Your First Bash Script
@@ -91,18 +94,16 @@ Answer the following in your own words:
 
 
 It's called a shebang (or hash-bang). Its purpose is to tell the operating system exactly which interpreter to use to run the commands in your script.
+
 ---
 
 **2. Why do we use `chmod +x` before running a script?**
 
-
-
 Changes the file's permissions to make it executable.
+
 ---
 
 **3. What is the difference between running a script using `./script.sh` and `bash script.sh`?**
-
-
 
 The difference comes down to who is in charge of launching the script and which permissions are required.
 
@@ -144,22 +145,20 @@ Answer the following in your own words:
 
 **1. What is a variable in Bash?**
 
-
 A variable in Bash is a temporary storage location that holds a piece of text or a number. Think of it like a labeled box: you give the box a name, drop some data inside it, and then call that name whenever you need to use that data later in your script.
+
 ---
 
 **2. Why should we avoid spaces around the `=` sign when creating variables?**
 
-
-
 Bash treats the very first word on a line as a command to run, and spaces act as separators between that command and its arguments.
+
 ---
 
 **3. How do you access the value stored inside a Bash variable?**
 
-
-
 To access the value stored inside a Bash variable, you put a dollar sign ($) directly in front of the variable's name.
+
 ---
 
 # Task 4 — Arrays & Loops: Tools Checklist Script
@@ -266,7 +265,7 @@ Five times
 
 **4. What would you change if you wanted the loop to run 10 times?**
 
-Add your answer here.
+
 Change the for number block from 5 digits to 10 digits
 
 ---
@@ -380,15 +379,11 @@ Answer the following in your own words:
 
 **1. What is the purpose of if-else in Bash?**
 
-
-
 The purpose of an if-else statement is to give your script decision-making power.
 
 ---
 
 **2. What does `-ge` mean?**
-
-
 
 In Bash, -ge stands for "greater than or equal to".
 
@@ -396,17 +391,14 @@ In Bash, -ge stands for "greater than or equal to".
 
 **3. Why should conditions be tested with different values?**
 
-
-
 This often called boundary and equivalence testing : This is the only way to prove a program actually works the way you expect. If you only test a single "happy path" value, you leave the door open for hidden bugs, crashes, and security holes.
 
 ---
 
 **4. How can conditionals help in automation scripts?**
 
-
-
 In automation scripts, conditionals (if/else statements) serve as the brain of your script. Without them, a script is just a rigid list of commands that runs blindly from top to bottom. Conditionals allow your script to dynamically pause, pivot, and make decisions based on the real-time state of your environment.
+
 ---
 
 # Task 8 — Functions: Final Bash Automation Script
@@ -447,16 +439,14 @@ Answer the following in your own words:
 
 **1. What is a function in Bash?**
 
-
-
 In Bash, a function is essentially a reusable mini-script tucked inside your main script. It allows you to group a block of commands together, give that block a name, and run it whenever you want just by calling that name.
+
 ---
 
 **2. Why are functions useful in scripts?**
 
-
-
 Functions are useful in scripts because they transform a messy, repetitive sequence of commands into a clean, organized, and maintainable tool.
+
 ---
 
 **3. Which functions did you create in this script?**
@@ -469,6 +459,7 @@ The functions I created in this script:
 2. `print_user_details()`– Displays the full name and assignment name.
 3. `check_files()` – Verifies whether the specified directory and file exist on the system.
 4. `print_tools()` – Loops through the `tools` array and lists each tool.
+
 ---
 
 **4. How does this final script combine variables, arrays, loops, conditionals, files, and functions?**
@@ -480,6 +471,7 @@ At the very top,I define the raw information the script needs to run.
 Variables (full_name, directory_path, etc.) store single pieces of text.
 
 An Array (tools) acts as a dedicated list holding multiple related values together ("bash", "nano", etc.).
+
 ---
 
 # LinkedIn Post (Required)

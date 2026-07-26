@@ -451,7 +451,7 @@ Examples:
 
 ### Biggest insight I got about myself this week
 
-Add your answer here...
+
 Understanding the effect of compounding, consistent little disciple leads to greatness
 Prioritizing my health and mental state
 

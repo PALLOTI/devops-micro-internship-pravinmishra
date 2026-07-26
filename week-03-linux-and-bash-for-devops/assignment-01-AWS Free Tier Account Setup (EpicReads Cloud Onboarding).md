@@ -21,7 +21,6 @@ Demonstrate understanding of AWS basics and Free Tier usage by answering the fol
 #### Question 1 — What is an AWS account, and why do you need it at this stage?
 
 
-
  An AWS account represents a formal business relationship between you and AWS, serving as the central hub where you provision, manage, and pay for your cloud resources.
 
 IMPORTANCE OF AWS ACCOUNT
@@ -33,7 +32,6 @@ IMPORTANCE OF AWS ACCOUNT
 3 For Safety of our provisioned infrastructure through the use of Security groups
 
 #### Question 2 — What is AWS Free Tier, and how long does it last?
-
 
 
 The AWS Free Tier allows developers, students, and businesses to explore and test AWS some services at no cost (once the services are within the free credit).
