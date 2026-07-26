@@ -17,6 +17,7 @@ In this assignment, you will set up your local development environment for Agent
 Install the Claude Code CLI globally and authenticate it using your Anthropic account.
 
 ### Evidence
+
 ![claude version](./screenshots/Claude%20code%20authentication.png)
 
 

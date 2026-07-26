@@ -20,7 +20,7 @@ Discover exactly where Claude Code stores memory for this project.
 
 #### Screenshot 1 — Memory file path shown by Claude
 
-
+![memory](./screenshots/wk2%2071.png.png)
 
 ---
 
@@ -34,12 +34,13 @@ Teach Claude three specific facts about the project and instruct it to save them
 
 #### Screenshot 2 — Claude confirming the memory was saved
 
+![memory](./screenshots/wk2-72.png)
 
 ---
 
 #### Screenshot 3 — The `MEMORY.md` file open in VS Code showing the saved content
 
-
+![memory](./screenshots/wk2-73.png)
 
 ---
 
@@ -53,7 +54,7 @@ Terminate the current Claude Code session and restart it to ensure memory is the
 
 #### Screenshot 4 — VS Code reopened with a fresh Claude Code session showing no previous conversation
 
-
+![memory](./screenshots/wk2-74.png)
 
 ---
 
@@ -67,13 +68,16 @@ Run three tests that prove Claude remembers what you told it — without you say
 
 #### Screenshot 5 — Claude recalling hero section colors
 
+![memory](./screenshots/wk2-75.png)
 
+
+![memory](./screenshots/wk2-75x.png)
 
 ---
 
 #### Screenshot 6 — Claude refusing JavaScript request based on memory rule
 
-
+![memory](./screenshots/wk2-76.png)
 
 ---
 
