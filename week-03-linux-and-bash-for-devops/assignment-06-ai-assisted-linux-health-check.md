@@ -212,7 +212,7 @@ Answer the following in your own words:
 
 **1. What is stored in the checks array?**
 
-Add your answer here.
+
 Based on the workflow demonstrated in the screen snapshot, the `checks` array stores the individual system health probes used to evaluate the server's baseline status. Specifically, it contains the definitions or execution logic for the **5 checks** outlined in the Bash Incident-Triage Plan:
 
 * Nginx service** status
@@ -240,6 +240,7 @@ done
 ```
 
 By looping through the array, the script avoids repetitive code blocks (copy-pasting code for all five checks) and ensures every target metric—from the Nginx service status down to memory availability—is evaluated in a clean, standardized, and predictable order.
+
 ---
 
 **3. Why are the health checks separated into functions?**
