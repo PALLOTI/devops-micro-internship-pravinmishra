@@ -74,7 +74,7 @@ Your stack earned via participation
  Week 01 → Success Mindset 
 
 
-<<<<<<< HEAD
+
  [![Week 01 – Mindset](./badges/week-01.svg)](./week-01-success-mindset/) 
 
 
@@ -97,10 +97,10 @@ Your stack earned via participation
 
 
  [![Week 04 – Git](./badges/week-04.svg)](./week-04-github/) 
-=======
+
 <!-- Week 04 → Git & GitHub -->
 <!-- [![Week 04 – Git](./badges/week-04.svg)](./week-04-git-and-github/) -->
->>>>>>> upstream/main
+
 
 <!-- Week 05 → DevOps Lifecycle & Agile -->
 <!-- [![Week 05 – Agile](./badges/week-05.svg)](./week-05-devops-lifecycle/) -->
