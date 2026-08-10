@@ -20,13 +20,13 @@ Generate an API token from your Atlassian account that the MCP server will use t
 
 #### Screenshot 1 — Jira API token creation confirmation page showing the token name, with the token value not visible
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk551.png)
 
 ### Notes You Must Write (Very Important):
 
 Why does the MCP server need your site URL and account email in addition to the token?
 
-Add your answer here
+An MCP server (such as the Atlassian/Jira MCP server) requires your Site URL, Account Email, and API Token because each piece plays a distinct role in basic HTTP Basic Authentication and Authorization to upstream Cloud APIs.
 
 ---
 
@@ -40,13 +40,36 @@ Create or update `.mcp.json` at your project root with a Jira MCP server block, 
 
 #### Screenshot 2 — `.mcp.json` open in VS Code showing the Jira server configuration
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk552.png)
 
 ### Notes You Must Write (Very Important):
 
 Compare this jira block to the github block from Week 2 Assignment 5. The GitHub server ran via npx (a Node.js package); this one runs via uvx (a Python package) — what stays exactly the same shape despite that difference, and why doesn't Claude Code care which language a given MCP server is written in?
 
-Add your answer here
+Regardless of whether an MCP server is invoked via Node.js (npx) or Python (uvx), the core architecture remains identical from Claude Code's perspective.
+
+Here is why the configuration shape stays the same and why Claude Code doesn't care about the underlying programming language.
+
+What Stays Exactly the Same
+1 The JSON Configuration Block Structure
+
+The wrapper configuration inside your claude.json / MCP config file maintains the exact same structural schema:
+
+2 Server Identifier: The top-level key defining the tool name (e.g., "github" vs "jira" or "atlassian").
+
+3 command String: The binary command used to execute the runner process ("npx" vs "uvx").
+
+4 args Array: The list of arguments passed to boot the server (package name, setup flags, etc.).
+
+5 env Object: The key-value environment variables containing credentials (tokens, site URLs, emails).
+
+The Execution Model (Subprocess Management)
+
+Claude Code treats both servers identically: it spawns a local child process using the binary specified in command, passes the args, injects the env variables, and maintains a persistent process while running.
+
+Standard Input/Output (stdio) Communication
+
+Both servers communicate over stdio (standard input and standard output). Claude Code sends JSON-RPC messages into the process's stdin and reads responses directly from its stdout.
 
 ---
 
@@ -60,13 +83,28 @@ Add your Jira site URL, account email, and API token to `.claude/settings.local.
 
 #### Screenshot 3 — `settings.local.json` open in VS Code showing the `env` section, with the actual token value blurred or covered
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk553.png)
 
 ### Notes You Must Write (Very Important):
 
 Why must JIRA_API_TOKEN live in settings.local.json and never in .mcp.json?
 
-Add your answer here
+1. File Visibility and Version Control (.gitignore)
+.mcp.json is committed to Git: This file is meant to define shared project-level MCP server configurations for the entire team or repository. Because it is tracked by Git, placing an API token inside .mcp.json means committing sensitive credentials directly into your source control history (which can leak to GitHub, GitLab, or unauthorized teammates).
+
+settings.local.json is local-only: By convention and design, local settings files (or environment files) are ignored by Git via .gitignore. They stay exclusively on your local machine.
+
+2. Multi-User and Authorization Boundary
+Even within the same team, every developer has distinct permissions in Jira:
+
+If JIRA_API_TOKEN were stored in a shared .mcp.json, every engineer pulling the repo would execute actions under the identity of whoever created that token.
+
+By placing tokens in settings.local.json (or referencing local environment variables), each team member authenticates using their own email and API token. Actions taken via the MCP server are accurately attributed to the specific user in Jira's audit logs.
+
+3. Key Rotation and Revocation
+If a token in settings.local.json gets compromised or rotated, you only update your local file without affecting repo history or creating Git diffs.
+
+If a token is committed to .mcp.json, revoking the token breaks the repository configuration for everyone, and deleting it from Git requires rewriting Git commit history to purge the secret permanently.
 
 ---
 
@@ -80,7 +118,7 @@ Restart Claude Code and confirm the Jira MCP server shows as connected.
 
 #### Screenshot 4 — `/mcp` output showing `jira: connected`
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk554.png)
 
 ---
 
@@ -94,13 +132,23 @@ Ask Claude to list the issues in your current active sprint through the Jira MCP
 
 #### Screenshot 5 — Claude's response showing the live sprint issue list retrieved via Jira MCP
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk5)
 
 ### Notes You Must Write (Very Important):
 
 How did you confirm this was real board data and not something Claude guessed?
 
-Add your answer here
+1. Cryptographic Identifiers & Unique Server Keys
+Guessed or mock data typically uses generic numbers (e.g., KAN-1, TASK-123). Real responses contain globally unique, server-generated metadata:
+
+Database IDs: Long numerical string IDs (e.g., 10024, 10892) generated by Atlassian/GitHub databases upon issue creation.
+
+2. Live API Metadata and System Timestamps
+Real backend responses automatically attach exact system timestamps and account metadata:
+
+Timestamps to the Millisecond: 2026-08-10T20:14:02.341+0000 (exact system time recorded when created or updated).
+
+Atlassian Account IDs (accountId): Strings like "5f9b2c8a0011223344556677" mapping directly to your authenticated user profile in Atlassian Cloud.
 
 ---
 
@@ -114,21 +162,46 @@ Create a `/sprint-health` skill restricted to read-only Jira tools plus `Read`, 
 
 #### Screenshot 6 — `SKILL.md` frontmatter showing `allowed-tools` limited to read-only Jira tools plus `Read`, with `disable-model-invocation: true`
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk5)
 
 #### Screenshot 7 — `/sprint-health` output showing the full triage report against your real sprint
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk5)
 
 ### Notes You Must Write (Very Important):
 
 1. Which Jira MCP tools does this skill's allowed-tools list include, and which mutating tools (create issue, update issue, transition issue, add comment) does it deliberately exclude?
 
-Add your answer here
+his skill is scoped strictly to read-only / inspection operations to safely query and monitor board data without risking accidental modifications:
+
+jira_search_issues (or search_issues / jira_get_issue): Used to execute JQL queries, fetch issue lists, and retrieve specific issue details.
+
+jira_get_all_projects / jira_get_board_issues: Used to list active boards, projects, and backlog items.
+
+jira_get_project_components / jira_get_sprints: Used to view sprint statuses, active sprint goals, and structural metadata.
 
 2. Why does a Scrum Master need this restriction more than almost any other role in this course?
 
-Add your answer here
+1. The SM Protects Process Integrity, Not Ticket Execution
+The Scrum Master’s core role is to serve as an agile coach and process guardian. Their job is to ensure the team owns the sprint board, maintains workflow discipline, and updates their own progress.
+
+If an automated AI tool or an SM independently transitions tickets (e.g., automatically moving an issue from In Progress to Done or updating story points), it bypasses the team's agreed Definition of Done (DoD) checks.
+
+1 The SM’s objective in Jira is observability (analyzing flow, spotting stale tickets, tracking burndown/velocity), not performing the administrative updates for developers.
+
+2. Preventing False Process Indicators & Flawed Metrics
+Agile metrics in Jira (such as Cycle Time, CFD/Cumulative Flow Diagrams, and Velocity) rely entirely on authentic human team behavior:
+
+If an SM skill automatically moves or creates tickets, it artificially distorts sprint velocity and masks underlying bottlenecks (e.g., tickets actually stuck in QA or waiting for code review).
+
+Read-only access allows the SM to identify where work is piling up so they can facilitate a discussion in the Daily Standup, rather than silently "fixing" the board state.
+
+3. Preserving Team Ownership and Accountability
+In Scrum, developers hold collective ownership over the Sprint Backlog.
+
+When individual team members log sub-tasks, update statuses, and flag blockers themselves, they maintain direct accountability for their work.
+
+If a Scrum Master (or an automated SM agent) mutates Jira tickets on behalf of the team, developers lose visibility into board state transitions, weakening team self-organization.
 
 ---
 
@@ -142,13 +215,21 @@ Manually update one ticket on your board in the browser (for example, move a sto
 
 #### Screenshot 8 — Second `/sprint-health` run showing the report now reflects your manual board change
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk5)
 
 ### Notes You Must Write (Very Important):
 
 Map this assignment to Gather → Analyze → Human Act → Verify from Week 3 Assignment 6. Which step did you perform manually in the browser, and why must that step stay human?
 
-Add your answer here
+Which Step You Performed Manually in the Browser
+1 You performed the Human Act step manually in the browser by opening the live deployment IP address ([http://18.188.7.58](http://18.188.7.58)) to inspect the running web application (verifying the hero tagline, dynamic footer, and Nginx response) and updating/verifying ticket states directly on the Jira board.
+
+2 Why That Step Must Stay Human
+True End-to-End Visual Verification (UX Guardrail): While AI can verify HTTP status codes or terminal output, a human must visually inspect the rendered UI in a real browser to ensure layout alignment, accessibility, and user experience match the design intent before marking a feature as delivered.
+
+3 Accountability and Authorization Boundary: Mutating live board data or declaring a feature "Done" represents a business commitment. Keeping the "Act" step human ensures an autonomous agent cannot independently alter production board states, misrepresent sprint progress, or bypass human acceptance criteria.
+
+4 Closing the Control Loop safely: By keeping human intervention in the execution loop (Human-in-the-Loop), you maintain strict governance over cloud resources and project state, ensuring the AI remains a supportive thought partner rather than an unmonitored actor.
 
 ---
 
