@@ -30,7 +30,7 @@ In the Billing Dashboard, create a monthly Cost Budget with a name, amount, and 
 
 #### Screenshot 1 — AWS Budget setup page showing the budget name, budget amount, and alert thresholds
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk611.png)
 
 ---
 
@@ -40,7 +40,40 @@ Answer the following in your own words:
 
 **1. Why is it important to set up budget alerts when using an AWS account?**
 
-Write your answer here.
+Setting up budget alerts in AWS is an essential best practice for managing cloud infrastructure. Because AWS operates on an elastic, pay-as-you-go model, costs scale infinitely with usage unless explicit boundaries are established.
+
+ 1. Eliminating "Bill Shock" and Unplanned Costs
+
+In cloud environments, leaving test instances running, failing to detach unassociated Elastic IPs or EBS volumes, or making configuration errors can quickly run up large bills. Budget alerts notify you as soon as spending crosses defined thresholds (e.g., 50%, 80%, or 100% of your allocated budget), letting you take action before receiving an unexpected bill at the end of the month.
+
+ 2. Early Detection of Security Breaches and Runaway Code
+
+Unusual spikes in AWS charges are often the first indicator of a problem:
+
+* **Compromised Credentials:** If an API key or IAM credential leaks, malicious actors may spawn high-end GPU instances for cryptocurrency mining or distributed attacks.
+* **Infinite Loops & Misconfigurations:** A serverless function (AWS Lambda) caught in an infinite loop or an overly aggressive Auto Scaling policy can trigger thousands of dollars in usage in hours.
+
+Budget alerts act as an early warning system for these operational and security anomalies.
+
+ 3. Proactive Forecasting vs. Reactive Cleanup
+
+AWS Budgets allows alerts based on both **actual spend** and **forecasted spend**. Forecasted alerts analyze your current spending trajectory and notify you early in the billing cycle if AWS predicts you will exceed your budget by the end of the month. This shifts management from reactive cleanup to proactive control.
+
+ 4. Granular Accountability Across Teams and Services
+
+AWS Budgets can be customized by service, tag, linked account, or project. You can set separate alerts for:
+
+* **Development vs. Production:** Ensuring dev environments stay cheap without impacting prod.
+* **Specific Services:** Monitoring heavy data transfer, S3 storage growth, or EC2 compute charges individually.
+* **Team Allocation:** Tracking expenditures across specific engineering units or client projects.
+
+ 5. Enforcing Automated Financial Guardrails
+
+Beyond basic email or SNS/Slack notifications, AWS Budget Alerts can trigger **AWS Budget Actions**. These automated responses can enforce immediate guardrails when thresholds are breached, such as:
+
+* Applying a restrictive IAM policy to block new resource provisioning.
+* Triggering an AWS Lambda function to stop non-critical EC2 instances.
+* Applying Service Control Policies (SCPs) at the AWS Organization level.
 
 ---
 
