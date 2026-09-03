@@ -132,7 +132,7 @@ Ask Claude to list the issues in your current active sprint through the Jira MCP
 
 #### Screenshot 5 — Claude's response showing the live sprint issue list retrieved via Jira MCP
 
-![PALLOTI](./screenshots/wk5)
+![PALLOTI](./screenshots/wk555.png)
 
 ### Notes You Must Write (Very Important):
 
@@ -162,11 +162,11 @@ Create a `/sprint-health` skill restricted to read-only Jira tools plus `Read`, 
 
 #### Screenshot 6 — `SKILL.md` frontmatter showing `allowed-tools` limited to read-only Jira tools plus `Read`, with `disable-model-invocation: true`
 
-![PALLOTI](./screenshots/wk5)
+![PALLOTI](./screenshots/wk556.png)
 
 #### Screenshot 7 — `/sprint-health` output showing the full triage report against your real sprint
 
-![PALLOTI](./screenshots/wk5)
+![PALLOTI](./screenshots/wk557.png)
 
 ### Notes You Must Write (Very Important):
 
@@ -215,7 +215,7 @@ Manually update one ticket on your board in the browser (for example, move a sto
 
 #### Screenshot 8 — Second `/sprint-health` run showing the report now reflects your manual board change
 
-![PALLOTI](./screenshots/wk5)
+![PALLOTI](./screenshots/wk558.png)
 
 ### Notes You Must Write (Very Important):
 
