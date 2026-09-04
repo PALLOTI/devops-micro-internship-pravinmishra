@@ -102,8 +102,8 @@ Your stack earned via participation
 
  [![Week 05 – Agile](./badges/week-05.svg)](./week-05-devops-lifecycle/) 
 
-<!-- Week 06 → AWS Cloud -->
-<!-- [![Week 06 – AWS](./badges/week-06.svg)](./week-06-aws-cloud/) -->
+Week 06 → AWS Cloud 
+ [![Week 06 – AWS](./badges/week-06.svg)](./week-06-aws-cloud/) 
 
 <!-- Week 07 → Azure Cloud -->
 <!-- [![Week 07 – Azure](./badges/week-07.svg)](./week-07-azure-cloud/) -->
