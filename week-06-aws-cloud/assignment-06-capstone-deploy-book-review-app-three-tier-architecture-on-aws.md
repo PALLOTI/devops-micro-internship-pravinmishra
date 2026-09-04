@@ -20,7 +20,7 @@ Create an architecture diagram showing the custom VPC (10.0.0.0/16), the six sub
 
 #### Diagram image or link
 
-Add your diagram image or link here.
+![PALLOTI](./screenshots/drawing.png)
 
 ---
 
@@ -34,13 +34,24 @@ Record the AWS Region used and list every AWS service used across networking, co
 
 **Region:**
 
-Write your answer here.
+Ohio Us-east-2
 
 ---
 
 **Services used:**
 
-Write your answer here.
+VPC
+Subnets
+Internet gateway
+Nat gateway
+Load balancer
+Ec2
+Autoscaling group
+Route table
+Target group
+Subnet group
+Mysql database
+DB subnet group
 
 ---
 
@@ -56,7 +67,7 @@ Confirm the Book Review App loads through the public ALB DNS name.
 
 Paste your public ALB DNS name here:
 
-`Add your URL here`
+internal-Book-Review-App-ALB-1175332058.us-east-2.elb.amazonaws.com
 
 ---
 
@@ -70,37 +81,37 @@ Capture visual proof of every tier and load balancer.
 
 #### Screenshot 1 — Web Tier EC2 instance in a public subnet
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk661.png)
 
 ---
 
 #### Screenshot 2 — App Tier EC2 instance in a private subnet
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk662.png)
 
 ---
 
 #### Screenshot 3 — Public Application Load Balancer configuration or healthy targets
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk663.png)
 
 ---
 
 #### Screenshot 4 — Internal Application Load Balancer configuration or healthy targets
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk664.png)
 
 ---
 
 #### Screenshot 5 — Amazon RDS for MySQL showing Multi-AZ and the read replica
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk665.png)
 
 ---
 
 #### Screenshot 6 — Book Review App UI working through the public ALB
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk666.png)
 
 ---
 
@@ -114,19 +125,39 @@ Summarize what worked in the final deployment, the issues encountered and how ea
 
 **What worked:**
 
-Write your answer here.
+Setted up all necessary AWS resources 
+SSHd into my frontend, through frontend sshd into backend server, configured my database
+Cloned my application
+Built my backend app
+Kept the backend app running actively in the background
+Moved to the frontend 
+Built the frontend application
+Installed and configured my nginx as a reverse proxy
+Ran the frontend 
+My ALB DNS endpoint url pasted on my browser
+
 
 ---
 
 **Issues encountered and fixes:**
+ALB DNS into the browser, hitting enter, and then Error 502: Bad Gateway.
 
-Write your answer here.
+Nginx mis-configuration
+
 
 ---
 
 **Tools/sources used:**
+Check the logs: I checked the latest Nginx error logs using sudo tail -n 10 /var/log/nginx/error.log and saw that Nginx was still struggling to connect upstream.
 
-Write your answer here.
+Audit the configurations: A quick grep search (sudo grep -rn "3001" /etc/nginx/) revealed the culprit. An old book-review configuration file was taking precedence over the default block, creating port conflicts.
+
+Refine and test: I updated the Nginx configuration to correctly route traffic to my app on port 3000, while routing /api/ traffic to the backend ALB DNS endpoint.
+
+Verify: After running sudo nginx -t to check syntax and sudo systemctl reload nginx, the book review app finally loaded smoothly in the browser.
+
+
+
 
 ---
 
@@ -140,15 +171,15 @@ Publish a LinkedIn post sharing the capstone deployment, including the public AL
 
 #### LinkedIn Post URL
 
-Paste your LinkedIn post URL here:
+https://lnkd.in/p/eNsd3Ftv
 
-`Add your URL here`
 
 ---
 
 #### Screenshot — Published LinkedIn post
 
-Add your screenshot here.
+![PALLOTI](./screenshots/linkedpost.png)
+
 
 ---
 
