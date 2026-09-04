@@ -102,8 +102,14 @@ Your stack earned via participation
 
  [![Week 05 – Agile](./badges/week-05.svg)](./week-05-devops-lifecycle/) 
 
+
+
 Week 06 → AWS Cloud 
+
+
  [![Week 06 – AWS](./badges/week-06.svg)](./week-06-aws-cloud/) 
+
+
 
 <!-- Week 07 → Azure Cloud -->
 <!-- [![Week 07 – Azure](./badges/week-07.svg)](./week-07-azure-cloud/) -->
@@ -156,6 +162,8 @@ Week 06 → AWS Cloud
 | 06 | DevOps Lifecycle & Agile | ✅ Completed | ✅ Solved | [View post](https://lnkd.in/p/g2hCt7NU) | [Read Blog](https://substack.com/profile/487332231-ezeobi-chinecherem-jude/note/c-312180076?r=8257yf&utm_source=notes-share-action&utm_medium=web) |
 
 | 07 | AWS Cloud | ✅ Completed | ✅ Solved | [View Post](https://lnkd.in/p/eNsd3Ftv) | [Read Blog](https://medium.com/@palloti10x/troubleshooting-a-3-tier-architecture-on-aws-48f930f3d5fb) |
+
+
 | 08 | Azure Cloud | ⬜ Not Started | ⏳ Pending | — | — |
 | 09 | Terraform | ⬜ Not Started | ⏳ Pending | — | — |
 | 10 | Ansible | ⬜ Not Started | ⏳ Pending | — | — |
