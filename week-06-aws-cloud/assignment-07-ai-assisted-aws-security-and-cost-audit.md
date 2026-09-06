@@ -96,7 +96,7 @@ Turn the script into a Claude Code skill named `/aws-audit` that runs the script
 
 #### Screenshot 6 — Skill file showing the restricted tool access
 
-![PALLOTI]
+![PALLOTI](./screenshots/wk676.png)
 
 ---
 
@@ -130,7 +130,22 @@ Pick one real finding from your baseline report (or deliberately open a security
 
 Map this assignment to Gather → Analyze → Human Act → Verify: which step did the script perform, which did Claude perform, and why must the remediation command always be run by you and never by Claude?
 
-Add your answer here
+1. Workflow Mapping
+
+➡️ Gather (Script): The custom Bash probe scripts handle data collection. They safely fetch system metrics, active port bindings, process lists, and Nginx error logs (/var/log/nginx/error.log) without altering system state.
+
+➡️ Analyze (Claude): The Claude Agent processes the gathered diagnostic data using read-only capabilities. It correlates error logs, identifies root causes (such as upstream port conflicts or configuration precedence issues), and suggests the precise fix.
+
+➡️ Human Act (You): You, the engineer, execute the remediation command in the terminal.
+
+Verify (Script / Human): Verification commands (like sudo nginx -t and service status checks) confirm whether the system has returned to a healthy state.
+
+2. Why Remediation Must Always Be Run by the Human
+The core principle behind keeping execution under human control—the Human-in-the-Loop model—serves two critical purposes:
+
+➡️ Blast Radius and Safety Control: Autonomous AI agents lack real-time context on downstream dependencies and can occasionally misinterpret complex environment constraints. Allowing an agent to execute unvalidated write commands directly on infrastructure risks unintended state changes, accidental service outages, or destructive edits.
+
+➡️ Accountability and Intent: Infrastructure changes carry operational risk. Requiring a human engineer to review and execute the final command ensures that every modification is deliberate, authorized, and fully understood.
 
 ---
 
