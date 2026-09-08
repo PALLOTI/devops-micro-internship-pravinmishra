@@ -20,13 +20,16 @@ Create a `terraform-azure-vm` project and define the resource group, virtual net
 
 #### Screenshot 1 — VS Code showing `main.tf` and the required Azure resources
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk811.png)
 
 ---
 
 #### Screenshot 2 — `main.tf` showing the public IP output and VM authentication configuration, with the password hidden or redacted
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk812.png)
+
+
+![PALLOTI](./screenshots/wk812x.png)
 
 ---
 
@@ -40,7 +43,7 @@ Run `terraform init` and confirm the working directory initializes successfully.
 
 #### Screenshot 3 — Terminal showing successful `terraform init` output
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk813.png)
 
 ---
 
@@ -54,19 +57,19 @@ Review `terraform plan`, run `terraform apply`, and record the VM's public IP fr
 
 #### Screenshot 4 — Terraform plan summary showing the proposed resources
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk814.png)
 
 ---
 
 #### Screenshot 5 — Terraform apply output showing successful completion
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk815.png)
 
 ---
 
 #### Screenshot 6 — Terraform output showing the public IP of the VM
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk816.png)
 
 ---
 
@@ -80,7 +83,7 @@ Use Azure CLI to confirm the VM was created and is running.
 
 #### Screenshot 7 — Azure CLI output showing the VM name and running status
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk817.png)
 
 ---
 
@@ -94,7 +97,7 @@ Run `terraform destroy` to clean up the Azure resources after testing.
 
 #### Screenshot 8 — Terminal showing successful `terraform destroy` completion
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk818.png)
 
 ---
 
@@ -102,8 +105,9 @@ Add your screenshot here.
 
 Write a short paragraph explaining what you learned or any issues you encountered.
 
-Write your answer here.
-
+Navigating through terraform registry documentation 
+Aligning my necessary resources 
+And my ssh-keygen input i.e getting my ssh key , for easy authentication into my AWS console
 ---
 
 # Submission Instructions
