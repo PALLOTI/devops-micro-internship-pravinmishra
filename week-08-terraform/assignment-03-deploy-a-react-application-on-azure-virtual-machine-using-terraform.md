@@ -20,7 +20,7 @@ Create a `terraform-react-azure` project directory for the Azure Terraform confi
 
 #### Screenshot 1 — File Explorer, VS Code, or terminal showing the `terraform-react-azure` project directory
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk831.png)
 
 ---
 
@@ -34,7 +34,7 @@ Define the resource group, virtual network/subnet, Network Security Group (SSH 2
 
 #### Screenshot 2 — VS Code showing `main.tf` with the required Azure resources, with any password or sensitive values hidden
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk832.png)
 
 ---
 
@@ -48,7 +48,7 @@ Run `terraform init` and confirm the working directory initializes successfully.
 
 #### Screenshot 3 — Terminal showing successful `terraform init` output
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk833.png)
 
 ---
 
@@ -62,13 +62,13 @@ Review `terraform plan`, run `terraform apply`, and record the VM's public IP.
 
 #### Screenshot 4 — Terraform apply output showing successful completion
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk834.png)
 
 ---
 
 #### Screenshot 5 — Azure portal showing the Virtual Machine running and its public IP
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk835.png)
 
 ---
 
@@ -82,7 +82,7 @@ Establish an SSH session with the Ubuntu VM through its public IP.
 
 #### Screenshot 6 — Terminal showing a successful SSH connection to the Azure VM
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk836.png)
 
 ---
 
@@ -96,7 +96,7 @@ Update Ubuntu and install Node.js, npm, and Git.
 
 #### Screenshot 7 — Terminal showing successful installation and the `node -v` and `npm -v` output
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk837.png)
 
 ---
 
@@ -110,13 +110,13 @@ Follow the `my-react-app` repository README to clone, install, and build the app
 
 #### Screenshot 8 — Terminal showing the successful React build
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk838.png)
 
 ---
 
 #### Screenshot 9 — Terminal showing that Nginx is active and running
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk839.png)
 
 ---
 
@@ -130,7 +130,7 @@ Confirm the React application loads through the VM's public IP and navigation wo
 
 #### Screenshot 10 — Browser showing the React application with the Azure VM public IP visible in the address bar
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk8310.png)
 
 ---
 
@@ -138,8 +138,25 @@ Add your screenshot here.
 
 Write a short summary of what you built and any issues you encountered and how you resolved them.
 
-Write your answer here.
+Deployment Overview: Automated AWS Single-Tier Web App Deployment with Terraform
 
+Architecture & Execution Summary
+
+Infrastructure as Code (IaC): Provisioned a complete AWS cloud architecture using Terraform, including a VPC, public subnet, Internet Gateway, route table associations, and an Elastic IP (EIP).
+
+Security & Ingress Configuration: Configured AWS Security Groups to allow inbound SSH (Port 22) for remote management and HTTP (Port 80 / 3000) for public web traffic.
+
+Compute & Provisioning: Deployed an Ubuntu 22.04 LTS EC2 instance running Nginx, auto-configured at boot via custom user_data shell scripts.
+
+Verification & Validation: SSHed into the instance to verify Node.js and npm runtime environments, inspected cloud-init execution logs, and validated live web accessibility via the Elastic Public IP.
+
+Key Achievements
+
+Automated Provisioning: Reduced manual configuration overhead by fully declarative Terraform state management and shell scripting (user_data_base64).
+
+Dynamic Lifecycle Management: Utilized user_data_replace_on_change to enforce deterministic instance recreations upon configuration updates.
+
+Network Integrity: Resolved AWS security dependency constraints (DependencyViolation) and SSH host fingerprint conflicts to ensure zero-downtime infrastructure updates.
 ---
 
 # Submission Instructions
