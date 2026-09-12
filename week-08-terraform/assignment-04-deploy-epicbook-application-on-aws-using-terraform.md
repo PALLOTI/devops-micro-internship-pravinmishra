@@ -20,13 +20,20 @@ Define a VPC (10.0.0.0/16) with a public subnet (10.0.1.0/24) and private subnet
 
 #### Screenshot 1 — Terraform configuration showing the VPC and both subnet CIDR ranges
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk841.png)
+
+![PALLOTI](./screenshots/wk841x.png)
+
 
 ---
 
 #### Screenshot 2 — Terraform configuration showing the Internet Gateway, public route table, and both Security Groups
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk842.png)
+
+![PALLOTI](./screenshots/wk842x.png)
+
+![PALLOTI](./screenshots/wk842xx.png)
 
 ---
 
@@ -40,19 +47,22 @@ Use Terraform to launch a t2.micro Ubuntu 22.04 EC2 instance in the public subne
 
 #### Screenshot 3 — Terraform apply output showing successful EC2 provisioning
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk843.png)
+
 
 ---
 
 #### Screenshot 4 — EC2 instance running in the AWS Console with the public IP and subnet visible
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk844.png)
+
 
 ---
 
 #### Screenshot 5 — Terminal showing successful SSH access and installed software
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk845.png)
+
 
 ---
 
@@ -66,13 +76,15 @@ Deploy the EpicBook frontend and backend on the EC2 instance and configure Nginx
 
 #### Screenshot 6 — Terminal showing the EpicBook application files and dependency installation
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk846.png)
+
 
 ---
 
 #### Screenshot 7 — Terminal showing the application and Nginx services running
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk841.png)
+
 
 ---
 
@@ -86,19 +98,22 @@ Provision a private Amazon RDS MySQL instance (db.t3.micro, Publicly accessible:
 
 #### Screenshot 8 — Terraform apply output showing successful RDS provisioning
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk848.png)
+
 
 ---
 
 #### Screenshot 9 — RDS instance in the AWS Console showing the private network configuration and Publicly accessible: No
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk849.png)
+
 
 ---
 
 #### Screenshot 10 — Terminal showing successful database initialization or table verification from EC2
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk8410.png)
+
 
 ---
 
@@ -112,13 +127,15 @@ Confirm EpicBook is accessible through the EC2 public IP and that navigation, ca
 
 #### Screenshot 11 — Browser showing the EpicBook application through the EC2 public IP
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk8410x.png)
+
 
 ---
 
 #### Screenshot 12 — Browser showing a working product, cart, order summary, or checkout flow
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk8412.png)
+
 
 ---
 
@@ -126,8 +143,11 @@ Add your screenshot here.
 
 Write a short note describing any issue you faced, how you fixed it, and what you learned.
 
-Write your answer here.
-
+The security module
+Misconfigured the security group 
+Didn't allow the frontend security group in the database security
+Misconfigured port
+My application wasn't live on the browser
 ---
 
 # LinkedIn Post (Required)
@@ -142,13 +162,14 @@ Publish a LinkedIn post about what you achieved in this assignment, with public 
 
 Paste your LinkedIn post URL here:
 
-`Add your URL here`
+https://lnkd.in/p/ej6HARJ9
 
 ---
 
 #### Screenshot 13 — Published LinkedIn post showing the text and at least one image or proof
 
-Add your screenshot here.
+![PALLOTI](./screenshots/linkedixx.png)
+
 
 ---
 
