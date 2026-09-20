@@ -20,19 +20,18 @@ Create a custom VPC/VNet (10.0.0.0/16) with six subnets across two Availability 
 
 #### Screenshot 1 — VPC or VNet details showing 10.0.0.0/16
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk851.png)
 
----
 
 #### Screenshot 2 — Subnet list showing all six subnets, their tiers, CIDR ranges, and Availability Zones
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk852.png)
 
 ---
 
 #### Screenshot 3 — Terraform plan or cloud networking view showing the required routing and tier isolation
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk853.png)
 
 ---
 
@@ -46,25 +45,29 @@ Configure tier-specific Security Groups/NSGs (Web Tier HTTP 80, App Tier 3001 on
 
 #### Screenshot 4 — Web, App, and Database Security Group or NSG rules
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk854.png)
+
+![PALLOTI](./screenshots/wk854x.png)
+
+![PALLOTI](./screenshots/wk854xx.png)
 
 ---
 
 #### Screenshot 5 — Public frontend load balancer configuration
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk855.png)
 
 ---
 
 #### Screenshot 6 — Internal backend load balancer configuration
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk856.png)
 
 ---
 
 #### Screenshot 7 — Healthy frontend and backend targets or backend pools
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk857.png)
 
 ---
 
@@ -78,19 +81,19 @@ Deploy the Next.js Web Tier behind Nginx on port 80 in the public subnets, and t
 
 #### Screenshot 8 — EC2 or Azure VM dashboard showing the frontend and backend VMs
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk858.png)
 
 ---
 
 #### Screenshot 9 — Nginx status or frontend response on the Web Tier
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk859.png)
 
 ---
 
 #### Screenshot 10 — Backend API response through the permitted internal path
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk8510.png)
 
 ---
 
@@ -104,31 +107,34 @@ Deploy a private managed MySQL database (Amazon RDS Multi-AZ or Azure Database f
 
 #### Screenshot 11 — Amazon RDS or Azure Database dashboard showing the primary database and read replica
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk8511.png)
 
 ---
 
 #### Screenshot 12 — Evidence of private database networking and permitted App Tier access
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk8512.png)
+
+
+![PALLOTI](./screenshots/wk8512x.png)
 
 ---
 
 #### Screenshot 13 — Functional Book Review App homepage and login flow
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk8513.png)
 
 ---
 
 #### Screenshot 14 — Functional review flow with working backend API and database integration
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk8514.png)
 
 ---
 
 #### Screenshot 15 (optional) — Application logs or terminal output
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk8514x.png)
 
 ---
 
@@ -136,7 +142,48 @@ Add your screenshot here.
 
 Report the cloud platform used (AWS or Azure), your Terraform code structure (`main.tf`, `variables.tf`, `outputs.tf`, and supporting files), a link/description of your architecture diagram, and the Public Load Balancer DNS used to access the frontend.
 
-Write your answer here.
+Cloud Infrastructure Architecture Report
+1. Cloud Platform
+Platform: Amazon Web Services (AWS)
+
+2. Terraform Code Structure & Modularity
+To ensure clean code readability, separation of concerns, and reusability, the Infrastructure as Code (IaC) is structured using modular Terraform layers. Each module contains its own dedicated main.tf, variables.tf, and outputs.tf:
+
+➡️ Network / VPC Module: Manages the core networking backbone, subnets, internet gateways, and routing tables.
+
+➡️ Compute Module: Provisions EC2 instances across the multi-tier application architecture.
+
+➡️ Security Module: Configures security groups, firewall rules, and least-privilege access layers.
+
+➡️ Database Module: Handles database provisioning and replica sets.
+
+3. Architecture Overview & Components
+The deployment implements a resilient, multi-AZ 3-tier web application architecture:
+
+➡️ VPC & Subnets: Custom VPC (10.0.0.0/16) spanning 2 Availability Zones with 6 total subnets neatly segmented into Public, Private, and Database subnet groups.
+
+Compute Tier:
+
+2 EC2 instances dedicated to the public-facing web tier.
+
+2 EC2 instances running the private backend application tier.
+
+2 EC2 instances dedicated to the database tier.
+
+➡️ Routing & Gateways: An Internet Gateway attached to the VPC, paired with public route tables for web tier connectivity and private route tables secured via a NAT Gateway for outbound internet access in private subnets.
+
+Traffic Management:
+
+➡️ Public Application Load Balancer (ALB): Manages and distributes incoming public traffic.
+
+➡️ Nginx Web Server: Positioned behind the public ALB to reverse-proxy traffic to the frontend application.
+
+➡️ Internal Load Balancer: Manages internal traffic distribution within the private application tier layer.
+
+Data Layer: A primary database serving as the core information warehouse (storing user details and application credentials) backed by a cross-AZ database replica set to ensure high availability and data durability during outages.
+
+4. Public Access Point
+➡️ Public Load Balancer DNS: book-review-public-alb-727014215.us-east-1.elb.amazonaws.com
 
 ---
 
@@ -152,13 +199,13 @@ Publish a LinkedIn post about what you achieved in this assignment, with public 
 
 Paste your LinkedIn post URL here:
 
-`Add your URL here`
+https://lnkd.in/p/eETYtmFM
 
 ---
 
 #### Screenshot 16 — Published LinkedIn post showing the text and at least one image or proof
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk8likkedin.png)
 
 ---
 
