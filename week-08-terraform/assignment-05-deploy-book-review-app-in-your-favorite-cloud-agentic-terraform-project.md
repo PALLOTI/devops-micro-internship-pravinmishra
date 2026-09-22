@@ -1,6 +1,15 @@
-# Assignment 5 — Deploy Book Review App in Your Favorite Cloud (Agentic Terraform Project)
+# Capstone Assignment — Deploy the Book Review App Using Terraform and Claude Code Agentic AI
 
-Part of the DevOps Micro Internship (DMI) Cohort 3 with Agentic AI
+Part of the DevOps Micro Internship (DMI) with Agentic AI
+
+---
+
+## Student Details
+
+**Full Name:** Add your full name here  
+**Cloud Platform:** AWS or Azure  
+**GitHub Repository URL:** Add your repository URL here  
+**Public Application URL / Load-Balancer DNS:** Add the public URL or DNS here
 
 ---
 
@@ -187,11 +196,13 @@ Data Layer: A primary database serving as the core information warehouse (storin
 
 ---
 
-# LinkedIn Post (Required)
+# Task 7 — Demonstrate the Agentic AI Workflow
 
 ## Goal
 
-Publish a LinkedIn post about what you achieved in this assignment, with public or "Anyone" visibility.
+Demonstrate how Claude Code assisted with Terraform generation, architecture and security review, and evidence-based troubleshooting while infrastructure-changing decisions remained under human control.
+
+You do not need to submit your complete Claude Code conversation history. Include only focused evidence.
 
 ## Evidence
 
@@ -211,42 +222,100 @@ https://lnkd.in/p/eETYtmFM
 
 # Submission Instructions
 
-- Add all required screenshots in your submission
-- Include your architecture diagram and Public Load Balancer DNS
-- Do not expose passwords, keys, tokens, database credentials, or Terraform state secrets
+- Complete Tasks 0–10 in sequence.
+- Include all Screenshots 1–28 exactly as specified.
+- Ensure that your full name is visible in the required screenshots.
+- Include the selected cloud platform.
+- Include the completed architecture diagram.
+- Include the modular Terraform project structure.
+- Include the working public application URL or public load-balancer DNS.
+- Include all required Agentic AI workflow evidence.
+- Answer all 15 reflection questions briefly in your own words.
+- Include the published LinkedIn post URL.
+- Do not expose cloud credentials, database passwords, SSH private keys, JWT secrets, access tokens, account IDs, Terraform state containing sensitive values, or other confidential information.
+- Review all screenshots and project files carefully before submitting through GitHub.
 
 ---
 
 # Completion Checklist
 
-- [ ] Task 1: Six-subnet VPC/VNet created across two AZs with Terraform (Screenshots 1–3)
-- [ ] Task 2: Tier-specific security rules and load balancers configured (Screenshots 4–7)
-- [ ] Task 3: Web and App Tier VMs deployed with correct public/private placement (Screenshots 8–10)
-- [ ] Task 4: Private MySQL with read replica deployed and app validated end to end (Screenshots 11–15)
-- [ ] Report completed: cloud platform, Terraform structure, diagram, LB DNS (Notes)
-- [ ] LinkedIn post published and URL submitted (Screenshot 16)
-- [ ] No sensitive data exposed
+- [ ] Selected AWS or Azure
+- [ ] Added and reviewed the Agentic AI starter files
+- [ ] Configured `CLAUDE.md`
+- [ ] Configured the Terraform Engineer subagent
+- [ ] Configured the Architecture and Security Reviewer subagent
+- [ ] Connected Terraform MCP
+- [ ] Configured validation hooks and safety guardrails
+- [ ] Created the architecture diagram
+- [ ] Created the six-subnet design
+- [ ] Configured public Web Tier routing
+- [ ] Kept the Application Tier private
+- [ ] Kept the Database Tier private
+- [ ] Configured tier-specific Security Groups or NSGs
+- [ ] Restricted backend port `3001`
+- [ ] Restricted MySQL port `3306` to the Application Tier
+- [ ] Created the public load balancer
+- [ ] Created the internal load balancer
+- [ ] Configured listeners and health checks
+- [ ] Deployed the Web Tier compute resources
+- [ ] Deployed the private Application Tier compute resources
+- [ ] Provisioned private managed MySQL
+- [ ] Configured Multi-AZ or high availability
+- [ ] Configured a read replica
+- [ ] Created the modular Terraform project
+- [ ] Used variables, outputs, and module dependencies
+- [ ] Used current Terraform documentation through MCP
+- [ ] Used hooks for deterministic validation
+- [ ] Completed `terraform fmt`
+- [ ] Completed `terraform validate`
+- [ ] Reviewed `terraform plan`
+- [ ] Completed the Terraform Engineer review
+- [ ] Completed the Architecture and Security review
+- [ ] Applied the infrastructure only after human approval
+- [ ] Deployed and configured the backend
+- [ ] Deployed and configured the frontend
+- [ ] Configured Nginx where required
+- [ ] Configured the internal backend endpoint
+- [ ] Configured the public frontend endpoint
+- [ ] Verified the homepage
+- [ ] Verified login or authentication
+- [ ] Verified book data
+- [ ] Verified review functionality
+- [ ] Verified the backend API
+- [ ] Verified database reads and writes
+- [ ] Verified healthy load-balancer targets
+- [ ] Included AI-assisted Terraform generation evidence
+- [ ] Included one architecture or security review
+- [ ] Included one AI-assisted troubleshooting example
+- [ ] Completed the final architecture review
+- [ ] Answered all 15 reflection questions
+- [ ] Published the mandatory LinkedIn post
+- [ ] Added the LinkedIn post URL
+- [ ] Captured all 28 required screenshots
+- [ ] Confirmed that my full name is visible in the required screenshots
+- [ ] Checked that no secrets or sensitive information are exposed
 
 ---
 
-## 📌 About DMI & CloudAdvisory
+## About DMI & CloudAdvisory
 
-DevOps Micro Internship (DMI) is a project-based DevOps program run by Pravin Mishra (The CloudAdvisory) focused on real-world execution, systems thinking, and career readiness.
+DevOps Micro Internship (DMI) is a project-based DevOps program run by Pravin Mishra (The CloudAdvisory), focused on real-world execution, systems thinking, and career readiness.
 
-It helps learners build strong DevOps foundations with hands-on experience.
-
----
-
-## 📌 Resources
-
-- 🌐 DMI Official Website: https://dmi.pravinmishra.com?utm_source=github&utm_medium=readme  
-- 🎓 University: https://university.pravinmishra.com?utm_source=github&utm_medium=readme  
-- 💬 Discord Community: https://discord.pravinmishra.com?utm_source=github&utm_medium=readme  
-- 📝 Blog: https://dmi.pravinmishra.com/blog?utm_source=github&utm_medium=readme  
-- ▶️ YouTube Playlist: https://www.youtube.com/playlist?list=PLFeSNDtI4Cho  
-- 🔗 Pravin Mishra (LinkedIn): https://www.linkedin.com/in/pravin-mishra-aws-trainer/  
-- 🏢 CloudAdvisory (LinkedIn): https://www.linkedin.com/company/thecloudadvisory/
+It helps learners build strong DevOps foundations through hands-on experience.
 
 ---
 
-*This submission is part of DevOps Micro Internship (DMI) Cohort 3 — Agentic AI Track.*
+## Resources
+
+- Book Review App Repository: [https://github.com/pravinmishraaws/book-review-app](https://github.com/pravinmishraaws/book-review-app)
+- DMI Official Website: [https://dmi.pravinmishra.com](https://dmi.pravinmishra.com)
+- University: [https://university.pravinmishra.com](https://university.pravinmishra.com)
+- Discord Community: [https://discord.pravinmishra.com](https://discord.pravinmishra.com)
+- Blog: [https://dmi.pravinmishra.com/blog](https://dmi.pravinmishra.com/blog)
+- YouTube Playlist: [https://www.youtube.com/playlist?list=PLFeSNDtI4Cho](https://www.youtube.com/playlist?list=PLFeSNDtI4Cho)
+- Pravin Mishra on LinkedIn: [https://www.linkedin.com/in/pravin-mishra-aws-trainer/](https://www.linkedin.com/in/pravin-mishra-aws-trainer/)
+- CloudAdvisory on LinkedIn: [https://www.linkedin.com/company/thecloudadvisory/](https://www.linkedin.com/company/thecloudadvisory/)
+
+---
+
+*This submission is part of the DevOps Micro Internship (DMI) Cohort 3 — Agentic AI Track.*

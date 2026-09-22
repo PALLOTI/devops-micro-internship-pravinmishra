@@ -1,6 +1,6 @@
 # Assignment 1 — Create an Azure Virtual Machine using Terraform
 
-Part of the DevOps Micro Internship (DMI) Cohort 3 with Agentic AI
+Part of the DevOps Micro Internship (DMI) with Agentic AI
 
 ---
 
@@ -10,7 +10,7 @@ In this assignment, you will use Terraform to provision a complete Azure Virtual
 
 ---
 
-# Task 1 — Create a New Terraform Project and Define the Infrastructure
+# Task 0 — Set Up and Verify the Terraform and Azure CLI Environment
 
 ## Goal
 
@@ -37,11 +37,11 @@ Create a `terraform-azure-vm` project and define the resource group, virtual net
 
 ## Goal
 
-Run `terraform init` and confirm the working directory initializes successfully.
+Initialize the Terraform working directory and download the required provider components.
 
 ### Evidence
 
-#### Screenshot 3 — Terminal showing successful `terraform init` output
+#### Screenshot 6 — Terminal showing the successful `terraform init` output
 
 ![PALLOTI](./screenshots/wk813.png)
 
@@ -51,23 +51,23 @@ Run `terraform init` and confirm the working directory initializes successfully.
 
 ## Goal
 
-Review `terraform plan`, run `terraform apply`, and record the VM's public IP from the Terraform output.
+Review the Terraform execution plan and provision the Azure resources.
 
 ### Evidence
 
-#### Screenshot 4 — Terraform plan summary showing the proposed resources
+#### Screenshot 7 — Terraform plan summary showing the proposed resources
 
 ![PALLOTI](./screenshots/wk814.png)
 
 ---
 
-#### Screenshot 5 — Terraform apply output showing successful completion
+#### Screenshot 8 — Terraform apply output showing successful completion
 
 ![PALLOTI](./screenshots/wk815.png)
 
 ---
 
-#### Screenshot 6 — Terraform output showing the public IP of the VM
+#### Screenshot 9 — Terraform output showing the public IP address of the VM
 
 ![PALLOTI](./screenshots/wk816.png)
 
@@ -77,11 +77,11 @@ Review `terraform plan`, run `terraform apply`, and record the VM's public IP fr
 
 ## Goal
 
-Use Azure CLI to confirm the VM was created and is running.
+Confirm through Azure CLI that the virtual machine was created successfully and is currently running.
 
 ### Evidence
 
-#### Screenshot 7 — Azure CLI output showing the VM name and running status
+#### Screenshot 10 — Azure CLI output showing the deployed VM name and `VM running` status
 
 ![PALLOTI](./screenshots/wk817.png)
 
@@ -91,11 +91,11 @@ Use Azure CLI to confirm the VM was created and is running.
 
 ## Goal
 
-Run `terraform destroy` to clean up the Azure resources after testing.
+Remove all Azure resources created by Terraform after completing the deployment and verification.
 
 ### Evidence
 
-#### Screenshot 8 — Terminal showing successful `terraform destroy` completion
+#### Screenshot 11 — Terminal showing successful `terraform destroy` completion
 
 ![PALLOTI](./screenshots/wk818.png)
 
@@ -112,21 +112,31 @@ And my ssh-keygen input i.e getting my ssh key , for easy authentication into my
 
 # Submission Instructions
 
-- Add all required screenshots in your submission
-- Include the VM public IP from the Terraform output
-- Do not expose Azure credentials, subscription details, or passwords
+- Complete all tasks in sequence and include all required screenshots specified in Tasks 0–5.
+- Do not expose passwords, keys, account IDs, or other sensitive information in screenshots.
 
 ---
 
 # Completion Checklist
 
-- [ ] Task 1: `terraform-azure-vm` project created with all required resources defined (Screenshots 1–2)
-- [ ] Task 2: `terraform init` completed successfully (Screenshot 3)
-- [ ] Task 3: Plan reviewed and `terraform apply` completed, public IP recorded (Screenshots 4–6)
-- [ ] Task 4: VM verified as running via Azure CLI (Screenshot 7)
-- [ ] Task 5: `terraform destroy` completed successfully (Screenshot 8)
-- [ ] Learning/issues paragraph written (Notes)
-- [ ] No sensitive information exposed
+- Installed Terraform and verified it using `terraform version`
+- Installed Azure CLI and verified it using `az version`
+- Signed in to Azure using `az login`
+- Confirmed the correct Azure subscription
+- Installed and enabled the HashiCorp Terraform extension in VS Code
+- Created the `terraform-azure-vm` project directory and `main.tf`
+- Added the Terraform and AzureRM provider configuration
+- Defined the resource group, virtual network, subnet, public IP, and network interface
+- Defined the Linux virtual machine with username and password-based authentication
+- Added the Terraform output for the VM public IP address
+- Completed `terraform init` successfully
+- Reviewed the Terraform execution plan using `terraform plan`
+- Completed `terraform apply` successfully
+- Captured and recorded the VM public IP using `terraform output`
+- Verified that the VM is running using Azure CLI
+- Completed `terraform destroy` successfully
+- Captured all required screenshots
+- Checked that no passwords, keys, account IDs, or other sensitive information are visible in the screenshots
 
 ---
 
@@ -140,14 +150,14 @@ It helps learners build strong DevOps foundations with hands-on experience.
 
 ## 📌 Resources
 
-- 🌐 DMI Official Website: https://dmi.pravinmishra.com?utm_source=github&utm_medium=readme  
-- 🎓 University: https://university.pravinmishra.com?utm_source=github&utm_medium=readme  
-- 💬 Discord Community: https://discord.pravinmishra.com?utm_source=github&utm_medium=readme  
-- 📝 Blog: https://dmi.pravinmishra.com/blog?utm_source=github&utm_medium=readme  
-- ▶️ YouTube Playlist: https://www.youtube.com/playlist?list=PLFeSNDtI4Cho  
-- 🔗 Pravin Mishra (LinkedIn): https://www.linkedin.com/in/pravin-mishra-aws-trainer/  
+- 🌐 DMI Official Website: https://dmi.pravinmishra.com?utm_source=github&utm_medium=readme
+- 🎓 University: https://university.pravinmishra.com?utm_source=github&utm_medium=readme
+- 💬 Discord Community: https://discord.pravinmishra.com?utm_source=github&utm_medium=readme
+- 📝 Blog: https://dmi.pravinmishra.com/blog?utm_source=github&utm_medium=readme
+- ▶️ YouTube Playlist: https://www.youtube.com/playlist?list=PLFeSNDtI4Cho
+- 🔗 Pravin Mishra (LinkedIn): https://www.linkedin.com/in/pravin-mishra-aws-trainer/
 - 🏢 CloudAdvisory (LinkedIn): https://www.linkedin.com/company/thecloudadvisory/
 
 ---
 
-*This submission is part of DevOps Micro Internship (DMI) Cohort 3 — Agentic AI Track.*
+*This submission is part of DevOps Micro Internship (DMI) — Agentic AI Track.*

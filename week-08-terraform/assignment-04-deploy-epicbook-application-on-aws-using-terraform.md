@@ -1,6 +1,6 @@
-# Assignment 4 — Deploy EpicBook Application on AWS Using Terraform
+# Assignment 4 — Deploy EpicBook Web App on AWS Using Terraform Modules and Amazon RDS for MySQL
 
-Part of the DevOps Micro Internship (DMI) Cohort 3 with Agentic AI
+Part of the DevOps Micro Internship (DMI) with Agentic AI
 
 ---
 
@@ -150,11 +150,15 @@ Misconfigured port
 My application wasn't live on the browser
 ---
 
-# LinkedIn Post (Required)
+# Task 10 — Test End-to-End Functionality
 
 ## Goal
 
-Publish a LinkedIn post about what you achieved in this assignment, with public or "Anyone" visibility.
+Verify that EpicBook, EC2, Nginx, and Amazon RDS work together successfully.
+
+## EC2 Public IP URL
+
+**EC2 Public IP URL:** Add the working EpicBook EC2 public IP URL here
 
 ## Evidence
 
@@ -175,42 +179,110 @@ https://lnkd.in/p/ej6HARJ9
 
 # Submission Instructions
 
-- Add all required screenshots in your submission
-- Include the EC2 public IP
-- Do not expose database passwords, private keys, or other secrets
+- Complete Tasks 0–12 in sequence.
+- Include all Screenshots 1–35 exactly as specified.
+- Ensure that your full name is visible in the required screenshots.
+- Include the working EpicBook EC2 public IP URL.
+- Include the published LinkedIn post URL.
+- Include proof of frontend, backend, and database integration.
+- Ensure that the required Terraform root files, module files, and `user_data.sh` are included in the GitHub submission.
+- Do not upload Terraform state files, `.pem` files, or a `terraform.tfvars` file containing passwords or other sensitive values.
+- Do not expose AWS credentials, account IDs, private SSH keys, RDS passwords, access tokens, Terraform sensitive values, or other confidential information.
+- Review all screenshots and files carefully before submitting through GitHub.
 
 ---
 
 # Completion Checklist
 
-- [ ] Task 1: VPC, subnets, IGW, and Security Groups created with Terraform (Screenshots 1–2)
-- [ ] Task 2: EC2 provisioned and required software installed (Screenshots 3–5)
-- [ ] Task 3: EpicBook deployed and Nginx serving the app (Screenshots 6–7)
-- [ ] Task 4: Private RDS MySQL created and database initialized (Screenshots 8–10)
-- [ ] Task 5: End-to-end functionality validated (Screenshots 11–12)
-- [ ] Issue/fix/learning note written (Notes)
-- [ ] LinkedIn post published and URL submitted (Screenshot 13)
-- [ ] No sensitive data exposed
+- [ ] Installed and verified Terraform
+- [ ] Installed and verified AWS CLI
+- [ ] Configured AWS CLI
+- [ ] Confirmed the AWS Region
+- [ ] Installed the HashiCorp Terraform extension
+- [ ] Created the modular Terraform project
+- [ ] Created the root `main.tf`, `variables.tf`, and `outputs.tf`
+- [ ] Created the Network module
+- [ ] Created the EC2 module
+- [ ] Created the RDS module
+- [ ] Created the EC2 `user_data.sh`
+- [ ] Created VPC `10.0.0.0/16`
+- [ ] Created public subnet `10.0.1.0/24`
+- [ ] Created private DB subnet A `10.0.2.0/24`
+- [ ] Created private DB subnet B `10.0.3.0/24`
+- [ ] Used different Availability Zones for the database subnets
+- [ ] Created and attached the Internet Gateway
+- [ ] Created the public route table
+- [ ] Associated the public subnet with the public route table
+- [ ] Created the EC2 Security Group
+- [ ] Allowed HTTP port `80`
+- [ ] Restricted SSH port `22`
+- [ ] Created the RDS Security Group
+- [ ] Allowed MySQL port `3306` from the EC2 Security Group only
+- [ ] Exposed the required Network module outputs
+- [ ] Defined the EC2 instance
+- [ ] Connected `user_data.sh` using the EC2 `user_data` argument
+- [ ] Configured EC2 with a public IP
+- [ ] Installed the required software using user data
+- [ ] Created the RDS DB subnet group
+- [ ] Created Amazon RDS for MySQL
+- [ ] Confirmed RDS is not publicly accessible
+- [ ] Configured sensitive database variables
+- [ ] Exposed the RDS endpoint
+- [ ] Connected all modules through the root module
+- [ ] Passed Network module outputs to EC2 and RDS
+- [ ] Added root EC2 public IP and RDS endpoint outputs
+- [ ] Completed `terraform init`
+- [ ] Completed `terraform validate`
+- [ ] Reviewed `terraform plan`
+- [ ] Completed `terraform apply`
+- [ ] Verified EC2 is running
+- [ ] Verified RDS is available
+- [ ] Verified user data installation
+- [ ] Connected to EC2 using SSH
+- [ ] Cloned EpicBook
+- [ ] Created the `bookstore` database
+- [ ] Imported the database schema
+- [ ] Imported author seed data
+- [ ] Imported book seed data
+- [ ] Verified database records
+- [ ] Installed EpicBook dependencies
+- [ ] Configured EpicBook to use RDS
+- [ ] Configured Nginx
+- [ ] Started EpicBook
+- [ ] Verified port `8080`
+- [ ] Loaded EpicBook through the EC2 public IP
+- [ ] Verified product viewing
+- [ ] Verified Add to Cart
+- [ ] Verified the checkout or order workflow
+- [ ] Confirmed application actions in Amazon RDS
+- [ ] Completed `terraform destroy`
+- [ ] Published the required LinkedIn post
+- [ ] Added the LinkedIn post URL
+- [ ] Captured all 35 required screenshots
+- [ ] Confirmed that my full name is visible in the required screenshots
+- [ ] Checked that no sensitive information is exposed
 
 ---
 
-## 📌 About DMI & CloudAdvisory
+## About DMI & CloudAdvisory
 
-DevOps Micro Internship (DMI) is a project-based DevOps program run by Pravin Mishra (The CloudAdvisory) focused on real-world execution, systems thinking, and career readiness.
+DevOps Micro Internship (DMI) is a project-based DevOps program run by Pravin Mishra (The CloudAdvisory), focused on real-world execution, systems thinking, and career readiness.
 
-It helps learners build strong DevOps foundations with hands-on experience.
+It helps learners build strong DevOps foundations through hands-on experience.
 
 ---
 
-## 📌 Resources
+## Resources
 
-- 🌐 DMI Official Website: https://dmi.pravinmishra.com?utm_source=github&utm_medium=readme  
-- 🎓 University: https://university.pravinmishra.com?utm_source=github&utm_medium=readme  
-- 💬 Discord Community: https://discord.pravinmishra.com?utm_source=github&utm_medium=readme  
-- 📝 Blog: https://dmi.pravinmishra.com/blog?utm_source=github&utm_medium=readme  
-- ▶️ YouTube Playlist: https://www.youtube.com/playlist?list=PLFeSNDtI4Cho  
-- 🔗 Pravin Mishra (LinkedIn): https://www.linkedin.com/in/pravin-mishra-aws-trainer/  
-- 🏢 CloudAdvisory (LinkedIn): https://www.linkedin.com/company/thecloudadvisory/
+- EpicBook Repository: [https://github.com/pravinmishraaws/theepicbook](https://github.com/pravinmishraaws/theepicbook)
+- EpicBook Installation, Configuration & Troubleshooting Guide: [Installation & Configuration Guide](https://github.com/pravinmishraaws/theepicbook/blob/main/Installation%20%26%20Configuration%20Guide.md)
+- DMI Official Website: [https://dmi.pravinmishra.com](https://dmi.pravinmishra.com)
+- University: [https://university.pravinmishra.com](https://university.pravinmishra.com)
+- Discord Community: [https://discord.pravinmishra.com](https://discord.pravinmishra.com)
+- Blog: [https://dmi.pravinmishra.com/blog](https://dmi.pravinmishra.com/blog)
+- YouTube Playlist: [https://www.youtube.com/playlist?list=PLFeSNDtI4Cho](https://www.youtube.com/playlist?list=PLFeSNDtI4Cho)
+- Pravin Mishra on LinkedIn: [https://www.linkedin.com/in/pravin-mishra-aws-trainer/](https://www.linkedin.com/in/pravin-mishra-aws-trainer/)
+- CloudAdvisory on LinkedIn: [https://www.linkedin.com/company/thecloudadvisory/](https://www.linkedin.com/company/thecloudadvisory/)
 
 ---
 

@@ -1,12 +1,16 @@
 # Assignment 7 — AI-Assisted AWS Security and Cost Audit
 
-Part of the DevOps Micro Internship (DMI) Cohort 3 with Agentic AI
+Part of the DevOps Micro Internship (DMI) with Agentic AI
 
 ---
 
 ## Purpose
 
-In this assignment, you will build a read-only Bash script that audits the AWS resources you deployed earlier this week — your S3 static site, EC2 instance(s), security groups, RDS database, and EBS volumes — for common security and cost misconfigurations. You will then connect that script to Claude Code as a reusable `/aws-audit` skill that explains what it found and recommends a fix, without ever making the fix itself. Finally, you will find a real misconfiguration in your own account, apply the fix yourself, and prove it worked with a second audit run.
+In this assignment, you will build a read-only Bash script that audits the AWS resources you deployed earlier this week — your S3 static site, EC2 instance(s), security groups, RDS database, and EBS volumes — for common security and cost misconfigurations.
+
+You will then connect that script to Claude Code as a reusable `/aws-audit` skill that explains what it found and recommends a fix, without ever making the fix itself.
+
+Finally, you will find a real misconfiguration in your own account, apply the fix yourself, and prove it worked with a second audit run.
 
 ---
 
@@ -18,7 +22,13 @@ Confirm your AWS CLI is authenticated and can see the S3 bucket, EC2 instance(s)
 
 ### Evidence
 
-#### Screenshot 1 — Terminal showing your AWS identity and your S3, EC2, and RDS resources listed
+#### Screenshot 1 — Output of `aws s3 ls`, the EC2 instance table, and the RDS instance table (blur the Account ID if visible)
+
+Add your screenshot here.
+
+---
+
+#### Screenshot 2 — Output of `pwd` and `find . -maxdepth 4 -type d | sort`
 
 ![PALLOTI](./screenshots/wk671.png)
 
@@ -47,7 +57,7 @@ Ask Claude Code to propose a read-only audit plan covering five checks — S3 pu
 
 ### Evidence
 
-#### Screenshot 3 — Claude's proposed five-check audit plan
+#### Screenshot 4 — Claude Code showing the five-check plan
 
 ![PALLOTI](./screenshots/wk673.png)
 
@@ -61,11 +71,25 @@ Ask Claude Code to propose a read-only audit plan covering five checks — S3 pu
 
 ## Goal
 
-Write a Bash script that runs the five checks from Task 3 using only read-only AWS CLI calls, writes a PASS/WARN/FAIL report to a file, and exits with a different code depending on the overall result. Make it executable and confirm it has no syntax errors.
+Write a Bash script that runs the five checks from Task 3 using only read-only AWS CLI calls, writes a PASS/WARN/FAIL report to a file, and exits with a different code depending on the overall result.
+
+Make it executable and confirm it has no syntax errors.
 
 ### Evidence
 
-#### Screenshot 4 — The script open in your editor, showing the checks and the report logic
+#### Screenshot 5 — Top section of `aws-audit.sh` showing the variables and the checks array
+
+Add your screenshot here.
+
+---
+
+#### Screenshot 6 — One check function (for example `check_ssh_open_to_world`) showing the AWS CLI call and conditional
+
+Add your screenshot here.
+
+---
+
+#### Screenshot 7 — Output of `bash -n scripts/aws-audit.sh` and `ls -l scripts/aws-audit.sh`
 
 ![PALLOTI](./screenshots/wk674.png)
 
@@ -76,11 +100,17 @@ Write a Bash script that runs the five checks from Task 3 using only read-only A
 
 ## Goal
 
-Run the script against your live AWS account and review the report honestly, noting any PASS, WARN, or FAIL result before you change anything.
+Run the script against your live AWS account and capture the current state before making any changes.
 
 ### Evidence
 
-#### Screenshot 5 — Script output showing your Full Name and all five check results
+#### Screenshot 8 — Output of `./scripts/aws-audit.sh` showing your Full Name and all five checks
+
+Add your screenshot here.
+
+---
+
+#### Screenshot 9 — Output showing the captured exit code and final summary
 
 ![PALLOTI](./screenshots/wk675.png)
 
@@ -94,13 +124,13 @@ Turn the script into a Claude Code skill named `/aws-audit` that runs the script
 
 ### Evidence
 
-#### Screenshot 6 — Skill file showing the restricted tool access
+#### Screenshot 10 — `SKILL.md` showing the frontmatter, tool restrictions, and safety rules
 
 ![PALLOTI](./screenshots/wk676.png)
 
 ---
 
-#### Screenshot 7 — `/aws-audit` output showing the findings and Claude's recommendation
+#### Screenshot 11 — `/aws-audit` output showing findings, cost/risk impact, and a recommended remediation command (or a clean report if your baseline passed everything)
 
 ![PALLOTI](./screenshots/wk677.png)
 
@@ -114,13 +144,13 @@ Pick one real finding from your baseline report (or deliberately open a security
 
 ### Evidence
 
-#### Screenshot 8 — Terminal output of the remediation command you ran yourself
+#### Screenshot 12 — Output of the `revoke-security-group-ingress` and `authorize-security-group-ingress` commands you ran yourself
 
 ![PALLOTI](./screenshots/wk678.png)
 
 ---
 
-#### Screenshot 9 — Second script run showing the finding now passing
+#### Screenshot 13 — Rerun of `./scripts/aws-audit.sh` showing the finding is now PASS
 
 ![PALLOTI](./screenshots/wk679.png)
 
@@ -154,21 +184,50 @@ The core principle behind keeping execution under human control—the Human-in-t
 Complete all tasks in sequence.
 
 Your submission must include:
-- All 9 required screenshots
+
+- All 13 required task screenshots
+- Answers to every **Notes You Must Write** question
+- `CLAUDE.md`
+- `scripts/aws-audit.sh`
+- `.claude/skills/aws-audit/SKILL.md`
+- `reports/aws-audit-report.txt` baseline report and the reverified report from Task 7
+- GitHub folder or repository URL containing the assignment files
+- Your Full Name visible in the required outputs
+- LinkedIn post URL
+- Screenshot of the published LinkedIn post
+- GitHub repository URL (containing all assignment files)
 
 ---
 
 # Completion Checklist
 
-- [ ] Task 1: AWS resources confirmed and workspace created (Screenshot 1)
-- [ ] Task 2: `CLAUDE.md` created with safety rules (Screenshot 2)
-- [ ] Task 3: Claude proposed a read-only five-check audit plan (Screenshot 3)
-- [ ] Task 4: Audit script built, executable, and syntax-checked (Screenshot 4)
-- [ ] Task 5: Baseline audit run and reviewed honestly (Screenshot 5)
-- [ ] Task 6: `/aws-audit` skill built and run, with no `Write` access (Screenshots 6–7)
-- [ ] Task 7: A real finding fixed by hand and re-verified as passing (Screenshots 8–9)
-- [ ] Gather → Analyze → Human Act → Verify reflection completed (Notes)
+- [ ] Task 1: AWS resources confirmed and workspace created (Screenshots 1–2)
+- [ ] Task 2: `CLAUDE.md` created with project context and safety rules (Screenshot 3)
+- [ ] Task 3: Claude produced a read-only five-check audit plan before any script existed (Screenshot 4)
+- [ ] Task 4: `aws-audit.sh` built, executable, and passes `bash -n` (Screenshots 5–7)
+- [ ] Task 5: Baseline audit captured and saved with Full Name visible (Screenshots 8–9)
+- [ ] Task 6: `/aws-audit` skill loads and runs successfully with no Write permission (Screenshots 10–11)
+- [ ] Task 7: A real finding was fixed by you and reverified as PASS (Screenshots 12–13)
+- [ ] Skill never executed a remediation command
+- [ ] New security group rule is scoped to your own IP, not `0.0.0.0/0`
+- [ ] All 13 required task screenshots are included
+- [ ] All "Notes You Must Write" questions are answered in your own words
 - [ ] No AWS credentials or unblurred account IDs exposed
+- [ ] LinkedIn post published and URL submitted
+- [ ] GitHub repository URL included in submission
+- [ ] All assignment files committed and visible in GitHub repository
+
+---
+
+# Final Submission
+
+Submit your GitHub repository URL containing all assignment files, screenshots, reports, and output.
+
+### GitHub Repository URL
+
+Paste your GitHub repository URL here:
+
+`Add your GitHub repository URL here`
 
 ---
 
@@ -192,4 +251,4 @@ It helps learners build strong DevOps foundations with hands-on experience.
 
 ---
 
-*This submission is part of DevOps Micro Internship (DMI) Cohort 3 — Agentic AI Track.*
+*This submission is part of DevOps Micro Internship (DMI) — Agentic AI Track.*
