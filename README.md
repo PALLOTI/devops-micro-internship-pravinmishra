@@ -114,8 +114,14 @@ Week 06 → AWS Cloud
 <!-- Week 07 → Azure Cloud -->
 <!-- [![Week 07 – Azure](./badges/week-07.svg)](./week-07-azure-cloud/) -->
 
- Week 08 → Terraform 
+
+
+ Week 08 → Terraform
+
+
  [![Week 08 – Terraform](./badges/week-08.svg)](./week-08-terraform/) 
+
+
 
 <!-- Week 09 → Ansible -->
 <!-- [![Week 09 – Ansible](./badges/week-09.svg)](./week-09-ansible/) -->
@@ -162,7 +168,7 @@ Week 06 → AWS Cloud
 | 06 | DevOps Lifecycle & Agile | ✅ Completed | ✅ Solved | [View post](https://lnkd.in/p/g2hCt7NU) | [Read Blog](https://substack.com/profile/487332231-ezeobi-chinecherem-jude/note/c-312180076?r=8257yf&utm_source=notes-share-action&utm_medium=web) |
 | 07 | AWS Cloud | ✅ Completed | ✅ Solved | [View Post](https://lnkd.in/p/eNsd3Ftv) | [Read Blog](https://medium.com/@palloti10x/troubleshooting-a-3-tier-architecture-on-aws-48f930f3d5fb) |
 | 08 | Azure Cloud | ⬜ Not Started | ⏳ Pending | — | — |
-| 09 | Terraform | ✅ Completed | ✅ Solved | [View post](https://lnkd.in/p/eETYtmFM) | [Read](https://substack.com/profile/487332231-ezeobi-chinecherem-jude/note/c-342438495?r=8257yf&utm_source=notes-share-action&utm_medium=web) |
+| 09 | Terraform | ✅ Completed | ✅ Solved | [View post](https://lnkd.in/p/eETYtmFM) | [Read Blog](https://substack.com/profile/487332231-ezeobi-chinecherem-jude/note/c-342438495?r=8257yf&utm_source=notes-share-action&utm_medium=web) |
 | 10 | Ansible | ⬜ Not Started | ⏳ Pending | — | — |
 | 11 | Azure DevOps (CI/CD) | ⬜ Not Started | ⏳ Pending | — | — |
 | 12 | Docker | ⬜ Not Started | ⏳ Pending | — | — |
