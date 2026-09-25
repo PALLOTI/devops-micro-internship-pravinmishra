@@ -115,7 +115,6 @@ Week 06 → AWS Cloud
 <!-- [![Week 07 – Azure](./badges/week-07.svg)](./week-07-azure-cloud/) -->
 
 
-
  Week 08 → Terraform
 
 

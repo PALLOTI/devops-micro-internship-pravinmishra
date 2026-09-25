@@ -24,19 +24,20 @@ This project will use the Git repository and Ansible controller prepared in Assi
 
 #### Screenshot 1 — Terminal showing the complete `ansible-adhoc-lab` project structure
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk921.png)
 
 ---
 
 #### Screenshot 2 — Terminal showing `git status --short` with the new project files and updated `.gitignore`
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk922.png)
+
 
 ---
 
 ### Notes
 
-Add your task notes here.
+Initialized multi-tier cloud infrastructure codebase, configured modular Terraform components for networking, compute, and security layers, structured Ansible inventory and ad-hoc automation for the web tier, and updated .gitignore rules for environment files.
 
 ---
 
@@ -57,25 +58,25 @@ Do not configure both providers for this assignment.
 
 #### Screenshot 3 — Terraform configuration showing the three or four server roles and the `for_each` or `count` implementation
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk923.png)
 
 ---
 
 #### Screenshot 4 — Terraform configuration showing SSH restricted to the controller IP and HTTP allowed only for web hosts
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk924.png)
 
 ---
 
 #### Screenshot 5 — Terraform output configuration showing how public IP addresses are associated with the server roles
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk925.png)
 
 ---
 
 ### Notes
 
-Add your task notes here.
+Configured Terraform output mappings to dynamically expose public IP addresses for the public web tier instances (44.221.103.38 and 54.160.234.240), establishing a clean interface for external inventory mapping and Ansible control node management.
 
 ---
 
@@ -89,25 +90,26 @@ Initialize and validate the Terraform configuration, review the execution plan, 
 
 #### Screenshot 6 — Final `terraform apply` output showing `Apply complete`
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk926.png)
 
 ---
 
 #### Screenshot 7 — `terraform output public_ips` showing the role-to-IP mapping for all three or four VMs
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk927.png)
 
 ---
 
 #### Screenshot 8 — Azure Portal or AWS Management Console showing all three or four VMs in the `Running` state, with their role-based names visible
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk928.png)
+
 
 ---
 
 ### Notes
 
-Add your task notes here.
+Verified instance deployment health in the AWS Management Console, confirming all multi-tier virtual machines—including public web servers and private backend nodes—are successfully in the Running state with descriptive, role-based naming conventions applied.
 
 ---
 
@@ -121,13 +123,17 @@ Verify that each managed VM can be accessed from the Ansible controller using SS
 
 #### Screenshot 9 — Terminal showing successful SSH hostname output from all VMs
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk929.png)
+
+
+![PALLOTI](./screenshots/wk929x.png)
+
 
 ---
 
 ### Notes
 
-Add your task notes here.
+Validated secure shell connectivity across the multi-tier infrastructure, confirming successful remote command execution and proper network routing from the control node to all provisioned virtual machines.
 
 ---
 
@@ -143,19 +149,20 @@ The inventory allows Ansible to run commands against all servers, or only specif
 
 #### Screenshot 10 — `inventory.ini` showing the `web`, `app`, and `db` groups
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk9210.png)
 
 ---
 
 #### Screenshot 11 — Output of `ansible-inventory -i inventory.ini --graph`
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk9211.png)
+
 
 ---
 
 ### Notes
 
-Add your task notes here.
+Validated the Ansible inventory structure using the graph command, confirming proper logical grouping of hosts into web and private tiers for targeted configuration management and playbook execution.
 
 ---
 
@@ -171,43 +178,47 @@ This task proves that the inventory is working and that Ansible can control mult
 
 #### Screenshot 12 — Output of `ansible all -i inventory.ini -m ping`
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk9212.png)
 
 ---
 
 #### Screenshot 13 — Output of `ansible all -i inventory.ini -m command -a "uptime"`
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk9213.png)
 
 ---
 
 #### Screenshot 14 — Output of `ansible web -i inventory.ini -m apt -a "name=nginx state=present update_cache=yes" --become`
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk9214.png)
+
 
 ---
 
 #### Screenshot 15 — Output of `ansible web -i inventory.ini -m service -a "name=nginx state=started enabled=yes" --become`
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk9215.png)
+
 
 ---
 
 #### Screenshot 16 — Output of `ansible all -i inventory.ini -m apt -a "name=htop state=present update_cache=yes" --become`
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk9216.png)
+
 
 ---
 
 #### Screenshot 17 — Output of `ansible web -i inventory.ini -m command -a "systemctl is-active nginx"`
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk9217.png)
+
 
 ---
 
 ### Notes
 
-Add your task notes here.
+Executed an Ansible ad-hoc command targeting the web group to verify runtime service health, confirming that Nginx is actively running (is-active) across all provisioned public web instances.
 
 ---
 
@@ -219,13 +230,13 @@ Add your task notes here.
 
 Paste your LinkedIn post URL here:
 
-`Add your URL here`
+https://lnkd.in/p/ezT-CbEA
 
 ---
 
 #### Screenshot — Published LinkedIn post
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk09linkedin.png)
 
 ---
 
@@ -235,37 +246,75 @@ Answer the following in your own words:
 
 **1. What is the purpose of an Ansible inventory file?**
 
-Add your answer here.
+An Ansible inventory file defines and organizes the managed nodes (servers and hosts) that your control node will connect to, manage, and configure.
+
+Specifically, its key purposes include:
+
+* **Host Grouping:** Organizing your infrastructure into logical groups and tiers—such as `web`, `app`, and `db`—so you can target specific sets of servers with your playbooks.
+
+
+* **Connection Routing & Variables:** Mapping out connection details like public IP addresses, private IP addresses, SSH keys, ports, and proxy configurations (such as `ProxyJump`) required to safely reach and authenticate with your instances.
 
 ---
 
 **2. What is the difference between the `web`, `app`, and `db` groups in your inventory?**
 
-Add your answer here.
+The `web`, `app`, and `db` groups in your inventory represent the distinct functional tiers of your multi-tier cloud architecture, separating servers based on their network exposure, security boundaries, and operational roles:
+
+* **`web` Group (Public Tier):**
+* Consists of public-facing web servers (such as Nginx instances) deployed in public subnets with direct access or Elastic IPs.
+* Acts as the entry point for incoming user traffic and serves static or frontend application content.
+
+
+* **`app` Group (Private Tier / Application Layer):**
+* Comprises internal application servers (such as backend Node.js processes) hosted securely in private subnets.
+* They are isolated from the public internet and are typically accessed via secure SSH proxy jumping through the public web tier.
+
+
+* **`db` Group (Private Tier / Database Layer):**
+* Houses database instances (such as Amazon RDS MySQL) dedicated strictly to backend data storage and persistence.
+* Like the app tier, they reside in private subnets with maximum isolation, only accepting connections from authorized internal services.
 
 ---
 
 **3. What does the Ansible `ping` module verify?**
 
-Add your answer here.
+The Ansible `ping` module verifies that the control node can successfully connect, authenticate, and communicate with the managed nodes (servers), and that a working Python environment is present on the remote host. It is primarily used to test basic SSH reachability and ensure the target servers are ready to receive playbook commands.
 
 ---
 
 **4. Why do package installation commands require `--become`?**
 
-Add your answer here.
+Package installation commands require `--become` (privilege escalation, typically running as `sudo` or `root`) because package managers like `apt`, `yum`, or `dnf` need to modify protected, system-wide directories.
+
+Specifically, privilege escalation is necessary because:
+
+* **System-Level Changes:** Installing software writes binaries to system paths (like `/usr/bin` or `/usr/sbin`), modifies configuration files in `/etc`, and creates system services. Standard users lack write permissions to these directories.
+* **Service Control:** Package managers often automatically enable and start system services (such as Nginx), which requires administrative permissions to interact with the underlying system and service manager (`systemctl`).
+
+Using `--become` allows Ansible to temporarily elevate permissions to `root` so these system-level modifications can execute safely and successfully.
 
 ---
 
 **5. When would you use an ad-hoc command instead of a playbook?**
 
-Add your answer here.
+You would use an Ansible ad-hoc command instead of a playbook when you need to perform a **quick, one-off, or emergency administrative task** where writing and maintaining a full YAML playbook file would be unnecessary overhead.
+
+Common scenarios include:
+
+* **Quick Status Checks & Troubleshooting:** Quickly checking if a service is running, verifying disk space, or running a quick connectivity test across your server inventory.
+* **Emergency Fixes:** Applying a rapid, urgent patch or restarting a service across multiple servers simultaneously without waiting to author a structured playbook.
+* **Ad-hoc File Transfers or Management:** Quickly copying a single file, checking log contents, or managing a user account on the fly.
+* **Gathering Quick Facts:** Pulling system information or package versions across a fleet instantly from the command line.
+
+**Rule of thumb:** If you only need to run a single command once or troubleshoot an active issue right now, use an **ad-hoc command**. If the task is repeatable, multi-step, or part of a continuous deployment pipeline (like provisioning, configuring, and verifying a web server), use a **playbook**.
 
 ---
 
 **6. What is one challenge you faced while setting up SSH or inventory, and how did you fix it?**
 
-Add your answer here.
+* **Challenge:** When setting up SSH connectivity to the managed servers, I encountered "No route to host" errors and `REMOTE HOST IDENTIFICATION HAS CHANGED` warnings caused by AWS dynamically reusing IP addresses.
+* **Fix:** I cleared the outdated IP fingerprints from my local machine using `ssh-keygen -R` and updated the `inventory.ini` file with the correct active IP addresses retrieved from `terraform output`. I also explicitly defined the `ansible_ssh_private_key_file` parameter within the inventory's `[all:vars]` block to ensure secure, passwordless authentication across the host groups.
 
 ---
 

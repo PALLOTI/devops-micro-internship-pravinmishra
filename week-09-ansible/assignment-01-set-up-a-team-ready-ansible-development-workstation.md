@@ -24,7 +24,7 @@ Create the assignment workspace, initialize a Git repository, prepare the requir
 
 #### Screenshot 1 — Terminal showing the `ansible-onboarding` path, `ls -la` output, and `git status` confirming the Git repository is on the `main` branch
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk911.png)
 
 ---
 
@@ -38,7 +38,7 @@ Create an isolated Python virtual environment and install Ansible and the requir
 
 #### Screenshot 2 — Terminal showing the active `(.venv)` environment, `which ansible`, `ansible --version`, `ansible-lint --version`, `yamllint --version`, and `pre-commit --version`
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk912.png)
 
 ---
 
@@ -52,13 +52,13 @@ Configure Visual Studio Code to use the project’s Python virtual environment a
 
 #### Screenshot 3 — VS Code Extensions panel showing the Ansible, YAML, and Python extensions installed
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk913.png)
 
 ---
 
 #### Screenshot 4 — VS Code showing `.vscode/settings.json` and `.editorconfig` open side by side, with the required settings clearly visible
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk914.png)
 
 ---
 
@@ -72,13 +72,13 @@ Create a reusable `ansible.cfg` file containing the default settings that will b
 
 #### Screenshot 5 — `ansible.cfg` open in VS Code or another editor, showing the complete configuration
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk914.png)
 
 ---
 
 #### Screenshot 6 — Terminal showing `ansible --version` with the `ansible.cfg` path and the output of `ansible-config dump --only-changed`
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk916.png)
 
 ---
 
@@ -92,7 +92,7 @@ Prepare SSH key authentication, load the key into the SSH agent, configure reusa
 
 #### Screenshot 7 — Terminal showing `ssh-add -l` with the ED25519 key loaded and the SSH configuration verification output
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk917.png)
 
 ---
 
@@ -106,7 +106,7 @@ Configure your Git identity and install pre-commit hooks that validate YAML and 
 
 #### Screenshot 8 — Terminal showing your Git full name, Git email, default branch, successful `pre-commit install` output, and `.git/hooks/pre-commit`
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk918.png)
 
 ---
 
@@ -120,13 +120,13 @@ Verify that Ansible, the linting tools, Git hooks, SSH agent, and Git ignore rul
 
 #### Screenshot 9 — Terminal showing `pre-commit run --all-files` completing successfully
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk919.png)
 
 ---
 
 #### Screenshot 10 — Terminal showing `ansible --version` with the project configuration path and `ssh-add -l` with the ED25519 key loaded
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk9110.png)
 
 ---
 
@@ -140,13 +140,13 @@ Document the completed Ansible workstation setup and create a reusable checklist
 
 #### Screenshot 11 — Terminal showing the final `ansible-onboarding` project structure
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk9111.png)
 
 ---
 
 #### Screenshot 12 — VS Code Markdown preview showing your full name, project summary, and part of the “New Machine? Do This” checklist
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk9112.png)
 
 ---
 
@@ -156,25 +156,40 @@ Answer the following in your own words:
 
 **1. What is one feature that makes your workstation setup team-friendly?**
 
-Add your answer here.
+1.Pre-commit and EditorConfig Integration:
+Standardized Formatting & Checks.
+One key feature that makes this workstation setup team-friendly is the inclusion of .editorconfig and .pre-commit-config.yaml files.These ensure that all team members adhere to identical code formatting rules (like indentation and trailing whitespace) and automatically run linters (yamllint and ansible-lint) before every commit.This prevents formatting disputes in pull requests and maintains consistent code quality across the entire team.
 
 ---
 
 **2. What is one pitfall you avoided while completing the setup?**
 
-Add your answer here.
+One major pitfall you avoided during this setup was allowing linters to scan massive, third-party files inside the virtual environment (.venv/).Without excluding .venv/ and .git/ directories in your .pre-commit-config.yaml file, running pre-commit run --all-files caused linters like yamllint to recursively parse thousands of external Ansible collection files. This resulted in massive performance overhead, severe terminal lag, and endless irrelevant syntax errors (such as truthy value and indentation warnings) originating from third-party library files rather than your own code. By defining a global exclude pattern (^(\.venv|\.git|\.cache)/), you bypassed this issue entirely, ensuring your pre-commit checks run instantly and focus strictly on your project source files.
 
 ---
 
 **3. Why should Ansible be installed inside a Python virtual environment?**
 
-Add your answer here.
+Installing Ansible inside a Python virtual environment (.venv) is a best practice for several important reasons:
+
+Key Benefits of Using a Virtual Environment
+1>  Dependency Isolation: It keeps Ansible and its required Python packages contained within your specific project directory, preventing conflicts with global system packages or other projects.
+
+2>  Version Control & Consistency: By pairing the virtual environment with a requirements.txt file, you ensure that everyone on your team (or your CI/CD pipelines) runs the exact same version of Ansible and its dependencies.
+
+3>  System Stability: Operating systems (like Ubuntu) rely on system Python for critical internal tasks. Installing packages globally can risk breaking system tools, whereas a virtual environment keeps your workspace safely sandboxed.
+
+4>  Clean Management: If something goes wrong with your setup, you can easily delete and recreate the .venv folder without affecting your operating system or other projects.
 
 ---
 
 **4. Why must SSH private keys and `.venv/` remain outside version control?**
 
-Add your answer here.
+Keeping SSH private keys and virtual environments (.venv/) out of version control is a core security and repository-management best practice:
+
+1> SSH Private Keys (Security Risk): Private keys grant authentication and access to your servers and repositories. If committed to version control, they are exposed to anyone who gains access to the repository (including public history), allowing unauthorized users to impersonate you and compromise your infrastructure.
+
+2> Virtual Environment .venv/ (Portability & Bloat): Virtual environments contain thousands of binary files, system libraries, and paths tied specifically to your local machine's operating system and architecture. Committing them causes massive repository bloat and compatibility errors. Instead, you track a lightweight requirements.txt file so each machine can cleanly generate its own isolated environment.
 
 ---
 
