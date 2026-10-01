@@ -162,7 +162,7 @@ Delete the merged `feature/contact-page` branch to keep your branch list clean.
 
 #### Screenshot 15 — Output showing `feature/contact-page` deleted and no longer listed
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk4-12.png)
 
 ---
 
@@ -174,7 +174,7 @@ Add your screenshot here.
 
 Paste your LinkedIn post URL here:
 
-Add your URL here...
+https://lnkd.in/p/eUyCJWKz
 
 #### Screenshot 16 — LinkedIn post published with the Git branching workflow summary
 

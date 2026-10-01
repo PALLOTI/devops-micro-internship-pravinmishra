@@ -32,7 +32,7 @@ Add a screenshot of the terminal showing successful `terraform version` output.
 
 Add a screenshot of the terminal showing successful `az version` output.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk832.png)
 
 ---
 
@@ -52,11 +52,11 @@ Create a new Terraform project and define the complete Azure infrastructure requ
 
 The `terraform-react-azure` project must contain:
 
-```text
+text
 terraform-react-azure/
 ├── main.tf
 └── cloud-init.sh
-```
+
 
 The Terraform configuration must include:
 
@@ -90,7 +90,7 @@ Add a screenshot of VS Code showing the Linux virtual machine configuration, inc
 
 Ensure that passwords, private keys, account IDs, access tokens, and other sensitive information are hidden.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk835.png)
 
 ---
 
@@ -140,7 +140,7 @@ Review the Terraform execution plan and provision the Azure infrastructure.
 
 Add a screenshot showing the Terraform plan summary and the proposed resources.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk839.png)
 
 ---
 
@@ -156,7 +156,8 @@ Add a screenshot showing successful `terraform apply` completion.
 
 Add a screenshot showing the VM public IP address returned by `terraform output`.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk8310.png)
+
 
 ## VM Public IP Address
 

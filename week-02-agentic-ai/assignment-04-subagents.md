@@ -129,7 +129,7 @@ Make sure your published post includes:
 
 #### Screenshot 7 — Published LinkedIn post showing your post content and leaderboard progress link visible
 
-Add your screenshot here.
+![PALLOTI](./screenshots/linkedin.png)
 
 ---
 

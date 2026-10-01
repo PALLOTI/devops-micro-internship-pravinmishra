@@ -144,7 +144,7 @@ Share how you built safety controls that prevent an AI agent from performing des
 
 #### Screenshot 10 — Published post on X or LinkedIn showing your AI safety achievement message and leaderboard progress link visible
 
-Add your screenshot here.
+![PALLOTI](./screenshots/whatsapp.png)
 
 ---
 

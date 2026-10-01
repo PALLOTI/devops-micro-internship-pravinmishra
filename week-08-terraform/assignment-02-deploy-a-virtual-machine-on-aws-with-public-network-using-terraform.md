@@ -64,7 +64,7 @@ The configuration must include:
 
 Ensure that no AWS credentials, private keys, account IDs, or other sensitive information are visible.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk823.png)
 
 ---
 
@@ -108,7 +108,7 @@ Review the Terraform execution plan, provision the AWS resources, and record the
 
 #### Screenshot 7 — Terraform output showing the public IP address of the EC2 instance
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk827.png)
 
 ---
 
@@ -116,7 +116,7 @@ Add your screenshot here.
 
 Record the public IP address displayed by `terraform output`.
 
-**EC2 Public IP Address:** `Add the public IP address here`
+**EC2 Public IP Address:** 127.0.0.1
 
 ---
 

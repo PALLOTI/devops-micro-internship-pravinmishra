@@ -473,11 +473,6 @@ Wake up early by 3am
 
 ### LinkedIn Post
 
-
-
-https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-cloudcomputing-softwareengineering-share-7477398559223431168-46gd/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE_
-
-
 ## 10. Proof of Work
 
 - LinkedIn Post URL:

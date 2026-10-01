@@ -229,7 +229,7 @@ In a Bash automation triage script structured like this, the `for` loop iterates
 
 The loop uses the array in the following way:
 
-```bash
+bash
 # Example of how the script executes the array elements
 for check in "${checks[@]}"; do
     # 1. It extracts the current check definition from the array
@@ -237,7 +237,7 @@ for check in "${checks[@]}"; do
     # 3. It evaluates the exit status or output to determine if the component is healthy
 done
 
-```
+
 
 By looping through the array, the script avoids repetitive code blocks (copy-pasting code for all five checks) and ensures every target metric—from the Nginx service status down to memory availability—is evaluated in a clean, standardized, and predictable order.
 

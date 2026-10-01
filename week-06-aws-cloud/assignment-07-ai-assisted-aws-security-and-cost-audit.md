@@ -24,13 +24,13 @@ Confirm your AWS CLI is authenticated and can see the S3 bucket, EC2 instance(s)
 
 #### Screenshot 1 — Output of `aws s3 ls`, the EC2 instance table, and the RDS instance table (blur the Account ID if visible)
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk671.png)
 
 ---
 
 #### Screenshot 2 — Output of `pwd` and `find . -maxdepth 4 -type d | sort`
 
-![PALLOTI](./screenshots/wk671.png)
+![PALLOTI](./screenshots/wk672.png)
 
 ---
 
@@ -79,13 +79,13 @@ Make it executable and confirm it has no syntax errors.
 
 #### Screenshot 5 — Top section of `aws-audit.sh` showing the variables and the checks array
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk675.png)
 
 ---
 
 #### Screenshot 6 — One check function (for example `check_ssh_open_to_world`) showing the AWS CLI call and conditional
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk676.png)
 
 ---
 
@@ -106,7 +106,7 @@ Run the script against your live AWS account and capture the current state befor
 
 #### Screenshot 8 — Output of `./scripts/aws-audit.sh` showing your Full Name and all five checks
 
-Add your screenshot here.
+![PALLOTI](./screenshots/wk678.png)
 
 ---
 
@@ -227,7 +227,7 @@ Submit your GitHub repository URL containing all assignment files, screenshots, 
 
 Paste your GitHub repository URL here:
 
-`Add your GitHub repository URL here`
+https://github.com/PALLOTI/devops-micro-internship-pravinmishra
 
 ---
 

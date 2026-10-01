@@ -163,27 +163,56 @@ Deliberately introduce a change Terraform did not make — a destructive change 
 
 ### 1. What change did you introduce?
 
-Write your answer here.
+the change introduced in Task 6 was an intentional, manual modification made directly in the AWS Management Console outside of Terraform:
+
+The Change: A custom tag with the Key: TestDrift and Value: manual-change was added directly to the EC2 security group named book-review-dev-web-sg.
 
 ### 2. Was it true infrastructure drift or a Terraform configuration change?
 
-Write your answer here.
+It was **true infrastructure drift**.
+
+The change was made directly in the live environment (the AWS Management Console) *outside* of Terraform, while the local Terraform configuration files (`.tf`) remained completely untouched.
+
+This created a direct divergence between the actual state of the AWS resource and the desired state declared in your code. When `terraform plan` ran, Terraform detected the extra tag present in AWS that wasn't in the configuration, correctly treating it as drift and proposing an in-place change to remove it.
 
 ### 3. What Terraform plan evidence proves that a change is pending?
 
-Write your answer here.
+Based on the workflow guide and Terraform's mechanics, there are three primary pieces of evidence that prove a change is pending:
+
+* **Terraform Exit Code (`2`):** The script executes `terraform plan -detailed-exitcode`. An exit code of **`2`** explicitly signals that Terraform has detected differences between the desired configuration and the actual infrastructure (compared to `0` for no changes or `1` for an error).
+* **Resource Summary Counts:** The plan summary indicates non-zero change operations—such as **`0 to add, 1 to change, 0 to destroy`** (as seen when the `TestDrift` tag was detected on the security group).
+* **Generated JSON Plan (`tfplan.json`):** The drift script is programmed to automatically generate a JSON version of the plan *only* when changes are found. The presence of this file allows `jq` to parse specific resource actions (like modifications or deletions) for policy and safety checks.
 
 ### 4. Was the action an update, deletion, replacement, or security-rule change?
 
-Write your answer here.
+The action was an **update** (specifically, an **in-place modification**).
+
+Here is why:
+
+* **The Plan Metrics:** The Terraform plan summary showed **`0 to add, 1 to change, 0 to destroy`**.
+* **The Nature of the Change:** Terraform modified the existing security group (`book-review-dev-web-sg`) in place to remove the unmanaged `TestDrift` tag, bringing the live resource back into alignment with the configuration file. It did not destroy or replace the resource.
+
+*Note on security rules:* While the automated script report generated an overall **FAIL** status, that was due to pre-existing open ingress rules (`0.0.0.0/0` for SSH/HTTP) flagged by the `check_open_ingress` policy check—the actual *Terraform plan action itself* did not modify any security rules, only the tags.
 
 ### 5. What did Claude recommend?
 
-Write your answer here.
+Based on the workflow guide, when Claude Code ran the `/tf-drift-review` Skill after the drift was introduced, it recommended the following:
+
+* **Human Review for the Security Findings:** It recommended that an engineer carefully review the pre-existing security issues—specifically the open ingress rules (such as port 22/SSH exposed to `0.0.0.0/0`) that caused the script to report an overall **FAIL**.
+* **Human Discretion on the Tag Change:** It identified the pending Terraform change as a low-risk, in-place tag reconciliation (removing the manually added `TestDrift` tag) to bring AWS back in line with the configuration.
+* **No Autonomous Action:** Most importantly, **Claude recommended no automated infrastructure changes.** It did not run `terraform apply` or attempt to fix the drift itself, leaving the final decision and execution strictly under human control.
 
 ### 6. Why should you review the recommendation before taking action?
 
-Write your answer here.
+Reviewing Claude's recommendation before taking action is critical because an AI model provides analysis, but the human engineer remains solely responsible for production infrastructure.
+
+Here is why that human review step is vital in this specific pipeline:
+
+Separating Drift from Pre-Existing Issues: As seen during the drift review, the automated script reported an overall FAIL due to open ingress rules (0.0.0.0/0), even though the actual Terraform plan was only removing an unmanaged tag. An engineer must review the recommendation to understand that context—ensuring they don't panic over a red "FAIL" status, while also making sure they don't overlook genuine security concerns (like an exposed SSH port) that need separate hardening.
+
+Preventing Unintended Side Effects: Even a seemingly harmless "in-place change" like removing a tag can sometimes disrupt automated monitoring, compliance labeling, or tracking systems if that tag was actually needed. A human review verifies whether the drift represents something that should be reconciled in AWS or if the Terraform code itself needs to be updated to match the new reality.
+
+Enforcing the Safety Boundary: The workflow is specifically designed so that deterministic scripts gather data and AI provides reasoning, but humans make the final operational decisions. Reviewing the recommendation ensures you keep a human-in-the-loop safety net active before any infrastructure-changing commands (terraform apply) are executed.
 
 ---
 

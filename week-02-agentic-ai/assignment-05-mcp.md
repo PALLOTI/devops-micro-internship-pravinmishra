@@ -95,7 +95,7 @@ Share your MCP achievement on Facebook or WhatsApp Status and provide evidence o
 
 #### Screenshot 6 — Published Facebook post or WhatsApp Status showing your MCP achievement message and leaderboard progress link visible
 
-Add your screenshot here.
+![PALLOTI](./screenshots/whatsapp.png)
 
 ---
 
