@@ -112,7 +112,7 @@ And my ssh-keygen input i.e getting my ssh key , for easy authentication into my
 
 # Submission Instructions
 
-- Complete all tasks in sequence and include all required screenshots specified in Tasks 0–5.
+- Complete all tasks in sequence and include all required screenshots specified in Tasks 0–6.
 - Do not expose passwords, keys, account IDs, or other sensitive information in screenshots.
 
 ---
@@ -135,6 +135,8 @@ And my ssh-keygen input i.e getting my ssh key , for easy authentication into my
 - Captured and recorded the VM public IP using `terraform output`
 - Verified that the VM is running using Azure CLI
 - Completed `terraform destroy` successfully
+- Shared Terraform deployment progress on WhatsApp by following Task 6
+- Captured a screenshot of the published WhatsApp Status
 - Captured all required screenshots
 - Checked that no passwords, keys, account IDs, or other sensitive information are visible in the screenshots
 

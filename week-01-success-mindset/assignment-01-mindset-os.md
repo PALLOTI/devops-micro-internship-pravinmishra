@@ -61,7 +61,7 @@ The power of living in the presence
 
 Life is'nt about perfection, life is an adventure, the little moments of life holds weight eg. attending ur kids graudation ,spending time with the kids at the park etc, life is about living in the presence stop believing that you'll be enjoy life more tomorrow or when you clock 60 .
 
----
+### Truth #2
 
  Truth #2
 
@@ -76,7 +76,7 @@ The future belongs to those taking a calculated risk. The truth is that some yea
 Lol
 Hope I'm not sounding like a motivational speaker
 
----
+### Truth #3
 
  Truth #3
 
@@ -123,18 +123,20 @@ Write as if a journalist is writing about you **3 to 7 years from now** (not 20 
   * community contribution
 * Add 1–3 images if you can (optional but powerful).
 
-### Publish It Publicly On Any ONE
+### Public Article URL
 
-* LinkedIn
-* Medium
-* WordPress
-* Blogspot
-* Personal blog
-* Portfolio page
+https://medium.com/@palloti10x/mental-dependencies-before-server-dependencies-why-your-mindset-is-your-true-foundation-in-devops-d0b8e665ce2c
 
-Use the credit note that matches your track:
+### LinkedIn Post URL
 
-Add the following credit note at the end of your post **(If you are DMI Cohort 3 student)**:
+Create a LinkedIn post sharing your published article, then add the URL below.
+
+https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-cloudcomputing-softwareengineering-share-7477398559223431168-46gd/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE
+
+
+### Credit Note — DMI Self-Paced Engineer Track Students
+
+Add this credit note at the end of your public article. Replace `YOUR-GITHUB-USERNAME` with your actual GitHub username.
 
 > **P.S. This post is part of the DevOps Micro Internship (DMI) with Agentic AI — Cohort 3 — by [Pravin Mishra](https://www.linkedin.com/in/pravin-mishra-aws-trainer/). My graded progress is public: https://dmi.pravinmishra.com/s/YOUR-GITHUB-USERNAME.html · Start your DevOps journey: https://dmi.pravinmishra.com/?utm_source=student&utm_medium=ps-blog&utm_campaign=cohort3**
 
@@ -423,7 +425,7 @@ Example:
 * From sat-Mon
 * Immediately after the Sat 8hrs class, sleep for like 2hrs then begin the Assignment, Try everything possible to finish up on monday
 
-#### How Many Sessions Per Week?
+#### How Many DMI Work Sessions Will I Complete Each Week?
 
 
 
@@ -449,20 +451,20 @@ Examples:
 * My phone always on airplane mode during my reading hours
 * My room and state Libary conducive for learning
 
-# Reflection – Week 1
+## Task 8 — Week 1 Reflection and Proof of Work
 
-### Biggest insight I got about myself this week
+### Biggest Insight I Got About Myself This Week
 
 
 Understanding the effect of compounding, consistent little disciple leads to greatness
 Prioritizing my health and mental state
 
-### My biggest weakness/loop I noticed
+### My Biggest Weakness or Loop I Noticed
 
 
 Mastering consistency is the ultimate challenge for me right now. However, I am confident that in the near future, I will achieve it.
 
-### One system I will implement from this week (exact habit + time)
+### One System I Will Implement From This Week (Exact Habit and Time)
 
 
 Wake up early by 3am
