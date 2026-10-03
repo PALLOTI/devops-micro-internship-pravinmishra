@@ -30,7 +30,7 @@ cat .dockerignore
 
 The file must exclude `node_modules`, `build`, and `.env`.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk21.png)
 
 ---
 
@@ -46,7 +46,7 @@ Create a baseline single-stage Docker image and run the application on port 3000
 
 Add a screenshot showing the completed `Dockerfile.single`.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk22.png)
 
 ---
 
@@ -60,7 +60,7 @@ http://localhost:3000
 
 Ensure that your full name is visible in the application.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk23.png)
 
 ---
 
@@ -76,7 +76,7 @@ Create an optimized multi-stage Docker image with separate builder and Nginx run
 
 Add a screenshot showing the completed multi-stage `Dockerfile`.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk24.png)
 
 ---
 
@@ -90,7 +90,7 @@ http://localhost
 
 Ensure that your full name is visible in the application.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk25.png)
 
 ---
 
@@ -117,7 +117,7 @@ react-single:latest
 react-multistage:latest
 ```
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk26.png)
 
 ---
 
@@ -158,6 +158,7 @@ Write a short analysis of 5–8 lines covering:
 
 Write your analysis here.
 
+Transitioning from a bulky single-stage image (~1.2 GB) to a multi-stage runtime image (~50 MB) achieved a **~95% reduction in total image size**. This dramatic slimming significantly enhances security by stripping out heavy build toolchains, package managers, and debugging utilities from production. By eliminating these components, the container's attack surface is drastically reduced, leaving fewer potential vulnerabilities (CVEs) exposed. Furthermore, these lightweight images accelerate image pull and deployment speeds, minimizing network overhead and speeding up cluster scaling. Finally, build-caching was optimized by copying `package.json` and running dependency installs before source code, allowing Docker to skip redundant installation steps when dependencies remain unchanged.
 ---
 
 # Task 6 — Explore Additional Production Optimizations (Optional)
@@ -191,13 +192,13 @@ Create a LinkedIn post describing what you built, what a multi-stage Docker buil
 
 Paste your LinkedIn post URL here:
 
-`Add your URL here`
+https://lnkd.in/p/eg7k7Dw4
 
 ---
 
 #### LinkedIn Post Screenshot
 
-Add a screenshot of the published LinkedIn post here.
+![PALLOTI](./screenshots/linkedin1&2.png)
 
 ---
 
