@@ -28,7 +28,7 @@ docker network ls
 
 The output must include the default `bridge`, `host`, and `none` networks.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk31.png)
 
 ---
 
@@ -40,7 +40,7 @@ Add a screenshot of the terminal showing successful completion of:
 docker pull nginx:alpine
 ```
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk32.png)
 
 ---
 
@@ -58,7 +58,7 @@ The output must show the running `myweb` container with:
 0.0.0.0:80->80/tcp
 ```
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk33.png)
 
 ---
 
@@ -72,7 +72,7 @@ http://<YOUR-VM-PUBLIC-IP>
 
 Ensure that the VM public IP is visible in the address bar. Add your full name as a clear caption directly below the screenshot.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk34.png)
 
 ---
 
@@ -92,7 +92,7 @@ Add a screenshot of the terminal showing `mynetwork` in:
 docker network ls
 ```
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk35.png)
 
 ---
 
@@ -106,7 +106,7 @@ docker ps
 
 The output must show both `web` and `client` containers running without published host ports.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk36.png)
 
 ---
 
@@ -120,7 +120,7 @@ docker exec client wget -qO- http://web
 
 The output must display the Nginx Welcome Page HTML.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk37.png)
 
 ---
 
@@ -134,7 +134,7 @@ docker network inspect mynetwork
 
 The output must show both `web` and `client` connected to `mynetwork`.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk38.png)
 
 ---
 
@@ -156,7 +156,7 @@ docker network ls
 
 The output must include both `frontend-network` and `backend-network`.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk39.png)
 
 ---
 
@@ -174,7 +174,7 @@ The output must show:
 - `backend` without a published host port
 - `db` without a published host port
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk310.png)
 
 ---
 
@@ -188,7 +188,7 @@ docker network inspect frontend-network
 
 The output must show `frontend` and `backend`.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk311.png)
 
 ---
 
@@ -202,7 +202,7 @@ docker network inspect backend-network
 
 The output must show `backend` and `db`.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk312.png)
 
 ---
 
@@ -216,7 +216,7 @@ docker exec frontend wget -qO- http://backend
 
 The output must display the Nginx Welcome Page HTML.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk313.png)
 
 ---
 
@@ -224,7 +224,7 @@ Add your screenshot here.
 
 Add a screenshot of the terminal showing a successful connection to `db` on port `27017` from the `backend` container.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk314.png)
 
 ---
 
@@ -238,7 +238,7 @@ The output must include:
 Expected result: frontend cannot reach db
 ```
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk315.png)
 
 ---
 
@@ -252,7 +252,7 @@ http://<YOUR-VM-PUBLIC-IP>
 
 Ensure that the VM public IP is visible in the address bar. Add your full name as a clear caption directly below the screenshot.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk316.png)
 
 ---
 
@@ -274,7 +274,7 @@ docker ps
 
 The output must show the running `fastapp` container.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk317.png)
 
 ---
 
@@ -292,7 +292,7 @@ The output must confirm:
 "NetworkMode": "host"
 ```
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk318.png)
 
 ---
 
@@ -306,7 +306,7 @@ http://<YOUR-VM-PUBLIC-IP>
 
 Ensure that the VM public IP is visible in the address bar. Add your full name as a clear caption directly below the screenshot.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk319.png)
 
 ---
 
@@ -319,7 +319,7 @@ docker stop fastapp
 docker rm fastapp
 ```
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk320.png)
 
 ---
 
@@ -332,7 +332,32 @@ Write a short note explaining:
 - Why the frontend could not access the database in Task 3
 - The difference between bridge mode and host network mode
 
-Write your note here.
+
+
+Key Networking Concepts in Multi-Tier Container Deployments
+Default Bridge Networking
+
+When Docker starts without a specified network, containers attach to the default bridge network automatically.
+
+Containers can communicate externally via NAT, but automatic container-name DNS resolution is disabled on the default bridge, requiring manual IP tracking or legacy linking.
+
+Container-Name Communication on Custom Networks
+
+Creating and using custom user-defined bridge networks enables Docker's built-in embedded DNS server.
+
+Containers connected to the same custom network can seamlessly discover and talk to each other using their service names (e.g., connecting to api or db) as hostnames.
+
+Frontend and Database Architecture Constraints
+
+In a secure 3-tier architecture, the frontend (ui) communicates exclusively with the backend API (api), while the database (db) remains isolated behind the backend layer.
+
+Direct cross-communication barriers or strict network isolation prevent unauthorized layers from reaching internal datastores directly.
+
+Bridge Mode vs. Host Network Mode
+
+Bridge Mode: Isolates containers within a virtual network using NAT and explicit port mapping flags (such as -p 80:80), ensuring clean port separation and security boundaries.
+
+Host Network Mode: Bypasses network isolation entirely, attaching the container directly to the host machine's network stack for native performance without port translation layers.
 
 ---
 
@@ -348,13 +373,13 @@ Create a LinkedIn post about the Docker networking modes explored, one key lesso
 
 Paste your LinkedIn post URL here:
 
-`Add your URL here`
+https://lnkd.in/p/eC93VhsV
 
 ---
 
 #### LinkedIn Post Screenshot
 
-Add a screenshot of the published LinkedIn post here.
+![PALLOTI](./screenshots/linkedin4&3.png)
 
 ---
 
