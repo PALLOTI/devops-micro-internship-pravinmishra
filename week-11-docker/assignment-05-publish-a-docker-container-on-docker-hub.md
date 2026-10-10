@@ -26,7 +26,7 @@ Add a screenshot of Docker Hub showing your newly created public repository:
 my-react-app
 ```
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk51.png)
 
 ---
 
@@ -40,7 +40,7 @@ Login Succeeded
 
 Ensure that your full name is visible and that no password, Personal Access Token, or device code is exposed.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk52.png)
 
 ---
 
@@ -54,7 +54,7 @@ docker image ls <YOUR_DOCKERHUB_USERNAME>/my-react-app
 
 The output must show the `latest` tag.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk53.png)
 
 ---
 
@@ -68,7 +68,7 @@ docker push <YOUR_DOCKERHUB_USERNAME>/my-react-app:latest
 
 The output must include a pushed status or image digest.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk54.png)
 
 ---
 
@@ -76,7 +76,7 @@ Add your screenshot here.
 
 Add a screenshot of your Docker Hub repository showing the uploaded `latest` image tag.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk55.png)
 
 ---
 
@@ -88,7 +88,7 @@ Add a screenshot of the terminal showing:
 - Successful `docker pull` output
 - `docker image ls` showing the pulled image
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk56.png)
 
 ---
 
@@ -106,7 +106,7 @@ The output must show the running `react-container` with:
 0.0.0.0:80->80/tcp
 ```
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk57.png)
 
 ---
 
@@ -120,13 +120,13 @@ http://<YOUR-VM-PUBLIC-IP>
 
 Ensure that the VM public IP is visible in the address bar. Add your full name as a clear caption directly below the screenshot.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk58.png)
 
 ---
 
 # Docker Hub Repository URL
 
-**Repository URL:** `Add your Docker Hub repository URL here`
+**Repository URL:** https://app.docker.com/accounts/techpalloti
 
 ---
 
@@ -162,13 +162,13 @@ Include:
 
 Paste your LinkedIn post URL here:
 
-`Add your URL here`
+https://lnkd.in/p/eq2N-f_W
 
 ---
 
 #### LinkedIn Post Screenshot
 
-Add a screenshot of the published LinkedIn post here.
+![PALLOTI](./screenshots/linkedin11.png)
 
 ---
 

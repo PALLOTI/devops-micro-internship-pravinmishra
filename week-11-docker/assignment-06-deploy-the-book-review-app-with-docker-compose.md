@@ -30,7 +30,7 @@ backend/
 docker-compose.yml
 ```
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk61.png)
 
 ---
 
@@ -47,7 +47,7 @@ backend/.dockerignore
 
 Ensure that no real passwords, tokens, or secrets are visible.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk62.png)
 
 ---
 
@@ -63,7 +63,7 @@ Prepare Dockerfiles for the frontend and backend services and build both service
 
 Add a screenshot showing the completed `frontend/Dockerfile`.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk63.png)
 
 ---
 
@@ -71,7 +71,7 @@ Add your screenshot here.
 
 Add a screenshot showing the completed `backend/Dockerfile`.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk64.png)
 
 ---
 
@@ -83,7 +83,7 @@ Add a screenshot of the terminal showing successful completion of:
 docker compose build
 ```
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk65.png)
 
 ---
 
@@ -105,7 +105,7 @@ Add a screenshot showing the MySQL service in `docker-compose.yml`, including:
 - `mysql_data` volume mount
 - No published MySQL port
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk66.png)
 
 ---
 
@@ -118,7 +118,7 @@ Add a screenshot showing the backend service configuration, including:
 - Browser frontend origin configured for CORS
 - Published backend port
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk67.png)
 
 ---
 
@@ -130,7 +130,7 @@ Add a screenshot showing the frontend service configuration, including:
 - `depends_on` for the backend service
 - Browser-facing `NEXT_PUBLIC_API_URL`
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk68.png)
 
 ---
 
@@ -138,7 +138,7 @@ Add your screenshot here.
 
 Add a screenshot showing the `mysql_data` volume definition in `docker-compose.yml`.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk69.png)
 
 ---
 
@@ -160,7 +160,7 @@ docker compose ps
 
 The output must show the MySQL, backend, and frontend services running. MySQL must show as healthy.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk610.png)
 
 ---
 
@@ -174,7 +174,7 @@ docker compose logs mysql backend --tail=50
 
 The logs must show MySQL readiness and successful backend database connection.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk611.png)
 
 ---
 
@@ -192,7 +192,7 @@ Add a browser screenshot showing successful user registration or login.
 
 Add your full name as a clear caption directly below the screenshot.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk612.png)
 
 ---
 
@@ -202,7 +202,7 @@ Add a browser screenshot showing a created book review visible in the applicatio
 
 Add your full name as a clear caption directly below the screenshot.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk613.png)
 
 ---
 
@@ -213,7 +213,7 @@ Add a browser developer-tools screenshot with:
 - The Network tab showing a successful API request
 - The Console drawer showing no CORS error after the API interaction
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk614.png)
 
 ---
 
@@ -231,7 +231,7 @@ Add a browser screenshot showing the registered user or created review before th
 
 Add your full name as a clear caption directly below the screenshot.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk615.png)
 
 ---
 
@@ -247,7 +247,7 @@ docker compose ps
 
 Do not use `docker compose down -v`.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk616.png)
 
 ---
 
@@ -257,7 +257,7 @@ Add a browser screenshot showing the same registered user or review after the st
 
 Add your full name as a clear caption directly below the screenshot.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk617.png)
 
 ---
 
@@ -283,7 +283,7 @@ Write your explanation here.
 
 # Final Public Frontend URL
 
-**Frontend URL:** `http://<VM_PUBLIC_IP>:<FRONTEND_PORT>`
+**Frontend URL:** http://44.209.224.205:3000
 
 Replace the placeholder with your working application URL.
 
@@ -303,11 +303,11 @@ Create a LinkedIn post about the Book Review App deployment and what you learned
 
 ### Evidence
 
-**LinkedIn Post URL:** `Add your LinkedIn post URL here`
+**LinkedIn Post URL:** https://lnkd.in/p/eq2N-f_W
 
 #### LinkedIn Post Screenshot
 
-Add a screenshot of your published LinkedIn post here.
+![PALLOTI](./screenshots/linkedin11.png)
 
 ---
 
