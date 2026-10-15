@@ -12,7 +12,7 @@ In this assignment, you will build a read-only Bash script that audits a running
 
 # Target Container
 
-**Target Container Name:** `Add the exact container name here`
+**Target Container Name:**  react-multistage:latest
 
 ---
 
@@ -33,7 +33,7 @@ docker-audit.sh
 SKILL.md
 ```
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk81.png)
 
 ---
 
@@ -49,7 +49,7 @@ Add the supplied `docker-audit` skill to Claude Code and confirm that it is avai
 
 Add a screenshot of Claude Code showing `docker-audit` in the available skill list.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk82.png)
 
 ---
 
@@ -70,7 +70,7 @@ Add a terminal screenshot showing:
 - Your full name
 - The usage message displayed when the script runs without a container name
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk83.png)
 
 ---
 
@@ -90,7 +90,7 @@ Add a terminal screenshot showing:
 - `docker ps`
 - The audit command using the selected target container name
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk84.png)
 
 ---
 
@@ -98,7 +98,7 @@ Add your screenshot here.
 
 Add a terminal screenshot showing the initial Docker audit results.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk85.png)
 
 ---
 
@@ -119,7 +119,7 @@ Add a Claude Code screenshot showing:
 - Recommended manual fix
 - Verification method
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk86.png)
 
 ---
 
@@ -135,7 +135,7 @@ Manually fix one WARN or FAIL finding from the initial audit.
 
 Add a screenshot of the updated Dockerfile or `docker-compose.yml` showing the selected hardening fix.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk87.png)
 
 ---
 
@@ -143,7 +143,7 @@ Add your screenshot here.
 
 Add a terminal screenshot showing your full name and the rebuilt or recreated service/container running successfully.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk88.png)
 
 ---
 
@@ -163,7 +163,7 @@ Add a terminal screenshot showing:
 - The updated running container
 - The final audit report
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk89.png)
 
 ---
 
@@ -176,7 +176,14 @@ Write a short comparison covering:
 - Final audit result
 - Security benefit of the improvement
 
-Write your comparison here.
+    Container Hardening & Security Audit Comparison
+➡️ Initial Audit Finding: The initial container security audit flagged a [WARN] for Container user, reporting that the backend service had no non-root user configured and was running as the default root user inside the container.
+
+➡️ Dockerfile Change Applied: The backend's Dockerfile was updated in the runtime stage to copy application files with explicit non-root ownership (COPY --chown=node:node . .) and explicitly drop root privileges by adding the USER node instruction prior to startup.
+
+➡️ Final Audit Result: Re-running the security audit against the updated container yielded a [PASS] for Container user, confirming that the process successfully runs under the unprivileged node user.
+
+➡️ Security Benefit of the Improvement: Eliminating root execution ensures that if the Node.js application is ever compromised via a vulnerability or injection flaw, the attacker is strictly confined to unprivileged permissions. This prevents root-level access to the container's filesystem and significantly mitigates the severity of potential container escape attempts.
 
 ---
 
@@ -188,13 +195,13 @@ Create a LinkedIn post about the container security checks you performed, one ha
 
 ### Evidence
 
-**LinkedIn Post URL:** `Add your LinkedIn post URL here`
+**LinkedIn Post URL:** https://lnkd.in/p/eeU52ftT
 
 #### LinkedIn Post Screenshot
 
 Add a screenshot of the published LinkedIn post, including the final audit result.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/linkedin11f.png)
 
 ---
 

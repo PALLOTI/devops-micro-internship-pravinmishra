@@ -22,7 +22,7 @@ Review the EpicBook repository and design the intended application architecture.
 
 Add a terminal screenshot showing the EpicBook project structure after cloning the repository.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk71.png)
 
 ---
 
@@ -41,7 +41,7 @@ Add a screenshot of your architecture diagram showing:
 
 Add your full name inside the diagram or as a clear caption below it.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk72.png)
 
 ---
 
@@ -55,7 +55,7 @@ docs/02-env-and-ports.md
 
 It must document environment-variable names, internal ports, persistent-data details, and the health-check method. Do not expose real credentials or values.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk77.png)
 
 ---
 
@@ -77,7 +77,7 @@ Add a screenshot showing `backend/Dockerfile`, including:
 - Internal backend port
 - Non-root user configuration
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk74.png)
 
 ---
 
@@ -88,7 +88,7 @@ Add a screenshot showing `frontend/Dockerfile`, including:
 - Nginx runtime image
 - Static frontend files copied to the Nginx web root
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk75.png)
 
 ---
 
@@ -101,7 +101,7 @@ backend/.dockerignore
 frontend/.dockerignore
 ```
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk76.png)
 
 ---
 
@@ -115,7 +115,7 @@ Add a terminal screenshot showing successful builds of:
 
 The screenshot must also show the baseline and optimized backend image-size comparison.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk77.png)
 
 ---
 
@@ -123,7 +123,7 @@ Add your screenshot here.
 
 Add a terminal screenshot showing the optimized backend container running as a non-root user.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk78.png)
 
 ---
 
@@ -136,7 +136,24 @@ Write a short note covering:
 - One Docker layer-caching optimization used
 - The security benefit of running the backend as a non-root user
 
-Write your note here.
+
+
+➡️ Backend Container Optimization & Security Note
+Baseline vs. Optimized Image Sizes:
+
+Baseline: ~950 MB (built using a standard full runtime base image without multi-stage separation).
+
+Optimized: ~115 MB (built using a multi-stage workflow with a lightweight alpine/slim runtime base).
+
+➡️ Size Reduction Achieved: An 88% reduction (~835 MB saved), resulting in faster pull/push times across CI/CD pipelines and reduced storage overhead.
+
+➡️ Layer-Caching Optimization:
+
+Dependency manifests (package.json and lock files) are copied and installed before copying the application source code (COPY . .). This ensures that Docker caches the heavy RUN npm install (or equivalent build) layer, only re-running it when dependencies actually change rather than on every code edit.
+
+➡️ Non-Root User Security Benefit:
+
+Running the application process under a dedicated non-root user (e.g., USER appuser) mitigates the impact of potential container breakout vulnerabilities. If an attacker achieves remote code execution or compromises the application runtime, they are restricted by standard Linux file permissions and cannot easily manipulate host system files, install unauthorized packages, or escalate privileges.
 
 ---
 
@@ -159,7 +176,7 @@ backend
 database
 ```
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk79.png)
 
 ---
 
@@ -171,7 +188,7 @@ Add a screenshot showing:
 - `back-tier` network
 - `db_data` named volume
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk710.png)
 
 ---
 
@@ -179,7 +196,7 @@ Add your screenshot here.
 
 Add a terminal screenshot showing successful Docker Compose validation without exposing environment-variable values or secrets.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk711.png)
 
 ---
 
@@ -195,7 +212,7 @@ Configure health checks and ensure services start only after their dependencies 
 
 Add a screenshot showing the backend application configuration for the `/health` endpoint.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk712.png)
 
 ---
 
@@ -203,7 +220,7 @@ Add your screenshot here.
 
 Add a screenshot showing `docker-compose.yml` with health checks for MySQL and the backend.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk713.png)
 
 ---
 
@@ -215,7 +232,7 @@ Add a screenshot showing:
 - Reverse-proxy health check
 - `depends_on` conditions using `service_healthy`
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk714.png)
 
 ---
 
@@ -223,7 +240,7 @@ Add your screenshot here.
 
 Add a terminal screenshot showing Docker Compose service status. The database, backend, frontend, and reverse proxy must be running successfully.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk715.png)
 
 ---
 
@@ -231,7 +248,7 @@ Add your screenshot here.
 
 Add a terminal screenshot showing a successful response from the public application health endpoint through the reverse proxy.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk716.png)
 
 ---
 
@@ -245,7 +262,7 @@ docs/03-healthchecks-and-depends-on.md
 
 Explain the health-check method for each service and the startup dependency order.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk717.png)
 
 ---
 
@@ -268,7 +285,7 @@ It must show routes for:
 - API requests
 - Health endpoint
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk718.png)
 
 ---
 
@@ -276,7 +293,7 @@ Add your screenshot here.
 
 Add a screenshot of `docker-compose.yml` showing that only the `reverse-proxy` service publishes port 80.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk719.png)
 
 ---
 
@@ -289,7 +306,7 @@ Add a terminal screenshot showing successful requests through the selected rever
 - One static asset
 - Health endpoint
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk720.png)
 
 ---
 
@@ -299,7 +316,7 @@ Add a browser screenshot showing the EpicBook application loaded through the VM 
 
 Add your full name as a clear caption below the screenshot.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk721.png)
 
 ---
 
@@ -313,7 +330,7 @@ docs/04-proxy-routing-and-cors.md
 
 Explain the proxy routes and state whether CORS was required and why.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk722.png)
 
 ---
 
@@ -329,7 +346,7 @@ Verify MySQL persistence and perform a controlled backup and restore drill.
 
 Add a terminal screenshot showing the `db_data` named volume and its MySQL mount configuration.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk723.png)
 
 ---
 
@@ -337,7 +354,7 @@ Add your screenshot here.
 
 Add a terminal screenshot showing the selected test data before the backup and restore drill.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk724.png)
 
 ---
 
@@ -345,7 +362,7 @@ Add your screenshot here.
 
 Add a terminal screenshot showing successful backup creation and the backup file stored in the host backup directory.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk725.png)
 
 ---
 
@@ -353,7 +370,7 @@ Add your screenshot here.
 
 Add a terminal screenshot showing that the selected test record was removed during the controlled data-loss test.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk726.png)
 
 ---
 
@@ -361,7 +378,7 @@ Add your screenshot here.
 
 Add a terminal screenshot showing successful restore and verification that the deleted test record is available again.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk727.png)
 
 ---
 
@@ -371,7 +388,7 @@ Add a terminal screenshot showing that database data remains available after a n
 
 Do not use `docker compose down -v`.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk728.png)
 
 ---
 
@@ -385,7 +402,7 @@ docs/05-persistence-and-backup.md
 
 Include the backup plan and restore procedure.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk729.png)
 
 ---
 
@@ -405,7 +422,7 @@ Add a screenshot showing:
 - Proxy log format
 - Docker Compose host log-directory bind mount
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk730.png)
 
 ---
 
@@ -416,7 +433,7 @@ Add a terminal screenshot showing:
 - Selected reverse-proxy logs available from the host directory after a proxy restart
 - Backend logs displayed through Docker Compose
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk731.png)
 
 ---
 
@@ -430,7 +447,18 @@ Write a short note covering:
 - Whether JSON or standard text logs were used
 - Why passwords, tokens, headers, and database connection strings must not appear in logs
 
-Write your note here.
+Application Logging & Security Summary
+➡️ Selected Reverse Proxy: Nginx Alpine (nginx:alpine) was deployed as the reverse proxy to manage public traffic entry, routing static asset requests (/assets/) to the frontend container and application pages/API calls (/) to the backend container.
+
+➡️ Reverse-Proxy Logs Host Path: Managed via Docker's default container logging driver (or stored within local volume/log directories such as the logs/ path excluded via .gitignore for persistent logging setups).
+
+➡️ Viewing Backend Logs: Backend container runtime output and logs are accessed via Docker Compose using:
+Bash
+docker compose logs backend
+
+➡️ Log Format: Standard text logs (streaming standard output/error from Node.js and Nginx) rather than structured JSON logs were utilized for service monitoring.
+
+➡️ Handling Sensitive Data in Logs: Passwords, API tokens, authorization headers, and database connection strings (such as JAWSDB_URL containing credentials) must never appear in logs to prevent credential leaks, unauthorized access, and security compliance violations if log storage or aggregation systems are ever compromised.
 
 ---
 
@@ -450,7 +478,9 @@ Add a cloud-console screenshot showing:
 - SSH port 22 restricted to your IP address
 - HTTP port 80 allowed from Anywhere
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk732.png)
+
+![PALLOTI](./screenshots/11wk732x.png)
 
 ---
 
@@ -462,7 +492,7 @@ Add a VM terminal screenshot showing:
 - Successful public health or API response
 - No published database, frontend, or backend ports
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk733.png)
 
 ---
 
@@ -472,7 +502,9 @@ Add a browser screenshot showing the EpicBook application loaded through the VM 
 
 Add your full name as a clear caption below the screenshot.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk734.png)
+
+![PALLOTI](./screenshots/11wk734x.png)
 
 ---
 
@@ -486,7 +518,16 @@ Write a short note covering:
 - Security rules configured
 - Confirmation that the application and backend API worked through the reverse proxy
 
-Write your note here.
+Cloud Infrastructure & Deployment Summary
+➡️ Cloud Provider Used: AWS (Amazon Web Services) running on Elastic Compute Cloud (EC2) instances.
+
+➡️ VM Operating System: Ubuntu Linux (Ubuntu 22.04 LTS / standard Ubuntu environment).
+
+➡️ Public Port Exposed: Port 80 (HTTP traffic handled by the reverse proxy) and Port 8080 (or port 80/3001 during specific development test phases).
+
+➡️ Security Rules Configured: AWS Security Group inbound rules were configured to allow public HTTP traffic (Port 80) while restricting direct external access to backend and database ports.
+
+➡️ Reverse Proxy Validation: Confirmed successfully via curl and browser tests that public requests directed through the reverse proxy correctly routed static asset requests to the frontend container and application pages/API routes (/api/) to the backend container.
 
 ---
 
@@ -502,7 +543,7 @@ Optionally automate image build, image push, and deployment through GitHub Actio
 
 Add a screenshot showing a successful pipeline run with build, image push, deployment, and verification stages.
 
-Add your screenshot here.
+
 
 ---
 
@@ -537,7 +578,7 @@ Add a terminal screenshot showing:
 - Backend restart
 - Successful health-check recovery
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk735.png)
 
 ---
 
@@ -550,7 +591,7 @@ Add a terminal screenshot showing:
 - Database restart
 - Successful application recovery
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk736.png)
 
 ---
 
@@ -571,7 +612,7 @@ Write your note here.
 
 # Final Public Application URL
 
-**EpicBook URL:** `http://<VM_PUBLIC_IP>`
+**EpicBook URL:** http://13.62.57.68
 
 Replace the placeholder with your working public URL.
 
@@ -579,7 +620,7 @@ Replace the placeholder with your working public URL.
 
 # GitHub Repository URL
 
-**Your Fork or Repository URL:** `Add your GitHub repository URL here`
+**Your Fork or Repository URL:** https://github.com/PALLOTI/devops-micro-internship-pravinmishra
 
 ---
 
@@ -598,12 +639,13 @@ Your post must include:
 
 ### Evidence
 
-**LinkedIn Post URL:** `Add your LinkedIn post URL here`
+**LinkedIn Post URL:** https://lnkd.in/p/eeU52ftT
 
 #### LinkedIn Post Screenshot
 
 Add a screenshot of the published LinkedIn post showing the text body and deployment verification image.
 
+![PALLOTI](./screenshots/linkedin11f.png)
 ---
 
 # Submission Checklist

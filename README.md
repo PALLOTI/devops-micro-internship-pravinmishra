@@ -131,8 +131,10 @@ Week 06 → AWS Cloud
 <!-- Week 10 → Azure DevOps CI/CD -->
 <!-- [![Week 10 – CI/CD](./badges/week-10.svg)](./week-10-azure-devops/) -->
 
-<!-- Week 11 → Docker -->
-<!-- [![Week 11 – Docker](./badges/week-11.svg)](./week-11-docker/) -->
+ Week 11 → Docker 
+
+
+ [![Week 11 – Docker](./badges/week-11.svg)](./week-11-docker/) 
 
 <!-- Week 12 → Kubernetes -->
 <!-- [![Week 12 – K8s](./badges/week-12.svg)](./week-12-kubernetes/) -->
@@ -174,7 +176,7 @@ Week 06 → AWS Cloud
 | 10 | Ansible | ✅ Completed | ✅ Solved | [View post](https://lnkd.in/p/e2HzYfAB) | [Read Blog](https://medium.com/@palloti1000/the-separation-of-power-in-cloud-automation-building-a-3-tier-web-app-f201cd184602) |
 
 | 11 | Azure DevOps (CI/CD) | ⬜ Not Started | ⏳ Pending | — | — |
-| 12 | Docker | ⬜ Not Started | ⏳ Pending | — | — |
+| 12 | Docker | ✅ Completed | ✅ Solved | [View post](https://medium.com/@palloti1000/hardening-containers-orchestrating-secure-stacks-with-ai-assisted-auditing-69beefadd786) | [Read Blog](https://medium.com/@palloti1000/hardening-containers-orchestrating-secure-stacks-with-ai-assisted-auditing-69beefadd786) |
 | 13 | Kubernetes | ⬜ Not Started | ⏳ Pending | — | — |
 | 14 | Final Project | ⬜ Not Started | ⏳ Pending | — | — |
 
