@@ -100,6 +100,8 @@ Verify that the review workflow reports a healthy result against your clean Terr
 
 ### Screenshot 7 — Healthy Baseline Report
 
+![PALLOTI](./screenshots/wk869.png)
+
 #### Screenshot 6 — Script output showing a healthy result against the clean baseline
 #### add
 
@@ -109,15 +111,28 @@ Verify that the review workflow reports a healthy result against your clean Terr
 
 ### 1. What is the Overall Status of your baseline?
 
-Write your answer here.
+Based on the security audit baseline (the initial run before applying any container-hardening fixes), the overall status was:
+
+PASS: 2 checks
+
+WARN: 4 checks (including container user, health check, image tag, and published host ports)
+
+FAIL: 0 checks
 
 ### 2. Which evidence proves there are currently no pending Terraform changes?
 
-Write your answer here.
+Evidence that there are no pending Terraform changes is provided by the terminal output of a terraform plan command, which explicitly states:
+
+No changes. Your infrastructure matches the configuration.
+
+Additionally, if the infrastructure has been fully torn down after running terraform destroy, the completion message confirms that all resources have been removed (0 added, 0 changed, 0 destroyed), meaning there is no active infrastructure remaining to change.
 
 ### 3. Was `reports/tfplan.json` created? Explain why or why not.
 
-Write your answer here.
+No, `reports/tfplan.json` was not created.
+
+TH REASON
+The step-by-step instructions and tasks for Assignment 03 only require running `terraform plan` to review the proposed infrastructure changes directly in the terminal, followed by `terraform apply`. The workflow does not include any commands to export or serialize the execution plan into a JSON file (such as `terraform plan -out` or `terraform show -json`), nor does it require establishing a `reports/` directory to store plan artifacts.
 
 ---
 

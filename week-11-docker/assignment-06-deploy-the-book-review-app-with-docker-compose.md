@@ -277,7 +277,12 @@ Write a short explanation of 5–8 lines covering:
 - When a full reset is useful
 - Why a full reset must not be used before persistence evidence is captured
 
-Write your explanation here.
+
+* `docker compose down` safely stops and removes active containers and networks while preserving named volumes by default.
+* Retaining named volumes is vital for MySQL data because database records, tables, and seed files live in persistent storage outside the container's lifecycle.
+* Adding the `-v` flag during teardown deletes these named volumes, instantly wiping all stored data and resetting the database to an empty state.
+* A full reset is useful when testing clean initializations, rebuilding from scratch, or troubleshooting a corrupted database configuration during development.
+* However, a full reset must never be performed before persistence evidence is captured, as doing so permanently destroys the proof that your database records survived container recreation.
 
 ---
 
@@ -291,7 +296,7 @@ Replace the placeholder with your working application URL.
 
 # GitHub Repository URL
 
-**Your Fork or Repository URL:** `Add your GitHub repository URL here`
+**Your Fork or Repository URL:** https://github.com/pravinmishraaws/devops-micro-internship-pravinmishra.git
 
 ---
 

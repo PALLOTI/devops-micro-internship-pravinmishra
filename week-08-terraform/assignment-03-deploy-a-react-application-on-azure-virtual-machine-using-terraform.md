@@ -213,8 +213,25 @@ Ensure that the Azure VM public IP is visible in the browser address bar.
 
 Write a short summary of what you built and any issues you encountered and how you resolved them.
 
-Write your answer here.
+I built an automated, end-to-end Infrastructure as Code (IaC) pipeline using Terraform to provision a complete cloud hosting environment on Microsoft Azure, paired with cloud-init for automated application bootstrapping.
+Specifically, the deployment consisted of:
 
+Networking & Security: An Azure Resource Group (react-app-rg), Virtual Network (react-app-vnet), and Subnet (react-app-subnet), secured by a Network Security Group (react-app-nsg) allowing inbound SSH (port 22) and HTTP (port 80) traffic.
+
+Compute & Connectivity: An Ubuntu Linux Virtual Machine (react-app-vm, Standard_B1s) attached to a Dynamic Public IP (react-app-public-ip) via a Network Interface (react-app-nic).
+
+Automated Provisioning: A custom non-interactive Bash script (cloud-init.sh) passed into the VM at creation via Terraform using custom_data = base64encode(file("${path.module}/cloud-init.sh")).
+
+Application Stack: The script automatically updated system packages, installed Node.js 20 LTS, build tools, and Nginx, cloned the target React application repository (my-react-app), compiled production static assets with npm run build, and configured Nginx to serve the SPA on port 80.
+
+Issues Encountered & How They Were Resolved
+
+Cloud-Init Timing Delays (App Not Accessible Immediately)
+Issue: Immediately after terraform apply finished and printed the public IP, attempting to SSH in or open http://<PUBLIC_IP> resulted in a "Connection Refused" or default web page error.
+
+Root Cause: Terraform reports VM provisioning as "Complete" as soon as Azure creates the compute instance, but cloud-init runs asynchronously inside the VM afterwards to install Node.js, run npm install, and build the React app (which takes 2–3 minutes).
+
+Resolution: Used SSH to monitor the initialization log in real-time (sudo tail -f /var/log/cloud-init-output.log) and verified status using cloud-init status. Once the status changed to done, Nginx was confirmed running (sudo systemctl status nginx), and the React application loaded cleanly in the browser.
 ---
 
 # Task 7 — Share Your Deployment Progress on LinkedIn
@@ -254,7 +271,7 @@ Add a screenshot of your published LinkedIn post showing:
 
 Ensure that no passwords, private keys, account IDs, access tokens, or other sensitive information are visible.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/linkedixx.png)
 
 ---
 

@@ -195,7 +195,7 @@ Add a screenshot of the browser showing the deployed static website.
 
 Ensure that the VM public IP address is visible in the browser address bar.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/11wk25.png)
 
 ---
 

@@ -308,13 +308,35 @@ Write a short explanation covering:
 - How Task 2 proved Docker Volume persistence
 - Why Docker Volumes are commonly used for application data
 
-Write your explanation here.
+
+Here is a clear breakdown of container storage mechanisms and persistence:
+
+ 1. Bind Mount vs. Docker Volume
+
+* **Bind Mounts:** Map a specific file or directory from your host machine's filesystem directly into the container. Any changes made on the host instantly reflect in the container (making them ideal for local code development).
+* **Docker Volumes:** Managed entirely by Docker and stored in a dedicated area on the host filesystem (isolated from the host's core directory tree). Docker handles the creation, storage management, and permissions internally.
+
+ 2. Proving Bind Mount Persistence
+
+* **How it worked:** In a bind-mount workflow, files modified or generated inside the container were written directly to the mapped host directory path.
+* **The proof:** Even after stopping and completely deleting the container, the data remained fully intact on the host machine because it lived outside the container's ephemeral filesystem.
+
+ 3. Proving Docker Volume Persistence
+
+* **How it worked:** Using named volumes (such as `db_data` for MySQL in a Compose stack), container data was written to a Docker-managed volume rather than a host path.
+* **The proof:** When running `docker compose down` (which removes containers and networks), the named volume was preserved. Spinning the stack back up automatically reattached `db_data`, verifying that database records and seed data survived container recreation without data loss.
+
+ 4. Why Docker Volumes are Preferred for Application Data
+
+* **Lifecycle Independence:** They decouple data from the container lifecycle, ensuring application and database records are never lost when containers are updated, stopped, or rebuilt.
+* **Portability & Ease of Management:** They are easier to back up, migrate, and manage using standard Docker CLI commands (`docker volume ...`) across different environments without worrying about host-specific folder structures or absolute paths.
+* **Security & Isolation:** They keep critical application data abstracted and protected away from arbitrary host file system permissions.
 
 ---
 
 # Public Application URL
 
-**Application URL:** `Add your VM public IP URL here`
+**Application URL:** http://14.34.56.21
 
 ---
 
