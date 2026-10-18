@@ -30,13 +30,13 @@ Confirm successful Azure Portal access and Locate the required services and subs
 
 #### Screenshot 1 — Azure Portal homepage after successful login
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk11.png)
 
 ---
 
 #### Screenshot 2 — "Subscriptions" section showing the "Free Trial" subscription
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk12.png)
 
 ---
 
@@ -44,8 +44,18 @@ Add your screenshot here.
 
 Write a three-to-four-line paragraph explaining which Azure services you plan to explore first and why.
 
-Write your answer here.
+### Azure Exploration Plan
 
+I plan to explore **Virtual Network** and **Azure Storage** first because establishing a secure private network foundation and configuring scalable blob storage containers are essential prerequisites before deploying any multi-tier application. Next, I will implement the **Load Balancer** to handle high availability, distribute traffic efficiently across backend instances, and perform essential health checks. Finally, I will organize and govern all of these interconnected components within a centralized **Resource Group** for clean deployment management.
+
+---
+
+### Modified Definitions
+
+* **Resource group:** A logical container that packages and organizes all related Azure resources for simplified management and governance.
+* **Virtual network:** A private cloud environment that provides isolation, security, and routing for your Azure infrastructure and deployments.
+* **Azure storage:** A parent management platform that handles various cloud storage responsibilities, including Azure Blob storage for objects, file shares, tables, and queues.
+* **Load balancer:** A resource that distributes inbound network traffic across multiple Azure virtual machines to ensure high availability and performs automated health checks.
 ---
 
 # Submission Instructions
