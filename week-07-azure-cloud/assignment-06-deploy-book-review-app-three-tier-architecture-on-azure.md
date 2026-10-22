@@ -20,13 +20,13 @@ Create an architecture diagram and implementation plan identifying the presentat
 
 #### Screenshot 1 — Architecture diagram showing the public entry point, three tiers, network boundaries, and traffic flow
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk61.png)
 
 ---
 
 #### Screenshot 2 — Written architecture assumptions and selected Azure services
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk62.jpeg)
 
 ---
 
@@ -40,19 +40,19 @@ Create a dedicated Resource Group and VNet with separate subnets for the web, ap
 
 #### Screenshot 3 — Resource Group overview showing the assignment resources
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk63.png)
 
 ---
 
 #### Screenshot 4 — VNet overview showing the address space and all required subnets
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk64.png)
 
 ---
 
 #### Screenshot 5 — Route-table or Private DNS evidence where applicable
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk65.png)
 
 ---
 
@@ -66,13 +66,19 @@ Apply least-privilege NSG rules so traffic flows Internet → public entry point
 
 #### Screenshot 6 — NSG rules proving least-privilege access between the tiers
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk66.png)
+
+
+![PALLOTI](./screenshots/7wk66x.png)
+
+
+![PALLOTI](./screenshots/7wk66xx.png)
 
 ---
 
 #### Screenshot 7 — Key Vault or approved secret-management configuration (without displaying secret values)
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk67.png)
 
 ---
 
@@ -86,13 +92,13 @@ Deploy the Book Review App presentation layer on the approved web-tier compute s
 
 #### Screenshot 8 — Web-tier compute overview showing subnet and availability configuration
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk68.png)
 
 ---
 
 #### Screenshot 9 — Terminal or service output proving the presentation layer is running
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk69.png)
 
 ---
 
@@ -106,19 +112,19 @@ Deploy the Book Review App backend privately in the application subnet, configur
 
 #### Screenshot 10 — Application-tier compute overview showing private subnet placement
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk610.png)
 
 ---
 
 #### Screenshot 11 — Backend process, service, or listening-port evidence
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk611.png)
 
 ---
 
 #### Screenshot 12 — Internal health-check or API response (without exposing secrets)
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk612.png)
 
 ---
 
@@ -132,20 +138,22 @@ Create a private Azure managed database (public access disabled), with availabil
 
 #### Screenshot 13 — Database overview showing private connectivity and public access disabled
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk613.png)
 
 ---
 
 #### Screenshot 14 — Availability, backup, and retention configuration
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk614.png)
 
 ---
 
 #### Screenshot 15 — Successful schema or connectivity verification (without exposing credentials)
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk615.png)
 
+
+![PALLOTI](./screenshots/7wk615x.png)
 ---
 
 # Task 7 — Configure Traffic Management, Availability, and Monitoring
@@ -158,19 +166,19 @@ Configure the approved public entry service with health probes and backend pools
 
 #### Screenshot 16 — Public entry service showing listener, frontend endpoint, and healthy web targets
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk616.png)
 
 ---
 
 #### Screenshot 17 — Internal application-tier load-balancing or routing configuration where applicable
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk617.png)
 
 ---
 
 #### Screenshot 18 — Azure Monitor, diagnostic settings, logs, metrics, or alert evidence
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk618.png)
 
 ---
 
@@ -184,25 +192,25 @@ Confirm the Book Review App works end to end through the public endpoint, with a
 
 #### Screenshot 19 — Browser showing the Book Review App through the public endpoint
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk619.png)
 
 ---
 
 #### Screenshot 20 — Proof of successful database-backed read and write operations
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk620.png)
 
 ---
 
 #### Screenshot 21 — Evidence that private tiers are not publicly accessible
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk621.png)
 
 ---
 
 #### Screenshot 22 — Availability-test and healthy-target evidence
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk622.png)
 
 ---
 
@@ -210,7 +218,7 @@ Add your screenshot here.
 
 Paste your public endpoint URL here:
 
-`Add your URL here`
+http://48.195.191.179 
 
 ---
 
@@ -218,7 +226,51 @@ Paste your public endpoint URL here:
 
 Summarize what worked, issues encountered and how they were fixed, and the availability/security/secrets/monitoring/backup choices made.
 
-Write your answer here.
+1. The Diagnostic Turning Point: curl http://localhost:3001/api/books
+The command curl http://localhost:3001/api/books (and its loopback variant [http://127.0.0.1:3001/api/books](http://127.0.0.1:3001/api/books)) served as the ultimate isolation and validation tool throughout your deployment:
+
+Bypassing the Proxy Layer: By hitting port 3001 directly, you completely bypassed Nginx and the public entry point. This allowed you to test the Express backend in isolation.
+
+Proving End-to-End Database Connectivity: When this command returned records (or successful 201/200 responses on POST), it delivered undeniable proof that:
+
+Your Node.js/Express application was running and healthy.
+
+Sequelize successfully authenticated and communicated with your cloud-hosted Azure MySQL Flexible Server.
+
+Read and write operations were functioning correctly at the application and database tiers.
+
+Isolating Nginx Bottlenecks: When external or proxy requests returned 504 Gateway Time-out errors while curl http://localhost:3001/api/books responded instantly, it conclusively proved that your database and backend were fine, and the issue was strictly isolated to Nginx upstream routing configuration.
+
+2. What Worked Successfully
+Process Management: PM2 successfully maintained background uptime for your Node.js/Express services on port 3001.
+
+Cloud Database Provisioning: Azure MySQL Flexible Server successfully provisioned and accepted authenticated database connections from your Azure VM.
+
+Static Assets & Routing Structure: The separation of concerns between your Next.js frontend (port 3000), Express API (port 3001), and Nginx reverse proxy (port 80) was successfully mapped.
+
+3. Issues Encountered & How They Were Fixed
+Issue 1: Database Crash (ER_TOO_MANY_KEYS)
+
+Cause: Sequelize was configured with alter: true, which repeatedly tried to alter table schemas on startup, generating duplicate unique index constraints that crashed MySQL.
+
+Fix: Disabled automatic schema alterations by shifting to alter: false, ensuring stable database boots.
+
+Issue 2: Nginx 504 Gateway Time-outs
+
+Cause: Nginx was misconfigured to forward upstream traffic to an incorrect internal IP (10.0.2.50:3001) or experienced timeout stalls due to loopback resolution quirks.
+
+Fix: Updated the Nginx sites-available configuration (/etc/nginx/sites-available/default) to cleanly route /api traffic directly to the local IPv4 loopback address ([http://127.0.0.1:3001](http://127.0.0.1:3001)) without trailing slashes, followed by sudo nginx -t and sudo systemctl reload nginx.
+
+4. Production Architectural Choices
+Availability: Utilized PM2 on the Azure VM for automatic process restarts and crash recovery, paired with Azure MySQL Flexible Server's built-in cloud high-availability features.
+
+Security: Deployed Nginx as a reverse proxy on port 80 to act as the single secure gatekeeper. This shields your internal application ports (3000 and 3001) from direct public exposure while cleanly routing client traffic.
+
+Secrets Management: Environment variables (.env) securely stored sensitive database connection strings, credentials, and endpoints locally on the VM without hardcoding them into source control.
+
+Monitoring & Diagnostics: Leveraged system logs (/var/log/nginx/error.log), systemctl service checks, and targeted curl requests to observe real-time health and trace latency bottlenecks.
+
+Backup Strategy: Leveraged Azure MySQL Flexible Server's managed automated backups, ensuring point-in-time recovery and persistent data safety in the cloud.
 
 ---
 

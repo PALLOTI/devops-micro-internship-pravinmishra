@@ -132,7 +132,7 @@ Add your screenshot here.
 
 Paste the public IP URL of your Virtual Machine here:
 
-`Add your URL here`
+hhtp://4.253.167.45
 
 ---
 
