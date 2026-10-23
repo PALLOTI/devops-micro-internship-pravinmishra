@@ -111,8 +111,10 @@ Week 06 → AWS Cloud
 
 
 
-<!-- Week 07 → Azure Cloud -->
-<!-- [![Week 07 – Azure](./badges/week-07.svg)](./week-07-azure-cloud/) -->
+ Week 07 → Azure Cloud 
+ 
+ 
+ [![Week 07 – Azure](./badges/week-07.svg)](./week-07-azure-cloud/) 
 
 
  Week 08 → Terraform
@@ -171,7 +173,7 @@ Week 06 → AWS Cloud
 | 05 | Git & GitHub | ✅ Completed | ✅ Solved | [View Post](https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-agenticai-git-share-7486473114105753601-OrvQ/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADLFS9YBFQ6i_O56Veo32xN5JbLJZhDGNnE) | [Read Blog](https://medium.com/@palloti10x/augmenting-git-workflows-with-agentic-ai-from-pre-commit-hooks-to-ai-pr-reviews-c7180bae93dc) |
 | 06 | DevOps Lifecycle & Agile | ✅ Completed | ✅ Solved | [View Post](https://lnkd.in/p/g2hCt7NU) | [Read Blog](https://substack.com/profile/487332231-ezeobi-chinecherem-jude/note/c-312180076?r=8257yf&utm_source=notes-share-action&utm_medium=web) |
 | 07 | AWS Cloud | ✅ Completed | ✅ Solved | [View Post](https://lnkd.in/p/eNsd3Ftv) | [Read Blog](https://medium.com/@palloti10x/troubleshooting-a-3-tier-architecture-on-aws-48f930f3d5fb) |
-| 08 | Azure Cloud | ⬜ Not Started | ⏳ Pending | — | — |
+| 08 | Azure Cloud | ⬜ Not Started | ⏳ Pending | [View Post](https://lnkd.in/p/e_v6nUyq) | [Read Blog](https://medium.com/@palloti1000/excited-to-share-my-latest-capstone-project-a-production-style-three-tier-web-application-deployed-20bd4e350153) |
 | 09 | Terraform | ✅ Completed | ✅ Solved | [View Post](https://lnkd.in/p/eETYtmFM) | [Read Blog](https://substack.com/profile/487332231-ezeobi-chinecherem-jude/note/c-342438495?r=8257yf&utm_source=notes-share-action&utm_medium=web) |
 | 10 | Ansible | ✅ Completed | ✅ Solved | [View Post](https://lnkd.in/p/e2HzYfAB) | [Read Blog](https://medium.com/@palloti1000/the-separation-of-power-in-cloud-automation-building-a-3-tier-web-app-f201cd184602) |
 | 11 | Azure DevOps (CI/CD) | ⬜ Not Started | ⏳ Pending | — | — |
