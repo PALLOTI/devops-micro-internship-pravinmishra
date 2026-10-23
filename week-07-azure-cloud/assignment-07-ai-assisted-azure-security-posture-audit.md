@@ -20,7 +20,7 @@ Confirm your Azure CLI is authenticated and can see the VM, network, storage acc
 
 #### Screenshot 1 — `az account show` and `az vm list -d -o table` confirming your subscription and running VM (subscription ID partially blurred)
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk71.png)
 
 ---
 
@@ -34,7 +34,7 @@ Create a `CLAUDE.md` for this workspace that tells Claude what the audit covers 
 
 #### Screenshot 2 — `CLAUDE.md` open in your editor showing the project overview, audit workflow, and safety rules
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk72.png)
 
 ---
 
@@ -48,7 +48,7 @@ Ask Claude Code to read `CLAUDE.md` and propose a read-only, four-check audit pl
 
 #### Screenshot 3 — Claude Code showing the four-check plan, with no files created or modified
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk73.png)
 
 ---
 
@@ -62,13 +62,13 @@ Write a Bash script that runs the four checks from Task 3 using read-only `az` c
 
 #### Screenshot 4 — Your script open in your editor, showing the check functions and the `az` commands they call
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk74.png)
 
 ---
 
 #### Screenshot 5 — Output of `bash -n` (no syntax errors) and `ls -l` showing the script is executable
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk75.png)
 
 ---
 
@@ -82,7 +82,8 @@ Run the script against your live resources and read the report honestly, even if
 
 #### Screenshot 6 — Script output showing your Full Name and all four checks with a PASS, WARN, or FAIL result
 
-Add your screenshot here.
+
+![PALLOTI](./screenshots/7wk76.png)
 
 ---
 
@@ -96,13 +97,13 @@ Create a Claude Code skill restricted to read-only tools (no `Write`) that runs 
 
 #### Screenshot 7 — Your skill file's frontmatter showing `allowed-tools` without `Write`
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk77.png)
 
 ---
 
 #### Screenshot 8 — `/azure-audit` output showing the baseline findings and Claude's explanation
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk78.png)
 
 ---
 
@@ -116,19 +117,19 @@ Pick one WARN or FAIL finding (or deliberately open an NSG rule to port 22 from 
 
 #### Screenshot 9 — Saved report showing the original finding before the fix
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk79.png)
 
 ---
 
 #### Screenshot 10 — Terminal output of the remediation command you ran yourself
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk710.png)
 
 ---
 
 #### Screenshot 11 — Second `/azure-audit` run (or report) showing the finding resolved
 
-Add your screenshot here.
+![PALLOTI](./screenshots/7wk711.png)
 
 ---
 
@@ -136,7 +137,51 @@ Add your screenshot here.
 
 Compare this assignment to the AWS audit you built in Week 6: which finding categories map to each other across the two clouds, and what stayed exactly the same about the workflow even though the `az`/`aws` commands are completely different?
 
-Add your answer here
+Transitioning from your AWS security posture audit to your Azure audit highlights a fundamental truth in cloud engineering: **cloud providers change their syntax and control planes, but core security principles and automation patterns remain identical.**
+
+---
+
+### 1. Finding Category Mapping (AWS vs. Azure)
+
+The security domains you audited in Week 6 map directly across both cloud environments:
+
+| Security Domain | AWS (Week 6 Equivalent) | Azure (Week 7 Implementation) | Core Security Objective |
+| --- | --- | --- | --- |
+| **Network Firewall Rules** | **Security Groups (SG)**<br>
+
+<br>Checking inbound rules for unrestricted SSH (22) / RDP (3389) access from `0.0.0.0/0`. | **Network Security Groups (NSGs)**<br>
+
+<br>Checking inbound security rules for unrestricted access on ports 22, 3389, or `*`. | Prevent unauthorized administrative remote access from the public internet. |
+| **Object Storage Exposure** | **S3 Public Access Block**<br>
+
+<br>Inspecting bucket policies and public access block configurations. | **Storage Account Public Access**<br>
+
+<br>Querying `allowBlobPublicAccess` on storage accounts. | Prevent accidental data leaks or public exposure of sensitive container objects/blobs. |
+| **Compute Disk Encryption** | **EBS Volume Encryption**<br>
+
+<br>Validating KMS encryption keys on EC2 root/data volumes. | **Managed Disk Encryption at Rest**<br>
+
+<br>Querying Azure disk `encryption.type` configurations. | Protect sensitive data stored on disk against physical or unauthorized volume extraction. |
+| **Database Network Isolation** | **RDS Public Accessibility**<br>
+
+<br>Checking if database instances have public IP endpoints enabled. | **Azure Database for MySQL**<br>
+
+<br>Querying `network.publicNetworkAccess` settings. | Isolate backend data stores within private network boundaries away from public exposure. |
+
+---
+
+### 2. What Stayed Exactly the Same About the Workflow
+
+Even though you swapped out AWS CLI (`aws ec2 ...`, `aws s3api ...`) for Azure CLI (`az network ...`, `az storage ...`), the **automation framework, architecture, and safety model** remained completely consistent:
+
+* **Read-Only Evidence Collection:** Both scripts are strictly scoped to gather configuration data using inspection commands only (`show`, `list`), ensuring zero infrastructure drift during the audit phase.
+* **Standardized Reporting Pipeline:** Both workflows utilize local directories (`reports/`), structured timestamp logging, and consistent status tags (`[PASS]`, `[WARN]`, `[FAIL]`) to produce clean, machine-readable and human-readable text reports.
+* **Deterministic Exit Codes:** Both scripts conclude with summary functions that evaluate failure and warning counts, returning standardized exit codes (`0` for healthy, `1` for warnings, `2` for critical failures) suitable for CI/CD pipelines.
+* **Human-in-the-Loop AI Safety Model:** The core operating procedure for your AI assistant (`GEMINI.md` / `SKILL.md`) stayed identical:
+1. Read the generated report.
+2. Explain the security impact of any findings.
+3. Propose a single, precise remediation command.
+4. **Never execute changes automatically**—leaving final authorization and execution strictly in the hands of the human operator.
 
 ---
 
