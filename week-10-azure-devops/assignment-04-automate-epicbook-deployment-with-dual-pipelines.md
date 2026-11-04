@@ -62,15 +62,13 @@ Validate, plan, approve, and apply the Terraform configuration through the Infra
 
 ### Screenshot 1 — Successful Infrastructure Pipeline
 
-Add a screenshot of the Infrastructure Pipeline run showing:
-
 * Successful `terraform apply` completion
 * `app_public_ip`
 * `backend_ansible_host`
 * `backend_private_ip`
 * `mysql_fqdn`
 
-Add your screenshot here.
+![PALLOTI](./screenshots/10wk41.png)
 
 > Do not expose the MySQL password, Client Secret, Terraform state, SSH private key, or another sensitive value.
 
@@ -86,7 +84,7 @@ Add a screenshot of the Azure Portal Resource Group overview showing:
 * Azure Database for MySQL Flexible Server
 * Related EpicBook resources
 
-Add your screenshot here.
+![PALLOTI](./screenshots/10wk42.png)
 
 > Hide sensitive IDs, credentials, and database details.
 
@@ -124,7 +122,7 @@ Run the Application Pipeline to configure the VMs, deploy EpicBook, and verify t
 
 Add a screenshot of the Application Pipeline run summary showing all required stages or jobs succeeded.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/10wk43.png)
 
 ---
 
@@ -137,7 +135,7 @@ Add a screenshot of the Application Pipeline log showing:
 * Zero failed hosts
 * Zero unreachable hosts
 
-Add your screenshot here.
+![PALLOTI](./screenshots/10wk44.png)
 
 > Do not expose the SSH private key, MySQL password, Client Secret, or complete database connection string.
 
@@ -153,7 +151,7 @@ Verify that the frontend, backend, and Azure Database for MySQL work together co
 
 ### Screenshot 5 — Running EpicBook Application
 
-Add a browser screenshot showing:
+![PALLOTI](./screenshots/10wk45.png)
 
 * Running EpicBook application
 * Frontend public IP address in the browser address bar
@@ -162,7 +160,7 @@ Add a browser screenshot showing:
 
 The screenshot may show a product, cart, or successful order view.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/10wk45.png)
 
 > Do not expose credentials or sensitive information.
 
@@ -172,15 +170,15 @@ Add your screenshot here.
 
 ## Frontend Application URL
 
-[Paste your final EpicBook application URL here.]
+http://13.57.230.22
 
 ## Infrastructure Repository URL
 
-[Paste your Infrastructure Repository URL here.]
+https://github.com/PALLOTI/infra-epicbook.git
 
 ## Application Repository URL
 
-[Paste your Application Repository URL here.]
+https://github.com/PALLOTI/theepicbook.git
 
 ---
 
@@ -188,7 +186,15 @@ Add your screenshot here.
 
 Write a short explanation of why separate Infrastructure and Application Repositories were used.
 
-[Write your explanation here.]
+Separating infrastructure code from application code follows a separation of concerns principle, which brings several key architectural and operational benefits to your workflow:
+
+Independent Lifecycles: Infrastructure (provisioned via Terraform) changes at a much slower, more deliberate cadence than application code (Node.js features, bug fixes, or content updates). Keeping them separate prevents code deployments from accidentally modifying underlying cloud resources.
+
+Targeted Access Control & Security: Infrastructure code often manages sensitive cloud resources, security groups, and database configurations. Restricting write access to the infrastructure repository provides a tighter security boundary compared to the application repository.
+
+Modular Reusability: Decoupling infrastructure definitions allows the same foundational environment (EC2, RDS, networking) to support multiple application branches, environments, or future microservices without tying cloud state directly to your repository's commit history.
+
+Clear CI/CD Boundaries: It allows dedicated pipelines—such as Terraform plan/apply workflows for cloud provisioning and Ansible/npm workflows for application deployment and configuration—to run independently and efficiently.
 
 ---
 
@@ -201,7 +207,13 @@ Write a short explanation of how the following non-sensitive Terraform outputs w
 * `backend_private_ip`
 * `mysql_fqdn`
 
-[Write your explanation here.]
+During the CI/CD pipeline execution, non-sensitive Terraform outputs are transferred and made available to your application and configuration management workflows through automated pipeline steps:
+
+Extraction via Terraform CLI: After Terraform provisions the AWS infrastructure, the pipeline runs terraform output -json (or queries specific output keys like mysql_fqdn) to retrieve the live resource attributes.
+
+Pipeline Variable Mapping: These retrieved values are captured as pipeline variables or environment variables within the CI/CD job runtime.
+
+Injection into Configuration Files: A pipeline step (or a pre-deployment script) dynamically writes or updates these values into your configuration files—such as updating ansible/group_vars/all.yml or populating the dynamic inventory (hosts.ini)—ensuring Ansible targets the correct EC2 instance and RDS endpoints without hardcoded values.
 
 ---
 
@@ -216,11 +228,11 @@ Add a screenshot of your LinkedIn post showing:
 * Post text
 * At least one image or link
 
-Add your screenshot here.
+![PALLOTI](./screenshots/10wklinkedin.png)
 
 ## LinkedIn Post URL
 
-[Paste your public LinkedIn post URL here.]
+[https://lnkd.in/p/euZwVMnz]
 
 Your post must include:
 

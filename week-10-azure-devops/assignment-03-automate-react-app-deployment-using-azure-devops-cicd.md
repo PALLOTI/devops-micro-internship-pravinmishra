@@ -37,7 +37,7 @@ Add a screenshot of Azure Repos showing:
 * `main` branch
 * Project files
 
-Add your screenshot here.
+![PALLOTI](./screenshots/10wk31.png)
 
 ---
 
@@ -81,7 +81,7 @@ Add a screenshot of the Azure Pipeline YAML open in the editor showing:
 * Publish stage
 * Deploy stage
 
-Add your screenshot here.
+![PALLOTI](./screenshots/10wk32.png)
 
 > Do not expose passwords, private keys, tokens, or cloud credentials.
 
@@ -104,7 +104,7 @@ Add a screenshot of one Azure DevOps pipeline run showing all four stages succee
 * Publish
 * Deploy
 
-Add your screenshot here.
+![PALLOTI](./screenshots/10wk33.png)
 
 ---
 
@@ -122,7 +122,7 @@ Add a screenshot of the pipeline SSH verification log or VM terminal showing the
 
 `/var/www/html`
 
-Add your screenshot here.
+![PALLOTI](./screenshots/10wk34.png)
 
 ---
 
@@ -143,7 +143,7 @@ Add a browser screenshot showing:
 * Your Full Name
 * Deployment date
 
-Add your screenshot here.
+![PALLOTI](./screenshots/10wk35.png)
 
 ## Final Application URL
 
@@ -151,7 +151,7 @@ Add your screenshot here.
 
 Replace the placeholder and paste your final application URL below:
 
-[Paste your final application URL here.]
+http://74.235.161.102/
 
 ---
 
@@ -159,7 +159,8 @@ Replace the placeholder and paste your final application URL below:
 
 Write a short explanation of the CI/CD workflow you created.
 
-[Write your summary here.]
+CI/CD Pipeline Summary: 
+React App on Azure VMArchitecture OverviewTarget Environment: Azure Ubuntu VM hosting Nginx.Agent Architecture: Self-hosted Azure DevOps agent (StaticSiteAgentPool) running directly on the target VM.   Deployment Pattern: Direct local execution bypassing external SSH service connections.Pipeline Stages & Execution FlowBuild StageChecks out the source code from GitHub (main branch).   Installs Node.js dependencies (npm install) and compiles static React build assets (npm run build).Test StageRuns automated unit tests (npm test) to ensure code quality and stability before publishing artifacts.Publish StagePackages the compiled static build output into a deployment artifact (deploymentPackage) and stores it in the Azure DevOps pipeline workspace.   Deploy Stage (Local Execution)Artifact Download: Retrieves deploymentPackage locally on the VM.   Directory Cleanup & Copy: Clears existing files in /var/www/html and copies the new React build assets directly into place.   Permissions & Ownership: Recursively grants ownership to the web server user (www-data:www-data) and sets read/execute permissions (755).   Service Management & Verification: Restarts Nginx (systemctl restart nginx) and runs a local loopback HTTP check (curl -s -o /dev/null -w "%{http_code}" http://localhost) to verify an HTTP 200 success code. 
 
 ---
 
@@ -174,11 +175,11 @@ Add a screenshot of your LinkedIn post showing:
 * Post text
 * At least one image or link
 
-Add your screenshot here.
+![PALLOTI](./screenshots/10wklinkedin.png)
 
 ## LinkedIn Post URL
 
-[Paste your public LinkedIn post URL here.]
+[https://lnkd.in/p/euZwVMnz]
 
 > Do not expose VM passwords, tokens, private keys, cloud credentials, or other sensitive information.
 

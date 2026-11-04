@@ -58,7 +58,7 @@ Add a screenshot from AWS or Azure showing:
 * VM status as **Running**
 * Public IP address
 
-Add your screenshot here.
+![PALLOTI](./screenshots/10wk11.png)
 
 ---
 
@@ -72,7 +72,7 @@ Add an SSH terminal screenshot showing the output of:
 
 The screenshot must confirm a supported Ubuntu version, `x86_64` architecture, and a successful HTTP response from Azure DevOps.
 
-Add your screenshot here.
+![PALLOTI](./screenshots/10wk12.png)
 
 ---
 
@@ -93,7 +93,7 @@ Add a terminal screenshot showing:
 * Agent service start
 * `sudo ./svc.sh status` reporting that the service is running
 
-Add your screenshot here.
+![PALLOTI](./screenshots/10wk13.png)
 
 > Ensure that the PAT is not visible.
 
@@ -116,7 +116,7 @@ Add a screenshot of the Azure DevOps Agent Pool **Agents** page showing:
 * Agent status as **Online**
 * Agent enabled and available
 
-Add your screenshot here.
+![PALLOTI](./screenshots/10wk14.png)
 
 ---
 
@@ -138,7 +138,7 @@ Add a screenshot of `azure-pipelines.yml` open in the Azure Repos editor showing
 * Your Full Name
 * Linux verification commands
 
-Add your screenshot here.
+![PALLOTI](./screenshots/10wk15.png)
 
 ---
 
@@ -156,7 +156,7 @@ Add a screenshot of the successful Azure DevOps pipeline run showing:
 * Output from `df -h`
 * Output from `pwd`
 
-Add your screenshot here.
+![PALLOTI](./screenshots/10wk16.png)
 
 ---
 
@@ -164,9 +164,163 @@ Add your screenshot here.
 
 Paste the contents of your completed `azure-pipelines.yml` file below.
 
-```yaml
-# Paste your completed azure-pipelines.yml here
-```
+trigger:
+  branches:
+    include:
+      - main
+
+variables:
+  deploymentPath: '/var/www/html'
+  nodeVersion: '20.x'
+
+stages:
+
+  # ==================================================
+  # STAGE 1: BUILD
+  # ==================================================
+  - stage: Build
+    displayName: 'Build'
+    pool:
+      name: StaticSiteAgentPool
+
+    jobs:
+      - job: BuildJob
+        displayName: 'Build React Application'
+
+        steps:
+          - checkout: self
+            clean: true
+
+          - task: UseNode@1
+            displayName: 'Install Node.js'
+            inputs:
+              version: '$(nodeVersion)'
+
+          - script: |
+              if [ -f package-lock.json ]; then
+                npm ci
+              else
+                npm install
+              fi
+            displayName: 'Install Dependencies'
+
+          - script: npm run build
+            displayName: 'Build React Application'
+
+          - publish: '$(System.DefaultWorkingDirectory)/build'
+            artifact: 'reactBuild'
+            displayName: 'Publish Build Artifact'
+
+
+  # ==================================================
+  # STAGE 2: TEST
+  # ==================================================
+  - stage: Test
+    displayName: 'Test'
+    dependsOn: Build
+    condition: succeeded()
+    pool:
+      name: StaticSiteAgentPool
+
+    jobs:
+      - job: TestJob
+        displayName: 'Run Tests'
+
+        steps:
+          - checkout: self
+            clean: true
+
+          - task: UseNode@1
+            displayName: 'Install Node.js'
+            inputs:
+              version: '$(nodeVersion)'
+
+          - script: |
+              if [ -f package-lock.json ]; then
+                npm ci
+              else
+                npm install
+              fi
+            displayName: 'Install Dependencies'
+
+          - script: |
+              CI=true npm test -- --watchAll=false
+            displayName: 'Run Unit Tests'
+
+
+  # ==================================================
+  # STAGE 3: PUBLISH
+  # ==================================================
+  - stage: Publish
+    displayName: 'Publish'
+    dependsOn: Test
+    condition: succeeded()
+    pool:
+      name: StaticSiteAgentPool
+
+    jobs:
+      - job: PublishJob
+        displayName: 'Prepare Deployment Package'
+
+        steps:
+          - download: current
+            artifact: 'reactBuild'
+            displayName: 'Download Build Artifact'
+
+          - publish: '$(Pipeline.Workspace)/reactBuild'
+            artifact: 'deploymentPackage'
+            displayName: 'Publish Deployment Package'
+
+
+# ==================================================
+  # STAGE 4: DEPLOY (Direct Local Deployment)
+  # ==================================================
+  - stage: Deploy
+    displayName: 'Deploy'
+    dependsOn: Publish
+    condition: succeeded()
+    pool:
+      name: StaticSiteAgentPool
+
+    jobs:
+      - job: DeployJob
+        displayName: 'Deploy to Nginx Server Locally'
+
+        steps:
+          - download: current
+            artifact: 'deploymentPackage'
+            displayName: 'Download Deployment Package'
+
+          - script: |
+              set -e
+              echo "Deploying files directly to $(deploymentPath)..."
+              
+              # Clear old files and copy new build output
+              sudo rm -rf $(deploymentPath)/*
+              sudo cp -r $(Pipeline.Workspace)/deploymentPackage/* $(deploymentPath)/
+              
+              # Set correct ownership for Nginx
+              sudo chown -R www-data:www-data $(deploymentPath)
+              sudo chmod -R 755 $(deploymentPath)
+
+              echo "Verifying deployment..."
+              ls -la $(deploymentPath)
+
+              echo "Restarting Nginx..."
+              sudo systemctl restart nginx
+              sudo systemctl status nginx
+
+              echo "Testing local HTTP response..."
+              HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" http://localhost)
+              echo "HTTP Status: $HTTP_STATUS"
+
+              if [ "$HTTP_STATUS" -eq 200 ]; then
+                echo "Deployment verified successfully!"
+              else
+                echo "ERROR: HTTP check failed with status $HTTP_STATUS."
+                exit 1
+              fi
+            displayName: 'Local Copy and Verify'
 
 > Do not include your PAT, SSH private key, password, or cloud credentials in the YAML file.
 
@@ -176,7 +330,20 @@ Paste the contents of your completed `azure-pipelines.yml` file below.
 
 Write a short summary of what you configured.
 
-[Write your summary here.]
+[Here is a summary of the infrastructure and deployment configuration we completed for your **EpicBook** project:
+
+* **Architecture Migration:** Transitioned from Azure DevOps to a self-managed AWS architecture featuring a single EC2 instance (`app_server`) hosting an Nginx reverse proxy and Node.js backend, connected to an external AWS RDS MySQL database.
+* **Ansible Configuration Management:**
+* Structured and cleaned up `ansible/group_vars/all.yml` to securely manage database endpoints, administrative credentials, and application ports.
+* Updated `ansible/site.yml` to sequentially execute the `common` baseline setup, `frontend` application deployment, and automated post-deployment verification.
+
+
+* **AWS Networking & Security:** Configured AWS Security Group rules (`epicbook-database-sg`) to allow secure port 3306 MySQL traffic specifically from the EC2 instance's security group (`epicbook-frontend-sg`), restricting public database exposure.
+* **End-to-End Verification Play:** Integrated automated validation tasks into the playbook to confirm:
+* The Node.js (`epicbook`) and Nginx services are active.
+* The backend application port (`3000`) is actively listening.
+* Nginx configuration syntax is valid (`nginx -t`) and responding with HTTP status `200`.
+* The AWS RDS database tables (`Author` and `Book`) are successfully populated with seed data.]
 
 ---
 
@@ -191,9 +358,9 @@ Add a screenshot of your LinkedIn post showing:
 * Three to five lines explaining your experience
 * A screenshot of the successful pipeline run with no secrets visible
 
-Add your screenshot here.
+![PALLOTI](./screenshots/10wklinkedin.png)
 
-**LinkedIn Post URL:** [Paste your LinkedIn post URL here]
+**LinkedIn Post URL:** [https://lnkd.in/p/euZwVMnz]
 
 ---
 
