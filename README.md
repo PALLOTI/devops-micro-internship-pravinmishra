@@ -130,8 +130,12 @@ Week 06 → AWS Cloud
 [![Week 09 – Ansible](./badges/week-09.svg)](./week-09-ansible/) 
 
 
-<!-- Week 10 → Azure DevOps CI/CD -->
-<!-- [![Week 10 – CI/CD](./badges/week-10.svg)](./week-10-azure-devops/) -->
+ Week 10 → Azure DevOps CI/CD 
+
+
+ [![Week 10 – CI/CD](./badges/week-10.svg)](./week-10-azure-devops/) 
+
+ 
 
  Week 11 → Docker 
 
@@ -167,19 +171,19 @@ Week 06 → AWS Cloud
 
 | Week | Topic | Status | Links |
 | :-: | --- | :-: | --- |
-| 00 | Internet & Networking Basics | ✅ Done | [🔗 LinkedIn](https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_startuplife-networking-techforfounders-share-7473842580309520385-Ts5c) · [📝 Blog](https://medium.com/@palloti10x/in-devops-networking-is-the-backbone-of-continuous-deployment-150e54b739b1) |
-| 01 | Success Mindset | ✅ Done | [🔗 LinkedIn](https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-cloudengineering-continuouslearning-activity-7476649737945874432-CErC) · [📝 Blog](https://medium.com/@palloti10x/mental-dependencies-before-server-dependencies-why-your-mindset-is-your-true-foundation-in-devops-d0b8e665ce2c) |
-| 02 | Agentic AI with Claude Code | ✅ Done | [🔗 LinkedIn](https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-agenticai-cloudengineering-ugcPost-7482423989043249152-HAcf) · [📝 Blog](https://medium.com/@palloti10x/the-rise-of-agentic-devops-990ff2cc9551) |
-| 03 | Linux for DevOps | ✅ Done | [🔗 LinkedIn](https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-linux-cloudsecurity-ugcPost-7485168451012087808-cgMx) · [📝 Blog](https://substack.com/profile/487332231-ezeobi-chinecherem-jude/note/c-298642766) |
-| 04 | Bash Scripting | ✅ Done | [🔗 LinkedIn](https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_while-reading-engineering-newsletters-tuning-ugcPost-7484574314764107776-PWfQ) · [📝 Blog](https://substack.com/profile/487332231-ezeobi-chinecherem-jude/note/c-298642766) ⚠️ |
-| 05 | Git & GitHub | ✅ Done | [🔗 LinkedIn](https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-agenticai-git-share-7486473114105753601-OrvQ) · [📝 Blog](https://medium.com/@palloti10x/augmenting-git-workflows-with-agentic-ai-from-pre-commit-hooks-to-ai-pr-reviews-c7180bae93dc) |
-| 06 | DevOps Lifecycle & Agile | ✅ Done | [🔗 LinkedIn](https://lnkd.in/p/g2hCt7NU) · [📝 Blog](https://substack.com/profile/487332231-ezeobi-chinecherem-jude/note/c-312180076) |
-| 07 | AWS Cloud | ✅ Done | [🔗 LinkedIn](https://lnkd.in/p/eNsd3Ftv) · [📝 Blog](https://medium.com/@palloti10x/troubleshooting-a-3-tier-architecture-on-aws-48f930f3d5fb) |
-| 08 | Azure Cloud | ⬜ Pending | [🔗 LinkedIn](https://lnkd.in/p/e_v6nUyq) · [📝 Blog](https://medium.com/@palloti1000/excited-to-share-my-latest-capstone-project-a-production-style-three-tier-web-application-deployed-20bd4e350153) |
-| 09 | Terraform | ✅ Done | [🔗 LinkedIn](https://lnkd.in/p/eETYtmFM) · [📝 Blog](https://substack.com/profile/487332231-ezeobi-chinecherem-jude/note/c-342438495) |
-| 10 | Ansible | ✅ Done | [🔗 LinkedIn](https://lnkd.in/p/e2HzYfAB) · [📝 Blog](https://medium.com/@palloti1000/the-separation-of-power-in-cloud-automation-building-a-3-tier-web-app-f201cd184602) |
-| 11 | Azure DevOps (CI/CD) | ⬜ Pending | — |
-| 12 | Docker | ✅ Done | 🔗 LinkedIn: *TODO* · [📝 Blog](https://medium.com/@palloti1000/hardening-containers-orchestrating-secure-stacks-with-ai-assisted-auditing-69beefadd786) |
+| 00 | Internet & Networking Basics | ✅ Done | https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_startuplife-networking-techforfounders-share-7473842580309520385-Ts5c | https://medium.com/@palloti10x/in-devops-networking-is-the-backbone-of-continuous-deployment-150e54b739b1 |
+| 01 | Success Mindset | ✅ Done | https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-cloudengineering-continuouslearning-activity-7476649737945874432-CErC | https://medium.com/@palloti10x/mental-dependencies-before-server-dependencies-why-your-mindset-is-your-true-foundation-in-devops-d0b8e665ce2c |
+| 02 | Agentic AI with Claude Code | ✅ Done | https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-agenticai-cloudengineering-ugcPost-7482423989043249152-HAcf | https://medium.com/@palloti10x/the-rise-of-agentic-devops-990ff2cc9551 |
+| 03 | Linux for DevOps | ✅ Done | https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-linux-cloudsecurity-ugcPost-7485168451012087808-cgMx | https://substack.com/profile/487332231-ezeobi-chinecherem-jude/note/c-298642766 |
+| 04 | Bash Scripting | ✅ Done | https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_while-reading-engineering-newsletters-tuning-ugcPost-7484574314764107776-PWfQ | https://substack.com/profile/487332231-ezeobi-chinecherem-jude/note/c-298642766 |
+| 05 | Git & GitHub | ✅ Done | https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-agenticai-git-share-7486473114105753601-OrvQ | https://medium.com/@palloti10x/augmenting-git-workflows-with-agentic-ai-from-pre-commit-hooks-to-ai-pr-reviews-c7180bae93dc |
+| 06 | DevOps Lifecycle & Agile | ✅ Done | https://lnkd.in/p/g2hCt7NU | https://substack.com/profile/487332231-ezeobi-chinecherem-jude/note/c-312180076 |
+| 07 | AWS Cloud | ✅ Done | https://lnkd.in/p/eNsd3Ftv | https://medium.com/@palloti10x/troubleshooting-a-3-tier-architecture-on-aws-48f930f3d5fb |
+| 08 | Azure Cloud | ✅ Done | https://lnkd.in/p/e_v6nUyq | https://medium.com/@palloti1000/excited-to-share-my-latest-capstone-project-a-production-style-three-tier-web-application-deployed-20bd4e350153 |
+| 09 | Terraform | ✅ Done | https://lnkd.in/p/eETYtmFM | https://substack.com/profile/487332231-ezeobi-chinecherem-jude/note/c-342438495 |
+| 10 | Ansible | ✅ Done | https://lnkd.in/p/e2HzYfAB | https://medium.com/@palloti1000/the-separation-of-power-in-cloud-automation-building-a-3-tier-web-app-f201cd184602 |
+| 11 | Azure DevOps (CI/CD) | ✅ Done  | https://lnkd.in/p/euZwVMnz | https://medium.com/@palloti1000/building-cloud-infrastructure-is-one-thing-automating-seamless-application-delivery-on-top-of-it-b59270731f37 |
+| 12 | Docker | ✅ Done | https://lnkd.in/p/eUn8MhhR | https://medium.com/@palloti1000/hardening-containers-orchestrating-secure-stacks-with-ai-assisted-auditing-69beefadd786 |
 | 13 | Kubernetes | ⬜ Pending | — |
 | 14 | Final Project | ⬜ Pending | — |
 
