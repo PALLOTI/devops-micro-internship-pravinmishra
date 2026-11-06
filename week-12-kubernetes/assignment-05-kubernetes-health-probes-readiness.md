@@ -20,7 +20,7 @@ Deploy two NGINX Pods without probes (`00-nginx-deploy-baseline.yaml`) to establ
 
 #### Screenshot 1 — Baseline manifest and healthy two-Pod rollout output
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk51.png)
 
 ---
 
@@ -34,7 +34,7 @@ Add an HTTP readiness probe on `/` port 80 (`01-nginx-deploy-readiness.yaml`) an
 
 #### Screenshot 2 — Pod description showing the readiness probe and `Ready=True`
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk52.png)
 
 ---
 
@@ -48,7 +48,7 @@ Change the readiness path to `/does-not-exist`, observe `NotReady` and a stalled
 
 #### Screenshot 3 — `NotReady` conditions followed by a successful fixed rollout
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk53.png)
 
 ---
 
@@ -62,7 +62,7 @@ Perform a good image update to `nginx:1.21.2`, then attempt an update to `nginx:
 
 #### Screenshot 4 — Successful good rollout, stalled broken rollout, and successful recovery
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk54.png)
 
 ---
 
@@ -76,7 +76,7 @@ Review probe timing/thresholds and retain or delete the Deployment.
 
 #### Screenshot 5 — Final healthy Pod state or optional cleanup output
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk55.png)
 
 ---
 
@@ -84,7 +84,9 @@ Add your screenshot here.
 
 Write a short note describing what the lab demonstrated.
 
-Write your answer here.
+Here is a short note describing what the lab demonstrated:
+Kubernetes Deployment Lifecycle: 
+Showcased how to create, configure, and manage standard deployment manifests using declarative YAML files.   Rolling Updates: Demonstrated zero-downtime rolling update strategies by modifying deployment configurations and controlling rollout progression.   Resource Management: Highlighted the importance of defining CPU resource requests and limits to properly support monitoring and autoscaling features.Autoscaling & Metric Collection: Illustrated the integration of the metrics-server and Horizontal Pod Autoscalers (HPA) to monitor container resource usage and dynamically scale pod replicas based on load.   
 
 ---
 

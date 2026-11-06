@@ -163,35 +163,28 @@ Week 06 → AWS Cloud
 | Containers | 11 – 12 | Docker & Kubernetes |
 | Capstone | 13 | Final Project |
 
----
 
-## Weekly Progress
+# Weekly Progress
 
-## 📚 Progress Tracker
+| Week | Topic | Status | Assignment | LinkedIn Post | Blog Post |
+| :-: | --- | :-: | :-: | --- | --- |
+| 00 | Internet & Networking Basics | ✅ Completed | ✅ Completed | <https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_startuplife-networking-techforfounders-share-7473842580309520385-Ts5c> | <https://medium.com/@palloti10x/in-devops-networking-is-the-backbone-of-continuous-deployment-150e54b739b1> |
+| 01 | Success Mindset | ✅ Completed | ✅ Completed | <https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-cloudengineering-continuouslearning-activity-7476649737945874432-CErC> | <https://medium.com/@palloti10x/mental-dependencies-before-server-dependencies-why-your-mindset-is-your-true-foundation-in-devops-d0b8e665ce2c> |
+| 02 | Agentic AI with Claude Code | ✅ Completed | ✅ Completed | <https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-agenticai-cloudengineering-ugcPost-7482423989043249152-HAcf> | <https://medium.com/@palloti10x/the-rise-of-agentic-devops-990ff2cc9551> |
+| 03 | Linux & Bash for DevOps | ✅ Completed | ✅ Completed | <https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-linux-cloudsecurity-ugcPost-7485168451012087808-cgMx>    <https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_while-reading-engineering-newsletters-tuning-ugcPost-7484574314764107776-PWfQ> | <https://substack.com/profile/487332231-ezeobi-chinecherem-jude/note/c-298642766> |
+| 04 | Git & GitHub | ✅ Completed | ✅ Completed | <https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-agenticai-git-share-7486473114105753601-OrvQ> | <https://medium.com/@palloti10x/augmenting-git-workflows-with-agentic-ai-from-pre-commit-hooks-to-ai-pr-reviews-c7180bae93dc> |
+| 05 | DevOps Lifecycle & Agile | ✅ Completed | ✅ Completed | <https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-aws-nginx-ugcPost-7492604098198888448-YFi8> | <https://substack.com/profile/487332231-ezeobi-chinecherem-jude/note/c-312180076> |
+| 06 | AWS Cloud | ✅ Completed | ✅ Completed | <https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_cloudcomputing-devops-aws-ugcPost-7500609925056856064-Bb82> | <https://medium.com/@palloti10x/troubleshooting-a-3-tier-architecture-on-aws-48f930f3d5fb> |
+| 07 | Azure Cloud | ✅ Completed | ✅ Completed | <https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-azure-cloudengineering-ugcPost-7519237098311237632-t9ty> | <https://medium.com/@palloti1000/excited-to-share-my-latest-capstone-project-a-production-style-three-tier-web-application-deployed-20bd4e350153> |
+| 08 | Terraform | ✅ Completed | ✅ Completed | <https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-cloudengineering-terraform-ugcPost-7507134865687920641-OYQR> | <https://substack.com/profile/487332231-ezeobi-chinecherem-jude/note/c-342438495> |
+| 09 | Ansible | ✅ Completed | ✅ Completed | <https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-terraform-ansible-share-7509381288412258304-YDha> | <https://medium.com/@palloti1000/the-separation-of-power-in-cloud-automation-building-a-3-tier-web-app-f201cd184602> |
+| 10 | Azure DevOps (CI/CD) | ✅ Completed | ✅ Completed | <https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_building-cloud-infrastructure-is-one-thingautomating-ugcPost-7523730584381145088-eThL> | <https://medium.com/@palloti1000/building-cloud-infrastructure-is-one-thing-automating-seamless-application-delivery-on-top-of-it-b59270731f37> |
+| 11 | Docker | ✅ Completed | ✅ Completed | <https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-docker-dockercompose-ugcPost-7514618424615174144-phKi> | <https://medium.com/@palloti1000/hardening-containers-orchestrating-secure-stacks-with-ai-assisted-auditing-69beefadd786> |
+| 12 | Kubernetes | ⬜ Not Started | ⏳ Pending | — | — |
+| 13 | Final Project | ⬜ Not Started | ⏳ Pending | — | — |
 
-| Week | Topic | Status | Links |
-| :-: | --- | :-: | --- |
-| 00 | Internet & Networking Basics | ✅ Done | https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_startuplife-networking-techforfounders-share-7473842580309520385-Ts5c | https://medium.com/@palloti10x/in-devops-networking-is-the-backbone-of-continuous-deployment-150e54b739b1 |
-| 01 | Success Mindset | ✅ Done | https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-cloudengineering-continuouslearning-activity-7476649737945874432-CErC | https://medium.com/@palloti10x/mental-dependencies-before-server-dependencies-why-your-mindset-is-your-true-foundation-in-devops-d0b8e665ce2c |
-| 02 | Agentic AI with Claude Code | ✅ Done | https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-agenticai-cloudengineering-ugcPost-7482423989043249152-HAcf | https://medium.com/@palloti10x/the-rise-of-agentic-devops-990ff2cc9551 |
-| 03 | Linux for DevOps | ✅ Done | https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-linux-cloudsecurity-ugcPost-7485168451012087808-cgMx | https://substack.com/profile/487332231-ezeobi-chinecherem-jude/note/c-298642766 |
-| 04 | Bash Scripting | ✅ Done | https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_while-reading-engineering-newsletters-tuning-ugcPost-7484574314764107776-PWfQ | https://substack.com/profile/487332231-ezeobi-chinecherem-jude/note/c-298642766 |
-| 05 | Git & GitHub | ✅ Done | https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-agenticai-git-share-7486473114105753601-OrvQ | https://medium.com/@palloti10x/augmenting-git-workflows-with-agentic-ai-from-pre-commit-hooks-to-ai-pr-reviews-c7180bae93dc |
-| 06 | DevOps Lifecycle & Agile | ✅ Done | https://lnkd.in/p/g2hCt7NU | https://substack.com/profile/487332231-ezeobi-chinecherem-jude/note/c-312180076 |
-| 07 | AWS Cloud | ✅ Done | https://lnkd.in/p/eNsd3Ftv | https://medium.com/@palloti10x/troubleshooting-a-3-tier-architecture-on-aws-48f930f3d5fb |
-| 08 | Azure Cloud | ✅ Done | https://lnkd.in/p/e_v6nUyq | https://medium.com/@palloti1000/excited-to-share-my-latest-capstone-project-a-production-style-three-tier-web-application-deployed-20bd4e350153 |
-| 09 | Terraform | ✅ Done | https://lnkd.in/p/eETYtmFM | https://substack.com/profile/487332231-ezeobi-chinecherem-jude/note/c-342438495 |
-| 10 | Ansible | ✅ Done | https://lnkd.in/p/e2HzYfAB | https://medium.com/@palloti1000/the-separation-of-power-in-cloud-automation-building-a-3-tier-web-app-f201cd184602 |
-| 11 | Azure DevOps (CI/CD) | ✅ Done  | https://lnkd.in/p/euZwVMnz | https://medium.com/@palloti1000/building-cloud-infrastructure-is-one-thing-automating-seamless-application-delivery-on-top-of-it-b59270731f37 |
-| 12 | Docker | ✅ Done | https://lnkd.in/p/eUn8MhhR | https://medium.com/@palloti1000/hardening-containers-orchestrating-secure-stacks-with-ai-assisted-auditing-69beefadd786 |
-| 13 | Kubernetes | ⬜ Pending | — |
-| 14 | Final Project | ⬜ Pending | — |
-
-
-**Status:** ⬜ Not Started &nbsp;|&nbsp; 🔄 In Progress &nbsp;|&nbsp; ✅ Completed<br>
-**Assignment:** ⏳ Pending &nbsp;|&nbsp; ✅ Solved
-
----
+**Status:** ⬜ Not Started | 🔄 In Progress | ✅ Completed<br>
+**Assignment:** ⏳ Pending | ✅ Completed
 
 ## Certificate of Completion
 

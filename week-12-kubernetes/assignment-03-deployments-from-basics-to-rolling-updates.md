@@ -20,7 +20,7 @@ Create the `~/k8s-labs/deployments` working directory.
 
 #### Screenshot 1 — Terminal showing the `~/k8s-labs/deployments` working directory
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk31.png)
 
 ---
 
@@ -34,7 +34,7 @@ Create `nginx-deployment.yaml` with two replicas and image `nginx:1.21.1`, apply
 
 #### Screenshot 2 — Manifest plus `kubectl` output showing the Deployment, ReplicaSet, and two Pods
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk32.png)
 
 ---
 
@@ -48,7 +48,7 @@ Add `strategy.rollingUpdate` with `maxSurge: 1` and `maxUnavailable: 0` to the D
 
 #### Screenshot 3 — Deployment YAML showing the RollingUpdate strategy and successful apply output
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk33.png)
 
 ---
 
@@ -62,7 +62,11 @@ Update the image to `nginx:1.23.1` with `kubectl set image`, watch the rollout, 
 
 #### Screenshot 4 — Rolling-update status, multiple ReplicaSets, and successful rollback/history output
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk34.png)
+
+
+
+![PALLOTI](./screenshots/12wk34x.png)
 
 ---
 
@@ -76,7 +80,7 @@ Scale to five replicas, verify, then scale back to two.
 
 #### Screenshot 5 — Terminal showing the scale-up and scale-down results
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk35.png)
 
 ---
 
@@ -84,7 +88,7 @@ Add your screenshot here.
 
 Write a short note describing what the lab demonstrated.
 
-Write your answer here.
+This lab demonstrated how to use a Kubernetes Deployment as a production-oriented controller for NGINX workloads. Specifically, it covered:   Basic Deployment Creation: Setting up and applying an NGINX deployment manifest with multiple replicas.   Rolling Updates & Strategies: Configuring a RollingUpdate strategy using maxSurge and maxUnavailable parameters to ensure continuous availability during updates.   Rollbacks: Updating an application image (nginx:1.23.1) and successfully rolling back to a previous revision (nginx:1.21.1) using rollout history.   Scaling: Dynamically scaling the workload up (to 5 replicas) and back down (to 2 replicas) while maintaining pod health and availability.   
 
 ---
 

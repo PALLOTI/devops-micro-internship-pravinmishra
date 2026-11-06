@@ -20,7 +20,7 @@ Create the `~/k8s-labs/autoscaling` working directory.
 
 #### Screenshot 1 — Terminal showing the `autoscaling` directory
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk41.png)
 
 ---
 
@@ -34,7 +34,7 @@ Create `demo-autohealing` (two replicas), delete one Pod, and confirm the desire
 
 #### Screenshot 2 — Deleted Pod and replacement Pod with the replica count restored
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk42.png)
 
 ---
 
@@ -48,7 +48,7 @@ Deploy `nginx-deployment` with CPU `requests: 100m` / `limits: 200m`, then enabl
 
 #### Screenshot 3 — Deployment resources plus successful Metrics Server status
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk43.png)
 
 ---
 
@@ -62,7 +62,7 @@ Create an HPA (imperatively via `kubectl autoscale` or declaratively via `autosc
 
 #### Screenshot 4 — `kubectl get hpa` and `kubectl describe hpa nginx-hpa` output
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk44.png)
 
 ---
 
@@ -76,7 +76,7 @@ Generate CPU load inside an NGINX Pod (`yes > /dev/null`) and monitor whether th
 
 #### Screenshot 5 — HPA output showing current metrics and any replica increase
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk45.png)
 
 ---
 
@@ -84,7 +84,7 @@ Add your screenshot here.
 
 Write a short note describing what the lab demonstrated.
 
-Write your answer here.
+Here is a short note describing what the lab demonstrated:Kubernetes Deployment Lifecycle: Demonstrated how to create, configure, and manage standard deployment manifests using declarative YAML files.   Rolling Updates & Rollbacks: Showcased zero-downtime rolling update strategies (controlling maxSurge and maxUnavailable) alongside rolling back image versions.   Manual Scaling Operations: Illustrated how to scale pod replicas up and down manually to handle fluctuating workloads.   Autoscaling & Metric Collection: Highlighted the integration of the metrics-server and Horizontal Pod Autoscalers (HPA) to dynamically monitor resource utilization and adjust cluster capacity based on CPU load. 
 
 ---
 
