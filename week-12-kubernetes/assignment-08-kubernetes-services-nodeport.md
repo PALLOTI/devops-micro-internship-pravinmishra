@@ -20,7 +20,7 @@ Create healthy, labeled NGINX Pods (readiness + liveness probes) for the NodePor
 
 #### Screenshot 1 — Healthy NGINX Pods before Service creation
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk81.png)
 
 ---
 
@@ -34,7 +34,7 @@ Create `nginx-svc-nodeport` (type `NodePort`, port 80, `nodePort: 30080`) and in
 
 #### Screenshot 2 — Service output showing `80:30080` and populated endpoints
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk82.png)
 
 ---
 
@@ -48,7 +48,7 @@ Find a reachable node IP and test `<NODE_IP>:30080` externally (curl) and intern
 
 #### Screenshot 3 — Successful external or internal NodePort response
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk83.png)
 
 ---
 
@@ -62,7 +62,7 @@ Use the appropriate fallback for your cluster environment (`minikube service --u
 
 #### Screenshot 4 — Minikube helper URL or local validation result
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk84.png)
 
 ---
 
@@ -76,7 +76,7 @@ Change the selector to `app: does-not-match`, confirm endpoints empty and the re
 
 #### Screenshot 5 — Empty then restored endpoint output
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk85.png)
 
 ---
 
@@ -90,7 +90,7 @@ Delete one backend Pod while calling the NodePort from another terminal, confirm
 
 #### Screenshot 6 — Pod replacement while NodePort remains available
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk86.png)
 
 ---
 
@@ -98,7 +98,13 @@ Add your screenshot here.
 
 Write a short note describing what the lab demonstrated.
 
-Write your answer here.
+Here is a concise note summarizing what the lab demonstrated:
+
+NodePort Service Exposure: Successfully deployed and configured an NGINX application exposed via a Kubernetes NodePort service on port 30080.
+
+Traffic Routing & Endpoints: Verified that the Kubernetes service correctly discovered and routed traffic across active pod endpoints.
+
+Network Diagnostics & Access: Explored cluster networking mechanics within a kind environment, utilizing kubectl port-forward for local host access and a tester pod to validate internal cluster connectivity and HTTP response headers.
 
 ---
 

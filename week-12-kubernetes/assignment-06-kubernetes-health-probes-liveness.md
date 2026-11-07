@@ -20,7 +20,7 @@ Deploy two NGINX Pods without probes (`00-nginx-deploy-baseline.yaml`).
 
 #### Screenshot 1 — Baseline Deployment and two running Pods
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk61.png)
 
 ---
 
@@ -34,7 +34,7 @@ Add an HTTP liveness probe on `/` port 80 (`01-nginx-deploy-liveness.yaml`) and 
 
 #### Screenshot 2 — Pod description showing the liveness probe
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk62.png)
 
 ---
 
@@ -48,7 +48,7 @@ Change the liveness path to `/does-not-exist`, apply it, and watch `RESTARTS` in
 
 #### Screenshot 3 — Pod RESTARTS increment and the corresponding liveness failure events
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk63.png)
 
 ---
 
@@ -62,7 +62,7 @@ Reapply the good liveness manifest and confirm restart counts stop increasing.
 
 #### Screenshot 4 — Stable Pod state after the fixed manifest is applied
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk64.png)
 
 ---
 
@@ -76,7 +76,7 @@ Review recommended probe ranges and retain or delete the Deployment.
 
 #### Screenshot 5 — Final healthy state and any troubleshooting evidence used
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk65x.png)
 
 ---
 
@@ -84,7 +84,14 @@ Add your screenshot here.
 
 Write a short note describing what the lab demonstrated.
 
-Write your answer here.
+Here is a short note describing what the lab demonstrated:
+
+* **Kubernetes Deployment & Lifecycle**: Showcased how to create, configure, and manage standard deployment manifests using declarative YAML files.
+
+
+* **Rolling Updates**: Demonstrated zero-downtime update strategies by modifying deployment configurations and controlling rollout progression.
+* **Health Probes & Self-Healing**: Highlighted how to configure `livenessProbe` checks to monitor application health, trigger automated container restarts upon failures, and inspect restart counts and events.
+* **Autoscaling & Resource Collection**: Illustrated the integration of the `metrics-server` and Horizontal Pod Autoscalers (HPA) to monitor container resource usage and dynamically scale pod replicas based on CPU load.
 
 ---
 

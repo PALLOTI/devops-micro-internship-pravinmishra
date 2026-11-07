@@ -20,7 +20,7 @@ Create two healthy, labeled NGINX Pods (readiness + liveness probes) as Service 
 
 #### Screenshot 1 — Two Ready Pods with labels and IPs
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk71.png)
 
 ---
 
@@ -34,7 +34,7 @@ Create `nginx-svc` (type `ClusterIP`, selector `app: nginx`, port 80) and inspec
 
 #### Screenshot 2 — Service ClusterIP plus populated Endpoints and EndpointSlices
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk72.png)
 
 ---
 
@@ -48,7 +48,7 @@ Create a BusyBox `tester` Pod and call `nginx-svc` by short name, ClusterIP, and
 
 #### Screenshot 3 — Successful `wget` responses and `nslookup` output
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk73.png)
 
 ---
 
@@ -62,7 +62,7 @@ Change the Service selector to `app: does-not-match`, confirm endpoints become e
 
 #### Screenshot 4 — Empty endpoints during failure and restored endpoints after the fix
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk74.png)
 
 ---
 
@@ -76,7 +76,7 @@ Scale to one replica, apply a broken readiness patch, confirm the NotReady Pod i
 
 #### Screenshot 5 — NotReady Pod with excluded endpoint, followed by restored endpoint membership
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk75.png)
 
 ---
 
@@ -90,7 +90,7 @@ Verify the Service path, then optionally delete `tester` and `nginx-svc`.
 
 #### Screenshot 6 — Final verification or optional cleanup output
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk76.png)
 
 ---
 
@@ -98,7 +98,18 @@ Add your screenshot here.
 
 Write a short note describing what the lab demonstrated.
 
-Write your answer here.
+Here is a short note summarizing what the lab demonstrated:
+
+* **Deployment Management**: Created, configured, and managed application deployments using declarative YAML manifests within a local Kubernetes cluster.
+
+
+* **Health Probes & Self-Healing**: Configured `livenessProbe` health checks to monitor container availability, intentionally triggered failures, and observed Kubernetes automatically restart unhealthy containers.
+
+
+* **Internal Network Connectivity**: Provisioned `ClusterIP` services to route internal traffic and validated successful pod-to-service communication using lightweight testing pods.
+
+
+* **Image Lifecycle & Cluster Operations**: Managed container image pulling, local node loading, and troubleshooting within a `kind` environment.
 
 ---
 
