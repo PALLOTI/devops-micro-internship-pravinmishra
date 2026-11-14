@@ -20,13 +20,13 @@ Confirm every Book Review App pod is `Running` and `Ready` and that its Service 
 
 #### Screenshot 1 — `kubectl get pods` and `kubectl get endpoints` showing the Book Review App healthy
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk111.png)
 
 ---
 
 #### Screenshot 2 — Workspace folder structure for this assignment
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk112.png)
 
 ---
 
@@ -40,7 +40,7 @@ Add a `CLAUDE.md` telling Claude this is a read-only Kubernetes triage workflow:
 
 #### Screenshot 3 — `CLAUDE.md` showing the project overview, incident workflow, and safety rules
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk113.png)
 
 ---
 
@@ -54,7 +54,7 @@ Ask Claude to propose a read-only, five-check `kubectl` triage plan — pod stat
 
 #### Screenshot 4 — Claude's proposed five-check plan, with no file created or cluster state changed
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk114.png)
 
 ---
 
@@ -68,13 +68,13 @@ Write a Bash script that runs the five read-only `kubectl` checks and writes a P
 
 #### Screenshot 5 — Script showing the five checks and how each one gathers its evidence
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk1105.png)
 
 ---
 
 #### Screenshot 6 — `bash -n` and `ls -l` confirming the script is valid and executable
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk116.png)
 
 ---
 
@@ -88,7 +88,7 @@ Run the script against your current, unmodified deployment and confirm it report
 
 #### Screenshot 7 — Script output showing all five checks passing
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk117.png)
 
 ---
 
@@ -102,13 +102,13 @@ Wrap the script in a Claude Code skill restricted to read-only tools (no `Write`
 
 #### Screenshot 8 — `SKILL.md` frontmatter showing the tool restrictions and safety rules
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk118.png)
 
 ---
 
 #### Screenshot 9 — `/k8s-triage` output for the healthy cluster
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk119.png)
 
 ---
 
@@ -122,13 +122,13 @@ Deliberately break your own deployment — an image tag that does not exist, or 
 
 #### Screenshot 10 — The pod in a failed state and the Service showing no Endpoints
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk1110.png)
 
 ---
 
 #### Screenshot 11 — `/k8s-triage` output showing the diagnosis and the recommended `kubectl` command, not executed by Claude
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk1111.png)
 
 ---
 
@@ -142,13 +142,13 @@ Review the recommendation, apply the fix yourself, confirm the pod returns to `R
 
 #### Screenshot 12 — Pod back to `Running`/`Ready` and the Service showing Endpoints again
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk1112.png)
 
 ---
 
 #### Screenshot 13 — Second `/k8s-triage` run confirming recovery
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk1113.png)
 
 ---
 
@@ -156,7 +156,25 @@ Add your screenshot here.
 
 Compare this incident to the Nginx incident from Week 3's AI-Assisted Linux Health Check. What stayed the same about the process, and what changed about the evidence you had to gather?
 
-Add your answer here
+omparing the Kubernetes incident-triage workflow from Week 12 to the Linux Nginx incident from Week 3 highlights how core operational philosophies translate across layers of the infrastructure stack.
+
+What Stayed the Same (The Process)
+The Agentic Loop (Gather → Analyze → Human Act → Verify): Both workflows strictly decouple data collection from remediation. In both cases, a deterministic script (Bash) collects the raw facts, an AI assistant analyzes the findings without executing mutations, and you (the human engineer) review the recommendation, perform the manual fix, and re-run the script to verify recovery.
+
+Strict Safety Guardrails: Both scenarios enforce a human-in-the-loop operational model. The AI is explicitly prohibited from autonomously executing mutating commands (such as restarting services or modifying cluster resources), keeping operational control firmly in your hands.
+
+Preservation of Evidence: Both workflows emphasize capturing the failure state in a persistent report (reports/ directory) before attempting remediation, creating a transparent audit trail of the incident.
+
+What Changed (The Evidence Gathered)
+Scope of Abstraction (Host vs. Cluster): In the Week 3 Linux health check, evidence gathering focused on single-node operating system primitives—such as checking systemctl status nginx, querying local socket listeners on Port 80 via ss or netstat, and inspecting system journal logs. In contrast, Week 12 required distributed, cloud-native orchestration primitives.
+
+Health Metrics and Observability Indicators:
+
+Instead of single-process uptime, evidence collection expanded to Pod phase and waiting reasons (e.g., ImagePullBackOff), container restart counts, and Pod readiness conditions.
+
+Namespace-Wide Events and Routing State:
+
+Evidence gathering shifted from local syslog files to namespace Warning events and Service endpoint health. Rather than checking if a local port is bound, you had to inspect EndpointSlices or Endpoints to verify whether traffic could successfully route to active backends across worker nodes in an AWS EKS cluster.
 
 ---
 

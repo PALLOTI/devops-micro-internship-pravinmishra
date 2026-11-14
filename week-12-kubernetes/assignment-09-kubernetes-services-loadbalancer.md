@@ -20,7 +20,10 @@ Create resource group `rg-aks-lb-lab` and a one-node AKS cluster `aks-lb-lab` (`
 
 #### Screenshot 1 — AKS creation result and Ready node output
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk91.png)
+
+
+![PALLOTI](./screenshots/12wk91x.png)
 
 ---
 
@@ -34,7 +37,7 @@ Create two healthy, probed NGINX Pods for the public Service.
 
 #### Screenshot 2 — Successful rollout and two Ready Pods
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk92.png)
 
 ---
 
@@ -48,7 +51,7 @@ Create `nginx-svc-lb` (type `LoadBalancer`, port 80), wait for `EXTERNAL-IP`, an
 
 #### Screenshot 3 — Service with public `EXTERNAL-IP` and successful `curl` output
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk93.png)
 
 ---
 
@@ -62,7 +65,7 @@ Apply a broken readiness patch, confirm the Pod leaves the endpoint set and publ
 
 #### Screenshot 4 — Endpoint changes and public `curl` behavior before and after recovery
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk94.png)
 
 ---
 
@@ -76,7 +79,7 @@ Scale to four replicas and confirm the endpoint set grows while the public IP st
 
 #### Screenshot 5 — Four replicas/endpoints behind the unchanged public endpoint
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk95.png)
 
 ---
 
@@ -90,7 +93,11 @@ Resolve any pending endpoint or unhealthy backend issues, then delete the Kubern
 
 #### Screenshot 6 — Clean final verification or resource deletion command output
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk96.png)
+
+
+![PALLOTI](./screenshots/12wk96x.png)
+
 
 ---
 
@@ -98,7 +105,11 @@ Add your screenshot here.
 
 Write a short note describing what the lab demonstrated.
 
-Write your answer here.
+This lab demonstrated how to deploy an NGINX application with readiness and liveness probes to an Amazon EKS cluster, expose it publicly using a Kubernetes LoadBalancer service, and route traffic to healthy backend pods.
+   Key concepts covered include:
+Public Load Balancing: Using a LoadBalancer service to provision an external AWS Elastic Load Balancer (ELB) that routes internet traffic into the cluster.   
+Readiness Protection: Observing how readiness probes exclude unready or failing pods from traffic routing during a faulty rollout, ensuring zero downtime while existing healthy pods continue serving requests.
+Horizontal Scaling: Scaling the deployment to increase the number of pod replicas and observing how the service automatically incorporates the new endpoints behind the stable public address.
 
 ---
 

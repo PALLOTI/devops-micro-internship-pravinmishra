@@ -20,13 +20,13 @@ Select a Kubernetes platform, confirm `kubectl` (and Helm, if used) can communic
 
 #### Screenshot 1 — Terminal showing the active Kubernetes context and Ready nodes
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk101.png)
 
 ---
 
 #### Screenshot 2 (if using Helm) — Terminal showing `helm version`
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk102.png)
 
 ---
 
@@ -40,7 +40,7 @@ Create an architecture diagram showing the public entry point, frontend, interna
 
 #### Screenshot 3 — Completed Kubernetes architecture diagram
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk103.png)
 
 ---
 
@@ -54,13 +54,13 @@ Externalize non-sensitive configuration into ConfigMaps and sensitive values (da
 
 #### Screenshot 4 — ConfigMap manifest or `kubectl describe configmap` output showing non-sensitive configuration
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk104.png)
 
 ---
 
 #### Screenshot 5 — Secret object usage with sensitive values hidden or redacted
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk105.png)
 
 ---
 
@@ -74,13 +74,13 @@ Provide a persistent MySQL database (managed service or StatefulSet + PVC) reach
 
 #### Screenshot 6 — Managed MySQL status or MySQL StatefulSet/PVC status
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk106.png)
 
 ---
 
 #### Screenshot 7 — Successful database connectivity or schema verification with credentials hidden
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk107.png)
 
 ---
 
@@ -94,13 +94,13 @@ Run one or two Node.js/Express backend replicas on port 3010, expose them via Cl
 
 #### Screenshot 8 — Backend Deployment, Pods, and internal Service
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk108.png)
 
 ---
 
 #### Screenshot 9 — Backend logs showing successful startup and database connectivity
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk109.png)
 
 ---
 
@@ -114,13 +114,13 @@ Run one or two Next.js frontend replicas behind Nginx on port 80, reverse-proxyi
 
 #### Screenshot 10 — Frontend Deployment and Ready Pods
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk1010.png)
 
 ---
 
 #### Screenshot 11 — Nginx reverse-proxy configuration showing the internal backend Service name
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk1011.png)
 
 ---
 
@@ -134,13 +134,13 @@ Expose only the frontend publicly (LoadBalancer or Ingress), restrict backend ac
 
 #### Screenshot 12 — Frontend LoadBalancer or Ingress showing the public endpoint
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk1012.png)
 
 ---
 
 #### Screenshot 13 — Internal backend Service and NetworkPolicy (or equivalent restriction)
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk1013.png)
 
 ---
 
@@ -154,31 +154,31 @@ Confirm the frontend loads publicly, a full user flow reaches the backend and My
 
 #### Screenshot 14 — `kubectl get all` output
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk1014.png)
 
 ---
 
 #### Screenshot 15 — Functional Book Review App in the browser with the public URL or IP visible
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk1015.png)
 
 ---
 
 #### Screenshot 16 — Frontend Pod logs
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk1016.png)
 
 ---
 
 #### Screenshot 17 — Backend Pod logs showing successful requests or database activity
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk1017.png)
 
 ---
 
 #### Screenshot 18 (optional) — Kubernetes dashboard
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk1018.png)
 
 ---
 
@@ -192,7 +192,7 @@ Optionally package as a Helm chart, add HPA, add readiness/liveness probes, or c
 
 #### Screenshot 19 (optional) — Helm release, HPA, probes, or TLS evidence
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk1019.png)
 
 ---
 
@@ -200,7 +200,29 @@ Add your screenshot here.
 
 Report the Kubernetes platform used, the public frontend URL/IP, a GitHub link to your manifests/Helm chart (if applicable), and the architecture diagram link. Summarize what worked, issues encountered and how they were resolved, and the tools/sources that helped the most.
 
-Write your answer here.
+Kubernetes platform
+Amazon EKS (Kubernetes v1.34), region us-west-1, created with eksctl, managed node group of t3.small nodes
+Public frontend URL
+http://a75ed8485a0be430fb6fca93b1f665f1-876787392.us-west-1.elb.amazonaws.com (AWS load balancer).
+
+Architecture
+A three-tier Book Review application runs in the book-review namespace. The request path is:
+Browser -> AWS load balancer (Service type LoadBalancer, port 80)
+        -> nginx (in the frontend pod)
+             /api/*      -> backend-service:3001 -> Express API -> MySQL
+             everything else -> Next.js frontend on port 3000
+• Frontend: a Next.js app built as a small standalone image, with an nginx sidecar that acts as the reverse proxy (configured through the nginx-config ConfigMap).
+• Backend: a Node.js Express API with user registration, login (JWT), books and reviews routes under /api.
+• Database: MySQL running as pod mysql-0 behind a headless Service, with the schema and sample books loaded.
+• Configuration: a ConfigMap (backend-config) for non-sensitive settings and a Secret (book-review-secret) for the database credentials and JWT key. Real secret values were never committed to Git.
+• Storage: the AWS EBS CSI driver, installed as a managed EKS add-on with its own IAM role.
+What Worked
+• An EKS cluster with a managed node group, reached from WSL with kubectl.
+• A public AWS load balancer created automatically by a Service of type LoadBalancer.
+• The frontend, backend and MySQL running as separate workloads that talk to each other through Kubernetes Services.
+• The books stored in MySQL were returned by the API and displayed in the browser.
+• A rolling update and a deliberate readiness-probe failure showed that unready pods are kept out of Service traffic.
+• Clean-up of the load balancers, nodes, cluster and IAM role afterwards, checked with AWS CLI queries.
 
 ---
 
