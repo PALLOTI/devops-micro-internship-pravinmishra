@@ -43,13 +43,18 @@ This is not a course. It is an internship-style program — real deployments, re
 
 | Week | Award | Post |
 |------|-------|------|
-| <!-- e.g. Week 03 --> | <!-- 🏆 Champion of the Week --> | <!-- [LinkedIn Post](#) --> |
+|  Week-11-docker  |  🏆 Champion of the Week  |  https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_atomichabits-continuouslearning-devops-ugcPost-7520598160059224064-zv2o |
+
+
+![PALLOTI](./badges/cw.png)
+
 
 ### Leaderboard
 
  Add your cohort leaderboard rank here as you progress 
 
-> 🥇 Cohort 3 Rank: **#__** <!-- Update this each week -->
+> 🥇 Cohort 3 Rank: **20** 
+<!-- Update this each week -->
 
 ---
 
@@ -170,8 +175,8 @@ Week 06 → AWS Cloud
 
 | Week | Topic | Status | Assignment | LinkedIn Post | Blog Post |
 | :-: | --- | :-: | :-: | --- | --- |
-| 00 | Internet & Networking Basics | ✅ Completed | ✅ Completed | <https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_startuplife-networking-techforfounders-share-7473842580309520385-Ts5c> | <https://medium.com/@palloti10x/in-devops-networking-is-the-backbone-of-continuous-deployment-150e54b739b1> |
-| 01 | Success Mindset | ✅ Completed | ✅ Completed | <https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-cloudengineering-continuouslearning-activity-7476649737945874432-CErC> | <https://medium.com/@palloti10x/mental-dependencies-before-server-dependencies-why-your-mindset-is-your-true-foundation-in-devops-d0b8e665ce2c> |
+| 00 | Internet & Networking Basics | ✅ Completed | ✅ Completed | <https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_startuplife-networking-techforfounders-share-7473842580309520385-Ts5c> | <https://medium.com/@palloti1000/why-networking-is-the-unsung-hero-of-devops-and-how-the-internet-actually-moves-your-data-39089f6a131c> |
+| 01 | Success Mindset | ✅ Completed | ✅ Completed | <https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-cloudengineering-continuouslearning-activity-7476649737945874432-CErC> | <https://medium.com/@palloti1000/mental-dependencies-before-server-dependencies-why-your-mindset-is-your-true-foundation-in-devops-f7a3f75bd5a1> |
 | 02 | Agentic AI with Claude Code | ✅ Completed | ✅ Completed | <https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-agenticai-cloudengineering-ugcPost-7482423989043249152-HAcf> | <https://medium.com/@palloti10x/the-rise-of-agentic-devops-990ff2cc9551> |
 | 03 | Linux & Bash for DevOps | ✅ Completed | ✅ Completed | <https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-linux-cloudsecurity-ugcPost-7485168451012087808-cgMx>    <https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_while-reading-engineering-newsletters-tuning-ugcPost-7484574314764107776-PWfQ> | <https://substack.com/profile/487332231-ezeobi-chinecherem-jude/note/c-298642766> |
 | 04 | Git & GitHub | ✅ Completed | ✅ Completed | <https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-agenticai-git-share-7486473114105753601-OrvQ> | <https://medium.com/@palloti10x/augmenting-git-workflows-with-agentic-ai-from-pre-commit-hooks-to-ai-pr-reviews-c7180bae93dc> |
