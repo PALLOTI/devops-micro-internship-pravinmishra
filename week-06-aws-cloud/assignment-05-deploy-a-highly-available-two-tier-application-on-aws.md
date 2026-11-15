@@ -229,15 +229,24 @@ Summarize the VPC/subnet layout, the ALB and Auto Scaling Group setup, the priva
 
 Summarize the VPC and subnets across the two Availability Zones.
 
-Write your answer here.
+The VPC (`10.0.0.0/16`) spans two Availability Zones (`AZ-a` and `AZ-b`) and is segmented into four subnets—two public and two private—to isolate the web and database tiers while ensuring high availability.
+
+* **Public Subnets (`10.0.1.0/24` in AZ-a, `10.0.2.0/24` in AZ-b):** Host the internet-facing Application Load Balancer, Auto Scaling Group EC2 web instances, and a NAT Gateway (with an Elastic IP). Both subnets are associated with a public route table that directs outbound traffic (`0.0.0.0/0`) to an attached Internet Gateway.
+* **Private Subnets (`10.0.11.0/24` in AZ-a, `10.0.12.0/24` in AZ-b):** Host the Multi-AZ RDS MySQL database instances with no direct internet exposure. Both subnets are associated with a private route table that routes outbound traffic (`0.0.0.0/0`) through the NAT Gateway.
 
 Summarize the ALB and Auto Scaling Group setup.
 
-Write your answer here.
+The Application Load Balancer (ALB) and Auto Scaling Group (ASG) work together across both public subnets (`AZ-a` and `AZ-b`) to provide a single, highly available entry point and automated self-healing for the WordPress web tier.
+
+* **Application Load Balancer (ALB):** Deployed as an internet-facing load balancer spanning both public subnets (`10.0.1.0/24` and `10.0.2.0/24`) and secured by `ha-alb-sg` (allowing inbound HTTP traffic on port 80 from `0.0.0.0/0`). It routes incoming requests via an HTTP port 80 listener to an instance target group configured with health checks on `/` (temporarily accepting `200-399` during initial WordPress setup, then locked to `200`).
+* **Auto Scaling Group (ASG):** Launches EC2 instances (`t3.micro` running Ubuntu, Apache, PHP, and WordPress via a standardized Launch Template) across both public subnets and registers them with the ALB target group. Configured with **Desired: 2**, **Minimum: 2**, and **Maximum: 4** capacity alongside ELB health checks, it automatically maintains active instances across both Availability Zones and replaces unhealthy or terminated instances without manual intervention.
 
 Summarize the private Multi-AZ RDS setup.
 
-Write your answer here.
+The database tier runs a managed **RDS MySQL** instance configured for high availability and strict network isolation across both private subnets (`AZ-a` and `AZ-b`).
+
+* **Multi-AZ & Network Placement:** Deployed across the private DB Subnet Group (`10.0.11.0/24` in AZ-a and `10.0.12.0/24` in AZ-b) with **Public access set to No**, ensuring zero direct internet exposure. Enabling **Multi-AZ** provisions a primary database instance in one Availability Zone with synchronous replication to a standby replica in the second Availability Zone for automatic failover.
+* **Security & Database Configuration:** Protected by `ha-db-sg`, which restricts inbound MySQL traffic on port `3306` exclusively to instances belonging to `ha-web-sg`. The instance hosts the initial `appdb` database, allowing all Auto Scaling Group web instances to read from and write to a single shared data store.
 
 Summarize the results of both high-availability tests.
 

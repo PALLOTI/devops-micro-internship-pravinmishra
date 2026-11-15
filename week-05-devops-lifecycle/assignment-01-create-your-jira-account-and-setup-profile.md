@@ -96,7 +96,7 @@ Share your Jira setup progress on WhatsApp Status, including your generated DMI 
 
 #### Screenshot 6 — Published WhatsApp Status showing your Jira setup message and generated DMI leaderboard progress link
 
-Add your screenshot here.
+![PALLOTI](./screenshots/whatsapp.png)
 
 ---
 
