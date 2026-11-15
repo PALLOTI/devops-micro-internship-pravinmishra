@@ -142,8 +142,10 @@ Week 06 → AWS Cloud
 
  [![Week 11 – Docker](./badges/week-11.svg)](./week-11-docker/) 
 
-<!-- Week 12 → Kubernetes -->
-<!-- [![Week 12 – K8s](./badges/week-12.svg)](./week-12-kubernetes/) -->
+ Week 12 → Kubernetes
+
+
+ [![Week 12 – K8s](./badges/week-12.svg)](./week-12-kubernetes/) 
 
 <!-- Week 13 → Final Project / Capstone -->
 <!-- [![Week 13 – Capstone](./badges/week-13.svg)](./week-13-final-project/) -->
@@ -180,7 +182,7 @@ Week 06 → AWS Cloud
 | 09 | Ansible | ✅ Completed | ✅ Completed | <https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-terraform-ansible-share-7509381288412258304-YDha> | <https://medium.com/@palloti1000/the-separation-of-power-in-cloud-automation-building-a-3-tier-web-app-f201cd184602> |
 | 10 | Azure DevOps (CI/CD) | ✅ Completed | ✅ Completed | <https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_building-cloud-infrastructure-is-one-thingautomating-ugcPost-7523730584381145088-eThL> | <https://medium.com/@palloti1000/building-cloud-infrastructure-is-one-thing-automating-seamless-application-delivery-on-top-of-it-b59270731f37> |
 | 11 | Docker | ✅ Completed | ✅ Completed | <https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-docker-dockercompose-ugcPost-7514618424615174144-phKi> | <https://medium.com/@palloti1000/hardening-containers-orchestrating-secure-stacks-with-ai-assisted-auditing-69beefadd786> |
-| 12 | Kubernetes | ⬜ Not Started | ⏳ Pending | — | — |
+| 12 | Kubernetes | ✅ Completed | ✅ Completed | <https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-kubernetes-cloudnative-ugcPost-7527642965532479488-ruxb> | <https://medium.com/@palloti1000/browser-load-balancer-nginx-frontend-pod-api-backend-service-backend-mysql-8a3b382cbecc> |
 | 13 | Final Project | ⬜ Not Started | ⏳ Pending | — | — |
 
 **Status:** ⬜ Not Started | 🔄 In Progress | ✅ Completed<br>
