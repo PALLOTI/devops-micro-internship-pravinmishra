@@ -62,8 +62,10 @@ Run `kubectl describe`, `kubectl logs`, and `kubectl exec -it ... -- /bin/bash` 
 
 #### Screenshot 4 — Terminal showing `kubectl describe`, `kubectl logs`, or the `/usr/share/nginx/html` directory
 
-Add your screenshot here.
+
 ![PALLOTI](./screenshots/12wk14.png)
+
+
 ---
 
 # Submission Instructions
