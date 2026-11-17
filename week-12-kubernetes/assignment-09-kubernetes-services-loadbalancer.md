@@ -18,21 +18,20 @@ Create a small AKS cluster for this lab, or connect to an existing approved AKS 
 
 ### Evidence
 
-#### Screenshot 1 — Output of `kubectl get nodes` showing ready AKS node(s)
+#### Screenshot 1 — AKS creation result and Ready node output
 
 ![PALLOTI](./screenshots/12wk91.png)
 
 
 ![PALLOTI](./screenshots/12wk91x.png)
 
-<<<<<<< HEAD
 ---
 
-# Task 2 — Deploy the Probed NGINX Workload
+# Task 2 — Set Up Your Lab Directory
 
 ## Goal
 
-Create two healthy, probed NGINX Pods for the public Service.
+Create and enter a dedicated directory for the LoadBalancer Service manifests.
 
 ### Evidence
 
@@ -46,128 +45,13 @@ Create two healthy, probed NGINX Pods for the public Service.
 
 ## Goal
 
-Create `nginx-svc-lb` (type `LoadBalancer`, port 80), wait for `EXTERNAL-IP`, and test it with `curl`.
+Create a healthy NGINX Deployment with readiness and liveness probes.
 
 ### Evidence
 
 #### Screenshot 3 — Service with public `EXTERNAL-IP` and successful `curl` output
 
 ![PALLOTI](./screenshots/12wk93.png)
-
----
-
-# Task 4 — Prove Readiness Affects Public Traffic
-
-## Goal
-
-Apply a broken readiness patch, confirm the Pod leaves the endpoint set and public availability is affected, then restore health.
-
-### Evidence
-
-#### Screenshot 4 — Endpoint changes and public `curl` behavior before and after recovery
-
-![PALLOTI](./screenshots/12wk94.png)
-
----
-
-# Task 5 — Scale Behind the Stable Public Endpoint
-
-## Goal
-
-Scale to four replicas and confirm the endpoint set grows while the public IP stays the same.
-
-### Evidence
-
-#### Screenshot 5 — Four replicas/endpoints behind the unchanged public endpoint
-
-![PALLOTI](./screenshots/12wk95.png)
-
----
-
-# Task 6 — Troubleshoot and Clean Up
-
-## Goal
-
-Resolve any pending endpoint or unhealthy backend issues, then delete the Kubernetes objects and Azure resource group when finished.
-
-### Evidence
-
-#### Screenshot 6 — Clean final verification or resource deletion command output
-
-![PALLOTI](./screenshots/12wk96.png)
-
-
-![PALLOTI](./screenshots/12wk96x.png)
-
-
----
-
-=======
->>>>>>> upstream
-### Notes
-
-**1. Why does this lab use a cloud-capable Kubernetes environment such as AKS for the LoadBalancer Service?**
-
-<<<<<<< HEAD
-This lab demonstrated how to deploy an NGINX application with readiness and liveness probes to an Amazon EKS cluster, expose it publicly using a Kubernetes LoadBalancer service, and route traffic to healthy backend pods.
-   Key concepts covered include:
-Public Load Balancing: Using a LoadBalancer service to provision an external AWS Elastic Load Balancer (ELB) that routes internet traffic into the cluster.   
-Readiness Protection: Observing how readiness probes exclude unready or failing pods from traffic routing during a faulty rollout, ensuring zero downtime while existing healthy pods continue serving requests.
-Horizontal Scaling: Scaling the deployment to increase the number of pod replicas and observing how the service automatically incorporates the new endpoints behind the stable public address.
-=======
-Add your answer here.
-
-**2. What Azure resources can Kubernetes provision when a LoadBalancer Service is created?**
-
-Add your answer here.
-
-**3. Why is it important to delete unused AKS resources after the lab?**
-
-Add your answer here.
-
----
-
-# Task 2 — Set Up Your Lab Directory
-
-## Goal
-
-Create and enter a dedicated directory for the LoadBalancer Service manifests.
-
-### Evidence
-
-#### Screenshot 2 — Terminal showing the output of `pwd` confirming that you are working inside `~/k8s-labs/services/loadbalancer`
-
-Add your screenshot here.
-
-### Notes
-
-**1. Why is it useful to keep Kubernetes manifests organized in dedicated directories?**
-
-Add your answer here.
-
-**2. What are the names of the main Deployment and LoadBalancer Service YAML files you will create in this assignment?**
-
-Add your answer here.
-
----
-
-# Task 3 — Deploy a Healthy NGINX Application
-
-## Goal
-
-Create a healthy NGINX Deployment with readiness and liveness probes.
-
-### Evidence
-
-#### Screenshot 3 — Completed `00-nginx-deploy.yaml` manifest
-
-Add your screenshot here.
-
----
-
-#### Screenshot 4 — Output showing successful rollout and two ready NGINX Pods
-
-Add your screenshot here.
 
 ### Notes
 
@@ -185,7 +69,7 @@ Add your answer here.
 
 ---
 
-# Task 4 — Create and Test the LoadBalancer Service
+# Task 4 — Prove Readiness Affects Public Traffic
 
 ## Goal
 
@@ -193,43 +77,13 @@ Create a public LoadBalancer Service and verify that the NGINX application is re
 
 ### Evidence
 
-#### Screenshot 5 — Completed `01-nginx-svc-loadbalancer.yaml` manifest
+#### Screenshot 4 — Endpoint changes and public `curl` behavior before and after recovery
 
-Add your screenshot here.
-
----
-
-#### Screenshot 6 — Output showing the Service with an assigned EXTERNAL-IP
-
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk94.png)
 
 ---
 
-#### Screenshot 7 — Successful curl output from the public IP
-
-Add your screenshot here.
-
-### Notes
-
-**1. What does `type: LoadBalancer` instruct AKS to do?**
-
-Add your answer here.
-
-**2. What public IP was assigned to your Service?**
-
-Add your answer here.
-
-**3. How does the public request eventually reach the NGINX Pods?**
-
-Add your answer here.
-
-**4. Why should you wait for EXTERNAL-IP before testing the Service?**
-
-Add your answer here.
-
----
-
-# Task 5 — Observe How Readiness Protects Public Traffic
+# Task 5 — Scale Behind the Stable Public Endpoint
 
 ## Goal
 
@@ -237,49 +91,13 @@ Intentionally break readiness and observe how Kubernetes excludes unready Pods f
 
 ### Evidence
 
-#### Screenshot 8 — Completed `02-readiness-broken.yaml` patch file
+#### Screenshot 5 — Four replicas/endpoints behind the unchanged public endpoint
 
-Add your screenshot here.
-
----
-
-#### Screenshot 9 — Output showing the expected incomplete rollout or readiness failure
-
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk95.png)
 
 ---
 
-#### Screenshot 10 — EndpointSlice output showing ready healthy backends and the effect of the readiness failure
-
-Add your screenshot here.
-
----
-
-#### Screenshot 11 — Successful public curl response after recovery
-
-Add your screenshot here.
-
-### Notes
-
-**1. Why did the rollout not complete?**
-
-Add your answer here.
-
-**2. Why can the public endpoint still work while new Pods fail readiness?**
-
-Add your answer here.
-
-**3. What would happen if Kubernetes routed traffic to Pods before they were ready?**
-
-Add your answer here.
-
-**4. How did you restore the Deployment successfully?**
-
-Add your answer here.
-
----
-
-# Task 6 — Scale the Deployment Behind the Load Balancer
+# Task 6 — Troubleshoot and Clean Up
 
 ## Goal
 
@@ -287,48 +105,25 @@ Scale the NGINX Deployment and confirm that more ready Pods become available beh
 
 ### Evidence
 
-#### Screenshot 12 — Two ready NGINX Pods verified initially; four ready Pods verified after scaling
+#### Screenshot 6 — Clean final verification or resource deletion command output
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk96.png)
+
+
+![PALLOTI](./screenshots/12wk96x.png)
+
 
 ---
-
-#### Screenshot 13 — Successful public curl response after scaling
-
-Add your screenshot here.
 
 ### Notes
 
-**1. What changed after scaling the Deployment from two to four replicas?**
+Write a short note describing what the lab demonstrated.
 
-Add your answer here.
-
-**2. Did the public IP change after scaling? Explain why or why not.**
-
-Add your answer here.
-
-**3. Why does scaling behind a LoadBalancer Service not require users to change the URL or IP they use?**
-
-Add your answer here.
-
----
-
-# Task 7 — Share Your LoadBalancer Lab on LinkedIn
-
-## Goal
-
-Share what you learned about exposing an NGINX application publicly through a LoadBalancer Service on AKS.
-
-### Evidence
-
-#### Screenshot 14 — Published LinkedIn post about your LoadBalancer lab on AKS
-
-Add your screenshot here.
-
-#### LinkedIn post link
-
-Add your link here.
->>>>>>> upstream
+This lab demonstrated how to deploy an NGINX application with readiness and liveness probes to an Amazon EKS cluster, expose it publicly using a Kubernetes LoadBalancer service, and route traffic to healthy backend pods.
+   Key concepts covered include:
+Public Load Balancing: Using a LoadBalancer service to provision an external AWS Elastic Load Balancer (ELB) that routes internet traffic into the cluster.   
+Readiness Protection: Observing how readiness probes exclude unready or failing pods from traffic routing during a faulty rollout, ensuring zero downtime while existing healthy pods continue serving requests.
+Horizontal Scaling: Scaling the deployment to increase the number of pod replicas and observing how the service automatically incorporates the new endpoints behind the stable public address.
 
 ---
 

@@ -44,13 +44,9 @@ Prepare the cluster, application source, container images, and tooling needed fo
 
 #### Screenshot 2 — If using Helm: Output of `helm version`
 
-<<<<<<< HEAD
-![PALLOTI](./screenshots/12wk102.png)
-=======
 Required only if you choose Helm. Skip this screenshot if using YAML manifests.
 
-Add your screenshot here, or write “Not applicable — using YAML manifests.”
->>>>>>> upstream
+![PALLOTI](./screenshots/12wk102.png)
 
 ---
 
@@ -178,13 +174,13 @@ Prove that the frontend, backend, and MySQL database work together and collect o
 
 ### Evidence
 
-#### Screenshot 14 — `kubectl get all` output for the book-review namespace
+#### Screenshot 14 — `kubectl get all` output
 
 ![PALLOTI](./screenshots/12wk1014.png)
 
 ---
 
-#### Screenshot 15 — Functional Book Review App in the browser with the URL visible, including evidence of a successful user flow
+#### Screenshot 15 — Functional Book Review App in the browser with the public URL or IP visible
 
 ![PALLOTI](./screenshots/12wk1015.png)
 
@@ -196,47 +192,36 @@ Prove that the frontend, backend, and MySQL database work together and collect o
 
 ---
 
-#### Screenshot 17 — Backend logs and evidence of a successful database-backed operation
+#### Screenshot 17 — Backend Pod logs showing successful requests or database activity
 
 ![PALLOTI](./screenshots/12wk1017.png)
 
 ---
 
-#### Screenshot 18 — Optional: Kubernetes dashboard
+#### Screenshot 18 (optional) — Kubernetes dashboard
 
-<<<<<<< HEAD
 ![PALLOTI](./screenshots/12wk1018.png)
-=======
-Add your screenshot here, or write “Not attempted.”
-
-Multiple images may be included under a screenshot number when needed to demonstrate the complete user flow.
->>>>>>> upstream
 
 ---
 
-# Task 9 — Optional: Implement Production Improvements
+# Task 9 — Implement Optional Production Enhancements
 
 ## Goal
 
-Add selected improvements without breaking the required three-tier architecture.
+Explain your three-tier architecture, demonstrate the working application, and share what you learned.
 
 ### Evidence
 
-#### Screenshot 19 — Optional: Evidence of selected Helm, HPA, probe, or TLS improvements
+#### Screenshot 20 — Published LinkedIn post about your Book Review App deployment on Kubernetes
 
-<<<<<<< HEAD
 ![PALLOTI](./screenshots/12wk1019.png)
-=======
-Add your screenshot here, or write “Not attempted.”
->>>>>>> upstream
 
 ---
 
-# Task 10 — Publish Your Book Review App Deployment on LinkedIn
+### Notes
 
-## Goal
+Report the Kubernetes platform used, the public frontend URL/IP, a GitHub link to your manifests/Helm chart (if applicable), and the architecture diagram link. Summarize what worked, issues encountered and how they were resolved, and the tools/sources that helped the most.
 
-<<<<<<< HEAD
 Kubernetes platform
 Amazon EKS (Kubernetes v1.34), region us-west-1, created with eksctl, managed node group of t3.small nodes
 Public frontend URL
@@ -260,53 +245,6 @@ What Worked
 • The books stored in MySQL were returned by the API and displayed in the browser.
 • A rolling update and a deliberate readiness-probe failure showed that unready pods are kept out of Service traffic.
 • Clean-up of the load balancers, nodes, cluster and IAM role afterwards, checked with AWS CLI queries.
-=======
-Explain your three-tier architecture, demonstrate the working application, and share what you learned.
-
-### Evidence
-
-#### Screenshot 20 — Published LinkedIn post about your Book Review App deployment on Kubernetes
-
-Add your screenshot here.
-
-### LinkedIn Post URL
-
-Add your published LinkedIn post URL here.
-
----
-
-# Final Summary
-
-## What Worked
-
-Describe the application components and user flows you successfully deployed and tested.
-
-Add your summary here.
-
-## Issues and Fixes
-
-Describe the main issues encountered, their causes, and how you resolved them.
-
-Add your summary here.
-
-## Tools and Sources Used
-
-List the documentation and tools that helped you complete the assignment.
-
-Add your tools and sources here.
-
-## Optional Improvements
-
-Describe any optional improvements implemented, or write “Not attempted.”
-
-Add your summary here.
-
-## Cleanup or Reuse Plan
-
-State which resources were removed or why the environment is being retained.
-
-Add your cleanup status or reuse plan here.
->>>>>>> upstream
 
 ---
 

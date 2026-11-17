@@ -26,13 +26,9 @@ Create an architecture diagram and implementation plan showing the selected Azur
 
 #### Architecture Notes
 
-<<<<<<< HEAD
-![PALLOTI](./screenshots/7wk62.jpeg)
-=======
 Explain your selected region, VM sizes, database capacity, secret-management method, monitoring, backup, and recovery choices. State that one VM per compute tier allows downtime during a restart or failure.
 
-Write your answer here.
->>>>>>> upstream
+![PALLOTI](./screenshots/7wk62.jpeg)
 
 ---
 
@@ -66,11 +62,11 @@ Create a Resource Group and VNet using `10.0.0.0/16`, with web subnet `10.0.1.0/
 
 ## Goal
 
-Configure NSGs for application, management, and health-probe traffic. Protect database credentials and the JWT signing secret. Create the Web VM with restricted SSH access and use it as the jump host for private App VM administration.
+Apply least-privilege NSG rules so traffic flows Internet → public entry point → web tier → application tier → database tier, and store credentials in Azure Key Vault or another approved secure mechanism.
 
-## Evidence
+### Evidence
 
-#### Screenshot 5 — Web, application, and database NSG rules showing permitted sources, ports, health-probe access, and applicable deny rules
+#### Screenshot 6 — NSG rules proving least-privilege access between the tiers
 
 ![PALLOTI](./screenshots/7wk66.png)
 
@@ -82,7 +78,7 @@ Configure NSGs for application, management, and health-probe traffic. Protect da
 
 ---
 
-#### Screenshot 6 — Key Vault or the selected secret-management configuration, without displaying secret values
+#### Screenshot 7 — Key Vault or approved secret-management configuration (without displaying secret values)
 
 ![PALLOTI](./screenshots/7wk67.png)
 
@@ -102,21 +98,13 @@ Create Azure Database for MySQL Flexible Server using private access in the dele
 
 ---
 
-#### Screenshot 8 — Database backup-retention and availability settings
+#### Screenshot 9 — Terminal or service output proving the presentation layer is running
 
 ![PALLOTI](./screenshots/7wk69.png)
 
 ---
 
-#### Database Notes
-
-Record the database service, selected capacity, backup-retention period, and recovery approach. Do not include passwords.
-
-Write your answer here.
-
----
-
-# Task 5 — Deploy the Business or Application Tier
+# Task 5 — Deploy the Business (Application) Tier
 
 ## Goal
 
@@ -124,27 +112,21 @@ Deploy the backend on one private Ubuntu VM using port **3001**. Connect to Azur
 
 ## Evidence
 
-#### Screenshot 9 — App VM networking configuration showing placement in the application subnet and no Public IP
+#### Screenshot 10 — Application-tier compute overview showing private subnet placement
 
 ![PALLOTI](./screenshots/7wk610.png)
 
 ---
 
-#### Screenshot 10 — Successful database connection and schema verification from the App VM, without displaying credentials
+#### Screenshot 11 — Backend process, service, or listening-port evidence
 
 ![PALLOTI](./screenshots/7wk611.png)
 
 ---
 
-#### Screenshot 11 — PM2 showing `book-review-backend` online after reboot
+#### Screenshot 12 — Internal health-check or API response (without exposing secrets)
 
 ![PALLOTI](./screenshots/7wk612.png)
-
----
-
-#### Screenshot 12 — Successful backend health or API response from the Web VM through the App VM’s private IP
-
-Add your screenshot here.
 
 ---
 
@@ -168,7 +150,7 @@ Deploy the Next.js frontend on the existing Web VM on port **3000**. Configure N
 
 ---
 
-#### Screenshot 15 — PM2 showing `book-review-frontend` online after reboot, with Nginx active and a successful local HTTP response
+#### Screenshot 15 — Successful schema or connectivity verification (without exposing credentials)
 
 ![PALLOTI](./screenshots/7wk615.png)
 
@@ -238,17 +220,13 @@ Verify registration, login, book viewing, and persistent review creation through
 
 Paste your Public Load Balancer website URL here:
 
-<<<<<<< HEAD
 http://48.195.191.179 
-=======
-`http://<PUBLIC-LB-IP>`
->>>>>>> upstream
 
 ---
 
-#### Recovery Notes
+#### Deployment Notes
 
-Record which VM was restarted, the observed interruption, recovery time, and whether services recovered without manual startup.
+Summarize what worked, issues encountered, fixes applied, and sources used. Identify the backend route used for direct and Internal Load Balancer verification, including its expected response.
 
 1. The Diagnostic Turning Point: curl http://localhost:3001/api/books
 The command curl http://localhost:3001/api/books (and its loopback variant [http://127.0.0.1:3001/api/books](http://127.0.0.1:3001/api/books)) served as the ultimate isolation and validation tool throughout your deployment:
@@ -295,38 +273,6 @@ Secrets Management: Environment variables (.env) securely stored sensitive datab
 Monitoring & Diagnostics: Leveraged system logs (/var/log/nginx/error.log), systemctl service checks, and targeted curl requests to observe real-time health and trace latency bottlenecks.
 
 Backup Strategy: Leveraged Azure MySQL Flexible Server's managed automated backups, ensuring point-in-time recovery and persistent data safety in the cloud.
-
----
-
-#### Deployment Notes
-
-Summarize what worked, issues encountered, fixes applied, and sources used. Identify the backend route used for direct and Internal Load Balancer verification, including its expected response.
-
-Write your answer here.
-
----
-
-# LinkedIn Post (Required)
-
-## Goal
-
-Publish a LinkedIn post with an application screenshot, your public website URL, and a caption explaining what you deployed, what you learned, one challenge you resolved, and how you verified database-backed functionality and recovery after VM restarts.
-
-Include **#DMIByPravinMishra #Azure #DevOps #CloudComputing**. Add the credit note and tags for your track as specified in the assignment guidelines.
-
-## Evidence
-
-#### LinkedIn Post URL
-
-Paste your published LinkedIn post URL here:
-
-`Add your URL here`
-
----
-
-#### Screenshot 23 — Published LinkedIn post showing your caption, website URL, and application screenshot
-
-Add your screenshot here.
 
 ---
 

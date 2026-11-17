@@ -44,13 +44,7 @@ Create a two-replica NGINX Deployment and verify the automatically managed Repli
 
 ### Evidence
 
-#### Screenshot 02 — Completed basic `nginx-deployment.yaml` showing two replicas and the initial NGINX image
-
-Add your screenshot here.
-
----
-
-#### Screenshot 03 — Successful apply output and verification output showing the Deployment, its automatically created ReplicaSet, and two Pods with `1/1` under `READY` and `Running` under `STATUS`
+#### Screenshot 2 — Manifest plus `kubectl` output showing the Deployment, ReplicaSet, and two Pods
 
 ![PALLOTI](./screenshots/12wk32.png)
 
@@ -64,13 +58,7 @@ Configure RollingUpdate to maintain the desired available replica count during a
 
 ### Evidence
 
-#### Screenshot 04 — Updated YAML showing `RollingUpdate`, `maxSurge: 1`, and `maxUnavailable: 0`
-
-Add your screenshot here.
-
----
-
-#### Screenshot 05 — Successful apply output and Deployment details showing the configured rolling-update strategy
+#### Screenshot 3 — Deployment YAML showing the RollingUpdate strategy and successful apply output
 
 ![PALLOTI](./screenshots/12wk33.png)
 
@@ -84,25 +72,7 @@ Update NGINX to 1.23.1, observe the rollout, and return to the previous stable r
 
 ### Evidence
 
-#### Screenshot 06 — Image-update command and rollout status showing successful completion
-
-Add your screenshot here.
-
----
-
-#### Screenshot 07 — ReplicaSet output showing the previous and updated ReplicaSets, and Deployment details showing `nginx:1.23.1`
-
-Add your screenshot here.
-
----
-
-#### Screenshot 08 — Rollback command and rollout status showing successful completion
-
-Add your screenshot here.
-
----
-
-#### Screenshot 09 — Rollout history and Deployment details showing the restored `nginx:1.21.1` image
+#### Screenshot 4 — Rolling-update status, multiple ReplicaSets, and successful rollback/history output
 
 ![PALLOTI](./screenshots/12wk34.png)
 
@@ -120,67 +90,17 @@ Scale the workload to five replicas and return it to two.
 
 ### Evidence
 
-#### Screenshot 10 — Scale-up command and output showing five Pods with `1/1` under `READY` and `Running` under `STATUS`
+#### Screenshot 5 — Terminal showing the scale-up and scale-down results
 
 ![PALLOTI](./screenshots/12wk35.png)
 
 ---
 
-#### Screenshot 11 — Scale-down command and output showing the final two Pods with `1/1` under `READY` and `Running` under `STATUS`
+### Notes
 
-Add your screenshot here.
+Write a short note describing what the lab demonstrated.
 
-<<<<<<< HEAD
 This lab demonstrated how to use a Kubernetes Deployment as a production-oriented controller for NGINX workloads. Specifically, it covered:   Basic Deployment Creation: Setting up and applying an NGINX deployment manifest with multiple replicas.   Rolling Updates & Strategies: Configuring a RollingUpdate strategy using maxSurge and maxUnavailable parameters to ensure continuous availability during updates.   Rollbacks: Updating an application image (nginx:1.23.1) and successfully rolling back to a previous revision (nginx:1.21.1) using rollout history.   Scaling: Dynamically scaling the workload up (to 5 replicas) and back down (to 2 replicas) while maintaining pod health and availability.   
-=======
----
-
-# Task 6 — Share Your Kubernetes Deployment Progress on WhatsApp Status
-
-## Goal
-
-Share your Kubernetes Deployment learning progress on WhatsApp Status, including your generated DMI leaderboard progress link.
-
-### Steps
-
-1. Go to the DMI Leaderboard.
-2. Find your name and select **Share your progress**.
-3. Click the **WhatsApp icon**.
-4. Copy the automatically generated leaderboard message containing your rank and progress link.
-5. Open WhatsApp and go to **Updates**.
-6. Create a new text Status.
-7. Copy and paste the message below.
-8. Insert the generated leaderboard message in the indicated place.
-9. Review and publish your Status.
-
-### WhatsApp Status Message
-
-I practiced Kubernetes Deployments as part of my DevOps learning journey! 🚀
-
-Today, I deployed NGINX, configured rolling updates, updated the container image, and rolled back to the previous version.
-
-I also scaled my Deployment from two Pods to five and back to two!
-
-[PASTE YOUR GENERATED LEADERBOARD MESSAGE AND LINK HERE]
-
-#DMIByPravinMishra #DevOps #Kubernetes
-
-### Evidence
-
-#### Screenshot 12 — Published WhatsApp Status showing your Kubernetes Deployment message and generated DMI leaderboard progress link
-
-Add your screenshot here.
-
-A draft or editing screen is not sufficient.
-
----
-
-# Lab Summary
-
-Write a short note explaining how Deployments manage ReplicaSets, perform rolling updates and rollbacks, and scale Pods.
-
-Add your answer here.
->>>>>>> upstream
 
 ---
 

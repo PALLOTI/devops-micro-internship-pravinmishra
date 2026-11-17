@@ -22,25 +22,13 @@ Confirm Azure CLI authentication and the availability of a VM, an associated NSG
 
 #### Screenshot 1 — Azure CLI showing the subscription name, VM, Storage Account, and MySQL Flexible Server without exposing subscription or tenant IDs
 
-![PALLOTI](./screenshots/7wk71.png)
+Add your screenshot here.
 
 ---
 
 #### Screenshot 2 — Workspace location and directory structure shown using `pwd` and `find . -maxdepth 4 -type d | sort`
 
-Add your screenshot here.
-
----
-
-## Notes You Must Write
-
-1. Which Azure resources will be inspected by this audit, and why is each one required?
-
-Write your answer here.
-
-2. Why should you confirm that the resources exist before writing an audit script against them?
-
-Write your answer here.
+![PALLOTI](./screenshots/7wk71.png)
 
 ---
 
@@ -58,18 +46,6 @@ Create `CLAUDE.md` defining the project overview, audit workflow, safety rules, 
 
 ---
 
-## Notes You Must Write
-
-1. Why should Claude never be allowed to execute the remediation command itself?
-
-Write your answer here.
-
-2. Which rule prevents Claude from reporting a security problem without evidence?
-
-Write your answer here.
-
----
-
 # Task 3 — Use Agentic AI to Plan the Audit Before Writing the Script
 
 ## Goal
@@ -84,18 +60,6 @@ Ask Claude Code to read `CLAUDE.md` and propose exactly four read-only checks: u
 
 ---
 
-## Notes You Must Write
-
-1. Which part of the Agentic Loop is being designed in this task?
-
-Write your answer here.
-
-2. Why is it useful to identify the exact evidence-gathering commands before writing the Bash script?
-
-Write your answer here.
-
----
-
 # Task 4 — Build the Azure Audit Bash Script
 
 ## Goal
@@ -104,61 +68,19 @@ Create `scripts/azure-audit.sh` using read-only Azure CLI commands. Generate a r
 
 ## Evidence
 
-#### Screenshot 5 — Top of `azure-audit.sh` showing the variables and checks array
+#### Screenshot 4 — Your script open in your editor, showing the check functions and the `az` commands they call
 
 ![PALLOTI](./screenshots/7wk74.png)
 
 ---
 
-#### Screenshot 6 — NSG and Storage Account check functions
+#### Screenshot 5 — Output of `bash -n` (no syntax errors) and `ls -l` showing the script is executable
 
 ![PALLOTI](./screenshots/7wk75.png)
 
 ---
 
-#### Screenshot 7 — Managed disk encryption and MySQL check functions
-
-Add your screenshot here.
-
----
-
-#### Screenshot 8 — `print_summary` function and script exit behavior
-
-Add your screenshot here.
-
----
-
-#### Screenshot 9 — Successful `bash -n` validation and `ls -l` output showing executable permission
-
-Add your screenshot here.
-
----
-
-## Notes You Must Write
-
-1. What is stored inside the `checks` array?
-
-Write your answer here.
-
-2. How does the `for` loop execute those checks?
-
-Write your answer here.
-
-3. Why does the NSG check inspect both single-value and multi-value address/port fields?
-
-Write your answer here.
-
-4. Why does the script use different exit codes for HEALTHY, WARN, and FAIL?
-
-Write your answer here.
-
-5. What does the disk encryption check verify?
-
-Write your answer here.
-
----
-
-# Task 5 — Run the Baseline Audit
+# Task 5 — Run the Script and Review the Baseline Report
 
 ## Goal
 
@@ -168,34 +90,14 @@ Run the script, capture its exit code immediately, review all four results, and 
 
 #### Screenshot 10 — Baseline audit output showing your Full Name and all four check results
 
-
-![PALLOTI](./screenshots/7wk76.png)
+Add your screenshot here.
 
 ---
 
 #### Screenshot 11 — Captured exit code and final report summary
 
-Add your screenshot here.
 
----
-
-## Notes You Must Write
-
-1. What is the Overall Status of your baseline audit?
-
-Write your answer here.
-
-2. Did any check return WARN or FAIL?
-
-Write your answer here.
-
-3. What evidence supports each finding?
-
-Write your answer here.
-
-4. Which finding represents the highest security risk in your environment? If none were found, state that.
-
-Write your answer here.
+![PALLOTI](./screenshots/7wk76.png)
 
 ---
 
@@ -207,39 +109,19 @@ Create `.claude/skills/azure-audit/SKILL.md` with Bash, Read, and Grep permissio
 
 ## Evidence
 
-#### Screenshot 12 — `SKILL.md` showing frontmatter, tool restrictions, and safety rules
+#### Screenshot 7 — Your skill file's frontmatter showing `allowed-tools` without `Write`
 
 ![PALLOTI](./screenshots/7wk77.png)
 
 ---
 
-#### Screenshot 13 — `/azure-audit` output showing baseline findings, supporting evidence, risk explanations, recommended remediation, and verification commands
+#### Screenshot 8 — `/azure-audit` output showing the baseline findings and Claude's explanation
 
 ![PALLOTI](./screenshots/7wk78.png)
 
 ---
 
-## Notes You Must Write
-
-1. Why does the Skill include Bash, Read, and Grep, but not Write?
-
-Write your answer here.
-
-2. What part of the workflow is performed by Bash?
-
-Write your answer here.
-
-3. What part is performed by Claude?
-
-Write your answer here.
-
-4. What additional value does Claude add beyond the script’s PASS/WARN/FAIL result?
-
-Write your answer here.
-
----
-
-# Task 7 — Fix a Real Finding and Reverify
+# Task 7 — Fix a Real Finding and Re-Verify
 
 ## Goal
 
@@ -249,29 +131,28 @@ If the baseline is clean, use only the controlled temporary SSH-rule exercise pe
 
 ## Evidence
 
-#### Screenshot 14 — `before-fix-report.txt` showing the original finding
+#### Screenshot 9 — Saved report showing the original finding before the fix
 
 ![PALLOTI](./screenshots/7wk79.png)
 
 ---
 
-#### Screenshot 15 — Terminal showing the remediation command executed manually by you
+#### Screenshot 10 — Terminal output of the remediation command you ran yourself
 
 ![PALLOTI](./screenshots/7wk710.png)
 
 ---
 
-#### Screenshot 16 — `/azure-audit` output or `after-fix-report.txt` showing the finding resolved
+#### Screenshot 11 — Second `/azure-audit` run (or report) showing the finding resolved
 
 ![PALLOTI](./screenshots/7wk711.png)
 
 ---
 
-## Notes You Must Write
+### Notes
 
-1. Which exact finding did you fix?
+Compare this assignment to the AWS audit you built in Week 6: which finding categories map to each other across the two clouds, and what stayed exactly the same about the workflow even though the `az`/`aws` commands are completely different?
 
-<<<<<<< HEAD
 Transitioning from your AWS security posture audit to your Azure audit highlights a fundamental truth in cloud engineering: **cloud providers change their syntax and control planes, but core security principles and automation patterns remain identical.**
 
 ---
@@ -317,78 +198,6 @@ Even though you swapped out AWS CLI (`aws ec2 ...`, `aws s3api ...`) for Azure C
 2. Explain the security impact of any findings.
 3. Propose a single, precise remediation command.
 4. **Never execute changes automatically**—leaving final authorization and execution strictly in the hands of the human operator.
-=======
-Write your answer here.
-
-2. What evidence proved that it existed?
-
-Write your answer here.
-
-3. What command did you run?
-
-Write your answer here.
-
-4. Why did you choose that remediation?
-
-Write your answer here.
-
-5. Did Claude execute the command, or did you?
-
-Write your answer here.
-
-6. Why does keeping remediation under human control matter?
-
-Write your answer here.
-
-7. Map your actions to **Gather → Analyze → Human Act → Verify**.
-
-Write your answer here.
-
----
-
-# LinkedIn Post — Required
-
-## Goal
-
-Publish a LinkedIn post describing the read-only audit script, the `/azure-audit` Skill, one finding you fixed, and the evidence → AI analysis → human remediation → reverification workflow. Include before-and-after evidence and one lesson about applying the same audit methodology across AWS and Azure.
-
-Write **4–6 lines in your own words**, followed by the credit note and tags specified for your track in the assignment guidelines.
-
-Suggested hashtags: **#DMIByPravinMishra #Azure #AgenticAI #ClaudeCode #DevOps**
-
-## Evidence
-
-#### LinkedIn Post URL
-
-Paste your published LinkedIn post URL here:
-
-`Add your URL here`
-
----
-
-#### Screenshot 17 — Published LinkedIn post showing your caption and before-and-after audit evidence
-
-Add your screenshot here.
-
----
-
-# Assignment Files
-
-## Evidence
-
-#### GitHub Repository or Assignment Folder URL
-
-Paste the link containing these files:
-
-- `CLAUDE.md`
-- `scripts/azure-audit.sh`
-- `.claude/skills/azure-audit/SKILL.md`
-- `reports/baseline-report.txt`
-- `reports/before-fix-report.txt`
-- `reports/after-fix-report.txt`
-
-`Add your repository or folder URL here`
->>>>>>> upstream
 
 ---
 
