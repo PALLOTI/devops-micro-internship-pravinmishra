@@ -6,25 +6,15 @@ Part of the DevOps Micro Internship (DMI) with Agentic AI
 
 ## Purpose
 
-In this assignment, you will configure and test a Kubernetes liveness probe. You will create a baseline NGINX Deployment, add an HTTP liveness probe, intentionally make it fail, observe container restarts, and restore the working configuration.
+In this guided lab, you will add an HTTP liveness probe to NGINX, force repeated failures, observe container restarts, restore the healthy probe, and review safe tuning.
 
 ---
 
-# Task 0 — Prepare the Lab Environment
+# Task 1 — Create the Baseline Deployment
 
 ## Goal
 
-Confirm that you are connected to your learning cluster and remove the previous HPA and NGINX Deployment before starting this lab.
-
-No screenshot or written notes are required for this pre-check.
-
----
-
-# Task 1 — Set Up Your Lab Directory
-
-## Goal
-
-Create and enter a dedicated directory for the liveness-probe lab.
+Deploy two NGINX Pods without probes (`00-nginx-deploy-baseline.yaml`).
 
 ### Evidence
 
@@ -38,7 +28,7 @@ Create and enter a dedicated directory for the liveness-probe lab.
 
 ## Goal
 
-Create a baseline NGINX Deployment with two replicas and no health probes.
+Add an HTTP liveness probe on `/` port 80 (`01-nginx-deploy-liveness.yaml`) and confirm the kubelet checks it every 10 seconds after the initial delay.
 
 ### Evidence
 
@@ -52,7 +42,7 @@ Create a baseline NGINX Deployment with two replicas and no health probes.
 
 ## Goal
 
-Add an HTTP liveness probe so Kubernetes can periodically check whether the NGINX container is still responsive.
+Change the liveness path to `/does-not-exist`, apply it, and watch `RESTARTS` increase over roughly 20 seconds.
 
 ### Evidence
 
@@ -66,7 +56,7 @@ Add an HTTP liveness probe so Kubernetes can periodically check whether the NGIN
 
 ## Goal
 
-Intentionally make the liveness probe fail and observe Kubernetes restart the unhealthy container.
+Reapply the good liveness manifest and confirm restart counts stop increasing.
 
 ### Evidence
 
@@ -107,38 +97,19 @@ Here is a short note describing what the lab demonstrated:
 
 # Submission Instructions
 
-- Add all required screenshots numbered 1–12.
-- Include the optional Task 5 screenshot only if you attempt that task.
-- Ensure your full name is visible in required screenshots.
-- Use clear, readable screenshots showing the relevant manifest or output.
-- Include the completed baseline and liveness-probe manifests in your repository.
-- Answer all Notes questions for Tasks 1–4 in your own words.
-- If you attempt Task 5, complete its Notes and restore the working configuration afterward.
-- Do not expose tokens, passwords, kubeconfig files, account IDs, or other sensitive information.
+- Add all required screenshots in your submission
+- Include the completed YAML manifests used in the lab
 
 ---
 
 # Completion Checklist
 
-- [ ] Learning cluster confirmed and previous assignment resources removed where applicable
-- [ ] Liveness-probe lab directory created (Screenshot 1)
-- [ ] Baseline Deployment manifest completed (Screenshot 2)
-- [ ] Successful rollout and two baseline Pods verified (Screenshot 3)
-- [ ] Baseline Deployment details reviewed (Screenshot 4)
-- [ ] Liveness probe added successfully (Screenshot 5)
-- [ ] Successful liveness-probe rollout verified (Screenshot 6)
-- [ ] Liveness-probe details inspected (Screenshot 7)
-- [ ] Broken liveness configuration created (Screenshot 8)
-- [ ] Increased container restart count observed (Screenshot 9)
-- [ ] Liveness-probe failure events or restart details captured (Screenshot 10)
-- [ ] Working liveness configuration restored and stable Pods verified (Screenshot 11)
-- [ ] Optional Task 5 evidence and Notes completed, if attempted
-- [ ] Working configuration restored after Task 5, if attempted
-- [ ] LinkedIn post published (Screenshot 12)
-- [ ] Notes for Tasks 1–4 completed
-- [ ] Required manifests included
-- [ ] All required screenshots are clear and readable
-- [ ] No sensitive data exposed
+- [ ] Task 1: Baseline Deployment applied (Screenshot 1)
+- [ ] Task 2: Liveness probe added and verified (Screenshot 2)
+- [ ] Task 3: Liveness restart triggered and observed (Screenshot 3)
+- [ ] Task 4: Probe restored and stabilized (Screenshot 4)
+- [ ] Task 5: Tuning reviewed / cleanup completed (Screenshot 5)
+- [ ] Reflection notes written (Notes)
 
 ---
 

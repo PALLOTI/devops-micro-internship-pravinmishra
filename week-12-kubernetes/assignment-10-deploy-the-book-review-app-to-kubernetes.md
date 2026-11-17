@@ -6,45 +6,25 @@ Part of the DevOps Micro Internship (DMI) with Agentic AI
 
 ## Purpose
 
-Deploy the Book Review App as a production-style three-tier application using Kubernetes manifests or Helm charts, with an accessible frontend, an internal backend, and a managed or persistent MySQL database.
+In this capstone assignment, you will deploy the Book Review App as a production-style three-tier application on Kubernetes (EKS, AKS, GKE, Minikube, or k3s): a Next.js frontend behind Nginx exposed publicly, an internal Node.js/Express backend on port 3010, and a persistent or managed MySQL database — configured with ConfigMaps, Secrets, and validated end to end.
 
 ---
 
-## Submission Details
-
-**Full Name:** Add your full name here.
-
-**Kubernetes Platform:** Add your platform here.
-
-**Namespace:** book-review
-
-**Frontend URL or IP:** Add the working endpoint here.
-
-**Access Method:** Public LoadBalancer, Ingress, or documented local access.
-
-**GitHub Manifests or Helm Chart URL:** Add your repository link here.
-
-**Architecture Diagram:** Add your diagram or link here.
-
----
-
-# Task 1 — Prepare the Kubernetes Cluster and Project
+# Task 1 — Prepare the Kubernetes Cluster and Tooling
 
 ## Goal
 
-Prepare the cluster, application source, container images, and tooling needed for the deployment.
+Select a Kubernetes platform, confirm `kubectl` (and Helm, if used) can communicate with the cluster, and verify nodes are Ready.
 
 ### Evidence
 
-#### Screenshot 1 — Active Kubernetes context and Ready nodes
+#### Screenshot 1 — Terminal showing the active Kubernetes context and Ready nodes
 
 ![PALLOTI](./screenshots/12wk101.png)
 
 ---
 
-#### Screenshot 2 — If using Helm: Output of `helm version`
-
-Required only if you choose Helm. Skip this screenshot if using YAML manifests.
+#### Screenshot 2 (if using Helm) — Terminal showing `helm version`
 
 ![PALLOTI](./screenshots/12wk102.png)
 
@@ -54,7 +34,7 @@ Required only if you choose Helm. Skip this screenshot if using YAML manifests.
 
 ## Goal
 
-Document the workloads, networking, configuration, storage, and permitted communication paths before deployment.
+Create an architecture diagram showing the public entry point, frontend, internal backend, MySQL, ConfigMaps/Secrets, and the permitted traffic flow.
 
 ### Evidence
 
@@ -68,17 +48,17 @@ Document the workloads, networking, configuration, storage, and permitted commun
 
 ## Goal
 
-Provide application configuration and credentials without embedding sensitive values in images or committing them to Git.
+Externalize non-sensitive configuration into ConfigMaps and sensitive values (database credentials, JWT secret) into Secrets, referenced from the Pod specs without committing plaintext values.
 
 ### Evidence
 
-#### Screenshot 4 — ConfigMap configuration or describe output showing non-sensitive values
+#### Screenshot 4 — ConfigMap manifest or `kubectl describe configmap` output showing non-sensitive configuration
 
 ![PALLOTI](./screenshots/12wk104.png)
 
 ---
 
-#### Screenshot 5 — Secret references or describe output showing names and keys without sensitive values
+#### Screenshot 5 — Secret object usage with sensitive values hidden or redacted
 
 ![PALLOTI](./screenshots/12wk105.png)
 
@@ -88,11 +68,11 @@ Provide application configuration and credentials without embedding sensitive va
 
 ## Goal
 
-Provide persistent MySQL storage and allow the backend to connect without exposing the database publicly.
+Provide a persistent MySQL database (managed service or StatefulSet + PVC) reachable only by the backend, initialize the schema, and test connectivity.
 
 ### Evidence
 
-#### Screenshot 6 — Managed MySQL status or MySQL StatefulSet and PVC status
+#### Screenshot 6 — Managed MySQL status or MySQL StatefulSet/PVC status
 
 ![PALLOTI](./screenshots/12wk106.png)
 
@@ -108,19 +88,17 @@ Provide persistent MySQL storage and allow the backend to connect without exposi
 
 ## Goal
 
-Run one or two Node.js/Express backend replicas on port 3001 and expose them through an internal ClusterIP Service.
+Run one or two Node.js/Express backend replicas on port 3010, expose them via ClusterIP (or internal LoadBalancer), and connect them to MySQL using ConfigMaps/Secrets.
 
 ### Evidence
 
-#### Screenshot 8 — Backend Deployment, ready Pods, and internal Service
+#### Screenshot 8 — Backend Deployment, Pods, and internal Service
 
 ![PALLOTI](./screenshots/12wk108.png)
 
 ---
 
-#### Screenshot 9 — Backend startup logs and database connectivity evidence
-
-If the application does not log successful database connections, provide a successful database-backed request alongside the startup logs.
+#### Screenshot 9 — Backend logs showing successful startup and database connectivity
 
 ![PALLOTI](./screenshots/12wk109.png)
 
@@ -130,7 +108,7 @@ If the application does not log successful database connections, provide a succe
 
 ## Goal
 
-Run the Next.js frontend behind Nginx on port 80 and proxy API requests to the internal backend Service.
+Run one or two Next.js frontend replicas behind Nginx on port 80, reverse-proxying to the backend's internal Service name.
 
 ### Evidence
 
@@ -140,7 +118,7 @@ Run the Next.js frontend behind Nginx on port 80 and proxy API requests to the i
 
 ---
 
-#### Screenshot 11 — Nginx reverse-proxy configuration showing the internal backend Service name and port 3001
+#### Screenshot 11 — Nginx reverse-proxy configuration showing the internal backend Service name
 
 ![PALLOTI](./screenshots/12wk1011.png)
 
@@ -150,17 +128,17 @@ Run the Next.js frontend behind Nginx on port 80 and proxy API requests to the i
 
 ## Goal
 
-Expose the frontend and enforce the intended communication path between application tiers.
+Expose only the frontend publicly (LoadBalancer or Ingress), restrict backend access to the frontend path (NetworkPolicy or platform equivalent), and confirm MySQL is not publicly reachable.
 
 ### Evidence
 
-#### Screenshot 12 — Frontend LoadBalancer or Ingress configuration and assigned endpoint, or documented local access method
+#### Screenshot 12 — Frontend LoadBalancer or Ingress showing the public endpoint
 
 ![PALLOTI](./screenshots/12wk1012.png)
 
 ---
 
-#### Screenshot 13 — Internal backend Service and NetworkPolicy or equivalent restriction, with access-test evidence
+#### Screenshot 13 — Internal backend Service and NetworkPolicy (or equivalent restriction)
 
 ![PALLOTI](./screenshots/12wk1013.png)
 
@@ -170,7 +148,7 @@ Expose the frontend and enforce the intended communication path between applicat
 
 ## Goal
 
-Prove that the frontend, backend, and MySQL database work together and collect operational evidence.
+Confirm the frontend loads publicly, a full user flow reaches the backend and MySQL, and collect operational evidence.
 
 ### Evidence
 
@@ -186,7 +164,7 @@ Prove that the frontend, backend, and MySQL database work together and collect o
 
 ---
 
-#### Screenshot 16 — Frontend or Nginx container logs
+#### Screenshot 16 — Frontend Pod logs
 
 ![PALLOTI](./screenshots/12wk1016.png)
 
@@ -208,11 +186,11 @@ Prove that the frontend, backend, and MySQL database work together and collect o
 
 ## Goal
 
-Explain your three-tier architecture, demonstrate the working application, and share what you learned.
+Optionally package as a Helm chart, add HPA, add readiness/liveness probes, or configure TLS via cert-manager — without changing the core architecture.
 
 ### Evidence
 
-#### Screenshot 20 — Published LinkedIn post about your Book Review App deployment on Kubernetes
+#### Screenshot 19 (optional) — Helm release, HPA, probes, or TLS evidence
 
 ![PALLOTI](./screenshots/12wk1019.png)
 
@@ -250,53 +228,24 @@ What Worked
 
 # Submission Instructions
 
-- Include your Kubernetes manifests or Helm chart in the linked repository.
-- Submit Secret examples containing placeholders only.
-- Include Screenshot 1, Screenshots 3–17, and Screenshot 20.
-- Include Screenshot 2 only if using Helm.
-- Screenshots 18–19 are optional.
-- Keep screenshot numbering consistent with the guidelines.
-- Use clear, readable screenshots showing relevant configuration, commands, and outputs.
-- Make your full name visible in required screenshots.
-- Complete the submission details and Final Summary.
-- Include your published LinkedIn post URL.
-- Capture required evidence before cleanup.
-- Do not expose passwords, tokens, JWT secrets, actual Secret values, kubeconfig contents, cloud credentials, or confidential account information.
+- Add all required screenshots and links in your submission
+- Do not display decoded Secret values in screenshots or the report
 
 ---
 
 # Completion Checklist
 
-- [ ] Selected and configured a supported Kubernetes platform
-- [ ] Confirmed the context and Ready nodes (Screenshot 1)
-- [ ] Created and selected the book-review namespace
-- [ ] Inspected the application repository
-- [ ] Prepared images accessible to the cluster
-- [ ] Confirmed Helm if using charts (Screenshot 2, conditional)
-- [ ] Created the architecture diagram (Screenshot 3)
-- [ ] Created ConfigMaps and Secrets (Screenshots 4–5)
-- [ ] Excluded actual Secret values from Git and screenshots
-- [ ] Provisioned private managed MySQL or persistent Kubernetes MySQL (Screenshot 6)
-- [ ] Initialized the required database and schema
-- [ ] Verified database connectivity or schema (Screenshot 7)
-- [ ] Deployed one or two backend replicas listening on port 3001
-- [ ] Created the backend ClusterIP Service (Screenshot 8)
-- [ ] Verified backend-to-database connectivity (Screenshot 9)
-- [ ] Deployed one or two frontend replicas behind Nginx (Screenshot 10)
-- [ ] Configured API proxying through the internal backend Service (Screenshot 11)
-- [ ] Configured and documented frontend access (Screenshot 12)
-- [ ] Enforced backend access restrictions (Screenshot 13)
-- [ ] Confirmed that the backend and database are not publicly exposed
-- [ ] Captured resource status for book-review (Screenshot 14)
-- [ ] Tested application functionality and database writes (Screenshots 15 and 17)
-- [ ] Verified saved data after application restart
-- [ ] Captured frontend and backend logs (Screenshots 16–17)
-- [ ] Included optional dashboard or improvement evidence if attempted (Screenshots 18–19)
-- [ ] Published the LinkedIn post (Screenshot 20)
-- [ ] Included the LinkedIn post URL
-- [ ] Documented issues, fixes, and useful sources
-- [ ] Recorded cleanup status or reuse plans
-- [ ] No sensitive data exposed
+- [ ] Task 1: Cluster and tooling verified (Screenshots 1–2)
+- [ ] Task 2: Architecture diagram completed (Screenshot 3)
+- [ ] Task 3: ConfigMaps and Secrets created (Screenshots 4–5)
+- [ ] Task 4: MySQL data tier deployed and verified (Screenshots 6–7)
+- [ ] Task 5: Backend tier deployed internally (Screenshots 8–9)
+- [ ] Task 6: Frontend deployed behind Nginx (Screenshots 10–11)
+- [ ] Task 7: External/internal networking configured (Screenshots 12–13)
+- [ ] Task 8: End-to-end validation completed (Screenshots 14–18)
+- [ ] Task 9: Optional production enhancements documented (Screenshot 19)
+- [ ] Report completed (Notes)
+- [ ] No sensitive information exposed
 
 ---
 

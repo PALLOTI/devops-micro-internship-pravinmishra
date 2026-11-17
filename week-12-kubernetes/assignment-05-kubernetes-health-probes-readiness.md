@@ -6,27 +6,15 @@ Part of the DevOps Micro Internship (DMI) with Agentic AI
 
 ## Purpose
 
-In this assignment, you will configure and test a Kubernetes readiness probe. You will create a baseline NGINX Deployment, add an HTTP readiness probe, intentionally break it, observe a stalled rollout, and restore the working configuration.
-
-You will also demonstrate how readiness probes protect rolling updates.
+In this guided lab, you will add an HTTP readiness probe to NGINX, intentionally break it, fix it, and prove that readiness gates Pod availability and safe rolling updates.
 
 ---
 
-# Task 0 — Prepare the Lab Environment
+# Task 1 — Create the Baseline Deployment
 
 ## Goal
 
-Confirm that you are connected to your learning cluster and remove the previous assignment’s HPA and NGINX Deployment before starting this lab.
-
-No screenshot or written notes are required for this pre-check.
-
----
-
-# Task 1 — Set Up Your Lab Directory
-
-## Goal
-
-Create and enter a dedicated directory for the readiness-probe lab.
+Deploy two NGINX Pods without probes (`00-nginx-deploy-baseline.yaml`) to establish the comparison state.
 
 ### Evidence
 
@@ -40,7 +28,7 @@ Create and enter a dedicated directory for the readiness-probe lab.
 
 ## Goal
 
-Create a baseline NGINX Deployment with two replicas and no readiness probe.
+Add an HTTP readiness probe on `/` port 80 (`01-nginx-deploy-readiness.yaml`) and confirm Pods become Ready only after it succeeds.
 
 ### Evidence
 
@@ -54,7 +42,7 @@ Create a baseline NGINX Deployment with two replicas and no readiness probe.
 
 ## Goal
 
-Add an HTTP readiness probe so Kubernetes checks whether each NGINX container is ready to accept requests.
+Change the readiness path to `/does-not-exist`, observe `NotReady` and a stalled rollout, then restore the good manifest.
 
 ### Evidence
 
@@ -68,7 +56,7 @@ Add an HTTP readiness probe so Kubernetes checks whether each NGINX container is
 
 ## Goal
 
-Intentionally fail the readiness probe, observe the NotReady behavior, and then restore the working probe configuration.
+Perform a good image update to `nginx:1.21.2`, then attempt an update to `nginx:1.21.3` with a broken readiness patch, and confirm the rollout stalls before restoring the good spec.
 
 ### Evidence
 
@@ -82,7 +70,7 @@ Intentionally fail the readiness probe, observe the NotReady behavior, and then 
 
 ## Goal
 
-Observe how readiness prevents a bad new Pod from replacing healthy Pods during a rolling update.
+Review probe timing/thresholds and retain or delete the Deployment.
 
 ### Evidence
 
@@ -104,41 +92,19 @@ Showcased how to create, configure, and manage standard deployment manifests usi
 
 # Submission Instructions
 
-- Add all required screenshots numbered 1–18.
-- Ensure your full name is visible in required screenshots.
-- Use clear, readable screenshots showing the relevant manifest or output.
-- Include the completed baseline and readiness-probe manifests in your repository.
-- Answer all Notes questions for Tasks 1–5 in your own words.
-- Include evidence of the intentional readiness failure and successful recovery.
-- Do not expose tokens, passwords, kubeconfig files, account IDs, or other sensitive information.
+- Add all required screenshots in your submission
+- Include the completed YAML manifests used in the lab
 
 ---
 
 # Completion Checklist
 
-- [ ] Learning cluster confirmed and previous assignment resources removed where applicable
-- [ ] Readiness-probe lab directory created (Screenshot 1)
-- [ ] Baseline Deployment created successfully (Screenshot 2)
-- [ ] Two baseline Pods running and successful rollout verified (Screenshot 3)
-- [ ] Baseline Deployment details reviewed (Screenshot 4)
-- [ ] Readiness probe added successfully (Screenshot 5)
-- [ ] Successful readiness rollout verified (Screenshot 6)
-- [ ] Pod readiness conditions and probe details inspected (Screenshot 7)
-- [ ] Broken readiness configuration created (Screenshot 8)
-- [ ] Stalled rollout or timeout observed (Screenshot 9)
-- [ ] NotReady status or readiness-probe failure events captured (Screenshot 10)
-- [ ] Working readiness configuration restored (Screenshot 11)
-- [ ] Successful image update completed (Screenshot 12)
-- [ ] ReplicaSets and Pods inspected after the update (Screenshot 13)
-- [ ] Broken-readiness patch created (Screenshot 14)
-- [ ] Stalled rollout observed after the patch (Screenshot 15)
-- [ ] Effect of broken readiness captured (Screenshot 16)
-- [ ] Final recovery completed (Screenshot 17)
-- [ ] LinkedIn post published (Screenshot 18)
-- [ ] Notes for Tasks 1–5 completed
-- [ ] Required manifests included
-- [ ] All screenshots are clear and readable
-- [ ] No sensitive data exposed
+- [ ] Task 1: Baseline Deployment applied (Screenshot 1)
+- [ ] Task 2: Readiness probe added and verified (Screenshot 2)
+- [ ] Task 3: Readiness broken and fixed (Screenshot 3)
+- [ ] Task 4: Readiness-gated rolling update proven (Screenshot 4)
+- [ ] Task 5: Tuning reviewed / cleanup completed (Screenshot 5)
+- [ ] Reflection notes written (Notes)
 
 ---
 

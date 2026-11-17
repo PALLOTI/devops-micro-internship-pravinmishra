@@ -6,19 +6,7 @@ Part of the DevOps Micro Internship (DMI) with Agentic AI
 
 ## Purpose
 
-Create an NGINX Deployment, configure RollingUpdate, update the container image, roll back to the previous revision, and scale the workload.
-
----
-
-# Task 0 — Pre-check: Remove the Assignment 02 ReplicaSet
-
-## Goal
-
-Confirm that you are connected to your learning cluster and remove the previous ReplicaSet and its managed Pods before starting this lab.
-
-### Evidence
-
-No screenshots required.
+In this guided lab, you will create an NGINX Deployment, add a zero-downtime RollingUpdate strategy, perform an image update, roll it back, and scale the workload.
 
 ---
 
@@ -26,11 +14,11 @@ No screenshots required.
 
 ## Goal
 
-Create and enter the dedicated Deployment lab directory.
+Create the `~/k8s-labs/deployments` working directory.
 
 ### Evidence
 
-#### Screenshot 01 — Output of `pwd` showing the directory ending in `/k8s-labs/deployments`
+#### Screenshot 1 — Terminal showing the `~/k8s-labs/deployments` working directory
 
 ![PALLOTI](./screenshots/12wk31.png)
 
@@ -40,7 +28,7 @@ Create and enter the dedicated Deployment lab directory.
 
 ## Goal
 
-Create a two-replica NGINX Deployment and verify the automatically managed ReplicaSet and Pods.
+Create `nginx-deployment.yaml` with two replicas and image `nginx:1.21.1`, apply it, and verify the Deployment, ReplicaSet, and Pods.
 
 ### Evidence
 
@@ -54,7 +42,7 @@ Create a two-replica NGINX Deployment and verify the automatically managed Repli
 
 ## Goal
 
-Configure RollingUpdate to maintain the desired available replica count during an image update.
+Add `strategy.rollingUpdate` with `maxSurge: 1` and `maxUnavailable: 0` to the Deployment and reapply it.
 
 ### Evidence
 
@@ -68,7 +56,7 @@ Configure RollingUpdate to maintain the desired available replica count during a
 
 ## Goal
 
-Update NGINX to 1.23.1, observe the rollout, and return to the previous stable revision.
+Update the image to `nginx:1.23.1` with `kubectl set image`, watch the rollout, then roll it back with `kubectl rollout undo` and check rollout history.
 
 ### Evidence
 
@@ -86,7 +74,7 @@ Update NGINX to 1.23.1, observe the rollout, and return to the previous stable r
 
 ## Goal
 
-Scale the workload to five replicas and return it to two.
+Scale to five replicas, verify, then scale back to two.
 
 ### Evidence
 
@@ -106,34 +94,19 @@ This lab demonstrated how to use a Kubernetes Deployment as a production-oriente
 
 # Submission Instructions
 
-- Include all required screenshots, numbered 01–12.
-- Ensure screenshots are clear and readable.
-- Submit the final `nginx-deployment.yaml` containing two replicas, the initial NGINX image, and the configured RollingUpdate strategy.
-- Complete the Lab Summary in your own words.
-- Include evidence of your published WhatsApp Status.
-- Do not expose passwords, tokens, private keys, or kubeconfig credentials.
+- Add all required screenshots in your submission
+- Include the completed YAML manifests used in the lab
 
 ---
 
 # Completion Checklist
 
-- [ ] Completed Task 0
-- [ ] Created the deployments directory (Screenshot 01)
-- [ ] Created the basic two-replica NGINX Deployment manifest (Screenshot 02)
-- [ ] Applied the Deployment and verified its ReplicaSet and two running Pods (Screenshot 03)
-- [ ] Added RollingUpdate with `maxSurge: 1` and `maxUnavailable: 0` (Screenshot 04)
-- [ ] Applied and verified the rolling-update strategy (Screenshot 05)
-- [ ] Updated NGINX to 1.23.1 and confirmed rollout completion (Screenshot 06)
-- [ ] Inspected the ReplicaSets and verified the updated image (Screenshot 07)
-- [ ] Rolled back the update and confirmed rollout completion (Screenshot 08)
-- [ ] Reviewed rollout history and verified the restored image (Screenshot 09)
-- [ ] Scaled to five running Pods (Screenshot 10)
-- [ ] Scaled back to two running Pods (Screenshot 11)
-- [ ] Published the WhatsApp Status with the generated leaderboard progress link (Screenshot 12)
-- [ ] Submitted the final `nginx-deployment.yaml`
-- [ ] Included screenshots 01–12
-- [ ] Completed the Lab Summary
-- [ ] No sensitive data exposed
+- [ ] Task 1: Lab directory created (Screenshot 1)
+- [ ] Task 2: Two-replica Deployment applied (Screenshot 2)
+- [ ] Task 3: RollingUpdate strategy configured (Screenshot 3)
+- [ ] Task 4: Image updated and rolled back (Screenshot 4)
+- [ ] Task 5: Scaled up and down (Screenshot 5)
+- [ ] Reflection notes written (Notes)
 
 ---
 

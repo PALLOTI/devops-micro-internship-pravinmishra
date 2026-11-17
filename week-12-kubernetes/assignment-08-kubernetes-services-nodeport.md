@@ -6,15 +6,15 @@ Part of the DevOps Micro Internship (DMI) with Agentic AI
 
 ## Purpose
 
-Create a healthy NGINX Deployment, expose it through a NodePort Service, test access using a node IP and NodePort, and observe how the Service behaves when a backend Pod is replaced.
+In this guided lab, you will expose NGINX on node port 30080, test it from outside and inside the cluster, break and fix the selector, and verify availability during Pod churn.
 
 ---
 
-# Task 1 — Set Up Your Lab Directory
+# Task 1 — Deploy the Probed NGINX Workload
 
 ## Goal
 
-Create and enter a dedicated directory for the NodePort Service lab.
+Create healthy, labeled NGINX Pods (readiness + liveness probes) for the NodePort Service.
 
 ### Evidence
 
@@ -24,11 +24,11 @@ Create and enter a dedicated directory for the NodePort Service lab.
 
 ---
 
-# Task 2 — Create a Healthy NGINX Deployment
+# Task 2 — Create the NodePort Service
 
 ## Goal
 
-Create a healthy NGINX Deployment that can act as the backend for the NodePort Service.
+Create `nginx-svc-nodeport` (type `NodePort`, port 80, `nodePort: 30080`) and inspect the Service and endpoints.
 
 ### Evidence
 
@@ -36,27 +36,13 @@ Create a healthy NGINX Deployment that can act as the backend for the NodePort S
 
 ![PALLOTI](./screenshots/12wk82.png)
 
-### Notes
-
-**1. Which label will the NodePort Service use to find the NGINX Pods?**
-
-Add your answer here.
-
-**2. Why must the Pods be ready before they can receive Service traffic?**
-
-Add your answer here.
-
-**3. What port does the NGINX container listen on?**
-
-Add your answer here.
-
 ---
 
 # Task 3 — Find a Node IP and Test Access
 
 ## Goal
 
-Create a NodePort Service that exposes the NGINX application through a port on every cluster node.
+Find a reachable node IP and test `<NODE_IP>:30080` externally (curl) and internally (from a `tester` Pod).
 
 ### Evidence
 
@@ -64,31 +50,13 @@ Create a NodePort Service that exposes the NGINX application through a port on e
 
 ![PALLOTI](./screenshots/12wk83.png)
 
-### Notes
-
-**1. What is the purpose of `type: NodePort`?**
-
-Add your answer here.
-
-**2. What is the difference between `port`, `targetPort`, and `nodePort`?**
-
-Add your answer here.
-
-**3. What NodePort was assigned or selected in your environment?**
-
-Add your answer here.
-
-**4. Why do Service endpoints need ready Pods?**
-
-Add your answer here.
-
 ---
 
 # Task 4 — Use the Environment-Specific Access Method
 
 ## Goal
 
-Find a reachable node IP and access the NodePort Service.
+Use the appropriate fallback for your cluster environment (`minikube service --url`, or port-forward for kind/Docker Desktop) to validate the Service.
 
 ### Evidence
 
@@ -102,9 +70,7 @@ Find a reachable node IP and access the NodePort Service.
 
 ## Goal
 
-Break the Service selector, observe that usable endpoints disappear, and restore the correct selector.
-
-Complete the Evidence and Notes below only if you attempted this optional task.
+Change the selector to `app: does-not-match`, confirm endpoints empty and the request fails, then restore the good selector.
 
 ### Evidence
 
@@ -118,7 +84,7 @@ Complete the Evidence and Notes below only if you attempted this optional task.
 
 ## Goal
 
-Delete one NGINX Pod and observe its replacement while the Service continues routing traffic to available Pods.
+Delete one backend Pod while calling the NodePort from another terminal, confirm the Service remains available, then optionally clean up.
 
 ### Evidence
 
@@ -144,35 +110,20 @@ Network Diagnostics & Access: Explored cluster networking mechanics within a kin
 
 # Submission Instructions
 
-- Include the completed YAML manifests created during the lab.
-- Add all required screenshots: Screenshots 1–8 and 12–14.
-- Include Screenshots 9–11 only if you attempted optional Task 5.
-- Complete the Notes for Tasks 1–4 and Task 6.
-- Complete Task 5 Notes only if you attempted that task.
-- Use clear, readable screenshots showing the relevant commands and outputs.
-- Ensure your full name is visible in the required screenshots.
-- If NodePort access is restricted by your environment, include the failed request output, ready endpoint evidence, and an explanation.
-- Do not expose passwords, access tokens, private keys, kubeconfig contents, or account IDs.
+- Add all required screenshots in your submission
+- Include the completed YAML manifests used in the lab
 
 ---
 
 # Completion Checklist
 
-- [ ] Created and entered `~/k8s-labs/services/nodeport` (Screenshot 1)
-- [ ] Created and applied the NGINX Deployment manifest (Screenshot 2)
-- [ ] Confirmed successful rollout and two ready NGINX Pods (Screenshot 3)
-- [ ] Created the NodePort Service manifest (Screenshot 4)
-- [ ] Verified the Service and its endpoints or EndpointSlices (Screenshot 5)
-- [ ] Recorded the assigned or selected NodePort
-- [ ] Identified a node IP (Screenshot 6)
-- [ ] Confirmed that the `tester` Pod is running (Screenshot 7)
-- [ ] Tested NodePort access, or documented the environment limitation with evidence (Screenshot 8)
-- [ ] Optional: Tested and restored the Service selector (Screenshots 9–11)
-- [ ] Deleted one NGINX Pod (Screenshot 12)
-- [ ] Confirmed the replacement Pod and two running, ready Pods (Screenshot 13)
-- [ ] Completed all required Notes
-- [ ] Published the LinkedIn post (Screenshot 14)
-- [ ] No sensitive data exposed
+- [ ] Task 1: Probed NGINX Deployment applied (Screenshot 1)
+- [ ] Task 2: NodePort Service created on 30080 (Screenshot 2)
+- [ ] Task 3: NodePort tested externally/internally (Screenshot 3)
+- [ ] Task 4: Environment-specific access method used (Screenshot 4)
+- [ ] Task 5: Selector broken and fixed (Screenshot 5)
+- [ ] Task 6: Pod churn tested and Service continuity confirmed (Screenshot 6)
+- [ ] Reflection notes written (Notes)
 
 ---
 

@@ -6,37 +6,15 @@ Part of the DevOps Micro Internship (DMI) with Agentic AI
 
 ## Purpose
 
-Configure a read-only Bash triage script for your Book Review App, connect it to Claude Code through `/k8s-triage`, simulate one controlled failure, recover the application manually, and verify recovery.
-
-**Workflow: Gather → Analyze → Human Act → Verify**
+In this assignment, you will build a read-only Bash script that checks the health of the Book Review App running on your Kubernetes cluster, connect it to Claude Code as a reusable `/k8s-triage` skill, then deliberately break your own deployment, use the skill to diagnose the failure from evidence alone, recover it yourself, and verify the fix. This closes out the AI Assignment series with the same discipline applied at every layer so far — a single Linux host, two clouds, Terraform, Ansible, a CI/CD pipeline, a Docker image, and now an orchestrated Kubernetes cluster: gather evidence with a read-only tool, let AI analyze it and recommend a fix, keep a human in charge of every action that changes the cluster, and verify again.
 
 ---
 
-## Submission Details
-
-**Full Name:** Add your full name here.
-
-**Kubernetes Platform:** Add your platform here.
-
-**Selected Workload:** Add the Deployment name here.
-
-**Namespace:** Add the namespace here.
-
-**GitHub Repository URL:** Add your project repository URL here.
-
-**Simulated Incident:** Invalid image or broken readiness probe.
-
-**Baseline Status:** HEALTHY or explained WARN.
-
-**Recovery Status:** HEALTHY or explained WARN, with no FAIL.
-
----
-
-# Task 1 — Discover the Application and Capture a Healthy Baseline
+# Task 1 — Confirm the Healthy Baseline and Create the Workspace
 
 ## Goal
 
-Identify the actual application configuration and prove that the selected workload is healthy before incident simulation.
+Confirm every Book Review App pod is `Running` and `Ready` and that its Service has active Endpoints, then set up a workspace folder for this assignment before writing any automation.
 
 ### Evidence
 
@@ -52,11 +30,11 @@ Identify the actual application configuration and prove that the selected worklo
 
 ---
 
-# Task 2 — Configure CLAUDE.md
+# Task 2 — Add Safety Rules to CLAUDE.md
 
 ## Goal
 
-Define the project configuration, incident workflow, and safety boundary for Claude Code.
+Add a `CLAUDE.md` telling Claude this is a read-only Kubernetes triage workflow: it must never run `kubectl apply`, `delete`, `rollout restart`, `edit`, or `scale` on its own, and every recovery action must be reviewed and run by you.
 
 ### Evidence
 
@@ -66,11 +44,11 @@ Define the project configuration, incident workflow, and safety boundary for Cla
 
 ---
 
-# Task 3 — Plan the Read-Only Triage Workflow
+# Task 3 — Use Agentic AI to Plan the Triage Checks
 
 ## Goal
 
-Ask Claude Code to explain the five health checks before running the supplied script.
+Ask Claude to propose a read-only, five-check `kubectl` triage plan — pod status, pod readiness, restart counts, recent namespace events, and Service endpoints — before you write any script.
 
 ### Evidence
 
@@ -80,11 +58,11 @@ Ask Claude Code to explain the five health checks before running the supplied sc
 
 ---
 
-# Task 4 — Configure and Validate the Bash Script
+# Task 4 — Build the Kubernetes Triage Script
 
 ## Goal
 
-Configure the supplied triage script for the selected workload and validate its syntax.
+Write a Bash script that runs the five read-only `kubectl` checks and writes a PASS/WARN/FAIL report with an overall status and exit code.
 
 ### Evidence
 
@@ -98,31 +76,13 @@ Configure the supplied triage script for the selected workload and validate its 
 
 ![PALLOTI](./screenshots/12wk116.png)
 
-### Notes
-
-**1. Why must the script fail when no Pods match the configured selector?**
-
-Add your answer here.
-
-**2. How does the readiness check detect a running but unready Pod?**
-
-Add your answer here.
-
-**3. Why are Service backends checked separately from Pod health?**
-
-Add your answer here.
-
-**4. What do exit codes 0, 1, and 2 represent?**
-
-Add your answer here.
-
 ---
 
 # Task 5 — Run the Script Against the Healthy Cluster
 
 ## Goal
 
-Run the script on the healthy application and confirm that it contains no failed checks.
+Run the script against your current, unmodified deployment and confirm it reports a clean, healthy baseline before you simulate anything.
 
 ### Evidence
 
@@ -130,31 +90,17 @@ Run the script on the healthy application and confirm that it contains no failed
 
 ![PALLOTI](./screenshots/12wk117.png)
 
-### Notes
-
-**1. What is the baseline status?**
-
-Add your answer here.
-
-**2. Which evidence proves the Service has a ready backend?**
-
-Add your answer here.
-
-**3. What is the difference between a warning and a failure?**
-
-Add your answer here.
-
 ---
 
 # Task 6 — Build and Run the /k8s-triage Skill
 
 ## Goal
 
-Connect the Bash script to a manually invoked Claude Code evidence-analysis workflow.
+Wrap the script in a Claude Code skill restricted to read-only tools (no `Write`), and confirm `/k8s-triage` reports the healthy baseline using the script's evidence without touching the cluster.
 
 ### Evidence
 
-#### Screenshot 11 — SKILL.md showing frontmatter and safety rules
+#### Screenshot 8 — `SKILL.md` frontmatter showing the tool restrictions and safety rules
 
 ![PALLOTI](./screenshots/12wk118.png)
 
@@ -166,11 +112,11 @@ Connect the Bash script to a manually invoked Claude Code evidence-analysis work
 
 ---
 
-# Task 7 — Simulate One Controlled Incident
+# Task 7 — Simulate an Incident and Let the Skill Diagnose It
 
 ## Goal
 
-Create one controlled failure, save its evidence, and let Claude analyze it without executing recovery.
+Deliberately break your own deployment — an image tag that does not exist, or a misconfigured readiness probe — then run `/k8s-triage` and confirm it correctly identifies the failure, quotes the evidence, and recommends a fix without applying it.
 
 ### Evidence
 
@@ -184,31 +130,13 @@ Create one controlled failure, save its evidence, and let Claude analyze it with
 
 ![PALLOTI](./screenshots/12wk1111.png)
 
-### Notes
-
-**1. Which failure did you choose?**
-
-Add your answer here.
-
-**2. Which checks failed, and what evidence proved it?**
-
-Add your answer here.
-
-**3. Did Claude execute recovery? Why is that important?**
-
-Add your answer here.
-
-**4. Why might the Service retain ready backends during the incident?**
-
-Add your answer here.
-
 ---
 
 # Task 8 — Recover, Verify, and Summarize
 
 ## Goal
 
-Restore the healthy configuration yourself and verify recovery using a second triage report.
+Review the recommendation, apply the fix yourself, confirm the pod returns to `Running`/`Ready` with active Endpoints, run `/k8s-triage` again to verify, and write a short incident summary.
 
 ### Evidence
 
@@ -252,48 +180,25 @@ Evidence gathering shifted from local syslog files to namespace Warning events a
 
 # Submission Instructions
 
-- Include all 20 required screenshots under their corresponding Evidence sections.
-- Complete all Notes questions in your own words.
-- Include the required project files in your linked repository.
-- Include your published LinkedIn post URL.
-- Use clear, readable screenshots showing relevant commands, configuration, and outputs.
-- Display your full name before taking required terminal screenshots.
-- Preserve the failure report before recovery.
-- Ensure the baseline and recovery reports contain no FAIL results.
-- Explain any WARN results remaining after recovery.
-- Review reports, logs, configuration records, and screenshots before publishing.
-- Do not expose credentials, kubeconfig contents, tokens, certificates, JWT secrets, or confidential account information.
+Complete all tasks in sequence.
+
+Your submission must include:
+- All 13 required screenshots
+- Do not expose kubeconfig contents, cluster certificates, or tokens
 
 ---
 
 # Completion Checklist
 
-- [ ] Confirmed the personal lab context
-- [ ] Discovered and recorded application configuration
-- [ ] Recorded the original working image
-- [ ] Captured healthy Pods and ready Service backends (Screenshot 1)
-- [ ] Created the workspace (Screenshot 2)
-- [ ] Configured CLAUDE.md (Screenshot 3)
-- [ ] Reviewed the five-check triage plan (Screenshot 4)
-- [ ] Configured and reviewed the supplied script (Screenshots 5–7)
-- [ ] Passed Bash syntax validation and set executable permission (Screenshot 8)
-- [ ] Captured a baseline report with no FAIL (Screenshot 9)
-- [ ] Captured the correct exit code (Screenshot 10)
-- [ ] Configured and invoked `/k8s-triage` (Screenshots 11–12)
-- [ ] Simulated one controlled incident manually (Screenshot 13)
-- [ ] Reviewed Claude’s failed-state analysis (Screenshot 14)
-- [ ] Saved failure evidence before recovery (Screenshot 15)
-- [ ] Executed recovery manually and waited for rollout completion
-- [ ] Confirmed recovered Pods and ready Service backends (Screenshot 16)
-- [ ] Captured recovery analysis with no FAIL (Screenshot 17)
-- [ ] Explained any remaining warnings
-- [ ] Saved failure and recovery reports (Screenshot 18)
-- [ ] Completed the seven-section incident summary (Screenshot 19)
-- [ ] Answered all Notes questions
-- [ ] Published the LinkedIn post (Screenshot 20)
-- [ ] Included the LinkedIn post URL
-- [ ] Included all required project files
-- [ ] Checked that no sensitive information is exposed
+- [ ] Task 1: Healthy baseline confirmed and workspace created (Screenshots 1–2)
+- [ ] Task 2: `CLAUDE.md` safety rules added (Screenshot 3)
+- [ ] Task 3: Read-only five-check plan produced before scripting (Screenshot 4)
+- [ ] Task 4: Triage script built and validated (Screenshots 5–6)
+- [ ] Task 5: Script run against the healthy cluster (Screenshot 7)
+- [ ] Task 6: `/k8s-triage` skill built and run against the healthy baseline (Screenshots 8–9)
+- [ ] Task 7: Incident simulated and correctly diagnosed without being applied (Screenshots 10–11)
+- [ ] Task 8: Recovery applied by the human, verified, and summarized (Screenshots 12–13, Notes)
+- [ ] No kubeconfig, tokens, or cluster credentials exposed
 
 ---
 

@@ -6,29 +6,15 @@ Part of the DevOps Micro Internship (DMI) with Agentic AI
 
 ## Purpose
 
-Create Deployments, test Pod auto-healing, configure CPU requests and limits, verify Metrics Server, and create a Horizontal Pod Autoscaler.
-
-Optionally generate CPU load to observe how the HPA responds.
+In this guided lab, you will prove Deployment auto-healing by deleting a Pod, then configure a CPU-based Horizontal Pod Autoscaler that maintains between two and five NGINX Pods.
 
 ---
 
-# Task 0 — Check the Existing Cluster Resources
+# Task 1 — Set Up the Lab Directory
 
 ## Goal
 
-Confirm that you are connected to your learning cluster and inspect existing Deployments and HPAs.
-
-### Evidence
-
-No screenshots required.
-
----
-
-# Task 1 — Set Up Your Lab Directory
-
-## Goal
-
-Create and enter a dedicated directory for the auto-scaling lab.
+Create the `~/k8s-labs/autoscaling` working directory.
 
 ### Evidence
 
@@ -42,7 +28,7 @@ Create and enter a dedicated directory for the auto-scaling lab.
 
 ## Goal
 
-Create a Deployment with two replicas, delete one Pod, and observe Kubernetes create a replacement Pod.
+Create `demo-autohealing` (two replicas), delete one Pod, and confirm the desired count of two is restored automatically.
 
 ### Evidence
 
@@ -56,7 +42,7 @@ Create a Deployment with two replicas, delete one Pod, and observe Kubernetes cr
 
 ## Goal
 
-Create a Deployment with CPU resource requests and limits so that HPA can calculate CPU utilization.
+Deploy `nginx-deployment` with CPU `requests: 100m` / `limits: 200m`, then enable Metrics Server (Minikube addon or manifest + kubelet TLS patch for kind) and confirm it reports `READY 1/1`.
 
 ### Evidence
 
@@ -70,7 +56,7 @@ Create a Deployment with CPU resource requests and limits so that HPA can calcul
 
 ## Goal
 
-Ensure the cluster can collect resource metrics for the HPA.
+Create an HPA (imperatively via `kubectl autoscale` or declaratively via `autoscaling/v2`) targeting `nginx-deployment` with min 2, max 5, and 50% target CPU utilization.
 
 ### Evidence
 
@@ -84,7 +70,7 @@ Ensure the cluster can collect resource metrics for the HPA.
 
 ## Goal
 
-Create an HPA that keeps at least two Pods running and can scale up to five Pods when average CPU utilization exceeds 50%.
+Generate CPU load inside an NGINX Pod (`yes > /dev/null`) and monitor whether the HPA increases replicas.
 
 ### Evidence
 
@@ -104,37 +90,19 @@ Here is a short note describing what the lab demonstrated:Kubernetes Deployment 
 
 # Submission Instructions
 
-- Include required Screenshots 1–10 and Screenshot 13.
-- Include Screenshots 11–12 only if you complete Task 6.
-- Full Name must be visible in required screenshots.
-- Ensure screenshots are clear and readable.
-- Include the completed `autohealing-deployment.yaml` and `hpa-deployment.yaml` files.
-- Include `hpa-nginx.yaml` if you selected the declarative HPA method.
-- Complete the Notes sections for Tasks 1–5 in your own words.
-- Complete Task 6 notes only if you perform the optional test.
-- Do not expose passwords, tokens, private keys, kubeconfig files, or account IDs.
+- Add all required screenshots in your submission
+- Include the completed YAML manifests used in the lab
 
 ---
 
 # Completion Checklist
 
-- [ ] Checked the active context and existing cluster resources
-- [ ] Created the autoscaling working directory (Screenshot 1)
-- [ ] Created `autohealing-deployment.yaml` (Screenshot 2)
-- [ ] Confirmed two auto-healing Pods were running (Screenshot 3)
-- [ ] Deleted one managed Pod (Screenshot 4)
-- [ ] Confirmed that the Pod was automatically replaced (Screenshot 5)
-- [ ] Created `hpa-deployment.yaml` with CPU requests and limits (Screenshot 6)
-- [ ] Verified `nginx-deployment` and its running Pods (Screenshot 7)
-- [ ] Verified Metrics Server and confirmed Pod metrics are available (Screenshot 8)
-- [ ] Created one HPA using the selected method (Screenshot 9)
-- [ ] Verified minimum replicas of 2, maximum replicas of 5, and a CPU target of 50% (Screenshot 10)
-- [ ] Completed Notes for Tasks 1–5
-- [ ] Completed Task 6 evidence and notes, or marked it “Not completed — optional”
-- [ ] Stopped the CPU-load command and exited the container shell, if Task 6 was completed
-- [ ] Published the LinkedIn post with the required explanation and attached screenshot (Screenshot 13)
-- [ ] Included the required manifest files
-- [ ] No sensitive data exposed
+- [ ] Task 1: Lab directory created (Screenshot 1)
+- [ ] Task 2: Auto-healing observed (Screenshot 2)
+- [ ] Task 3: HPA-ready Deployment applied and Metrics Server verified (Screenshot 3)
+- [ ] Task 4: HPA created and inspected (Screenshot 4)
+- [ ] Task 5: CPU load generated and scaling observed (Screenshot 5, optional)
+- [ ] Reflection notes written (Notes)
 
 ---
 

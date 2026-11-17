@@ -6,25 +6,15 @@ Part of the DevOps Micro Internship (DMI) with Agentic AI
 
 ## Purpose
 
-In this assignment, you will create and test a Kubernetes ClusterIP Service. You will connect it to a healthy NGINX Deployment, access it using DNS and its ClusterIP, break and restore its selector, and observe how readiness affects Service routing.
+In this guided lab, you will create an internal ClusterIP Service for NGINX, call it by DNS and virtual IP, break and fix its selector, and prove readiness-aware endpoint routing.
 
 ---
 
-# Task 0 — Prepare the Lab Environment
+# Task 1 — Deploy the Probed NGINX Workload
 
 ## Goal
 
-Confirm your learning-cluster context and remove previous lab resources where applicable before starting this assignment.
-
-No screenshot or written notes are required for this pre-check.
-
----
-
-# Task 1 — Set Up Your Lab Directory
-
-## Goal
-
-Create and enter a dedicated directory for the ClusterIP Service lab.
+Create two healthy, labeled NGINX Pods (readiness + liveness probes) as Service backends.
 
 ### Evidence
 
@@ -38,7 +28,7 @@ Create and enter a dedicated directory for the ClusterIP Service lab.
 
 ## Goal
 
-Create an NGINX Deployment with labels, readiness probes, and liveness probes that can act as the backend for a Service.
+Create `nginx-svc` (type `ClusterIP`, selector `app: nginx`, port 80) and inspect the Service, Endpoints, and EndpointSlices.
 
 ### Evidence
 
@@ -52,7 +42,7 @@ Create an NGINX Deployment with labels, readiness probes, and liveness probes th
 
 ## Goal
 
-Create a stable internal Service that routes traffic to the NGINX Pods.
+Create a BusyBox `tester` Pod and call `nginx-svc` by short name, ClusterIP, and both short/FQDN via `nslookup`.
 
 ### Evidence
 
@@ -66,7 +56,7 @@ Create a stable internal Service that routes traffic to the NGINX Pods.
 
 ## Goal
 
-Create a client Pod and access the NGINX Service using DNS and its ClusterIP.
+Change the Service selector to `app: does-not-match`, confirm endpoints become empty and requests fail, then restore `app: nginx`.
 
 ### Evidence
 
@@ -80,7 +70,7 @@ Create a client Pod and access the NGINX Service using DNS and its ClusterIP.
 
 ## Goal
 
-Break the Service selector, observe that usable endpoints disappear, and then restore the correct selector.
+Scale to one replica, apply a broken readiness patch, confirm the NotReady Pod is excluded from Service endpoints, then restore the healthy Deployment.
 
 ### Evidence
 
@@ -94,7 +84,7 @@ Break the Service selector, observe that usable endpoints disappear, and then re
 
 ## Goal
 
-Observe how a new Pod that fails readiness is excluded from ready Service backends while the existing healthy Pod continues serving traffic.
+Verify the Service path, then optionally delete `tester` and `nginx-svc`.
 
 ### Evidence
 
@@ -125,41 +115,20 @@ Here is a short note summarizing what the lab demonstrated:
 
 # Submission Instructions
 
-- Add all required screenshots numbered 1–18.
-- Ensure your full name is visible in required screenshots.
-- Use clear, readable screenshots showing the relevant manifest or output.
-- Include the completed NGINX Deployment and ClusterIP Service manifests in your repository.
-- Answer all Notes questions for Tasks 1–6 in your own words.
-- Include evidence of the intentional failures and successful recovery.
-- Do not expose tokens, passwords, kubeconfig files, account IDs, or other sensitive information.
+- Add all required screenshots in your submission
+- Include the completed YAML manifests used in the lab
 
 ---
 
 # Completion Checklist
 
-- [ ] Learning-cluster context confirmed and previous lab resources removed where applicable
-- [ ] ClusterIP lab directory created (Screenshot 1)
-- [ ] Healthy NGINX Deployment manifest completed (Screenshot 2)
-- [ ] Successful rollout and two ready NGINX Pods verified (Screenshot 3)
-- [ ] ClusterIP Service manifest completed (Screenshot 4)
-- [ ] Service and backend endpoints or EndpointSlices verified (Screenshot 5)
-- [ ] Client Pod created and running (Screenshot 6)
-- [ ] Service accessed using DNS name and ClusterIP (Screenshot 7)
-- [ ] Service DNS resolution verified (Screenshot 8)
-- [ ] Broken selector manifest created (Screenshot 9)
-- [ ] Empty endpoints observed (Screenshot 10)
-- [ ] Failed Service request captured (Screenshot 11)
-- [ ] Original selector restored and connectivity verified (Screenshot 12)
-- [ ] Deployment scaled to one ready Pod (Screenshot 13)
-- [ ] Broken readiness patch created (Screenshot 14)
-- [ ] Incomplete rollout or NotReady Pod observed (Screenshot 15)
-- [ ] Readiness effect on Service backends verified (Screenshot 16)
-- [ ] Deployment restored and ready Service backends verified (Screenshot 17)
-- [ ] LinkedIn post published (Screenshot 18)
-- [ ] Notes for Tasks 1–6 completed
-- [ ] Required manifests included
-- [ ] All required screenshots are clear and readable
-- [ ] No sensitive data exposed
+- [ ] Task 1: Probed NGINX Deployment applied (Screenshot 1)
+- [ ] Task 2: ClusterIP Service created and inspected (Screenshot 2)
+- [ ] Task 3: Service reached by DNS and ClusterIP (Screenshot 3)
+- [ ] Task 4: Selector broken and fixed (Screenshot 4)
+- [ ] Task 5: Readiness-aware routing proven (Screenshot 5)
+- [ ] Task 6: Verified / cleaned up (Screenshot 6)
+- [ ] Reflection notes written (Notes)
 
 ---
 
