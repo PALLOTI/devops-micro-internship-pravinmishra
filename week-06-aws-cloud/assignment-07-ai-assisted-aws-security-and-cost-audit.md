@@ -223,9 +223,7 @@ Your submission must include:
 
 Submit your GitHub repository URL containing all assignment files, screenshots, reports, and output.
 
-### GitHub Repository URL
-
-Paste your GitHub repository URL here:
+ GitHub Repository URL
 
 https://github.com/PALLOTI/devops-micro-internship-pravinmishra
 

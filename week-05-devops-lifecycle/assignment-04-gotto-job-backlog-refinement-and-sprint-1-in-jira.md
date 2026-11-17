@@ -213,7 +213,7 @@ Publish a LinkedIn post about what you delivered, including your live URL, three
 
 #### LinkedIn Post URL
 
-Paste your LinkedIn post URL here:
+
 
 https://lnkd.in/p/g2hCt7NU
 

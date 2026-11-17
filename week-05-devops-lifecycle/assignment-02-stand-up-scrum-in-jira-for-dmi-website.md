@@ -153,7 +153,7 @@ Locate the Burndown Chart for Sprint 1 so it is ready for later progress trackin
 
 #### LinkedIn Post URL
 
-Paste your LinkedIn post URL here:
+
 
 https://lnkd.in/p/g2hCt7NU
 

@@ -278,7 +278,6 @@ Publish a LinkedIn post about the high-availability build, including the ALB URL
 
 #### LinkedIn Post URL
 
-Paste your LinkedIn post URL here:
 
 https://lnkd.in/p/eRVH6vyw
 
