@@ -481,7 +481,7 @@ Wake up early by 3am
 
  Blog / Medium : 
  
- https://medium.com/@palloti10x/mental-dependencies-before-server-dependencies-why-your-mindset-is-your-true-foundation-in-devops-d0b8e665ce2c
+ https://medium.com/@palloti1000/mental-dependencies-before-server-dependencies-why-your-mindset-is-your-true-foundation-in-devops-f7a3f75bd5a1
 
 ## 📌 About DMI & CloudAdvisory
 

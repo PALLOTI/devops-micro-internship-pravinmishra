@@ -249,7 +249,7 @@ Include these hashtags:
 
 #DMIByPravinMishra #AgenticAI #ClaudeCode #DevOps #Agile
 
-Add the credit note for your track, as provided in the assignment guidelines, and replace `YOUR-GITHUB-USERNAME` with your GitHub username.
+Add the credit note for your track, as provided in the assignment guidelines, and replace PALLOTI with your GitHub username.
 
 ## Evidence
 
@@ -257,13 +257,13 @@ Add the credit note for your track, as provided in the assignment guidelines, an
 
 Paste your LinkedIn post URL here:
 
-`Add your URL here`
+https://www.linkedin.com/posts/ezeobi-palloti-5b231a1b9_devops-aws-nginx-ugcPost-7492604098198888448-YFi8
 
 ---
 
 #### Screenshot 9 — Published LinkedIn post showing the caption and sprint-health report image
 
-Add your screenshot here.
+![PALLOTI](./screenshots/linkedwk5.png)
 
 ---
 

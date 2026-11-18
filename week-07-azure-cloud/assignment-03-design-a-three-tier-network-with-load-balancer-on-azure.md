@@ -31,7 +31,7 @@ Create Resource Group `vnet-demo-rg` in Central India or your selected Azure reg
 
 Create `eb-demo-vnet` (`10.0.0.0/16`) in `vnet-demo-rg` with `web-subnet` (`10.0.2.0/24`), `app-subnet` (`10.0.3.0/25`), and `db-subnet` (`10.0.4.0/26`). Azure Bastion is optional.
 
-## Evidence
+## Evid ence
 
 #### Screenshot 2 — VNet address space showing `eb-demo-vnet` uses `10.0.0.0/16`
 

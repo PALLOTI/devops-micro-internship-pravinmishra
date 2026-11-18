@@ -57,15 +57,28 @@ Create a healthy NGINX Deployment with readiness and liveness probes.
 
 **1. Why must Pods be ready before they should receive public traffic?**
 
-Add your answer here.
+Pods must be ready before receiving public traffic because a container starting (Running state) does not mean the application inside it is actually initialized and capable of serving requests. Without readiness checks, Kubernetes Services and Ingress controllers route traffic to unready Pods, causing dropped connections, HTTP 502/503 errors, and degraded user experience.
 
 **2. What is the role of the readiness probe in this Deployment?**
 
-Add your answer here.
+In a Kubernetes Deployment, the readinessProbe acts as a traffic gatekeeper that tells Kubernetes exactly when a Pod is ready to accept incoming network requests—and when traffic should be temporarily paused without restarting the container.
+
+Controls Service Load Balancing: A Kubernetes Service only routes traffic to Pods whose readinessProbe is passing. If a Pod fails its readiness check, Kubernetes removes the Pod's IP from the Service Endpoints list so users never get routed to an unready or overloaded container.
+
+Protects Rolling Updates (RollingUpdate): When you deploy a new image or update configuration in a Deployment, Kubernetes spins up new Pods alongside the old ones. The Deployment controller waits until the new Pods pass their readinessProbe before terminating the older Pods, preventing downtime during releases.
+
+Handles Temporary Slowdowns Without Restarts: Unlike a livenessProbe (which kills and restarts a stuck container), a failing readinessProbe simply takes the Pod out of rotation until it recovers (for example, while waiting for a database connection pool to reconnect or finishing a heavy initialization task).
 
 **3. What is the role of the liveness probe in this Deployment?**
 
-Add your answer here.
+In a Kubernetes Deployment, the livenessProbe acts as an automated health watchdog that detects when an application inside a running container has deadlocked, frozen, or entered an unrecoverable broken state—and triggers a container restart to restore it.
+
+Key Roles of the livenessProbe
+Detects Deadlocks and Frozen Processes: A container's main process can stay alive (so Kubernetes sees the container as Running) even when the application inside is hung, stuck in an infinite loop, or out of memory and unable to respond. The livenessProbe periodically checks a health endpoint (such as /healthz or a TCP port) to verify the app is still responsive.
+
+Triggers Self-Healing Restarts: If the probe fails repeatedly beyond its configured failureThreshold, the kubelet terminates and restarts the container according to the Pod's restartPolicy (which defaults to Always in a Deployment).
+
+Complements the readinessProbe: While the readinessProbe controls traffic routing (removing an unready Pod from the Service load balancer without restarting it), the livenessProbe controls container lifecycle (restarting a broken container so it can recover cleanly).
 
 ---
 

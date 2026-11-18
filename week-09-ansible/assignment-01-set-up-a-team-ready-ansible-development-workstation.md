@@ -162,7 +162,7 @@ Get your progress link from **DMI Leaderboard → Your name → Share your progr
 
 #### Screenshot 13 — Published WhatsApp Status showing your Ansible workstation screenshot, caption, and personal DMI progress link
 
-Add your screenshot here.
+![PALLOTI](./screenshots/whatsapp9.png)
 
 > **Privacy Note:** Do not display private keys, credentials, private messages, phone numbers, or other sensitive information.
 

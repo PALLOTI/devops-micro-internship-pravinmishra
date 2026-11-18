@@ -40,7 +40,7 @@ Create an NGINX Pod directly from the command line, verify that it is running, a
 
 #### Screenshot 03 — Output of `kubectl delete pod nginx-pod` showing the successful deletion message
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk13.png)
 
 ---
 
@@ -54,19 +54,19 @@ Define the NGINX Pod in a YAML file, apply the manifest, and verify the resultin
 
 #### Screenshot 04 — The filename `nginx-pod.yaml` and the complete YAML manifest with clear, readable indentation
 
-![PALLOTI](./screenshots/12wk13.png)
+![PALLOTI](./screenshots/12wk14.png)
 
 ---
 
 #### Screenshot 05 — Output of `kubectl apply -f nginx-pod.yaml` showing the successful creation message
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk15.png)
 
 ---
 
 #### Screenshot 06 — Output of `kubectl get pods` showing the declarative `nginx-pod` with `1/1` under `READY` and `Running` under `STATUS`
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk16.png)
 
 ---
 
@@ -74,7 +74,41 @@ Add your screenshot here.
 
 **1. What is the difference between imperative and declarative Pod creation?**
 
-Add your answer here.
+In Kubernetes, the fundamental difference between **imperative** and **declarative** Pod creation comes down to *how* you instruct the cluster: telling Kubernetes **what actions to take step-by-step** versus defining **the final desired state** you want to achieve.
+
+---
+
+### 1. Imperative Approach (Commands)
+
+With imperative management, you use direct `kubectl` commands to tell the cluster exactly what action to perform right now.
+
+* **How it works:** You run commands in the terminal specifying the action and object parameters.
+* **Example:** The command you just ran (`kubectl run nginx-pod --image=nginx`) is an imperative command. You are explicitly telling Kubernetes: *"Run a pod named nginx-pod using the nginx image."*
+* **Best used for:** Quick testing, troubleshooting, debugging, or one-off exploratory tasks in a development cluster.
+* **Limitations:** Changes aren't tracked automatically in version control, making it hard to reproduce exact infrastructure setups or track history.
+
+### 2. Declarative Approach (Manifests & `apply`)
+
+With declarative management, you write configuration files (YAML or JSON) that describe the **desired state** of your Pod or deployment, and let Kubernetes figure out how to make reality match that state.
+
+* **How it works:** You write a manifest file (`pod.yaml`) containing the full specification, then apply it using:
+```bash
+kubectl apply -f pod.yaml
+```
+
+* **Best used for:** Production environments, team collaboration, and Infrastructure as Code (IaC) workflows.
+* **Benefits:**
+* **Version Control:** Configuration files live in Git, providing a complete audit history.
+* **Idempotency:** Running `kubectl apply -f pod.yaml` multiple times safely updates resources only if changes are detected.
+
+ **Quick Comparison**
+
+| Feature | Imperative (`kubectl run` / `create`) | Declarative (`kubectl apply -f`) |
+| --- | --- | --- |
+| **Focus** | **How** to do it (actions/commands) | **What** the final state should look like |
+| **Source of Truth** | The live cluster state | Configuration files (YAML in Git) |
+| **Reproducibility** | Low (relies on terminal history) | High (fully version-controlled) |
+| **Ideal Use Case** | Quick debugging and testing | Production deployments and IaC workflows |
 
 ---
 
@@ -89,14 +123,14 @@ Inspect the running Pod, view its logs, and open a shell inside the NGINX contai
 #### Screenshot 07 — Output of `kubectl describe pod nginx-pod` showing the Pod name, `app=nginx` label, `Running` status, container name, and NGINX image
 
 
-![PALLOTI](./screenshots/12wk14.png)
+![PALLOTI](./screenshots/12wk17.png)
 
 
 ---
 
 #### Screenshot 08 — Output of `kFilename: `08-pod-logs.png`
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk18.png)
 
 If no logs appear, add a caption stating that the command completed without output.
 
@@ -104,7 +138,7 @@ If no logs appear, add a caption stating that the command completed without outp
 
 #### Screenshot 09 — Container shell opened using `kubectl exec -it nginx-pod -- /bin/bash`, showing `cd /usr/share/nginx/html`, `pwd`, and `ls -la`, with the directory path and default NGINX files visible before exiting
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk19.png)
 
 ---
 
@@ -141,6 +175,8 @@ I also checked its status, inspected its details, viewed its logs, and accessed 
 **Screenshots Required**
 
 - **Screenshot 10 — `10-whatsapp-status.png`:** Published WhatsApp Status showing your Kubernetes Pod message and generated DMI leaderboard progress link.
+
+![PALLOTI](./screenshots/whatsapp.png)
 
 ---
 

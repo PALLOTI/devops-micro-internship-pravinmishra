@@ -40,13 +40,24 @@ Create and enter a dedicated directory for this ReplicaSet lab.
 
 **1. Why is it useful to keep Kubernetes manifests in organized directories?**
 
-Add your answer here.
+Organizing Kubernetes manifests into structured directories (such as grouping by resource type like `pods/`, `replicasets/`, `deployments/`, or by application tier and environment) turns a collection of YAML files into a maintainable, production-ready codebase.
+
+* **Batch Deployment and Cleanup:** You can apply or delete an entire stack or module with a single command (`kubectl apply -f deployments/` or `kubectl delete -f deployments/`) instead of running commands file by file.
+* **Clear Separation of Concerns:** Isolating workloads (Deployments, StatefulSets), networking (Services, Ingress), and configuration (ConfigMaps, Secrets) makes it immediately obvious where specific settings live during debugging or incident triage.
+* **Cleaner GitOps & Version Control:** Structured directories produce readable Git diffs, simplify code reviews, and allow CI/CD pipelines or GitOps tools (like ArgoCD or Flux) to watch specific paths and sync changes automatically.
+* **Multi-Environment Management:** Separating base configurations from environment-specific overrides (e.g., `base/` vs. `overlays/dev/` and `overlays/prod/` with Kustomize) prevents accidental production changes while eliminating copy-paste duplication.
+* **Safer Access Control & Blast-Radius Reduction:** Teams can enforce granular CODEOWNERS rules or RBAC policies on sensitive directories (such as `security/` or `database/`), ensuring critical manifests require peer approval before merging.
 
 ---
 
 **2. What file will you create in this directory for this assignment?**
 
-Add your answer here.
+For decalarative means of pod creation file
+nginx-pod.yaml
+
+
+For replicaset file
+nginx-replicaset.yaml
 
 ---
 
@@ -67,13 +78,13 @@ Create a ReplicaSet that maintains three NGINX Pods.
 
 #### Screenshot 03 — Output of `kubectl apply -f nginx-replicaset.yaml`
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk23.png)
 
 ---
 
 #### Screenshot 04 — Output of `kubectl get pods` showing three NGINX Pods with `1/1` under `READY` and `Running` under `STATUS`
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk24.png)
 
 ---
 
@@ -81,13 +92,65 @@ Add your screenshot here.
 
 **1. What does `replicas: 3` mean in this manifest?**
 
-Add your answer here.
+It means the desired pod number will always be 3
 
 ---
 
 **2. Why must `selector.matchLabels` match `template.metadata.labels`?**
 
-Add your answer here.
+In Kubernetes, a Deployment (or other workload resource like a StatefulSet) acts as a controller that manages a set of Pods. For the controller to know which Pods belong to it, it relies on labels.
+
+The requirement that `selector.matchLabels` must match `template.metadata.labels` is fundamental to how the **Deployment Controller** links its desired state (the Pod template) to its actual state (the running Pods).
+
+---
+
+### Why the Match is Required
+
+1. **The Controller's Lookup Mechanism**
+The Deployment controller queries the Kubernetes API server for all Pods in the cluster that match the labels defined in `spec.selector.matchLabels`. It uses these matched Pods to calculate the current replica count (e.g., *“Are there 3 running Pods matching my selector, or only 2?”*).
+2. **Tagging the Created Pods**
+When the Deployment needs to create new Pods, it generates them using the blueprint defined in `spec.template`. The labels specified in `spec.template.metadata.labels` are automatically stamped onto every Pod created from that template.
+3. **Closing the Loop**
+If `selector.matchLabels` did not match `template.metadata.labels`:
+* The Deployment would create Pods with one set of labels (from the template).
+* But it would search for Pods using a completely different set of labels (from the selector).
+* As a result, the Deployment would see **0 matching Pods**, assume it needs to create more, and endlessly spawn new Pods until your cluster runs out of resources (a classic runaway creation loop).
+
+
+
+---
+
+### Visualizing the Link
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web     # <-- 1. Controller uses this to FIND existing pods
+  template:
+    metadata:
+      labels:
+        app: web   # <-- 2. Controller STAMPS this onto newly created pods
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+
+```
+
+---
+
+ What Happens If They Don't Match?
+
+Kubernetes protects you from configuration errors through validation:
+
+* **API Rejection:** If you try to apply a Deployment where `selector.matchLabels` and `template.metadata.labels` do not align, the Kubernetes API server will reject the manifest outright with a validation error (typically: *`Deployment.spec.selector does not match Deployment.spec.template.metadata.labels`*).
+* **Immutability:** Once a Deployment is created, the `selector` field is **immutable** (it cannot be changed). This prevents you from accidentally or maliciously "orphaning" existing Pods or hijacking Pods belonging to other Deployments.
 
 ---
 
@@ -113,13 +176,13 @@ Delete one Pod managed by the ReplicaSet and observe Kubernetes automatically cr
 
 #### Screenshot 06 — Output of `kubectl get pods` showing the replacement Pod with a different name from the deleted Pod
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk26.png)
 
 ---
 
 #### Screenshot 07 — Output showing three NGINX Pods with `1/1` under `READY` and `Running` under `STATUS` again
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk27.png)
 
 ---
 
@@ -127,19 +190,93 @@ Add your screenshot here.
 
 **1. What happened after you deleted one Pod?**
 
-Add your answer here.
+Immediately a new pod was created to mtch the desire state of pod, as decleared in the nginx-replicaset.yaml
 
 ---
 
 **2. How does the ReplicaSet know that a replacement Pod is needed?**
 
-Add your answer here.
+The ReplicaSet doesn't "detect" a pod's deletion through polling or a direct ping. Instead, it relies on Kubernetes' core architectural pattern: **the control loop and the Watch mechanism**.
+
+Here is the exact sequence of how the ReplicaSet controller knows a replacement is needed:
+
+---
+
+ 1. The Watch and Informer Pattern
+
+Inside the `kube-controller-manager`, the ReplicaSet controller doesn’t constantly query the API server with expensive `GET` requests. Instead, it uses a **List-Watch** mechanism via client-go informers:
+
+* **Initial List:** When the controller starts up, it lists all Pods in the cluster to build an in-memory cache.
+* **Continuous Watch:** It establishes a long-lived HTTP stream (a watch) with the Kubernetes API server. The API server instantly pushes an event notification whenever a Pod matching the ReplicaSet's `selector` is added, modified, or deleted.
+
+ 2. The Reconciliation Loop (Desired vs. Actual State)
+
+The ReplicaSet controller runs a continuous control loop that follows a simple logic: **Compare Desired State to Actual State.**
+
+1. **The Event Arrives:** When you delete a Pod, the API server sends a `DELETED` event for that Pod over the watch stream.
+2. **Cache Update:** The ReplicaSet controller updates its local cache, removing that Pod from its list of active matching pods.
+3. **The Delta Check:** The controller calculates the state:
+* **Desired Replicas (`spec.replicas`):** e.g., `3`
+* **Actual Matching Pods:** e.g., `2` (since one was just deleted)
+
+
+4. **Triggering Action:** Because Actual ($2$) < Desired ($3$), the controller identifies a deficit of `1` Pod.
+
+ 3. Spawning the Replacement
+
+Once the controller registers the deficit, it immediately takes corrective action:
+
+1. It pulls the blueprint from its `spec.template`.
+2. It constructs a new Pod object manifest (stamping it with the correct owner reference pointing back to the ReplicaSet).
+3. It sends a `POST` request to the Kubernetes API server to create the new Pod.
+4. The scheduler picks up the new Pod and assigns it to a node.
+
+---
+
+### Key Takeaway
+
+The ReplicaSet controller is entirely reactive to events streaming from the API server. It continuously ensures that **Active Pods matching the selector == `spec.replicas**`. If that equation breaks due to deletion, node failure, or eviction, the reconciliation loop instantly fires to restore balance.
 
 ---
 
 **3. What proves that auto-healing worked successfully?**
 
-Add your answer here.
+To prove that Kubernetes auto-healing (reconciliation) has successfully restored your application state after a Pod deletion, you look for a combination of exact replica counts, new identifiers, and controller events.
+
+Here is the exact evidence that confirms auto-healing worked:
+
+---
+
+1. Replica Count Equilibrium
+
+Run `kubectl get deployment` (or `kubectl get rs`) and check that the actual state matches the desired state:
+
+* **`READY` / `UP-TO-DATE` / `AVAILABLE**` equal **`DESIRED`** (e.g., `3/3`).
+* If you see the counts dip momentarily and then return to match the desired replica count, the control loop has successfully closed the gap.
+
+2. New Pod Identifiers (`UID` and IP Address)
+
+Run `kubectl get pods -o wide` and compare the active Pods against your baseline before the deletion:
+
+* **Different Hash Suffix:** Because the ReplicaSet generates Pods from a template hash, the replacement Pod will have a brand-new name (e.g., `my-app-798b5f97bc-abc12` instead of the old `...-xyz89`).
+* **Fresh `AGE`:** The `AGE` column for the replacement Pod will show a few seconds or minutes, proving it was freshly spawned.
+* **New IP Address:** The Pod will be assigned a new internal cluster IP address by the CNI plugin.
+
+3. Controller Events (`kubectl describe`)
+
+Run `kubectl describe deployment <deployment-name>` or `kubectl get events --sort-by='.metadata.creationTimestamp'`. Successful auto-healing leaves a clear audit trail in the Kubernetes events:
+
+* `ScalingReplicaSet`: Scaled up replica set `<name>` from `2` to `3`
+* `SuccessfulCreate`: Created pod: `<new-pod-name>`
+
+4. Lifecycle Progression (`Status`)
+
+By inspecting the new Pod (`kubectl get pod <new-pod-name>`), you can verify it successfully traversed the standard health phases:
+
+1. `Pending` (scheduled by the `kube-scheduler` to a node).
+2. `ContainerCreating` (images pulled, volumes attached).
+3. `Running` (containers started).
+4. `Ready` (liveness and readiness probes passed, clearing it to receive traffic).
 
 ---
 
@@ -153,13 +290,13 @@ Scale the ReplicaSet from three NGINX Pods to five NGINX Pods by changing the YA
 
 #### Screenshot 08 — Updated `nginx-replicaset.yaml` showing `replicas: 5`
 
-![PALLOTI](./screenshots/12wk24.png)
+![PALLOTI](./screenshots/12wk28.png)
 
 ---
 
 #### Screenshot 09 — Output of `kubectl get pods` showing five NGINX Pods with `1/1` under `READY` and `Running` under `STATUS`
 
-Add your screenshot here.
+![PALLOTI](./screenshots/12wk29.png)
 
 ---
 
@@ -167,19 +304,55 @@ Add your screenshot here.
 
 **1. What change did you make to scale the ReplicaSet?**
 
-Add your answer here.
+Changing the replicaset from 3 to 5
+
+replica: 3 to replica: 5
 
 ---
 
 **2. Did you manually create the additional Pods? Explain why or why not.**
 
-Add your answer here.
+No there was no manual pod creation, Changing the replica count from 3 to 5 and applying the change, triggers an automatic pod scale up from 3 to 5. The control node will verify and balance the desire pod state and the actual pod state and the the make both are balanced. 
 
 ---
 
 **3. What would happen if you changed the replica count from five back to three?**
 
-Add your answer here.
+This is the autoscaling feature of kubernetes
+
+When you scale a Deployment down from five replicas back to three, the ReplicaSet controller performs a **scale-down reconciliation** to match the new desired state.
+
+Here is the exact sequence of events that takes place:
+
+---
+
+1. The Controller Detects a Surplus
+
+The controller's control loop evaluates the current state against your update:
+
+* **Desired Replicas:** `3`
+* **Actual Running Pods:** `5`
+* **Delta:** A surplus of `2` Pods.
+
+2. Pod Selection and Termination
+
+The controller must prune two Pods to bridge the gap. By default, Kubernetes prioritizes terminating **youngest pods first** (along with unready or unscheduled pods) to minimize disruption to stable, long-running instances.
+
+* The controller issues a `DELETE` request for the selected Pods to the API server.
+
+ 3. Graceful Shutdown
+
+When a Pod is marked for deletion, Kubernetes executes a graceful shutdown rather than pulling the plug instantly:
+
+* **`SIGTERM` Signal:** Kubelet sends a `SIGTERM` to the container processes, giving your application a window (controlled by `terminationGracePeriodSeconds`, which defaults to 30 seconds) to finish active requests, close database connections, and save state.
+* **Service Deregistration:** Simultaneously, endpoints controllers remove the terminating Pods from the corresponding Service endpoints, halting new incoming traffic.
+* **`SIGKILL`:** Once the grace period expires (or the app shuts down early), Kubelet sends a `SIGKILL` to terminate any remaining processes, and the Pod is fully removed.
+
+### 4. Equilibrium Restored
+
+Once the two excess Pods are fully terminated, the active count matches your new desired replica count of `3`, and the reconciliation loop returns to steady state.
+
+---
 
 ---
 
@@ -201,13 +374,13 @@ Do not share sensitive information, cluster credentials, tokens, or kubeconfig d
 
 #### Screenshot 10 — Published LinkedIn post showing your name, the required explanation, and the attached Pod screenshot
 
-Add your screenshot here.
+![PALLOTI](./screenshots/122linkedin.png)
 
 ---
 
 ### Post Link
 
-Add the URL of your published LinkedIn post here.
+https://lnkd.in/p/efqZJhS3
 
 ---
 
